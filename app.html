@@ -734,7 +734,7 @@ async function boot(){
   const params=new URLSearchParams(location.search);
   const cid=params.get("c")||params.get("condition")||"skin";
   try{
-    const r=await fetch("conditions/"+cid+".json");
+    const r=await fetch(cid+".json");
     if(!r.ok)throw new Error("HTTP "+r.status);
     C=await r.json();
     // Initialise BLK state from JSON defaults
