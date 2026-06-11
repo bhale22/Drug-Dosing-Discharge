@@ -190,6 +190,22 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
   .bar-inner{padding:9px 14px 11px}
   main{padding:16px 14px 22px}
 }
+
+/* ===== PRESET BAR ===== */
+.preset-bar{background:var(--surface);border-bottom:1px solid var(--line);padding:10px 22px 11px}
+.preset-bar-inner{max-width:1200px;margin:0 auto}
+.preset-label{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--soft);margin-bottom:7px}
+.preset-btns{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
+.pbtn{font-family:var(--sans);font-size:13px;font-weight:650;padding:6px 14px;
+  border:1.5px solid var(--line);border-radius:20px;background:#F7FAFA;
+  color:var(--ink);cursor:pointer;transition:background .15s,border-color .15s,color .15s;white-space:nowrap}
+.pbtn:hover{border-color:var(--accent);color:var(--accent-d)}
+.pbtn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.pbtn.custom{border-style:dashed;color:var(--soft)}
+.pbtn.clear{color:var(--warn);border-color:#E8DACC}
+.pbtn.clear:hover{background:var(--warn-s);border-color:var(--warn)}
+.preset-divider{width:1px;height:22px;background:var(--line);margin:0 4px;align-self:center}
 </style>
 </head>
 <body class="dog">
@@ -226,6 +242,13 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
     </div>
   </div>
 </header>
+
+<div class="preset-bar" id="preset-bar" style="display:none">
+  <div class="preset-bar-inner">
+    <div class="preset-label">Quick start — select a preset</div>
+    <div class="preset-btns" id="preset-btns"></div>
+  </div>
+</div>
 
 <main id="main"><div class="loading">Loading condition data…</div></main>
 
@@ -647,6 +670,78 @@ function renderBlocks(){
         '</div></div>';
     }).join("");}
 
+
+/* ================================================================
+   PRESET ENGINE
+================================================================ */
+let activePreset=null;  // id of active preset, or null if custom/cleared
+
+function clearAll(){
+  // Reset all med and block state to defaults
+  for(const k of Object.keys(S)) delete S[k];
+  for(const k of Object.keys(BLK)) delete BLK[k];
+  // Re-init block defaults from JSON
+  for(const b of(C.dischargeBlocks||[]))bk(b.id,b);
+  // Reset discharge title override
+  if(C._origDischarge) C.discharge=C._origDischarge;
+  activePreset=null;
+  render();
+  refreshPresetBtns();}
+
+function applyPreset(pid){
+  const presets=C.presets||[];
+  const p=presets.find(x=>x.id===pid);
+  if(!p)return;
+  // Save original discharge title once
+  if(!C._origDischarge)C._origDischarge=C.discharge;
+  // Clear existing state
+  for(const k of Object.keys(S))delete S[k];
+  for(const k of Object.keys(BLK))delete BLK[k];
+  // Re-init blocks to all-off, then apply preset
+  for(const b of(C.dischargeBlocks||[]))BLK[b.id]={on:false,dur:0,text:null};
+  // Apply meds
+  for(const pm of p.meds){
+    const s=st(pm.id);
+    s.on=true;
+    if(pm.opt!==undefined)s.opt=pm.opt;
+    if(pm.freq!==undefined)s.freq=pm.freq;}
+  // Apply blocks
+  for(const pb of p.blocks){
+    const b=BLK[pb.id]||{};
+    b.on=pb.on;
+    if(pb.dur!==undefined)b.dur=pb.dur;
+    if(pb.text!==undefined)b.text=pb.text;
+    BLK[pb.id]=b;}
+  // Override discharge title
+  C.discharge=p.discharge||C._origDischarge;
+  // Switch species to match preset if needed
+  if(p.sp&&p.sp!==sp)setSp(p.sp);
+  activePreset=pid;
+  render();
+  refreshPresetBtns();}
+
+function markCustom(){
+  // Called whenever user manually changes anything after a preset
+  if(activePreset!==null){activePreset=null;refreshPresetBtns();}}
+
+function refreshPresetBtns(){
+  const bar=document.getElementById("preset-btns");
+  if(!bar)return;
+  const presets=(C.presets||[]).filter(p=>p.sp===sp);
+  if(!presets.length){document.getElementById("preset-bar").style.display="none";return;}
+  document.getElementById("preset-bar").style.display="block";
+  const anyOn=Object.values(S).some(s=>s.on);
+  bar.onclick=e=>{const b=e.target.closest('[data-pid]');if(b)applyPreset(b.dataset.pid);};
+  bar.innerHTML=
+    presets.map(p=>
+      '<button class="pbtn'+(activePreset===p.id?" active":"")
+      +'" data-pid="'+p.id+'" title="'+esc(p.desc||"")+'">'+esc(p.label)+'</button>'
+    ).join("")+
+    (anyOn||activePreset?
+      '<div class="preset-divider"></div>'+
+      (activePreset===null&&anyOn?
+        '<button class="pbtn custom" onclick="" disabled title="Selections modified">✎ Custom</button>':'')
+      +'<button class="pbtn clear" onclick="clearAll()">✕ Clear all</button>':"");}
 /* ================================================================
    FULL PAGE RENDER
 ================================================================ */
@@ -694,22 +789,23 @@ function render(){
   document.getElementById("main").innerHTML=
     '<div class="grid">'+cards+'</div>'+outcard;
   renderBlocks();
-  buildOutput();}
+  buildOutput();
+  refreshPresetBtns();}
 
 /* ================================================================
    EVENT HANDLERS
 ================================================================ */
 function toggleMed(id){const s=st(id);s.on=!s.on;
-  document.getElementById("med-"+id).classList.toggle("off",!s.on);buildOutput();}
-function pickOpt(id,i){st(id).opt=i;buildOutput();}
-function pickFreq(id,i){st(id).freq=i;buildOutput();}
+  document.getElementById("med-"+id).classList.toggle("off",!s.on);markCustom();buildOutput();}
+function pickOpt(id,i){st(id).opt=i;markCustom();buildOutput();}
+function pickFreq(id,i){st(id).freq=i;markCustom();buildOutput();}
 function setVol(id,el){
   const v=parseFloat(el.textContent);
   st(id).volMl=isFinite(v)&&v>0?Math.round(v*100)/100:(C.meds.find(m=>m.id===id)||{}).defaultMl||null;
   el.textContent=st(id).volMl;buildOutput();}
-function toggleBlk(id){const b=BLK[id];if(b)b.on=!b.on;renderBlocks();buildOutput();}
-function setDur(id,i){const b=BLK[id];if(b)b.dur=i;renderBlocks();buildOutput();}
-function editBlk(id,v){const b=BLK[id];if(b)b.text=v;buildOutput();}
+function toggleBlk(id){const b=BLK[id];if(b)b.on=!b.on;markCustom();renderBlocks();buildOutput();}
+function setDur(id,i){const b=BLK[id];if(b)b.dur=i;markCustom();renderBlocks();buildOutput();}
+function editBlk(id,v){const b=BLK[id];if(b)b.text=v;markCustom();buildOutput();}
 function setSp(s){sp=s;
   document.body.classList.toggle("dog",s==="dog");
   document.body.classList.toggle("cat",s==="cat");
@@ -734,7 +830,7 @@ async function boot(){
   const params=new URLSearchParams(location.search);
   const cid=params.get("c")||params.get("condition")||"skin";
   try{
-    const r=await fetch(cid+".json");
+    const r=await fetch("conditions/"+cid+".json");
     if(!r.ok)throw new Error("HTTP "+r.status);
     C=await r.json();
     // Initialise BLK state from JSON defaults
@@ -744,6 +840,7 @@ async function boot(){
     document.getElementById("wt").addEventListener("input",render);
     document.getElementById("pname").addEventListener("input",buildOutput);
     render();
+    refreshPresetBtns();
   }catch(e){
     document.getElementById("main").innerHTML=
       '<div class="err">Could not load condition data: '+esc(String(e))+
