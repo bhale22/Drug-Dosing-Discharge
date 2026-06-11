@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dosing & Discharge</title>
+<style>
+/* ===== VARIABLES ===== */
+:root{
+  --bg:#F3F6F6; --surface:#fff; --ink:#16282C; --soft:#5B6E72;
+  --line:#E1E8E8; --line2:#EEF2F2;
+  --accent:#0E6E66; --accent-s:#E2F1EE; --accent-d:#0A4F49;
+  --warn:#B45309; --warn-s:#FDF3E3;
+  --r:12px;
+  --sans:"Seravek","Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"SF Mono","Cascadia Code","JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+body.cat{ --accent:#5B4B8A; --accent-s:#ECE8F5; --accent-d:#41356B; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.45;font-size:15px}
+
+/* ===== TOP BAR ===== */
+.bar{position:sticky;top:0;z-index:60;background:var(--surface);
+  border-bottom:3px solid var(--accent);box-shadow:0 2px 14px rgba(20,40,44,.08);transition:border-color .25s}
+.bar-inner{max-width:1200px;margin:0 auto;padding:11px 22px 13px;
+  display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 26px}
+.titleblock{flex:1 1 220px;min-width:180px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.eyebrow a{color:inherit;text-decoration:none}.eyebrow a:hover{text-decoration:underline}
+h1{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-top:2px}
+.controls{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 16px}
+.ctl label{display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--soft);font-weight:600;margin-bottom:4px}
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:9px;overflow:hidden;background:#F7FAFA}
+.seg button{font-family:var(--sans);font-size:13.5px;font-weight:600;padding:7px 15px;
+  border:none;background:transparent;color:var(--soft);cursor:pointer;transition:background .15s,color .15s}
+.seg button.on{background:var(--accent);color:#fff}
+.seg button:focus-visible{outline:2px solid var(--accent-d);outline-offset:-2px}
+#wt{font-family:var(--mono);font-size:16px;font-weight:600;width:90px;padding:7px 10px;
+  border:1.5px solid var(--line);border-right:none;border-radius:9px 0 0 9px;background:#fff;color:var(--ink)}
+#pname{font-family:var(--sans);font-size:14px;width:130px;padding:7px 10px;
+  border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--ink)}
+#wt:focus,#pname:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.wt-wrap{display:flex;align-items:stretch}
+.kg-show{font-family:var(--mono);font-size:12.5px;color:var(--soft);align-self:center;margin-left:9px}
+.kg-show strong{color:var(--ink)}
+
+/* ===== LAYOUT ===== */
+main{max-width:1200px;margin:0 auto;padding:22px 22px 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:18px;align-items:start}
+@media(max-width:880px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:15px 17px}
+.card.wide{grid-column:1/-1}
+.grp-title{font-size:14px;font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:8px}
+.grp-tag{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);background:var(--accent-s);padding:2px 7px;border-radius:20px;transition:background .25s,color .25s}
+
+/* ===== MED ROWS ===== */
+.med{border-top:1px solid var(--line);padding:10px 0 9px}
+.med:first-of-type{border-top:none;padding-top:1px}
+.mh{display:flex;align-items:flex-start;gap:9px}
+.mh input[type=checkbox]{width:17px;height:17px;accent-color:var(--accent);margin-top:2px;flex:none;cursor:pointer}
+.mn{flex:1}
+.mn .name{font-weight:650;cursor:pointer;font-size:14px}
+.mn .gen{color:var(--soft);font-size:12px;margin-left:4px}
+.chip{font-family:var(--mono);font-size:12px;color:var(--accent-d);background:var(--accent-s);
+  padding:2px 8px;border-radius:6px;white-space:nowrap;font-variant-numeric:tabular-nums;
+  align-self:flex-start;transition:background .25s;flex:none}
+.chip.dim{background:var(--line2);color:var(--soft)}
+/* editable volume chips */
+.chip.editable{cursor:text;border:1.5px dashed var(--accent);padding:1px 7px}
+.chip.editable:focus{outline:2px solid var(--accent);background:#fff}
+.mb{margin:6px 0 0 26px}
+.med.off .mb{opacity:.5}
+.opt{display:flex;align-items:center;gap:7px;padding:2.5px 0;font-size:13px}
+.opt input[type=radio]{accent-color:var(--accent);width:14px;height:14px;flex:none;cursor:pointer}
+.opt label{cursor:pointer;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px}
+.opt .dmg{font-family:var(--mono);font-size:12px;color:var(--soft)}
+.ltag{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;background:var(--accent);padding:1px 5px;border-radius:10px;transition:background .25s}
+.freq-row{margin-top:5px;font-size:12.5px;color:var(--soft)}
+.freq-row select{font-family:var(--sans);font-size:12.5px;padding:2px 5px;border:1px solid var(--line);
+  border-radius:6px;background:#fff;color:var(--ink)}
+.mnote{font-size:11.5px;color:var(--soft);margin-top:4px;line-height:1.45}
+.warn{font-size:12px;color:var(--warn);font-weight:600;margin-top:3px}
+details.ch{margin:5px 0 0 26px}
+details.ch summary{cursor:pointer;font-size:11.5px;color:var(--soft);font-weight:600}
+details.ch table{margin-top:5px;font-size:12.5px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--soft);
+  font-weight:700;padding:4px 8px 4px 0;border-bottom:1.5px solid var(--line)}
+td{padding:5px 8px 5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr.hit td{background:var(--accent-s)}
+.sc{color:var(--soft)}
+
+/* ===== BOTTOM COUNT BAR ===== */
+.countbar{position:sticky;bottom:0;z-index:40;background:var(--accent-d);color:#fff;
+  transition:background .25s}
+.countbar-inner{max-width:1200px;margin:0 auto;padding:9px 22px;
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.countbar strong{font-size:14px}
+.countbar a{color:#fff;font-size:13.5px;font-weight:600}
+
+/* ===== OUTPUT CARD ===== */
+#output{scroll-margin-top:80px}
+.tabs{display:flex;gap:5px;margin-bottom:11px}
+.tabs button{font-family:var(--sans);font-size:13px;font-weight:650;padding:6px 14px;
+  border:1.5px solid var(--line);border-radius:8px;background:#F7FAFA;color:var(--soft);cursor:pointer}
+.tabs button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* discharge blocks editor */
+#blocks{margin-bottom:12px}
+.blk{display:flex;gap:9px;align-items:flex-start;margin-bottom:8px;
+  background:#FAFCFC;border:1px solid var(--line);border-radius:9px;padding:9px 11px}
+.blk input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent);margin-top:3px;flex:none;cursor:pointer}
+.blkwrap{flex:1;min-width:0}
+.blktitle{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--soft);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.blktitle select{font-family:var(--sans);font-size:12px;padding:2px 5px;border:1px solid var(--line);
+  border-radius:5px;background:#fff;color:var(--ink)}
+.blk textarea{width:100%;font-family:var(--sans);font-size:13px;line-height:1.5;
+  border:1px solid var(--line);border-radius:7px;padding:7px 9px;resize:vertical;min-height:48px;
+  background:#fff;color:var(--ink)}
+
+.outhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:10px 0 8px}
+.outmeta{font-size:12px;color:var(--soft)}
+.out-wrap{border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+#outpreview{min-height:180px;padding:18px 20px 20px;background:#fff;font-family:var(--sans);
+  font-size:13.5px;line-height:1.6;color:#111;outline:none;cursor:text}
+/* record styles */
+.out-record .rec-hdr{font-family:var(--mono);font-size:11px;color:var(--soft);
+  border-bottom:1.5px solid var(--line);padding-bottom:7px;margin-bottom:9px}
+.out-record .sec-lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);margin:12px 0 4px;transition:color .25s}
+.out-record ul{list-style:none;padding:0}
+.out-record li{padding:4px 0 4px 16px;border-bottom:1px solid var(--line2);position:relative;font-size:13px}
+.out-record li:last-child{border-bottom:none}
+.out-record li::before{content:"•";position:absolute;left:0;color:var(--accent)}
+/* discharge styles */
+.out-dis .dis-title{font-size:16px;font-weight:700;margin-bottom:2px}
+.out-dis .dis-sub{font-size:12px;color:#666;margin-bottom:12px}
+.out-dis .sec-hdr{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--accent);margin:14px 0 5px;transition:color .25s}
+.out-dis ul{list-style:none;padding:0}
+.out-dis li{padding:4px 0 4px 16px;border-bottom:1px solid var(--line2);position:relative;font-size:13.5px;line-height:1.5}
+.out-dis li:last-child{border-bottom:none}
+.out-dis li::before{content:"•";position:absolute;left:0;color:var(--accent)}
+.out-dis .btext{font-size:13px;line-height:1.6;white-space:pre-wrap;color:#333;margin-top:2px}
+.out-dis .chk-line{display:flex;align-items:flex-start;gap:8px;padding:4px 0;font-size:13px;line-height:1.5}
+.out-dis .chk-box{display:inline-block;width:14px;height:14px;border:1.5px solid #555;
+  border-radius:2px;flex:none;margin-top:2px}
+/* shared */
+.mn-bold{font-weight:700}
+.mn-desc{color:#555;font-weight:400}
+.mn-give{color:#111}
+.out-actions{display:flex;gap:7px;flex-wrap:wrap;align-items:center;
+  padding:9px 13px;background:#F7FAFA;border-top:1px solid var(--line)}
+.obtn{font-family:var(--sans);font-size:13px;font-weight:700;padding:6px 15px;border:none;
+  border-radius:8px;cursor:pointer;transition:background .15s}
+.obtn.p{background:var(--accent);color:#fff}.obtn.p:hover{background:var(--accent-d)}
+.obtn.s{background:#E8F0EF;color:var(--accent-d)}.obtn.s:hover{background:#D2E6E3}
+.copied{font-size:12.5px;font-weight:700;color:var(--accent-d);opacity:0;transition:opacity .3s;margin-left:4px}
+.copied.show{opacity:1}
+
+/* ===== PRINT ===== */
+@media print{
+  body *{visibility:hidden}
+  #printzone,#printzone *{visibility:visible}
+  #printzone{position:fixed;top:0;left:0;width:100%;padding:18pt 24pt;
+    font-family:Arial,Helvetica,sans-serif;font-size:11pt;line-height:1.55;color:#000}
+  .out-dis .dis-title{font-size:16pt;font-weight:bold}
+  .out-dis .dis-sub{font-size:10pt;color:#555;margin-bottom:10pt}
+  .out-dis .sec-hdr,.out-record .sec-lbl{font-size:9.5pt;font-weight:bold;
+    text-transform:uppercase;letter-spacing:.06em;margin-top:10pt;margin-bottom:3pt;color:#000}
+  .out-dis .chk-box{border:1.5pt solid #000;width:12pt;height:12pt;display:inline-block}
+  .out-dis .chk-line{display:flex;gap:7pt;align-items:flex-start}
+  .out-dis ul li,.out-record ul li{padding-left:14pt}
+  .out-actions,.rec-hdr{display:none}
+  .out-wrap{border:none}
+  .out-dis .btext,.out-record{page-break-inside:avoid}
+}
+
+footer{max-width:1200px;margin:0 auto;padding:14px 22px 50px;font-size:11.5px;color:var(--soft)}
+footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
+.loading{text-align:center;padding:80px 20px;font-size:16px;color:var(--soft)}
+.err{color:var(--warn);text-align:center;padding:60px 20px}
+@media(max-width:600px){
+  .bar-inner{padding:9px 14px 11px}
+  main{padding:16px 14px 22px}
+}
+</style>
+</head>
+<body class="dog">
+
+<header class="bar">
+  <div class="bar-inner">
+    <div class="titleblock">
+      <div class="eyebrow"><a href="index.html">← All Conditions</a></div>
+      <h1 id="pagetitle">Loading…</h1>
+    </div>
+    <div class="controls">
+      <div class="ctl">
+        <label>Patient name <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+        <input id="pname" type="text" placeholder="Name" autocomplete="off">
+      </div>
+      <div class="ctl">
+        <label>Species</label>
+        <div class="seg" role="group">
+          <button id="btn-dog" class="on" onclick="setSp('dog')">Dog</button>
+          <button id="btn-cat" onclick="setSp('cat')">Cat</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <label>Weight</label>
+        <div class="wt-wrap">
+          <input id="wt" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0.0">
+          <div class="seg" style="border-radius:0 9px 9px 0;border-left:none">
+            <button id="btn-lb" class="on" onclick="setU('lb')">lb</button>
+            <button id="btn-kg" onclick="setU('kg')">kg</button>
+          </div>
+          <div class="kg-show" id="kgshow">= <strong>—</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main"><div class="loading">Loading condition data…</div></main>
+
+<div class="countbar">
+  <div class="countbar-inner">
+    <strong id="selcount">0 medications selected</strong>
+    <a href="#output">↓ Jump to generated instructions</a>
+  </div>
+</div>
+
+<footer>
+  <hr>
+  <span id="footnote">Internal clinical reference — includes off-label options used at the clinician's discretion.
+  Verify all doses, concentrations, and label directions before administering or dispensing.</span>
+</footer>
+
+<script>
+"use strict";
+/* ================================================================
+   STATE
+================================================================ */
+let C=null;          // condition data (loaded JSON)
+let sp="dog", unit="lb", mode="record";
+const S={};          // per-med: {on, opt, freq, volMl}
+const BLK={};        // per-block: {on, dur, text}
+function st(id){if(!S[id])S[id]={on:false,opt:0,freq:0,volMl:null};return S[id];}
+function bk(id,def){if(!BLK[id])BLK[id]={on:def.on,dur:0,text:null};return BLK[id];}
+
+/* ================================================================
+   HELPERS
+================================================================ */
+const FRAC={0.0625:"1/16",0.125:"⅛",0.25:"¼",0.5:"½",0.75:"¾",1:"1",1.5:"1½",2:"2",2.5:"2½",3:"3"};
+const fr=n=>FRAC[n]||String(n);
+const R2=x=>Math.round(x*100)/100;
+const fmtMg=x=>{if(x===null)return null;if(x>=100)return Math.round(x).toLocaleString();
+  if(x>=10)return String(Math.round(x*10)/10);return String(Math.round(x*100)/100);}
+const fmtMl=x=>x===null?null:(Math.round(x*100)/100).toFixed(2);
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+function today(){const d=new Date();return (d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear();}
+function getKg(){const v=parseFloat(document.getElementById("wt").value);
+  return(!isFinite(v)||v<=0)?null:(unit==="lb"?v/2.2:v);}
+function getLb(){const k=getKg();return k===null?null:k*2.2;}
+function getName(){return document.getElementById("pname").value.trim()||"your pet";}
+function band(key,lb){if(!C||!lb)return null;return(C.bands[key]||[]).find(b=>lb>=b.min&&lb<b.max)||null;}
+function multiBands(key,lb){if(!C||!lb)return[];return(C.bands[key]||[]).filter(b=>lb>=b.min&&lb<b.max);}
+function tabsTotal(tabs){return tabs.reduce((s,t)=>s+t.n*t.mg,0);}
+function tabsText(tabs){return tabs.map(t=>t.mg?fr(t.n)+"×"+t.mg+"mg":fr(t.n)+" tab"+(t.n>1?"s":"")).join(" + ");}
+function sameTabs(a,b){return a.length===b.length&&a.every((t,i)=>t.mg===b[i].mg&&t.n===b[i].n);}
+
+/* eval-safe function from JSON string — used for protocol chipFn/bodyFn/lineFn */
+const fnCache={};
+function evalFn(src){if(!fnCache[src])fnCache[src]=new Function("kg","lb","fmtMg","R2",
+  "return ("+src+")(kg,lb)");
+  return (kg,lb)=>fnCache[src](kg,lb,fmtMg,R2);}
+
+/* ================================================================
+   DOSE-OPTIONS ENGINE
+================================================================ */
+function doseOptions(m,kg,lb){
+  if(kg===null)return{opts:[],msg:"Enter a weight to see dosing options"};
+  if(m.type==="multiband"){
+    const hits=multiBands(m.bandKey,lb);
+    if(!hits.length)return{opts:[],msg:"Weight outside the dosing chart."};
+    return{opts:hits.map(b=>({tabs:b.tabs,mg:tabsTotal(b.tabs),isLabel:true})),msg:""};
+  }
+  const lo=m.lo*kg, hi=m.hi*kg, mid=(lo+hi)/2, ranged=m.hi>m.lo;
+  let opts=[], bandRef=null, bandMsg="";
+  if(m.bandKey){
+    const b=band(m.bandKey,lb);
+    if(b&&b.tabs){bandRef=b.tabs;opts.push({tabs:b.tabs,mg:tabsTotal(b.tabs),isLabel:true});}
+    else if(b&&!b.tabs)bandMsg="Above chart range — combine tablet strengths.";
+    else bandMsg="Below labeled chart range.";
+  }
+  if(m.strengths){
+    for(const s of m.strengths)for(const f of m.splits){
+      const mg=s*f;
+      const ok=ranged||m.bandKey?(mg>=lo-1e-9&&mg<=hi+1e-9):(Math.abs(mg-mid)<=mid*0.25);
+      if(!ok)continue;
+      const tabs=[{mg:s,n:f}];
+      if(bandRef&&sameTabs(tabs,bandRef))continue;
+      opts.push({tabs,mg,isLabel:false});
+    }
+    const anchor=bandRef?tabsTotal(bandRef):mid;
+    const head=opts.filter(o=>o.isLabel);
+    const rest=opts.filter(o=>!o.isLabel).sort((a,b)=>Math.abs(a.mg-anchor)-Math.abs(b.mg-anchor));
+    opts=[...head,...rest].slice(0,4);
+    if(opts.length<2){
+      let all=[];
+      for(const s of m.strengths)for(const f of m.splits)
+        all.push({tabs:[{mg:s,n:f}],mg:s*f,isLabel:false});
+      all.sort((a,b)=>Math.abs(a.mg-(bandRef?tabsTotal(bandRef):mid))-Math.abs(b.mg-(bandRef?tabsTotal(bandRef):mid)));
+      for(const o of all){if(opts.length>=2)break;
+        if(opts.some(x=>sameTabs(x.tabs,o.tabs)))continue;opts.push(o);}
+    }
+  }
+  return{opts,msg:bandMsg,lo,hi};
+}
+
+/* ================================================================
+   MEDICATION TEXT LINE
+   Format: "Name strength (desc):  Give X tab frequency."
+================================================================ */
+function nameStr(m,tabs){
+  if(!tabs||!tabs[0].mg)return m.name;
+  return m.name+(tabs.length===1?" "+tabs[0].mg+" mg":" "+tabs.map(t=>t.mg+"mg").join("+"));}
+function giveStr(tabs,unit){
+  const u=unit||"tab";
+  if(tabs.length===1){const n=tabs[0].n;return"Give "+fr(n)+" "+u+(n!==1?"s":"")+" ";}
+  return"Give "+tabs.map(t=>fr(t.n)+"×"+t.mg+"mg").join(" + ")+" ";}
+function medLine(m,kg,lb){
+  const s=st(m.id);
+  const freq=(m.freqs&&m.freqs.length)?m.freqs[Math.min(s.freq,m.freqs.length-1)]:"";
+  const D=" ("+m.desc+"):  ";
+  if(m.type==="band"||m.type==="tab"||m.type==="multiband"){
+    const d=doseOptions(m,kg,lb);
+    const o=d.opts[Math.min(s.opt,Math.max(d.opts.length-1,0))];
+    if(!o)return m.name+D+"dose pending — weight outside chart range.";
+    return nameStr(m,o.tabs)+D+giveStr(o.tabs,m.unitName)+freq+".";
+  }
+  if(m.type==="calc"){
+    const lo=kg===null?null:m.lo*kg,hi=kg===null?null:m.hi*kg,u=m.unitDose||"mg";
+    const amt=lo===null?"___":(m.hi>m.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo));
+    return m.name+D+"Give "+amt+" "+u+" "+freq+".";
+  }
+  if(m.type==="inj"){
+    const mg=kg===null?null:m.lo*kg,ml=mg===null?null:mg/m.conc;
+    return m.name+" ("+m.desc+"):  "+(ml===null?"___":fmtMl(ml))+" ml "+m.route+" given in clinic.";
+  }
+  if(m.type==="injVolume"){
+    const vol=s.volMl!==null?s.volMl:m.defaultMl;
+    return m.name+" ("+m.desc+"):  "+vol+" ml given in clinic.";
+  }
+  if(m.type==="fixed")
+    return m.name+(m.strengthLabel?" "+m.strengthLabel:"")+D+"Give "+m.doseText+(freq?" "+freq:"")+"."+(m.extra?" "+m.extra:"");
+  if(m.type==="weightText"){
+    const b=band(m.bandKey,lb);
+    return m.name+D+"Give "+(b?b.text:"chart amount")+(m.onFood?" on food":"")+(freq?" "+freq:"")+".";
+  }
+  if(m.type==="iver"){
+    const ml=kg===null?"___":fmtMl(kg*m.doseMid/m.conc);
+    return "Ivermectin 1% — "+m.name+D+"Give "+ml+" ml ("+m.doseMid+" mg/kg) "+m.protocol+".";
+  }
+  if(m.type==="protocol")return m.name+D+evalFn(m.lineFn)(kg,lb);
+  return "";
+}
+
+/* ================================================================
+   HTML BUILDERS FOR OUTPUT PREVIEW
+================================================================ */
+function splitLine(line){
+  const m=line.match(/^(.+?)\s+\((.+?)\):\s{2}(.+)$/);
+  if(!m)return"<span>"+esc(line)+"</span>";
+  return'<span class="mn-bold">'+esc(m[1])+'</span> <span class="mn-desc">('+esc(m[2])+'):</span>  <span class="mn-give">'+esc(m[3])+'</span>';}
+
+function buildRecord(kg,lb,inhosp,atHome){
+  const wt=lb===null?"___ lb":(Math.round(lb*10)/10)+" lb ("+R2(kg)+" kg)";
+  const hdr=C.code+" — "+(sp==="dog"?"Canine":"Feline")+" — "+wt+" — "+today();
+  let html='<div class="out-record"><div class="rec-hdr">'+esc(hdr)+'</div>';
+  if(inhosp.length){
+    html+='<div class="sec-lbl">Treatments given in hospital</div><ul>'+
+      inhosp.map(m=>'<li>'+splitLine(medLine(m,kg,lb))+'</li>').join("")+'</ul>';}
+  if(atHome.length){
+    html+='<div class="sec-lbl">Take-home medications</div><ul>'+
+      atHome.map(m=>'<li>'+splitLine(medLine(m,kg,lb))+'</li>').join("")+'</ul>';}
+  if(!inhosp.length&&!atHome.length)
+    html+='<ul><li><em>No medications selected</em></li></ul>';
+  return html+'</div>';}
+
+function buildDischarge(kg,lb,inhosp,atHome){
+  const name=getName();
+  const wt=lb===null?"___ lb":(Math.round(lb*10)/10)+" lb ("+R2(kg)+" kg)";
+  const sp2=sp==="dog"?"Canine":"Feline";
+  let html='<div class="out-dis">'+
+    '<div class="dis-title">DISCHARGE INSTRUCTIONS: '+esc(C.discharge)+'</div>'+
+    '<div class="dis-sub">'+esc(name)+" · "+sp2+" · "+esc(wt)+" · "+today()+'</div>';
+
+  // in-hospital section
+  if(inhosp.length){
+    html+='<div class="sec-hdr">Treatments performed in hospital</div><ul>'+
+      inhosp.map(m=>'<li>'+splitLine(medLine(m,kg,lb))+'</li>').join("")+'</ul>';}
+
+  // withhold water / food / small meals checkboxes
+  const ckBlocks=(C.dischargeBlocks||[]).filter(b=>b.checkbox&&bk(b.id,b).on);
+  if(ckBlocks.length){
+    html+='<div class="sec-hdr">Feeding instructions</div>';
+    for(const b of ckBlocks){
+      const bs=bk(b.id,b);
+      let text=bs.text!==null?bs.text:b.text;
+      if(b.durationOptions){
+        const dur=b.durationOptions[Math.min(bs.dur,b.durationOptions.length-1)];
+        text=text.replace("{duration}",dur);}
+      text=text.replaceAll("{name}",name);
+      html+='<div class="chk-line"><span class="chk-box"></span><span>'+esc(text)+'</span></div>';}}
+
+  // take-home meds
+  html+='<div class="sec-hdr">Medications</div>';
+  if(atHome.length)
+    html+='<ul>'+atHome.map(m=>'<li>'+splitLine(medLine(m,kg,lb))+'</li>').join("")+'</ul>';
+  else html+='<ul><li><em>No take-home medications selected</em></li></ul>';
+
+  // free-text blocks (non-checkbox)
+  for(const b of (C.dischargeBlocks||[]).filter(x=>!x.checkbox&&bk(x.id,x).on)){
+    const bs=bk(b.id,b);
+    let text=bs.text!==null?bs.text:b.text;
+    text=text.replaceAll("{name}",name);
+    html+='<div class="sec-hdr">'+esc(b.title)+'</div>'+
+          '<div class="btext">'+esc(text)+'</div>';}
+  return html+'</div>';}
+
+function buildOutput(){
+  const kg=getKg(),lb=getLb();
+  const sel=C.meds.filter(m=>m.sp===sp&&st(m.id).on);
+  document.getElementById("selcount").textContent=
+    sel.length+" medication"+(sel.length===1?"":"s")+" selected";
+  const inhosp=sel.filter(m=>m.inClinic);
+  const atHome=sel.filter(m=>!m.inClinic);
+  const html=mode==="record"?buildRecord(kg,lb,inhosp,atHome):buildDischarge(kg,lb,inhosp,atHome);
+  document.getElementById("outpreview").innerHTML=html;}
+
+/* ================================================================
+   PLAIN-TEXT SERIALISER (walks live DOM)
+================================================================ */
+function previewToPlain(){
+  function walk(n){
+    if(n.nodeType===3)return n.textContent;
+    const t=n.tagName&&n.tagName.toLowerCase();
+    const cl=n.classList;
+    if(t==="li")return"• "+[...n.childNodes].map(walk).join("")+"\n";
+    if(t==="br")return"\n";
+    const inner=[...n.childNodes].map(walk).join("");
+    if(cl.contains("rec-hdr"))return inner+"\n";
+    if(cl.contains("dis-sub"))return inner+"\n";
+    if(cl.contains("sec-hdr")||cl.contains("sec-lbl"))return"\n"+inner.toUpperCase()+":\n";
+    if(cl.contains("btext"))return inner+"\n";
+    if(cl.contains("chk-line"))return"☐  "+inner.trim()+"\n";
+    if(t==="ul")return"\n"+inner;
+    return inner;
+  }
+  return walk(document.getElementById("outpreview")).replace(/\n{3,}/g,"\n\n").trim();}
+
+/* ================================================================
+   COPY / PRINT
+================================================================ */
+function flash(){const m=document.getElementById("copiedmsg");
+  m.classList.add("show");setTimeout(()=>m.classList.remove("show"),1800);}
+async function copyRich(){
+  const el=document.getElementById("outpreview");
+  const css="<style>body{font-family:Arial,Helvetica,sans-serif;font-size:11pt;line-height:1.55;color:#000}"+
+    "ul{list-style:none;padding:0;margin:0}li{padding:3pt 0 3pt 14pt;position:relative}"+
+    "li::before{content:'• '}.mn-bold{font-weight:bold}"+
+    ".sec-hdr,.sec-lbl{font-size:9.5pt;font-weight:bold;text-transform:uppercase;"+
+    "letter-spacing:.06em;margin-top:9pt;margin-bottom:3pt;display:block}"+
+    ".dis-title{font-size:14pt;font-weight:bold}.dis-sub{font-size:10pt;color:#555}"+
+    ".rec-hdr{font-size:10pt;color:#555;border-bottom:1px solid #ccc;padding-bottom:4pt;margin-bottom:6pt}"+
+    ".btext{white-space:pre-wrap}.chk-box{display:inline-block;width:11pt;height:11pt;"+
+    "border:1.5pt solid #333;border-radius:2pt;margin-right:6pt;vertical-align:middle}"+
+    ".chk-line{margin:2pt 0}</style>";
+  const hb=new Blob([css+el.innerHTML],{type:"text/html"});
+  const tb=new Blob([previewToPlain()],{type:"text/plain"});
+  try{await navigator.clipboard.write([new ClipboardItem({"text/html":hb,"text/plain":tb})]);flash();}
+  catch(e){const r=document.createRange();r.selectNodeContents(el);
+    const s=window.getSelection();s.removeAllRanges();s.addRange(r);
+    document.execCommand("copy");s.removeAllRanges();flash();}}
+async function copyPlain(){
+  const t=previewToPlain();
+  try{await navigator.clipboard.writeText(t);}
+  catch(e){const a=document.createElement("textarea");a.value=t;a.style.position="fixed";
+    a.style.opacity="0";document.body.appendChild(a);a.select();document.execCommand("copy");
+    document.body.removeChild(a);}
+  flash();}
+
+/* ================================================================
+   RENDERING — MEDICATION CARDS
+================================================================ */
+function chipHtml(m,kg,lb){
+  if(m.type==="calc"){
+    const lo=kg===null?null:m.lo*kg,hi=kg===null?null:m.hi*kg;
+    const t=lo===null?"—":(m.hi>m.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+(m.unitDose?" "+m.unitDose:" mg");
+    return'<span class="chip'+(lo===null?" dim":"")+'">target '+t+'</span>';}
+  if(m.type==="inj"){
+    const mg=kg===null?null:m.lo*kg,ml=mg===null?null:mg/m.conc;
+    return'<span class="chip'+(ml===null?" dim":"")+'">'+(ml===null?"—":fmtMl(ml)+" ml "+m.route)+'</span>';}
+  if(m.type==="injVolume"){
+    const s=st(m.id);
+    const vol=s.volMl!==null?s.volMl:m.defaultMl;
+    return'<span class="chip editable" contenteditable="true" inputmode="decimal" '+
+      'title="Click to edit volume" '+
+      'onblur="setVol(\''+m.id+'\',this)" '+
+      'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+vol+'</span> ml';}
+  if(m.type==="band"||m.type==="tab"){
+    const lo=kg===null?null:m.lo*kg,hi=kg===null?null:m.hi*kg;
+    const t=lo===null?"—":(m.hi>m.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+" mg";
+    return'<span class="chip'+(lo===null?" dim":"")+'">target '+t+'</span>';}
+  if(m.type==="weightText"){
+    const b=band(m.bandKey,lb);
+    return'<span class="chip'+(b?"":" dim")+'">'+(b?b.text:"—")+'</span>';}
+  if(m.type==="fixed")return'<span class="chip">'+m.doseText+'</span>';
+  if(m.type==="iver"){
+    const ml=kg===null?null:fmtMl(kg*m.doseMid/m.conc);
+    return'<span class="chip'+(ml===null?" dim":"")+'">'+(ml===null?"—":ml+" ml")+'</span>';}
+  if(m.type==="protocol")return'<span class="chip'+(kg===null?" dim":"")+'">'+
+    (kg===null?"—":evalFn(m.chipFn)(kg,lb))+'</span>';
+  if(m.type==="multiband"){
+    const hits=multiBands(m.bandKey,lb);
+    return'<span class="chip'+(hits.length?"":" dim")+'">'+(hits.length?"see chart":"—")+'</span>';}
+  return"";}
+
+function freqHtml(m,s){
+  if(!m.freqs||!m.freqs.length||m.freqs[0]==="")return"";
+  if(m.freqs.length===1)return'<div class="freq-row">'+m.freqs[0]+'</div>';
+  if(s.freq>=m.freqs.length)s.freq=0;
+  return'<div class="freq-row"><select onchange="pickFreq(\''+m.id+'\',this.selectedIndex)">'+
+    m.freqs.map((f,i)=>'<option '+(s.freq===i?"selected":"")+'>'+f+'</option>').join("")+
+    '</select></div>';}
+
+function bandChartHtml(m,lb){
+  if(!m.bandKey)return"";
+  const rows=C.bands[m.bandKey]||[];
+  const hits=multiBands(m.bandKey,lb).concat(band(m.bandKey,lb)?[band(m.bandKey,lb)]:[]);
+  const cols=m.chartCols||["Weight","Dose"];
+  const fields=m.chartRowFields||["lb","text"];
+  return'<details class="ch"><summary>Full chart</summary><table><thead><tr>'+
+    cols.map(c=>"<th>"+c+"</th>").join("")+'</tr></thead><tbody>'+
+    rows.map(b=>'<tr'+(hits.includes(b)?' class="hit"':"")+'>'+
+      fields.map((f,i)=>'<td'+(i===0?' class="sc"':"")+'>'+
+        (f==="mg_fmt"?(b.mg?b.mg.toLocaleString()+" mg":"—"):
+         f==="tabs"?(b.tabs?tabsText(b.tabs):"Combine strengths"):
+         (b[f]||""))+'</td>').join("")+'</tr>').join("")+
+    '</tbody></table>'+(m.chartNote?'<div class="mnote">'+m.chartNote+'</div>':"")+'</details>';}
+
+function medHtml(m,kg,lb){
+  const s=st(m.id);
+  let body="",chart="";
+  if(m.type==="band"||m.type==="tab"||m.type==="multiband"){
+    const d=doseOptions(m,kg,lb);
+    if(d.msg)body+='<div class="warn">'+d.msg+'</div>';
+    if(s.opt>=d.opts.length)s.opt=0;
+    body+=d.opts.map((o,i)=>{
+      const mgkg=kg&&m.type!=="multiband"?" · "+R2(o.mg/kg)+" mg/kg":"";
+      return'<div class="opt"><input type="radio" name="opt-'+m.id+'" id="r'+m.id+i+'" '+
+        (s.opt===i?"checked":"")+' onchange="pickOpt(\''+m.id+'\','+i+')">'+
+        '<label for="r'+m.id+i+'"><span>'+tabsText(o.tabs)+'</span>'+
+        (o.mg?'<span class="dmg">= '+fmtMg(o.mg)+" mg"+mgkg+'</span>':"")+ 
+        (o.isLabel&&m.type!=="multiband"?'<span class="ltag">Label</span>':"")+'</label></div>';
+    }).join("");
+    if(m.mlConc&&kg){
+      const lo2=m.lo*kg/m.mlConc,hi2=m.hi*kg/m.mlConc;
+      body+='<div class="mnote">Liquid ('+m.mlConc+' mg/ml): '+(m.hi>m.lo?fmtMl(lo2)+"–"+fmtMl(hi2):fmtMl(lo2))+' ml</div>';}
+    body+=freqHtml(m,s);
+    chart=bandChartHtml(m,lb);
+  } else if(m.type==="calc"){
+    const lo=kg===null?null:m.lo*kg,hi=kg===null?null:m.hi*kg,u=m.unitDose||"mg";
+    body='<div class="mnote">'+(m.hi>m.lo?m.lo+"–"+m.hi:m.lo)+" "+u+"/kg"+
+      (kg?" → <strong>"+(m.hi>m.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+" "+u+"</strong>":"")+'</div>';
+    body+=freqHtml(m,s);
+  } else if(m.type==="inj"){
+    const mg=kg===null?null:m.lo*kg,ml=mg===null?null:mg/m.conc;
+    body='<div class="mnote">'+m.lo+" mg/kg "+(mg?" → <strong>"+fmtMg(mg)+" mg = "+fmtMl(ml)+" ml</strong>":"")+'</div>';
+  } else if(m.type==="injVolume"){
+    const vol=s.volMl!==null?s.volMl:m.defaultMl;
+    body='<div class="mnote">Click the volume chip to adjust (default: '+m.defaultMl+' ml).</div>';
+  } else if(m.type==="fixed"){
+    body='<div class="mnote">'+m.doseText+(m.extraNote?" · "+m.extraNote:"")+'</div>';
+    body+=freqHtml(m,s);
+  } else if(m.type==="weightText"){
+    const b=band(m.bandKey,lb);
+    if(m.noteFn)body+='<div class="mnote">'+eval("("+m.noteFn+")")(kg,lb)+'</div>';
+    body+=freqHtml(m,s);
+    chart=bandChartHtml(m,lb);
+  } else if(m.type==="iver"){
+    const ml=kg===null?null:kg*m.doseMid/m.conc;
+    body='<div class="mnote">'+m.gen+(kg?" → typical draw <strong>"+fmtMl(ml)+" ml</strong>"+
+      " (range "+fmtMl(kg*m.doseLo/m.conc)+"–"+fmtMl(kg*m.doseHi/m.conc)+" ml)":"")+
+      ". "+m.protocol.charAt(0).toUpperCase()+m.protocol.slice(1)+"."+
+      (m.ramp&&kg?" Ramp start ("+m.ramp+" mg/kg): <strong>"+fmtMl(kg*m.ramp/m.conc)+" ml</strong>.":"")+
+      " Caution in ivermectin-sensitive (MDR1) breeds.</div>";
+  } else if(m.type==="protocol"){
+    body='<div class="mnote">'+evalFn(m.bodyFn)(kg,lb)+'</div>';
+  }
+
+  return'<div class="med '+(s.on?"":"off")+'" id="med-'+m.id+'">'+
+    '<div class="mh">'+
+    '<input type="checkbox" id="ck-'+m.id+'" '+(s.on?"checked":"")+
+    ' onchange="toggleMed(\''+m.id+'\')">'+
+    '<div class="mn"><label class="name" for="ck-'+m.id+'">'+m.name+'</label>'+
+    (m.gen?'<span class="gen">· '+m.gen+'</span>':"")+'</div>'+
+    chipHtml(m,kg,lb)+'</div>'+
+    '<div class="mb">'+body+'</div>'+chart+'</div>';}
+
+/* ================================================================
+   DISCHARGE BLOCKS EDITOR
+================================================================ */
+function renderBlocks(){
+  const wrap=document.getElementById("blocks");
+  if(mode!=="discharge"){wrap.style.display="none";return;}
+  wrap.style.display="block";
+  const blocks=C.dischargeBlocks||[];
+  wrap.innerHTML=
+    '<div style="font-size:11.5px;color:var(--soft);margin-bottom:8px">'+
+    'CLIENT INSTRUCTION BLOCKS — check to include. '+
+    '"<code>{name}</code>" is replaced by the patient\'s name. Checkbox blocks print with an empty box for staff to tick in clinic.</div>'+
+    blocks.map(b=>{
+      const s=bk(b.id,b);
+      let controls="";
+      if(b.durationOptions){
+        controls+='<select title="Withhold duration" onchange="setDur(\''+b.id+'\',this.selectedIndex)">'+
+          b.durationOptions.map((d,i)=>'<option '+(s.dur===i?"selected":"")+'>'+d+'</option>').join("")+'</select>';}
+      let textVal=s.text!==null?s.text:b.text;
+      // show duration preview in textarea
+      if(b.durationOptions){
+        const dur=b.durationOptions[Math.min(s.dur,b.durationOptions.length-1)];
+        textVal=textVal.replace("{duration}",dur);}
+      const cbLabel=b.checkbox?'<span style="font-size:10px;background:#E8F0EF;color:var(--accent-d);padding:1px 6px;border-radius:10px;font-weight:700">prints as checkbox</span>':"";
+      return'<div class="blk">'+
+        '<input type="checkbox" '+(s.on?"checked":"")+' onchange="toggleBlk(\''+b.id+'\')">'+
+        '<div class="blkwrap">'+
+        '<div class="blktitle">'+b.title+' '+controls+' '+cbLabel+'</div>'+
+        '<textarea rows="2" oninput="editBlk(\''+b.id+'\',this.value)">'+textVal+'</textarea>'+
+        '</div></div>';
+    }).join("");}
+
+/* ================================================================
+   FULL PAGE RENDER
+================================================================ */
+function render(){
+  if(!C)return;
+  const kg=getKg(),lb=getLb();
+  document.getElementById("kgshow").innerHTML=unit==="lb"
+    ?"= <strong>"+(kg===null?"—":R2(kg))+"</strong> kg"
+    :"= <strong>"+(lb===null?"—":Math.round(lb*10)/10)+"</strong> lb";
+
+  // group meds by species then group name
+  const groups={};
+  for(const m of C.meds){
+    if(m.sp!==sp)continue;
+    (groups[m.grp]=groups[m.grp]||[]).push(m);}
+
+  const cards=Object.entries(groups).map(([grp,meds])=>
+    '<div class="card"><div class="grp-title">'+grp+
+    ' <span class="grp-tag">'+(sp==="dog"?"Dog":"Cat")+'</span></div>'+
+    meds.map(m=>medHtml(m,kg,lb)).join("")+'</div>').join("");
+
+  // output panel
+  const outcard=`
+  <div class="card wide" id="output" style="margin-top:18px">
+    <div style="font-size:15px;font-weight:700;margin-bottom:10px">Generated Instructions</div>
+    <div class="tabs">
+      <button id="tab-rec" class="${mode==="record"?"on":""}" onclick="setMode('record')">Medical record</button>
+      <button id="tab-dis" class="${mode==="discharge"?"on":""}" onclick="setMode('discharge')">Discharge instructions</button>
+    </div>
+    <div id="blocks"></div>
+    <div class="outhead">
+      <div class="outmeta">Check medications above · output updates live · click inside to edit before copying or printing.</div>
+    </div>
+    <div class="out-wrap" id="printzone">
+      <div id="outpreview" contenteditable="true" spellcheck="false"></div>
+      <div class="out-actions">
+        <button class="obtn p" onclick="copyRich()">Copy (rich text)</button>
+        <button class="obtn s" onclick="copyPlain()">Copy (plain text)</button>
+        <button class="obtn s" onclick="window.print()">Print / PDF</button>
+        <span class="copied" id="copiedmsg">Copied ✓</span>
+      </div>
+    </div>
+  </div>`;
+
+  document.getElementById("main").innerHTML=
+    '<div class="grid">'+cards+'</div>'+outcard;
+  renderBlocks();
+  buildOutput();}
+
+/* ================================================================
+   EVENT HANDLERS
+================================================================ */
+function toggleMed(id){const s=st(id);s.on=!s.on;
+  document.getElementById("med-"+id).classList.toggle("off",!s.on);buildOutput();}
+function pickOpt(id,i){st(id).opt=i;buildOutput();}
+function pickFreq(id,i){st(id).freq=i;buildOutput();}
+function setVol(id,el){
+  const v=parseFloat(el.textContent);
+  st(id).volMl=isFinite(v)&&v>0?Math.round(v*100)/100:(C.meds.find(m=>m.id===id)||{}).defaultMl||null;
+  el.textContent=st(id).volMl;buildOutput();}
+function toggleBlk(id){const b=BLK[id];if(b)b.on=!b.on;renderBlocks();buildOutput();}
+function setDur(id,i){const b=BLK[id];if(b)b.dur=i;renderBlocks();buildOutput();}
+function editBlk(id,v){const b=BLK[id];if(b)b.text=v;buildOutput();}
+function setSp(s){sp=s;
+  document.body.classList.toggle("dog",s==="dog");
+  document.body.classList.toggle("cat",s==="cat");
+  document.getElementById("btn-dog").classList.toggle("on",s==="dog");
+  document.getElementById("btn-cat").classList.toggle("on",s==="cat");
+  render();}
+function setU(u){
+  const wt=document.getElementById("wt");const v=parseFloat(wt.value);
+  if(isFinite(v)&&v>0&&u!==unit)wt.value=u==="kg"?R2(v/2.2):Math.round(v*2.2*10)/10;
+  unit=u;
+  document.getElementById("btn-lb").classList.toggle("on",u==="lb");
+  document.getElementById("btn-kg").classList.toggle("on",u==="kg");
+  render();}
+function setMode(m){mode=m;renderBlocks();buildOutput();
+  document.getElementById("tab-rec").classList.toggle("on",m==="record");
+  document.getElementById("tab-dis").classList.toggle("on",m==="discharge");}
+
+/* ================================================================
+   BOOTSTRAP — load condition JSON from URL param
+================================================================ */
+async function boot(){
+  const params=new URLSearchParams(location.search);
+  const cid=params.get("c")||params.get("condition")||"skin";
+  try{
+    const r=await fetch("conditions/"+cid+".json");
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    C=await r.json();
+    // Initialise BLK state from JSON defaults
+    for(const b of(C.dischargeBlocks||[]))bk(b.id,b);
+    document.getElementById("pagetitle").textContent=C.title;
+    document.title=C.title+" — Dosing & Discharge";
+    document.getElementById("wt").addEventListener("input",render);
+    document.getElementById("pname").addEventListener("input",buildOutput);
+    render();
+  }catch(e){
+    document.getElementById("main").innerHTML=
+      '<div class="err">Could not load condition data: '+esc(String(e))+
+      '<br><br><a href="index.html">← Back to conditions list</a></div>';}}
+
+boot();
+</script>
+</body>
+</html>

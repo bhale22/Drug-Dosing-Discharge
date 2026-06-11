@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dosing & Discharge — Godspeed Animal Care</title>
+<style>
+  :root{
+    --bg:#F3F6F6; --surface:#fff; --ink:#16282C; --soft:#5B6E72;
+    --line:#E1E8E8; --accent:#0E6E66; --accent-s:#E2F1EE; --accent-d:#0A4F49;
+    --r:14px;
+    --sans:"Seravek","Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+
+  header{background:var(--surface);border-bottom:3px solid var(--accent);padding:36px 0 28px}
+  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:28px;font-weight:700;letter-spacing:-.015em;margin-top:6px}
+  header p{color:var(--soft);margin-top:8px;max-width:580px;font-size:14px}
+
+  main{padding:28px 0 20px}
+  #condgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+
+  a.cond{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    padding:18px 18px 16px;text-decoration:none;color:var(--ink);
+    transition:border-color .15s,box-shadow .15s,transform .12s}
+  a.cond:hover{border-color:var(--accent);box-shadow:0 4px 18px rgba(14,110,102,.12);transform:translateY(-2px)}
+  a.cond:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px}
+  .cicon{font-size:28px;margin-bottom:8px}
+  .cname{font-size:16px;font-weight:700}
+  .cdesc{font-size:12.5px;color:var(--soft);margin-top:5px;line-height:1.45}
+  .cgo{display:inline-block;margin-top:11px;font-size:11.5px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--accent)}
+
+  .placeholder{opacity:.5;pointer-events:none}
+  .placeholder .cgo{color:var(--soft)}
+
+  .howto{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    padding:16px 18px;margin-top:22px;font-size:13px;color:var(--soft);line-height:1.55}
+  .howto strong{color:var(--ink)}
+
+  .add-hint{background:var(--accent-s);border:1px dashed var(--accent);border-radius:var(--r);
+    padding:13px 16px;margin-top:16px;font-size:12.5px;color:var(--accent-d)}
+  .add-hint code{background:#C8E6E3;border-radius:4px;padding:1px 5px;font-size:11.5px}
+
+  footer{padding:16px 0 50px;font-size:11.5px;color:var(--soft)}
+  footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
+  @media(max-width:600px){header{padding:24px 0 20px}h1{font-size:22px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Internal Clinical Reference · Godspeed Animal Care</div>
+    <h1>Dosing &amp; Discharge</h1>
+    <p>Select a condition to calculate doses by patient weight, choose medications and dosing options, then generate a medical-record entry or formatted client discharge instructions.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div id="condgrid"><p style="color:var(--soft);font-size:14px">Loading conditions…</p></div>
+
+    <div class="howto" style="margin-top:22px">
+      <strong>How it works:</strong> enter the patient's name, species, and weight at the top of any condition page.
+      Each drug shows the label-chart dose pre-selected, with practical alternatives (including tablet-fraction options) below it.
+      Check the medications to dispense, adjust frequencies, then use the <em>Generated Instructions</em> panel
+      to copy a concise medical-record note or a formatted client discharge sheet — with checkboxes, feeding instructions,
+      and follow-up text — ready to paste into your EMR or print.
+    </div>
+
+    <div class="add-hint">
+      <strong>Adding a new condition:</strong> drop a new <code>conditions/yourcondition.json</code> file
+      and add one entry to <code>conditions/index.json</code>. No code changes needed — the app picks it up automatically.
+      Use any existing JSON as a template.
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"><hr>
+    Internal use only. Compiled from practice dosing spreadsheets; includes off-label options used at the clinician's discretion.
+    Verify all doses, concentrations, and label directions before administering or dispensing.
+  </div>
+</footer>
+
+<script>
+async function loadConditions(){
+  try{
+    const r=await fetch("conditions/index.json");
+    if(!r.ok)throw new Error("index.json not found (HTTP "+r.status+")");
+    const list=await r.json();
+    const grid=document.getElementById("condgrid");
+    grid.innerHTML=list.map(c=>`
+      <a class="cond" href="app.html?c=${encodeURIComponent(c.id)}">
+        <div class="cicon">${c.icon||"💊"}</div>
+        <div class="cname">${c.title}</div>
+        <div class="cdesc">${c.desc||""}</div>
+        <span class="cgo">Open →</span>
+      </a>`).join("")+`
+      <a class="cond placeholder" href="#">
+        <div class="cicon">＋</div>
+        <div class="cname">More conditions</div>
+        <div class="cdesc">Additional condition pages are added by dropping a new JSON file in the conditions/ folder.</div>
+        <span class="cgo">Coming soon</span>
+      </a>`;
+  }catch(e){
+    document.getElementById("condgrid").innerHTML=
+      '<p style="color:#B45309">Could not load conditions list: '+e.message+
+      '. Make sure all files are in the same folder and opened via a local server or browser file access.</p>';}}
+loadConditions();
+</script>
+</body>
+</html>
