@@ -90,7 +90,7 @@
 <script>
 async function loadConditions(){
   try{
-    const r=await fetch("conditions/index.json");
+    const r=await fetch("index.json");
     if(!r.ok)throw new Error("index.json not found (HTTP "+r.status+")");
     const list=await r.json();
     const grid=document.getElementById("condgrid");
