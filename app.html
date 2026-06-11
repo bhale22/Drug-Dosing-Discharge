@@ -206,6 +206,22 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
 .pbtn.clear{color:var(--warn);border-color:#E8DACC}
 .pbtn.clear:hover{background:var(--warn-s);border-color:var(--warn)}
 .preset-divider{width:1px;height:22px;background:var(--line);margin:0 4px;align-self:center}
+
+/* ===== CLINICAL NOTES PANEL ===== */
+.notes-panel{grid-column:1/-1;background:#FFFDF5;border:1.5px solid #E8D87A;border-radius:var(--r);padding:15px 18px}
+.notes-panel h3{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7A6A00;margin-bottom:10px}
+.note-item{font-size:13px;line-height:1.55;color:#3A3000;padding:6px 0;border-bottom:1px solid #F0E898}
+.note-item:last-child{border-bottom:none}
+.note-item strong{color:#5A4E00}
+/* ===== MED NOTE (inline) ===== */
+.med-note-box{font-size:12px;line-height:1.5;color:var(--warn);background:var(--warn-s);
+  border-radius:7px;padding:6px 10px;margin-top:5px;margin-left:26px}
+/* ===== IMAGE DISPLAY ===== */
+.med-image{margin:10px 26px 4px;border-radius:9px;overflow:hidden;
+  border:1px solid var(--line);background:#fff}
+.med-image img{width:100%;height:auto;display:block}
+.med-image figcaption{font-size:11.5px;color:var(--soft);line-height:1.45;
+  padding:8px 11px;border-top:1px solid var(--line);background:#FAFCFC}
 </style>
 </head>
 <body class="dog">
@@ -758,7 +774,23 @@ function render(){
     if(m.sp!==sp)continue;
     (groups[m.grp]=groups[m.grp]||[]).push(m);}
 
+  // Clinical notes panel (seizure and other specialty conditions)
+  let notesHtml="";
+  if(C.notes&&Object.keys(C.notes).length){
+    const labels={
+      xr_split:"XR Tablet Splitting",
+      clustering:"Cluster Rescue Protocol",
+      pre_ictal:"Pre-ictal / Cluster Prevention",
+      side_effects:"Side Effects",
+      status_sequence:"Active Seizure Sequence",
+      status_note:"Active Seizure Notes"
+    };
+    const items=Object.entries(C.notes).map(([k,v])=>
+      '<div class="note-item"><strong>'+(labels[k]||k)+':</strong> '+esc(v)+'</div>').join("");
+    notesHtml='<div class="notes-panel wide"><h3>Clinical Notes</h3>'+items+'</div>';}
+
   const cards=Object.entries(groups).map(([grp,meds])=>
+
     '<div class="card"><div class="grp-title">'+grp+
     ' <span class="grp-tag">'+(sp==="dog"?"Dog":"Cat")+'</span></div>'+
     meds.map(m=>medHtml(m,kg,lb)).join("")+'</div>').join("");
@@ -769,7 +801,7 @@ function render(){
     <div style="font-size:15px;font-weight:700;margin-bottom:10px">Generated Instructions</div>
     <div class="tabs">
       <button id="tab-rec" class="${mode==="record"?"on":""}" onclick="setMode('record')">Medical record</button>
-      <button id="tab-dis" class="${mode==="discharge"?"on":""}" onclick="setMode('discharge')">Discharge instructions</button>
+      ${C.noDischarge?"":"<button id=\"tab-dis\" class=\""+( mode==="discharge"?"on":"")+" \" onclick=\"setMode('discharge')\">Discharge instructions</button>"}
     </div>
     <div id="blocks"></div>
     <div class="outhead">
@@ -787,7 +819,7 @@ function render(){
   </div>`;
 
   document.getElementById("main").innerHTML=
-    '<div class="grid">'+cards+'</div>'+outcard;
+    '<div class="grid">'+notesHtml+cards+'</div>'+outcard;
   renderBlocks();
   buildOutput();
   refreshPresetBtns();}
