@@ -73,9 +73,9 @@
     </div>
 
     <div class="add-hint">
-      <strong>Adding a new condition:</strong> drop a new <code>conditions/yourcondition.json</code> file
-      and add one entry to <code>conditions/index.json</code>. No code changes needed — the app picks it up automatically.
-      Use any existing JSON as a template.
+      <strong>Adding a new condition:</strong> upload a single <code>conditions/yourcondition.json</code> file — that's it.
+      The index rebuilds itself automatically within a minute (GitHub Action), and the new card appears here.
+      Use any existing JSON as a template; include <code>"title"</code>, <code>"desc"</code>, and <code>"icon"</code> fields for the card.
     </div>
   </div>
 </main>
@@ -90,27 +90,43 @@
 <script>
 async function loadConditions(){
   try{
-    const r=await fetch("index.json");
-    if(!r.ok)throw new Error("index.json not found (HTTP "+r.status+")");
-    const list=await r.json();
+    const r=await fetch("conditions/index.json");
+    if(!r.ok)throw new Error("conditions/index.json not found (HTTP "+r.status+")");
+    const data=await r.json();
+    // supports both auto-generated format {conditions:[...]} and legacy plain array
+    const list=Array.isArray(data)?data:(data.conditions||[]);
+    const errors=Array.isArray(data)?[]:(data.errors||[]);
+    const generated=Array.isArray(data)?null:data.generated;
     const grid=document.getElementById("condgrid");
+    const spLabel=s=>!s||!s.length?"":(" · "+s.map(x=>x==="dog"?"Dogs":x==="cat"?"Cats":x).join(" & "));
     grid.innerHTML=list.map(c=>`
       <a class="cond" href="app.html?c=${encodeURIComponent(c.id)}">
         <div class="cicon">${c.icon||"💊"}</div>
         <div class="cname">${c.title}</div>
         <div class="cdesc">${c.desc||""}</div>
+        <div class="cdesc" style="margin-top:4px;font-weight:600">${c.medCount?c.medCount+" medications":""}${spLabel(c.species)}</div>
         <span class="cgo">Open →</span>
       </a>`).join("")+`
       <a class="cond placeholder" href="#">
         <div class="cicon">＋</div>
         <div class="cname">More conditions</div>
-        <div class="cdesc">Additional condition pages are added by dropping a new JSON file in the conditions/ folder.</div>
+        <div class="cdesc">Upload a new condition JSON to the conditions/ folder — the index rebuilds itself automatically.</div>
         <span class="cgo">Coming soon</span>
       </a>`;
+    if(errors.length){
+      grid.insertAdjacentHTML("afterend",
+        '<div style="margin-top:14px;background:#FDF3E3;border:1.5px solid #B45309;border-radius:12px;'+
+        'padding:11px 14px;font-size:12.5px;color:#7A4A06"><strong>⚠ Skipped invalid condition file(s):</strong> '+
+        errors.map(e=>e.split(" — ")[0]).join(", ")+
+        '. Check the file for JSON errors (Actions tab shows details).</div>');}
+    if(generated){
+      const f=document.querySelector("footer .wrap");
+      if(f)f.insertAdjacentHTML("beforeend",
+        '<div style="margin-top:6px">Condition index auto-generated: '+generated+'</div>');}
   }catch(e){
     document.getElementById("condgrid").innerHTML=
       '<p style="color:#B45309">Could not load conditions list: '+e.message+
-      '. Make sure all files are in the same folder and opened via a local server or browser file access.</p>';}}
+      '. Make sure conditions/index.json exists (the GitHub Action builds it automatically after the first condition upload, or run the workflow manually from the Actions tab).</p>';}}
 loadConditions();
 </script>
 </body>
