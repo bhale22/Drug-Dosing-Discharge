@@ -100,7 +100,7 @@ async function loadConditions(){
     const grid=document.getElementById("condgrid");
     const spLabel=s=>!s||!s.length?"":(" · "+s.map(x=>x==="dog"?"Dogs":x==="cat"?"Cats":x).join(" & "));
     grid.innerHTML=list.map(c=>`
-      <a class="cond" href="app.html?c=${encodeURIComponent(c.id)}">
+      <a class="cond" href="${c.page?encodeURIComponent(c.page):"app.html?c="+encodeURIComponent(c.id)}">
         <div class="cicon">${c.icon||"💊"}</div>
         <div class="cname">${c.title}</div>
         <div class="cdesc">${c.desc||""}</div>

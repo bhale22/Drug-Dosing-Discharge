@@ -3,6 +3,7 @@
   "conditions": [
     {
       "id": "seizure",
+      "page": "seizure.html",
       "title": "Seizure Medications",
       "desc": "Maintenance antiseizure drugs (phenobarbital, levetiracetam IR/XR, zonisamide, KBr), emergency protocols, refractory status, cluster prevention. Includes XR tablet-splitting evidence.",
       "icon": "⚡",
