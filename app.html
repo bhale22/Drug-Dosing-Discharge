@@ -49,8 +49,9 @@ h1{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-top:2px}
 /* ===== LAYOUT ===== */
 main{max-width:1200px;margin:0 auto;padding:22px 22px 28px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:18px;align-items:start}
-@media(max-width:880px){.grid{grid-template-columns:1fr}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:15px 17px}
+@media(max-width:880px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:15px 17px;min-width:0}
 .card.wide{grid-column:1/-1}
 .grp-title{font-size:14px;font-weight:700;margin-bottom:9px;display:flex;align-items:center;gap:8px}
 .grp-tag{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
@@ -59,9 +60,9 @@ main{max-width:1200px;margin:0 auto;padding:22px 22px 28px}
 /* ===== MED ROWS ===== */
 .med{border-top:1px solid var(--line);padding:10px 0 9px}
 .med:first-of-type{border-top:none;padding-top:1px}
-.mh{display:flex;align-items:flex-start;gap:9px}
+.mh{display:flex;align-items:flex-start;gap:9px;min-width:0}
 .mh input[type=checkbox]{width:17px;height:17px;accent-color:var(--accent);margin-top:2px;flex:none;cursor:pointer}
-.mn{flex:1}
+.mn{flex:1;min-width:0}
 .mn .name{font-weight:650;cursor:pointer;font-size:14px}
 .mn .gen{color:var(--soft);font-size:12px;margin-left:4px}
 .chip{font-family:var(--mono);font-size:12px;color:var(--accent-d);background:var(--accent-s);
@@ -79,6 +80,34 @@ main{max-width:1200px;margin:0 auto;padding:22px 22px 28px}
 .opt .dmg{font-family:var(--mono);font-size:12px;color:var(--soft)}
 .ltag{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   color:#fff;background:var(--accent);padding:1px 5px;border-radius:10px;transition:background .25s}
+.ltag.in{background:var(--accent-s);color:var(--accent-d)}
+.ltag.pct,.ltag.out{text-transform:none;letter-spacing:.01em;font-weight:600}
+.ltag.out{background:var(--warn-s);color:var(--warn)}
+.ltag.pct{background:var(--line2);color:var(--soft)}
+
+/* ===== ADJUSTABLE TARGET + CUSTOM AMOUNT ===== */
+.dose-target{display:flex;flex-wrap:wrap;align-items:center;gap:5px 8px;
+  margin:1px 0 7px;font-size:12px;color:var(--soft)}
+.dt-lbl{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.dt-in{font-family:var(--mono);font-size:13px;font-weight:600;width:72px;padding:4px 7px;
+  border:1.5px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);text-align:right}
+.dt-in:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.dose-target.custom .dt-in{border-color:var(--accent);background:var(--accent-s);color:var(--accent-d)}
+.dt-unit{font-size:11.5px}
+.dt-eq{font-family:var(--mono);font-size:12px;color:var(--ink);font-weight:600}
+.dt-note{font-size:11px}
+.dt-reset{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--accent-d);
+  background:var(--accent-s);border:none;border-radius:20px;padding:4px 10px;cursor:pointer}
+.dt-reset:hover{background:#CDE6E2}
+.opt.cust{gap:6px;margin-top:2px}
+.opt.cust label{font-size:13px;color:var(--soft)}
+.opt.cust.on label{color:var(--ink);font-weight:650}
+.cust-in{font-family:var(--mono);font-size:13px;width:78px;padding:3px 7px;
+  border:1.5px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);text-align:right}
+.cust-in:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.opt.cust.on .cust-in{border-color:var(--accent)}
+.cust-u{font-size:11.5px;color:var(--soft)}
+.chip.cust{background:var(--accent);color:#fff}
 .freq-row{margin-top:5px;font-size:12.5px;color:var(--soft)}
 .freq-row select{font-family:var(--sans);font-size:12.5px;padding:2px 5px;border:1px solid var(--line);
   border-radius:6px;background:#fff;color:var(--ink)}
@@ -100,8 +129,15 @@ tr.hit td{background:var(--accent-s)}
   transition:background .25s}
 .countbar-inner{max-width:1200px;margin:0 auto;padding:9px 22px;
   display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.countbar strong{font-size:14px}
+.countbar strong{font-size:14px;flex:1 1 auto}
 .countbar a{color:#fff;font-size:13.5px;font-weight:600}
+.cb-actions{display:flex;gap:7px;flex-wrap:wrap}
+.cbtn{font-family:var(--sans);font-size:13px;font-weight:700;padding:8px 14px;
+  border:1.5px solid rgba(255,255,255,.45);border-radius:9px;background:transparent;
+  color:#fff;cursor:pointer;white-space:nowrap}
+.cbtn:hover{background:rgba(255,255,255,.14)}
+.cbtn.p{background:#fff;color:var(--accent-d);border-color:#fff}
+.cbtn.p:hover{background:#EAF4F2}
 
 /* ===== OUTPUT CARD ===== */
 #output{scroll-margin-top:80px}
@@ -164,31 +200,101 @@ tr.hit td{background:var(--accent-s)}
 .copied{font-size:12.5px;font-weight:700;color:var(--accent-d);opacity:0;transition:opacity .3s;margin-left:4px}
 .copied.show{opacity:1}
 
-/* ===== PRINT ===== */
+/* ===== PRINT =====
+   The sheet is cloned into #printroot (a plain, static block at the end of
+   <body>) immediately before printing, and every other top-level element is
+   display:none. The previous approach (visibility:hidden + a position:fixed
+   #printzone) made Chrome repaint the whole fixed block on every printed
+   page, so a two-page discharge sheet came out 3-4 times. */
+#printroot{display:none}
 @media print{
-  body *{visibility:hidden}
-  #printzone,#printzone *{visibility:visible}
-  #printzone{position:fixed;top:0;left:0;width:100%;padding:18pt 24pt;
-    font-family:Arial,Helvetica,sans-serif;font-size:11pt;line-height:1.55;color:#000}
+  @page{margin:14mm}
+  html,body{background:#fff;font-size:11pt}
+  body>*{display:none!important}
+  body>#printroot{display:block!important}
+  #printroot{font-family:Arial,Helvetica,sans-serif;font-size:11pt;
+    line-height:1.55;color:#000;position:static;width:auto}
+  #printroot ul{list-style:none;padding:0;margin:0}
+  #printroot li{padding:3pt 0 3pt 14pt;position:relative}
+  #printroot li::before{content:"2";position:absolute;left:0}
   .out-dis .dis-title{font-size:16pt;font-weight:bold}
   .out-dis .dis-sub{font-size:10pt;color:#555;margin-bottom:10pt}
+  .out-record .rec-hdr{font-size:10pt;color:#444;border-bottom:1pt solid #999;
+    padding-bottom:4pt;margin-bottom:8pt}
   .out-dis .sec-hdr,.out-record .sec-lbl{font-size:9.5pt;font-weight:bold;
     text-transform:uppercase;letter-spacing:.06em;margin-top:10pt;margin-bottom:3pt;color:#000}
-  .out-dis .chk-box{border:1.5pt solid #000;width:12pt;height:12pt;display:inline-block}
+  .out-dis .chk-box{border:1.5pt solid #000;width:12pt;height:12pt;
+    display:inline-block;flex:none;margin-top:2pt}
   .out-dis .chk-line{display:flex;gap:7pt;align-items:flex-start}
-  .out-dis ul li,.out-record ul li{padding-left:14pt}
-  .out-actions,.rec-hdr{display:none}
-  .out-wrap{border:none}
-  .out-dis .btext,.out-record{page-break-inside:avoid}
+  .out-actions{display:none}
+  .out-dis .btext,.out-dis .chk-line,#printroot li{page-break-inside:avoid}
+  .out-dis .sec-hdr,.out-record .sec-lbl{page-break-after:avoid}
 }
 
 footer{max-width:1200px;margin:0 auto;padding:14px 22px 50px;font-size:11.5px;color:var(--soft)}
 footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
 .loading{text-align:center;padding:80px 20px;font-size:16px;color:var(--soft)}
 .err{color:var(--warn);text-align:center;padding:60px 20px}
-@media(max-width:600px){
-  .bar-inner{padding:9px 14px 11px}
-  main{padding:16px 14px 22px}
+/* ===== PHONE ===== */
+@media(max-width:720px){
+  body{-webkit-text-size-adjust:100%}
+  .bar-inner{padding:8px 12px 10px;gap:8px 12px}
+  .eyebrow{font-size:10.5px}
+  h1{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .titleblock{flex:1 1 100%;min-width:0}
+  .controls{width:100%;gap:8px 10px}
+  .ctl:first-child{flex:1 1 100%}           /* patient name gets its own row */
+  #pname{width:100%;font-size:16px}          /* 16px stops iOS zooming on focus */
+  #wt{font-size:16px;width:78px}
+  .seg button{padding:9px 14px;font-size:14px}
+  .kg-show{font-size:12px;margin-left:7px}
+  /* once scrolled, drop the big title so the controls stay reachable */
+  body.scrolled h1{display:none}
+
+  main{padding:14px 12px 20px}
+  .card{padding:13px 13px 12px;border-radius:11px}
+  .med{padding:12px 0 11px}
+  .mh{flex-wrap:wrap}
+  .mh input[type=checkbox]{width:22px;height:22px;margin-top:0}
+  .chip{white-space:normal}
+  .mn .name{font-size:15px}
+  .mb{margin-left:0}
+  .med-note-box,.med-image{margin-left:0;margin-right:0}
+  details.ch{margin-left:0;overflow-x:auto}
+  .opt{padding:6px 0;font-size:14px}
+  .opt input[type=radio]{width:19px;height:19px}
+  .opt label{gap:5px}
+  .dt-in,.cust-in{font-size:16px;padding:6px 8px}
+  .cust-in{width:96px}
+  .wt-wrap{flex-wrap:wrap}
+  .kg-show{flex:1 1 100%;margin-left:0;margin-top:3px}
+  .dt-reset{padding:6px 12px}
+  .chip{font-size:12.5px;padding:4px 9px}
+  .freq-row select{font-size:14px;padding:5px 7px}
+
+  .preset-bar{padding:9px 12px 10px}
+  .preset-btns{flex-wrap:nowrap;overflow-x:auto;padding-bottom:3px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .preset-btns::-webkit-scrollbar{display:none}
+  .pbtn{padding:8px 15px}
+
+  .tabs button{flex:1;padding:9px 8px}
+  .blk textarea{font-size:16px}
+  .blktitle select{font-size:14px;padding:4px 6px}
+  #outpreview{padding:14px 14px 16px}
+  .out-actions{padding:9px}
+  .obtn{flex:1 1 auto;padding:10px 12px;text-align:center}
+
+  .countbar-inner{padding:8px 12px;gap:8px}
+  .countbar strong{font-size:12px;flex:1 1 100%;order:-1}
+  .cb-actions{width:100%}
+  .cbtn{flex:1 1 auto;padding:10px 10px;font-size:13px}
+  #output{scroll-margin-top:118px}
+  footer{padding:12px 12px 40px}
+}
+@media(max-width:400px){
+  .cbtn{font-size:12px;padding:9px 6px}
+  .countbar strong{font-size:11.5px}
 }
 
 /* ===== PRESET BAR ===== */
@@ -271,9 +377,14 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
 <div class="countbar">
   <div class="countbar-inner">
     <strong id="selcount">0 medications selected</strong>
-    <a href="#output">↓ Jump to generated instructions</a>
+    <div class="cb-actions">
+      <button type="button" class="cbtn" onclick="goOutput('record')">Medical record</button>
+      <button type="button" class="cbtn p" id="cb-dis" onclick="goOutput('discharge')">↓ Discharge instructions</button>
+    </div>
   </div>
 </div>
+
+<div id="printroot"></div>
 
 <footer>
   <hr>
@@ -290,7 +401,9 @@ let C=null;          // condition data (loaded JSON)
 let sp="dog", unit="lb", mode="record";
 const S={};          // per-med: {on, opt, freq, volMl}
 const BLK={};        // per-block: {on, dur, text}
-function st(id){if(!S[id])S[id]={on:false,opt:0,freq:0,volMl:null};return S[id];}
+function st(id){if(!S[id])S[id]={on:false,opt:null,freq:0,volMl:null,mgkg:null,customMg:null};
+  return S[id];}
+/* opt: null = follow the target automatically, -1 = custom amount, else index */
 function bk(id,def){if(!BLK[id])BLK[id]={on:def.on,dur:0,text:null};return BLK[id];}
 
 /* ================================================================
@@ -322,46 +435,92 @@ function evalFn(src){if(!fnCache[src])fnCache[src]=new Function("kg","lb","fmtMg
 
 /* ================================================================
    DOSE-OPTIONS ENGINE
+   Options are returned ascending by mg and bracket the target: the closest
+   fit at-or-below it, the closest above it, and one neighbour either side.
+   The clinician can retarget (mg/kg) or type an exact amount instead.
 ================================================================ */
+/* effective mg/kg — the label range unless the clinician retargeted */
+function perKg(m){
+  const s=st(m.id);
+  if(s.mgkg!==null)return{lo:s.mgkg,hi:s.mgkg,custom:true};
+  return{lo:m.lo,hi:m.hi,custom:false};}
+function labelTarget(m){return m.hi>m.lo?R2((m.lo+m.hi)/2):m.lo;}
+function curMgkg(m){const s=st(m.id);return s.mgkg!==null?s.mgkg:labelTarget(m);}
+
+/* every total reachable from one strength x one split, ascending, de-duped
+   (a given mg is kept as the fit using the fewest units) */
+function allTabOpts(m){
+  const seen={};
+  for(const str of m.strengths)for(const f of m.splits){
+    const mg=Math.round(str*f*1e4)/1e4, k=mg.toFixed(4);
+    if(!seen[k]||f<seen[k].tabs[0].n)seen[k]={tabs:[{mg:str,n:f}],mg};}
+  return Object.keys(seen).map(k=>seen[k]).sort((a,b)=>a.mg-b.mg);}
+
+/* the pair straddling the target, plus one neighbour on each side.
+   When the target sits past one end of the range, the four nearest fits on
+   that side are offered instead of wrapping round to a nonsense dose. */
+function bracketOpts(all,target){
+  if(!all.length)return{opts:[],def:0};
+  let i=0;while(i<all.length&&all[i].mg<target-1e-9)i++;
+  const under=i-1, over=i<all.length?i:-1;
+  const idx=[];
+  const push=j=>{if(j>=0&&j<all.length&&idx.indexOf(j)<0)idx.push(j);};
+  if(under>=0&&over>=0){push(under-1);push(under);push(over);push(over+1);}
+  else if(over<0){push(under-3);push(under-2);push(under-1);push(under);}
+  else{push(over);push(over+1);push(over+2);push(over+3);}
+  idx.sort((a,b)=>a-b);
+  const pick=under<0?over:over<0?under:
+    (Math.abs(all[under].mg-target)<=Math.abs(all[over].mg-target)?under:over);
+  return{opts:idx.map(j=>({tabs:all[j].tabs,mg:all[j].mg})),
+         def:Math.max(0,idx.indexOf(pick))};}
+
 function doseOptions(m,kg,lb){
-  if(kg===null)return{opts:[],msg:"Enter a weight to see dosing options"};
+  if(kg===null)return{opts:[],def:0,msg:"Enter a weight to see dosing options"};
   if(m.type==="multiband"){
     const hits=multiBands(m.bandKey,lb);
-    if(!hits.length)return{opts:[],msg:"Weight outside the dosing chart."};
-    return{opts:hits.map(b=>({tabs:b.tabs,mg:tabsTotal(b.tabs),isLabel:true})),msg:""};
+    if(!hits.length)return{opts:[],def:0,msg:"Weight outside the dosing chart."};
+    return{opts:hits.map(b=>({tabs:b.tabs,mg:tabsTotal(b.tabs),isLabel:true,inRange:true})),
+           def:0,msg:""};
   }
-  const lo=m.lo*kg, hi=m.hi*kg, mid=(lo+hi)/2, ranged=m.hi>m.lo;
-  let opts=[], bandRef=null, bandMsg="";
-  if(m.bandKey){
+  const pk=perKg(m), lo=pk.lo*kg, hi=pk.hi*kg;
+  let bandRef=null, bandMsg="";
+  if(m.bandKey&&!pk.custom){
     const b=band(m.bandKey,lb);
-    if(b&&b.tabs){bandRef=b.tabs;opts.push({tabs:b.tabs,mg:tabsTotal(b.tabs),isLabel:true});}
+    if(b&&b.tabs)bandRef=b.tabs;
     else if(b&&!b.tabs)bandMsg="Above chart range — combine tablet strengths.";
     else bandMsg="Below labeled chart range.";
   }
+  const target=bandRef?tabsTotal(bandRef):(lo+hi)/2;
+  let opts=[],def=0;
   if(m.strengths){
-    for(const s of m.strengths)for(const f of m.splits){
-      const mg=s*f;
-      const ok=ranged||m.bandKey?(mg>=lo-1e-9&&mg<=hi+1e-9):(Math.abs(mg-mid)<=mid*0.25);
-      if(!ok)continue;
-      const tabs=[{mg:s,n:f}];
-      if(bandRef&&sameTabs(tabs,bandRef))continue;
-      opts.push({tabs,mg,isLabel:false});
-    }
-    const anchor=bandRef?tabsTotal(bandRef):mid;
-    const head=opts.filter(o=>o.isLabel);
-    const rest=opts.filter(o=>!o.isLabel).sort((a,b)=>Math.abs(a.mg-anchor)-Math.abs(b.mg-anchor));
-    opts=[...head,...rest].slice(0,4);
-    if(opts.length<2){
-      let all=[];
-      for(const s of m.strengths)for(const f of m.splits)
-        all.push({tabs:[{mg:s,n:f}],mg:s*f,isLabel:false});
-      all.sort((a,b)=>Math.abs(a.mg-(bandRef?tabsTotal(bandRef):mid))-Math.abs(b.mg-(bandRef?tabsTotal(bandRef):mid)));
-      for(const o of all){if(opts.length>=2)break;
-        if(opts.some(x=>sameTabs(x.tabs,o.tabs)))continue;opts.push(o);}
-    }
+    const br=bracketOpts(allTabOpts(m),target);
+    opts=br.opts;def=br.def;
+    for(const o of opts){
+      o.isLabel=!!(bandRef&&sameTabs(o.tabs,bandRef));
+      o.inRange=o.mg>=lo-1e-9&&o.mg<=hi+1e-9;
+      o.pct=target>0?Math.round(o.mg/target*100):null;}
+    if(bandRef&&!opts.some(o=>o.isLabel)){          // always offer the chart dose
+      opts.push({tabs:bandRef,mg:tabsTotal(bandRef),isLabel:true,inRange:true,pct:100});
+      opts.sort((a,b)=>a.mg-b.mg);}
+    const iLabel=opts.findIndex(o=>o.isLabel);
+    if(iLabel>=0)def=iLabel;
+    else{
+      let best=-1;
+      opts.forEach((o,i)=>{if(o.inRange&&
+        (best<0||Math.abs(o.mg-target)<Math.abs(opts[best].mg-target)))best=i;});
+      if(best>=0)def=best;}
+  }else if(bandRef){
+    opts=[{tabs:bandRef,mg:tabsTotal(bandRef),isLabel:true,inRange:true}];
   }
-  return{opts,msg:bandMsg,lo,hi};
+  return{opts,def,msg:bandMsg,lo,hi,target,custom:pk.custom};
 }
+
+/* which option is in force: explicit pick, custom amount, or the auto default */
+function curOpt(m,d){
+  const s=st(m.id);
+  if(s.opt===-1)return{custom:true,mg:s.customMg,tabs:null};
+  if(s.opt===null||s.opt<0||s.opt>=d.opts.length)return d.opts[d.def]||null;
+  return d.opts[s.opt];}
 
 /* ================================================================
    MEDICATION TEXT LINE
@@ -380,13 +539,21 @@ function medLine(m,kg,lb){
   const D=" ("+m.desc+"):  ";
   if(m.type==="band"||m.type==="tab"||m.type==="multiband"){
     const d=doseOptions(m,kg,lb);
-    const o=d.opts[Math.min(s.opt,Math.max(d.opts.length-1,0))];
+    const o=curOpt(m,d);
+    if(o&&o.custom)return o.mg===null
+      ?m.name+D+"dose pending — enter a custom amount."
+      :m.name+D+"Give "+fmtMg(o.mg)+" mg "+freq+".";
     if(!o)return m.name+D+"dose pending — weight outside chart range.";
     return nameStr(m,o.tabs)+D+giveStr(o.tabs,m.unitName)+freq+".";
   }
   if(m.type==="calc"){
-    const lo=kg===null?null:m.lo*kg,hi=kg===null?null:m.hi*kg,u=m.unitDose||"mg";
-    const amt=lo===null?"___":(m.hi>m.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo));
+    const u=m.unitDose||"mg";
+    if(s.opt===-1)return s.customMg===null
+      ?m.name+D+"dose pending — enter a custom amount."
+      :m.name+D+"Give "+fmtMg(s.customMg)+" "+u+" "+freq+".";
+    const pk=perKg(m);
+    const lo=kg===null?null:pk.lo*kg,hi=kg===null?null:pk.hi*kg;
+    const amt=lo===null?"___":(pk.hi>pk.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo));
     return m.name+D+"Give "+amt+" "+u+" "+freq+".";
   }
   if(m.type==="inj"){
@@ -508,6 +675,16 @@ function previewToPlain(){
 /* ================================================================
    COPY / PRINT
 ================================================================ */
+/* Clone the live preview into a static #printroot so the browser lays it out
+   as ordinary page flow. Anything position:fixed repeats on every printed
+   page in Chrome, which is what duplicated the sheet 3-4 times. */
+function doPrint(){
+  const root=document.getElementById("printroot");
+  root.innerHTML=document.getElementById("outpreview").innerHTML;
+  window.print();}
+window.addEventListener("afterprint",()=>{
+  const root=document.getElementById("printroot");
+  if(root)root.innerHTML="";});
 function flash(){const m=document.getElementById("copiedmsg");
   m.classList.add("show");setTimeout(()=>m.classList.remove("show"),1800);}
 async function copyRich(){
@@ -541,9 +718,12 @@ async function copyPlain(){
 ================================================================ */
 function chipHtml(m,kg,lb){
   if(m.type==="calc"){
-    const lo=kg===null?null:m.lo*kg,hi=kg===null?null:m.hi*kg;
-    const t=lo===null?"—":(m.hi>m.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+(m.unitDose?" "+m.unitDose:" mg");
-    return'<span class="chip'+(lo===null?" dim":"")+'">target '+t+'</span>';}
+    const s=st(m.id),pk=perKg(m);
+    if(s.opt===-1)return'<span class="chip'+(s.customMg===null?" dim":" cust")+'">'+
+      (s.customMg===null?"custom —":fmtMg(s.customMg)+(m.unitDose?" "+m.unitDose:" mg"))+'</span>';
+    const lo=kg===null?null:pk.lo*kg,hi=kg===null?null:pk.hi*kg;
+    const t=lo===null?"—":(pk.hi>pk.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+(m.unitDose?" "+m.unitDose:" mg");
+    return'<span class="chip'+(lo===null?" dim":"")+(pk.custom?" cust":"")+'">target '+t+'</span>';}
   if(m.type==="inj"){
     const mg=kg===null?null:m.lo*kg,ml=mg===null?null:mg/m.conc;
     return'<span class="chip'+(ml===null?" dim":"")+'">'+(ml===null?"—":fmtMl(ml)+" ml "+m.route)+'</span>';}
@@ -555,9 +735,12 @@ function chipHtml(m,kg,lb){
       'onblur="setVol(\''+m.id+'\',this)" '+
       'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+vol+'</span> ml';}
   if(m.type==="band"||m.type==="tab"){
-    const lo=kg===null?null:m.lo*kg,hi=kg===null?null:m.hi*kg;
-    const t=lo===null?"—":(m.hi>m.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+" mg";
-    return'<span class="chip'+(lo===null?" dim":"")+'">target '+t+'</span>';}
+    const s=st(m.id),pk=perKg(m);
+    if(s.opt===-1)return'<span class="chip'+(s.customMg===null?" dim":" cust")+'">'+
+      (s.customMg===null?"custom —":fmtMg(s.customMg)+" mg")+'</span>';
+    const lo=kg===null?null:pk.lo*kg,hi=kg===null?null:pk.hi*kg;
+    const t=lo===null?"—":(pk.hi>pk.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+" mg";
+    return'<span class="chip'+(lo===null?" dim":"")+(pk.custom?" cust":"")+'">target '+t+'</span>';}
   if(m.type==="weightText"){
     const b=band(m.bandKey,lb);
     return'<span class="chip'+(b?"":" dim")+'">'+(b?b.text:"—")+'</span>';}
@@ -595,30 +778,76 @@ function bandChartHtml(m,lb){
          (b[f]||""))+'</td>').join("")+'</tr>').join("")+
     '</tbody></table>'+(m.chartNote?'<div class="mnote">'+m.chartNote+'</div>':"")+'</details>';}
 
+/* editable mg/kg target — the label range is the default and stays one tap away */
+function targetEditHtml(m,kg){
+  const s=st(m.id),u=(m.unitDose||"mg")+"/kg";
+  const lbl=m.hi>m.lo?m.lo+"–"+m.hi:String(m.lo);
+  const val=curMgkg(m);
+  return'<div class="dose-target'+(s.mgkg!==null?" custom":"")+'">'+
+    '<span class="dt-lbl">Target</span>'+
+    '<input class="dt-in" type="number" step="any" min="0" inputmode="decimal" value="'+val+'" '+
+      'aria-label="Target dose in '+u+'" '+
+      'onchange="setMgkg(\''+m.id+'\',this.value)" '+
+      'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+
+    '<span class="dt-unit">'+u+'</span>'+
+    (kg?'<span class="dt-eq">= '+fmtMg(val*kg)+' '+(m.unitDose||"mg")+'</span>':'')+
+    (s.mgkg!==null
+      ?'<button type="button" class="dt-reset" onclick="setMgkg(\''+m.id+'\',null)">↺ label '+lbl+'</button>'
+      :'<span class="dt-note">label '+lbl+' '+u+'</span>')+
+    '</div>';}
+
+/* free-entry amount for compounded / liquid / clinician-chosen doses */
+function customOptHtml(m,kg){
+  const s=st(m.id),u=m.unitDose||"mg";
+  const on=s.opt===-1;
+  return'<div class="opt cust'+(on?" on":"")+'">'+
+    '<input type="radio" name="opt-'+m.id+'" id="rc'+m.id+'" '+(on?"checked":"")+
+      ' onchange="pickCustom(\''+m.id+'\')">'+
+    '<label for="rc'+m.id+'">Custom</label>'+
+    '<input class="cust-in" type="number" step="any" min="0" inputmode="decimal" '+
+      'placeholder="amount" aria-label="Custom dose in '+u+'" '+
+      'value="'+(s.customMg===null?"":s.customMg)+'" '+
+      'onfocus="pickCustom(\''+m.id+'\')" '+
+      'oninput="setCustomMg(\''+m.id+'\',this.value)" '+
+      'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+
+    '<span class="cust-u">'+u+'</span>'+
+    '<span class="dmg" id="cmk-'+m.id+'">'+customMgkgText(m,kg)+'</span></div>';}
+function customMgkgText(m,kg){
+  const s=st(m.id);
+  return(kg&&s.customMg!==null)?"· "+R2(s.customMg/kg)+" "+(m.unitDose||"mg")+"/kg":"";}
+
 function medHtml(m,kg,lb){
   const s=st(m.id);
   let body="",chart="";
   if(m.type==="band"||m.type==="tab"||m.type==="multiband"){
     const d=doseOptions(m,kg,lb);
     if(d.msg)body+='<div class="warn">'+d.msg+'</div>';
-    if(s.opt>=d.opts.length)s.opt=0;
+    if(m.type!=="multiband")body+=targetEditHtml(m,kg);
+    const sel=(s.opt===null||s.opt<0||s.opt>=d.opts.length)?d.def:s.opt;
     body+=d.opts.map((o,i)=>{
       const mgkg=kg&&m.type!=="multiband"?" · "+R2(o.mg/kg)+" mg/kg":"";
+      const tag=m.type==="multiband"?""
+        :o.isLabel?'<span class="ltag">Label</span>'
+        :o.inRange?'<span class="ltag in">In range</span>'
+        :o.pct===null?""
+        :'<span class="ltag '+(o.pct<75||o.pct>133?"out":"pct")+'">'+o.pct+'% of target</span>';
       return'<div class="opt"><input type="radio" name="opt-'+m.id+'" id="r'+m.id+i+'" '+
-        (s.opt===i?"checked":"")+' onchange="pickOpt(\''+m.id+'\','+i+')">'+
+        (s.opt!==-1&&sel===i?"checked":"")+' onchange="pickOpt(\''+m.id+'\','+i+')">'+
         '<label for="r'+m.id+i+'"><span>'+tabsText(o.tabs)+'</span>'+
-        (o.mg?'<span class="dmg">= '+fmtMg(o.mg)+" mg"+mgkg+'</span>':"")+ 
-        (o.isLabel&&m.type!=="multiband"?'<span class="ltag">Label</span>':"")+'</label></div>';
+        (o.mg?'<span class="dmg">= '+fmtMg(o.mg)+" mg"+mgkg+'</span>':"")+tag+'</label></div>';
     }).join("");
+    if(m.type!=="multiband")body+=customOptHtml(m,kg);
     if(m.mlConc&&kg){
-      const lo2=m.lo*kg/m.mlConc,hi2=m.hi*kg/m.mlConc;
-      body+='<div class="mnote">Liquid ('+m.mlConc+' mg/ml): '+(m.hi>m.lo?fmtMl(lo2)+"–"+fmtMl(hi2):fmtMl(lo2))+' ml</div>';}
+      const pk=perKg(m),lo2=pk.lo*kg/m.mlConc,hi2=pk.hi*kg/m.mlConc;
+      body+='<div class="mnote">Liquid ('+m.mlConc+' mg/ml): '+(pk.hi>pk.lo?fmtMl(lo2)+"–"+fmtMl(hi2):fmtMl(lo2))+' ml</div>';}
     body+=freqHtml(m,s);
     chart=bandChartHtml(m,lb);
   } else if(m.type==="calc"){
-    const lo=kg===null?null:m.lo*kg,hi=kg===null?null:m.hi*kg,u=m.unitDose||"mg";
-    body='<div class="mnote">'+(m.hi>m.lo?m.lo+"–"+m.hi:m.lo)+" "+u+"/kg"+
-      (kg?" → <strong>"+(m.hi>m.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+" "+u+"</strong>":"")+'</div>';
+    const pk=perKg(m),lo=kg===null?null:pk.lo*kg,hi=kg===null?null:pk.hi*kg,u=m.unitDose||"mg";
+    body=targetEditHtml(m,kg);
+    if(kg&&s.opt!==-1)
+      body+='<div class="mnote">→ <strong>'+(pk.hi>pk.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+" "+u+'</strong> per dose</div>';
+    body+=customOptHtml(m,kg);
     body+=freqHtml(m,s);
   } else if(m.type==="inj"){
     const mg=kg===null?null:m.lo*kg,ml=mg===null?null:mg/m.conc;
@@ -720,6 +949,8 @@ function applyPreset(pid){
     const s=st(pm.id);
     s.on=true;
     if(pm.opt!==undefined)s.opt=pm.opt;
+    if(pm.mgkg!==undefined)s.mgkg=pm.mgkg;
+    if(pm.customMg!==undefined){s.customMg=pm.customMg;s.opt=-1;}
     if(pm.freq!==undefined)s.freq=pm.freq;}
   // Apply blocks
   for(const pb of p.blocks){
@@ -807,12 +1038,12 @@ function render(){
     <div class="outhead">
       <div class="outmeta">Check medications above · output updates live · click inside to edit before copying or printing.</div>
     </div>
-    <div class="out-wrap" id="printzone">
+    <div class="out-wrap">
       <div id="outpreview" contenteditable="true" spellcheck="false"></div>
       <div class="out-actions">
         <button class="obtn p" onclick="copyRich()">Copy (rich text)</button>
         <button class="obtn s" onclick="copyPlain()">Copy (plain text)</button>
-        <button class="obtn s" onclick="window.print()">Print / PDF</button>
+        <button class="obtn s" onclick="doPrint()">Print / PDF</button>
         <span class="copied" id="copiedmsg">Copied ✓</span>
       </div>
     </div>
@@ -829,7 +1060,34 @@ function render(){
 ================================================================ */
 function toggleMed(id){const s=st(id);s.on=!s.on;
   document.getElementById("med-"+id).classList.toggle("off",!s.on);markCustom();buildOutput();}
-function pickOpt(id,i){st(id).opt=i;markCustom();buildOutput();}
+function pickOpt(id,i){st(id).opt=i;custRow(id,false);markCustom();buildOutput();}
+/* the custom row is toggled in place — a full re-render would blur the field
+   the clinician is typing into */
+function custRow(id,on){
+  const med=document.getElementById("med-"+id);
+  if(!med)return;
+  const row=med.querySelector(".opt.cust");
+  if(row)row.classList.toggle("on",on);}
+function pickCustom(id){
+  const s=st(id),r=document.getElementById("rc"+id);
+  if(r)r.checked=true;
+  custRow(id,true);
+  if(s.opt===-1)return;
+  s.opt=-1;markCustom();buildOutput();}
+function setCustomMg(id,v){
+  const s=st(id),n=parseFloat(v);
+  s.customMg=(isFinite(n)&&n>0)?Math.round(n*1000)/1000:null;
+  s.opt=-1;custRow(id,true);
+  const m=C.meds.find(x=>x.id===id),el=document.getElementById("cmk-"+id);
+  if(m&&el)el.textContent=customMgkgText(m,getKg());
+  markCustom();buildOutput();}
+/* retarget mg/kg — options re-bracket around the new target and the
+   selection goes back to automatic so it follows it */
+function setMgkg(id,v){
+  const s=st(id);
+  if(v===null||v===""){s.mgkg=null;}
+  else{const n=parseFloat(v);if(!isFinite(n)||n<=0)return;s.mgkg=Math.round(n*1000)/1000;}
+  s.opt=null;markCustom();render();}
 function pickFreq(id,i){st(id).freq=i;markCustom();buildOutput();}
 function setVol(id,el){
   const v=parseFloat(el.textContent);
@@ -851,9 +1109,17 @@ function setU(u){
   document.getElementById("btn-lb").classList.toggle("on",u==="lb");
   document.getElementById("btn-kg").classList.toggle("on",u==="kg");
   render();}
-function setMode(m){mode=m;renderBlocks();buildOutput();
-  document.getElementById("tab-rec").classList.toggle("on",m==="record");
-  document.getElementById("tab-dis").classList.toggle("on",m==="discharge");}
+function setMode(m){
+  if(m==="discharge"&&C&&C.noDischarge)m="record";
+  mode=m;renderBlocks();buildOutput();
+  const tr=document.getElementById("tab-rec"),td=document.getElementById("tab-dis");
+  if(tr)tr.classList.toggle("on",m==="record");
+  if(td)td.classList.toggle("on",m==="discharge");}
+/* every condition page can jump straight to the finished sheet */
+function goOutput(m){
+  setMode(m);
+  const el=document.getElementById("output");
+  if(el)el.scrollIntoView({behavior:"smooth",block:"start"});}
 
 /* ================================================================
    BOOTSTRAP — load condition JSON from URL param
@@ -868,6 +1134,7 @@ async function boot(){
     // Initialise BLK state from JSON defaults
     for(const b of(C.dischargeBlocks||[]))bk(b.id,b);
     document.getElementById("pagetitle").textContent=C.title;
+    if(C.noDischarge)document.getElementById("cb-dis").style.display="none";
     document.title=C.title+" — Dosing & Discharge";
     document.getElementById("wt").addEventListener("input",render);
     document.getElementById("pname").addEventListener("input",buildOutput);
@@ -877,6 +1144,13 @@ async function boot(){
     document.getElementById("main").innerHTML=
       '<div class="err">Could not load condition data: '+esc(String(e))+
       '<br><br><a href="index.html">← Back to conditions list</a></div>';}}
+
+/* compact the sticky header once the page is scrolled (phone) */
+let _sc=false;
+addEventListener("scroll",()=>{
+  const now=window.scrollY>70;
+  if(now!==_sc){_sc=now;document.body.classList.toggle("scrolled",now);}
+},{passive:true});
 
 boot();
 </script>

@@ -7,23 +7,26 @@
 <style>
 :root{
   --bg:#F3F6F6; --surface:#fff; --ink:#16282C; --soft:#5B6E72;
-  --line:#E1E8E8; --accent:#0E6E66; --accent-s:#E2F1EE; --accent-d:#0A4F49;
+  --line:#E1E8E8; --line2:#EEF2F2; --accent:#0E6E66; --accent-s:#E2F1EE; --accent-d:#0A4F49;
   --warn:#B45309; --warn-s:#FDF3E3; --emerg:#A02C2C; --emerg-s:#FBEDED;
   --r:14px;
   --sans:"Seravek","Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
   --mono:"Cascadia Code","SF Mono",Consolas,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px;
+  -webkit-text-size-adjust:100%}
 .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
 
 /* ============ header / controls ============ */
-header{background:var(--surface);border-bottom:3px solid var(--accent);padding:16px 0 14px;
+header{background:var(--surface);border-bottom:3px solid var(--accent);padding:14px 0 13px;
   position:sticky;top:0;z-index:30;box-shadow:0 2px 10px rgba(22,40,44,.06)}
 .bar-inner{max-width:1080px;margin:0 auto;padding:0 22px;display:flex;flex-wrap:wrap;
-  align-items:flex-end;gap:14px 26px}
+  align-items:flex-end;gap:12px 24px}
+.titleblock{flex:1 1 220px;min-width:0}
 .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
 .eyebrow a{color:var(--accent);text-decoration:none}
+.eyebrow a:hover{text-decoration:underline}
 h1{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-top:2px}
 .ctl label{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
   color:var(--soft);font-weight:600;margin-bottom:4px}
@@ -31,17 +34,18 @@ h1{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-top:2px}
 .seg button{font-family:var(--sans);font-size:13.5px;font-weight:600;padding:7px 15px;
   border:none;background:var(--surface);color:var(--soft);cursor:pointer}
 .seg button.on{background:var(--accent);color:#fff}
+.seg button:focus-visible{outline:2px solid var(--accent-d);outline-offset:-2px}
 .wt-wrap{display:flex;align-items:center;gap:8px}
 #wt{font-family:var(--mono);font-size:16px;font-weight:600;width:90px;padding:7px 10px;
   border:1.5px solid var(--line);border-radius:9px 0 0 9px;border-right:none}
+#pname{font-family:var(--sans);font-size:15px;width:140px;padding:7px 10px;
+  border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--ink)}
+#wt:focus,#pname:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .wt-wrap .seg{border-radius:0 9px 9px 0;border-left:none}
 .kg-show{font-size:13px;color:var(--soft);font-family:var(--mono)}
-.pb-toggle{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:600;
-  padding:7px 12px;border:1.5px solid var(--line);border-radius:9px;background:var(--surface);cursor:pointer;user-select:none}
-.pb-toggle input{accent-color:var(--accent);width:16px;height:16px;cursor:pointer}
 
 /* ============ sections ============ */
-main{padding:24px 0 30px}
+main{padding:22px 0 30px;padding-bottom:96px}
 .ladder-strip{background:var(--accent-s);border:1px solid #C8E6E3;border-radius:var(--r);
   padding:13px 18px;margin-bottom:20px;font-size:13.5px;color:var(--accent-d)}
 .ladder-strip strong{font-weight:700}
@@ -67,24 +71,56 @@ table.dose th{text-align:left;font-size:10.5px;letter-spacing:.08em;text-transfo
 table.dose td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
 table.dose tr:last-child td{border-bottom:none}
 td.ck{width:30px;padding-top:11px}
-td.ck input{width:16px;height:16px;accent-color:var(--accent);cursor:pointer}
+td.ck input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer}
 .dname{font-weight:650;font-size:14px}
 .dgen{font-size:12px;color:var(--soft)}
-.dnote{font-size:11.5px;color:var(--soft);margin-top:2px;max-width:260px}
+.dnote{font-size:11.5px;color:var(--soft);margin-top:3px;max-width:270px;line-height:1.45}
 .drange{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
 .dfreq{font-size:11.5px;color:var(--soft)}
-.target{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent-d);white-space:nowrap}
-.target small{font-weight:400;color:var(--soft)}
+.nofit{font-size:12px;color:var(--warn);font-weight:600}
 
-.chips{display:flex;flex-wrap:wrap;gap:6px;max-width:330px}
-.chip{font-family:var(--mono);font-size:12px;padding:4px 10px;border:1.5px solid var(--line);
+/* ---- adjustable target ---- */
+.tgt{display:flex;flex-wrap:wrap;align-items:center;gap:5px 7px}
+.tgt-in{font-family:var(--mono);font-size:14px;font-weight:600;width:74px;padding:5px 7px;
+  border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);text-align:right}
+.tgt-in:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.tgt.custom .tgt-in{border-color:var(--accent);background:var(--accent-s);color:var(--accent-d)}
+.tgt-u{font-size:11px;color:var(--soft)}
+.tgt-eq{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent-d);white-space:nowrap}
+.tgt-reset{font-family:var(--sans);font-size:10.5px;font-weight:700;color:var(--accent-d);
+  background:var(--accent-s);border:none;border-radius:20px;padding:4px 9px;cursor:pointer}
+.tgt-reset:hover{background:#CDE6E2}
+.tgt-lbl{font-size:10.5px;color:var(--soft)}
+
+/* ---- tablet-fit chips ---- */
+.chips{display:flex;flex-wrap:wrap;gap:6px;max-width:340px}
+.chip{font-family:var(--mono);font-size:12px;padding:5px 10px;border:1.5px solid var(--line);
   border-radius:9px;background:var(--surface);cursor:pointer;white-space:nowrap}
 .chip:hover{border-color:var(--accent)}
 .chip.sel{background:var(--accent);border-color:var(--accent);color:#fff}
 .chip.sel small{color:#D7ECE9}
 .chip small{color:var(--soft);font-size:10.5px}
 .chip.best:not(.sel){border-color:var(--accent);background:var(--accent-s)}
-.nofit{font-size:12px;color:var(--warn);font-weight:600}
+.chip.off{border-style:dashed}
+.chip.off small{color:var(--warn)}
+.chip.cust{display:inline-flex;align-items:center;gap:5px;cursor:default;border-style:dashed}
+.chip.cust.sel{border-style:solid}
+.chip.cust input{font-family:var(--mono);font-size:13px;width:84px;padding:3px 6px;border:1.5px solid var(--line);
+  border-radius:6px;background:#fff;color:var(--ink);text-align:right}
+.chip.cust input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+
+/* ---- inline phenobarb status (lives with the zonisamide dose) ---- */
+.pb-inline{margin-top:7px;background:var(--warn-s);border:1.5px solid #EBD9BC;border-radius:10px;
+  padding:8px 10px 9px}
+.pb-inline .pb-lbl{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--warn);margin-bottom:5px}
+.pb-seg{display:inline-flex;border:1.5px solid #E3D3B6;border-radius:9px;overflow:hidden;background:#fff}
+.pb-seg button{font-family:var(--sans);font-size:12.5px;font-weight:650;padding:7px 11px;
+  border:none;background:transparent;color:var(--soft);cursor:pointer}
+.pb-seg button.on{background:var(--warn);color:#fff}
+.pb-nudge{margin-top:6px;font-size:11.5px;color:var(--warn);font-weight:600;line-height:1.45}
+.pb-nudge button{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--warn);
+  border:none;border-radius:20px;padding:4px 10px;cursor:pointer;margin-left:5px}
 
 /* ============ emergency rows ============ */
 .erow{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line)}
@@ -98,40 +134,160 @@ td.ck input{width:16px;height:16px;accent-color:var(--accent);cursor:pointer}
 .evol{font-family:var(--mono);font-size:14.5px;font-weight:700;color:var(--emerg);min-width:150px}
 .erow.alt .evol{color:var(--warn)}
 .einstr{font-size:12.5px;color:var(--soft);flex:1;min-width:200px}
-.erow td.ck{padding:0}
 .erow .ck{flex:none}
-.erow input[type=checkbox]{width:16px;height:16px;accent-color:var(--emerg);cursor:pointer;position:relative;top:2px}
+.erow input[type=checkbox]{width:17px;height:17px;accent-color:var(--emerg);cursor:pointer;position:relative;top:2px}
 
-/* ============ notes / plan ============ */
+/* ============ notes ============ */
 .notes{background:#FFFBE8;border:1px solid #EADFA0;border-radius:var(--r);padding:15px 18px;margin-bottom:20px}
 .notes h3{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7A6A00;margin-bottom:8px}
 .notes div{font-size:13px;margin-bottom:6px}
 .notes strong{font-weight:700}
 
-#plan{scroll-margin-top:90px}
+/* ============ output ============ */
+#plan{scroll-margin-top:104px}
+.tabs{display:flex;gap:5px;margin:10px 0 11px}
+.tabs button{font-family:var(--sans);font-size:13px;font-weight:650;padding:7px 15px;
+  border:1.5px solid var(--line);border-radius:9px;background:#F7FAFA;color:var(--soft);cursor:pointer}
+.tabs button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+#blocks{margin-bottom:12px}
+.blkhint{font-size:11.5px;color:var(--soft);margin-bottom:8px;line-height:1.5}
+.blk{display:flex;gap:9px;align-items:flex-start;margin-bottom:8px;
+  background:#FAFCFC;border:1px solid var(--line);border-radius:9px;padding:9px 11px}
+.blk input[type=checkbox]{width:17px;height:17px;accent-color:var(--accent);margin-top:3px;flex:none;cursor:pointer}
+.blkwrap{flex:1;min-width:0}
+.blktitle{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--soft);margin-bottom:4px}
+.blk textarea{width:100%;font-family:var(--sans);font-size:13px;line-height:1.5;
+  border:1px solid var(--line);border-radius:7px;padding:7px 9px;resize:vertical;min-height:52px;
+  background:#fff;color:var(--ink)}
+
 .plan-pre{font-family:var(--mono);font-size:12.5px;white-space:pre-wrap;background:var(--bg);
-  border:1px solid var(--line);border-radius:10px;padding:14px 16px;min-height:60px}
-.plan-actions{margin-top:10px;display:flex;gap:8px;align-items:center}
-.obtn{font-family:var(--sans);font-size:13px;font-weight:700;padding:7px 16px;border:none;
+  border:1px solid var(--line);border-radius:10px;padding:14px 16px;min-height:60px;outline:none}
+.out-dis{background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:18px 20px 20px;
+  font-size:13.5px;line-height:1.6;color:#111;outline:none}
+.out-dis .dis-title{font-size:16px;font-weight:700;margin-bottom:2px}
+.out-dis .dis-sub{font-size:12px;color:#666;margin-bottom:12px}
+.out-dis .sec-hdr{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--accent);margin:14px 0 5px}
+.out-dis ul{list-style:none;padding:0}
+.out-dis li{padding:4px 0 4px 16px;border-bottom:1px solid var(--line2);position:relative;line-height:1.5}
+.out-dis li:last-child{border-bottom:none}
+.out-dis li::before{content:"\2022";position:absolute;left:0;color:var(--accent)}
+.out-dis .btext{font-size:13px;line-height:1.6;white-space:pre-wrap;color:#333;margin-top:2px}
+.mn-bold{font-weight:700}.mn-desc{color:#555}.mn-give{color:#111}
+
+.plan-actions{margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.obtn{font-family:var(--sans);font-size:13px;font-weight:700;padding:9px 16px;border:none;
   border-radius:9px;cursor:pointer;background:var(--accent);color:#fff}
+.obtn:hover{background:var(--accent-d)}
 .obtn.s{background:var(--surface);color:var(--accent-d);border:1.5px solid var(--line)}
+.obtn.s:hover{background:#EAF4F2}
 .copied{font-size:12.5px;font-weight:700;color:var(--accent-d);opacity:0;transition:opacity .3s}
 .copied.show{opacity:1}
 
-.countbar{position:fixed;bottom:0;left:0;right:0;background:var(--accent-d);padding:9px 0;z-index:25}
-.countbar-inner{max-width:1080px;margin:0 auto;padding:0 22px;display:flex;justify-content:space-between;align-items:center}
-.countbar strong{color:#fff;font-size:13.5px}
-.countbar a{color:#fff;font-size:13.5px;font-weight:600}
-main{padding-bottom:70px}
+/* ============ bottom bar ============ */
+.countbar{position:fixed;bottom:0;left:0;right:0;background:var(--accent-d);padding:8px 0;z-index:25}
+.countbar-inner{max-width:1080px;margin:0 auto;padding:0 22px;display:flex;
+  justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.countbar strong{color:#fff;font-size:13.5px;flex:1 1 auto}
+.cb-actions{display:flex;gap:7px;flex-wrap:wrap}
+.cbtn{font-family:var(--sans);font-size:13px;font-weight:700;padding:8px 14px;
+  border:1.5px solid rgba(255,255,255,.45);border-radius:9px;background:transparent;
+  color:#fff;cursor:pointer;white-space:nowrap}
+.cbtn:hover{background:rgba(255,255,255,.14)}
+.cbtn.p{background:#fff;color:var(--accent-d);border-color:#fff}
+.cbtn.p:hover{background:#EAF4F2}
 
-footer{padding:16px 0 60px;font-size:11.5px;color:var(--soft)}
+footer{padding:16px 0 30px;font-size:11.5px;color:var(--soft)}
 footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
+
+/* ============ phone ============ */
 @media(max-width:760px){
+  .wrap{padding:0 12px}
+  header{padding:8px 0 10px}
+  .bar-inner{padding:0 12px;gap:8px 12px}
+  .titleblock{flex:1 1 100%}
+  h1{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .eyebrow{font-size:10.5px}
+  body.scrolled h1{display:none}
+  .bar-inner>.ctl{flex:0 0 auto}
+  .ctl.name{flex:1 1 100%}
+  .ctl.wt{flex:1 1 auto;min-width:0}
+  #pname{width:100%;font-size:16px}
+  #wt{font-size:16px;width:78px}
+  .seg button{padding:9px 13px;font-size:14px}
+  .wt-wrap{flex-wrap:wrap}
+  .kg-show{flex:1 1 100%;margin-top:3px}
+  .chip.cust input{width:84px}
+  main{padding:14px 0 30px;padding-bottom:104px}
+  section{padding:14px 13px;border-radius:12px}
+  .ladder-strip{padding:11px 13px;font-size:13px}
+
+  /* dose table becomes a stack of cards */
+  table.dose thead{display:none}
+  table.dose,table.dose tbody,table.dose tr,table.dose td{display:block;width:100%}
+  table.dose tr{border:1px solid var(--line);border-radius:11px;padding:11px 12px 12px 40px;
+    margin-bottom:10px;position:relative}
+  table.dose tr:last-child{margin-bottom:0}
+  table.dose td{border:none;padding:4px 0}
+  table.dose tr:last-child td{border:none}
+  td.ck{position:absolute;left:12px;top:12px;width:auto;padding:0}
+  td.ck input{width:22px;height:22px}
+  table.dose td[data-l]::before{content:attr(data-l);display:block;font-size:9.5px;font-weight:700;
+    letter-spacing:.09em;text-transform:uppercase;color:var(--soft);margin-bottom:3px}
+  .dnote{max-width:none}
   .chips{max-width:none}
-  table.dose,.drange{font-size:12.5px}
+  .chip{font-size:13px;padding:8px 12px}
+  .chip.cust input,.tgt-in{font-size:16px}
+  .tgt-in{padding:7px 8px}
+  .tgt-reset{padding:6px 11px}
+
+  /* emergency rows stack */
+  .erow{gap:3px 12px;padding:12px 0 12px 30px;position:relative}
+  .erow .ck{position:absolute;left:0;top:12px}
+  .erow input[type=checkbox]{width:22px;height:22px;top:0}
+  .ename,.edose,.evol,.einstr{min-width:0;flex:1 1 100%}
+  .evol{font-size:16px}
+
+  .tabs button{flex:1;padding:10px 6px}
+  .blk textarea{font-size:16px}
+  .plan-pre{font-size:12px;padding:12px}
+  .out-dis{padding:14px 14px 16px}
+  .obtn{flex:1 1 auto;text-align:center;padding:11px 12px}
+  .countbar-inner{padding:0 12px;gap:7px}
+  .countbar strong{flex:1 1 100%;font-size:12px;order:-1}
+  .cb-actions{width:100%}
+  .cbtn{flex:1 1 auto;padding:10px 8px;font-size:13px}
+  #plan{scroll-margin-top:112px}
 }
+@media(max-width:400px){
+  .cbtn{font-size:12px;padding:9px 5px}
+  .countbar strong{font-size:11.5px}
+}
+
+/* ============ print =============
+   The sheet is cloned into #printroot, a plain static block, and everything
+   else is display:none. Printing a position:fixed element repeats it on every
+   page in Chrome, which duplicated the instructions several times over. */
+#printroot{display:none}
 @media print{
-  header,.countbar,.plan-actions,footer{display:none}
+  @page{margin:14mm}
+  html,body{background:#fff;font-size:11pt}
+  body>*{display:none!important}
+  body>#printroot{display:block!important}
+  #printroot{font-family:Arial,Helvetica,sans-serif;font-size:11pt;line-height:1.55;
+    color:#000;position:static;width:auto}
+  #printroot .out-dis{border:none;padding:0;font-size:11pt}
+  #printroot ul{list-style:none;padding:0;margin:0}
+  #printroot li{padding:3pt 0 3pt 14pt;position:relative;page-break-inside:avoid}
+  #printroot li::before{content:"\2022";position:absolute;left:0;color:#000}
+  #printroot .dis-title{font-size:16pt;font-weight:bold}
+  #printroot .dis-sub{font-size:10pt;color:#555;margin-bottom:10pt}
+  #printroot .sec-hdr{font-size:9.5pt;font-weight:bold;text-transform:uppercase;
+    letter-spacing:.06em;margin-top:10pt;margin-bottom:3pt;color:#000;page-break-after:avoid}
+  #printroot .btext{white-space:pre-wrap;page-break-inside:avoid}
+  #printroot pre{font-family:"Courier New",monospace;font-size:10pt;white-space:pre-wrap}
 }
 </style>
 </head>
@@ -143,6 +299,10 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
       <div class="eyebrow"><a href="index.html">← All Conditions</a></div>
       <h1>⚡ Seizure Medications</h1>
     </div>
+    <div class="ctl name">
+      <label>Patient name <span style="font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+      <input id="pname" type="text" placeholder="Name" autocomplete="off">
+    </div>
     <div class="ctl">
       <label>Species</label>
       <div class="seg" role="group">
@@ -150,7 +310,7 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
         <button id="btn-cat" onclick="setSp('cat')">Cat</button>
       </div>
     </div>
-    <div class="ctl">
+    <div class="ctl wt">
       <label>Weight</label>
       <div class="wt-wrap">
         <input id="wt" type="number" inputmode="decimal" min="0" step="0.1" value="60">
@@ -161,10 +321,6 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
         <div class="kg-show" id="kgshow"></div>
       </div>
     </div>
-    <div class="ctl" id="pbctl">
-      <label>Phenobarb status</label>
-      <label class="pb-toggle"><input type="checkbox" id="onpb" onchange="render()"> Patient is on phenobarbital</label>
-    </div>
   </div>
 </header>
 
@@ -173,9 +329,14 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
 <div class="countbar">
   <div class="countbar-inner">
     <strong id="selcount">0 medications selected</strong>
-    <a href="#plan">↓ Jump to treatment plan</a>
+    <div class="cb-actions">
+      <button type="button" class="cbtn" onclick="goOutput('plan')">Treatment plan</button>
+      <button type="button" class="cbtn p" onclick="goOutput('discharge')">↓ Discharge instructions</button>
+    </div>
   </div>
 </div>
+
+<div id="printroot"></div>
 
 <footer><div class="wrap"><hr>
 Internal clinical reference — includes off-label options used at the clinician's discretion.
@@ -193,7 +354,7 @@ const DOG_TIERS=[
  {h:"Tier 1 — First line: start with ONE of these",
   sub:"Zonisamide or levetiracetam. Pick whichever formulation/size fits the dog best.",
   drugs:[
-   {id:"zon",name:"Zonisamide",unit:"capsule",freq:"BID",
+   {id:"zon",name:"Zonisamide",unit:"capsule",freq:"BID",pbToggle:true,
     loFn:pb=>pb?10:5,hiFn:pb=>pb?10:5,
     rangeFn:pb=>pb?"10 mg/kg":"5 mg/kg",
     strengths:[25,50,100],splits:[1,2,3],
@@ -304,19 +465,48 @@ const DOG_CLUSTER=[
 ];
 
 /* ================================================================
+   DATA — client discharge blocks (all editable in the page)
+================================================================ */
+const BLOCKS=[
+ {id:"during",on:true,title:"During a seizure",
+  text:"Stay calm and keep {name} safe. Move furniture, stairs, water and other pets out of the way. Do NOT put your hands near the mouth and do not try to hold the tongue — pets do not swallow their tongue, and you can be badly bitten. Dim the lights, keep noise down, and time the seizure if you can.\n\nMost seizures stop on their own within 1–2 minutes. Afterwards {name} may be disoriented, restless, wobbly, temporarily blind, or very hungry and thirsty for anywhere from a few minutes to several hours. Keep {name} in a safe, quiet, confined space until fully back to normal."},
+ {id:"emergency",on:true,title:"Call us or go to an emergency hospital right away if",
+  text:"• A seizure lasts longer than 5 minutes.\n• {name} has more than one seizure in a 24-hour period (cluster seizures).\n• {name} does not fully wake up and recover between seizures.\n• {name} is struggling to breathe, feels very hot to the touch, or has not returned to normal within a few hours.\n\nProlonged or repeated seizures are a true emergency and need to be treated immediately."},
+ {id:"diary",on:true,title:"Seizure diary",
+  text:"Please keep a written or phone log of every seizure: the date, the time of day, how long it lasted, what it looked like, and anything unusual beforehand. This log is the single most useful thing you can bring to a recheck — it tells us whether the medication is working and whether the dose needs to change."},
+ {id:"dosing",on:true,title:"Giving the medication",
+  text:"Give every dose at the same times each day — steady blood levels are what control seizures. If you miss a dose, give it as soon as you remember, unless it is nearly time for the next one; never double up. It is fine to hide tablets in a small treat or pill pocket unless we have told you otherwise.\n\nDo NOT stop or taper an anti-seizure medication on your own. Stopping suddenly can trigger severe or prolonged seizures."},
+ {id:"sideeffects",on:true,title:"What to expect",
+  text:"Sedation, wobbliness, and increased appetite or thirst are common in the first one to two weeks and usually improve a great deal with time. If {name} is too sedated to eat or drink, will not walk, or vomits the medication, please call us rather than stopping it on your own."},
+ {id:"monitor",on:false,title:"Bloodwork and monitoring",
+  text:"Anti-seizure medications are processed by the liver, so we monitor bloodwork. For phenobarbital we check a drug level along with a CBC and chemistry panel about 2 weeks after starting or after any dose change, then about every 6 months. Please keep these appointments even if {name} is doing well."},
+ {id:"followup",on:true,title:"Follow up",
+  text:"Please call us with an update in about 2 weeks, or sooner if the seizures continue or the side effects are a problem. Bring the seizure diary to every recheck."},
+];
+
+/* ================================================================
    STATE + HELPERS
 ================================================================ */
-let sp="dog",unit="lb";
-const S={}; // id -> {on:bool, opt:int|null}
-function st(id){if(!S[id])S[id]={on:false,opt:null};return S[id];}
-const FRAC={0.25:"¼",0.5:"½",0.75:"¾",1:"1",1.5:"1½",2:"2",2.5:"2½",3:"3",4:"4"};
+let sp="dog",unit="lb",pbOn=false,mode="plan";
+/* opt: null = follow the target automatically, -1 = custom amount, else index */
+const S={};
+function st(id){if(!S[id])S[id]={on:false,opt:null,mgkg:null,customMg:null};return S[id];}
+const BLK={};
+function bk(id){if(!BLK[id]){const b=BLOCKS.find(x=>x.id===id);BLK[id]={on:!!(b&&b.on),text:null};}return BLK[id];}
+for(const b of BLOCKS)bk(b.id);
+
+const FRAC={0.125:"⅛",0.25:"¼",0.5:"½",0.75:"¾",1:"1",1.5:"1½",2:"2",2.5:"2½",3:"3",4:"4"};
 const fr=n=>FRAC[n]||String(n);
 const R2=x=>Math.round(x*100)/100;
 const fmtMg=x=>x>=100?String(Math.round(x)):x>=10?String(Math.round(x*10)/10):String(Math.round(x*100)/100);
 const fmtMl=x=>(Math.round(x*100)/100).toFixed(2);
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const escA=s=>esc(s).replace(/"/g,"&quot;");
 function getKg(){const v=parseFloat(document.getElementById("wt").value);
   return(!isFinite(v)||v<=0)?null:(unit==="lb"?v/2.2:v);}
-function onPB(){return document.getElementById("onpb").checked;}
+function getName(){return document.getElementById("pname").value.trim()||"your pet";}
+function today(){const d=new Date();return(d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear();}
+function onPB(){return pbOn;}
 function medLo(m){return m.loFn?m.loFn(onPB()):m.lo;}
 function medHi(m){return m.hiFn?m.hiFn(onPB()):m.hi;}
 function medRange(m){return m.rangeFn?m.rangeFn(onPB()):m.range;}
@@ -327,54 +517,136 @@ function allMeds(){
   if(sp==="dog")out=out.concat(DOG_CLUSTER);
   return out;}
 function emergMeds(){return sp==="dog"?DOG_EMERG.concat(DOG_REFRACT):CAT_EMERG;}
-
-/* tablet-fit options: combos of strength × split inside (or nearest to) target */
-function fitOptions(m,kg){
-  if(!m.strengths||kg===null)return[];
-  const lo=medLo(m)*kg,hi=medHi(m)*kg,anchor=lo; // start at the low end of the range
-  let inRange=[],all=[];
-  for(const s of m.strengths)for(const n of m.splits){
-    const mg=s*n,o={s,n,mg};
-    all.push(o);
-    if(mg>=lo*0.9-1e-9&&mg<=hi*1.1+1e-9)inRange.push(o);
-  }
-  let opts=inRange.sort((a,b)=>Math.abs(a.mg-anchor)-Math.abs(b.mg-anchor)).slice(0,4);
-  if(!opts.length)opts=all.sort((a,b)=>Math.abs(a.mg-anchor)-Math.abs(b.mg-anchor)).slice(0,2);
-  // dedupe same total mg keeping the simplest (fewest units, then biggest tab)
-  const seen={};const out=[];
-  for(const o of opts){const k=o.mg.toFixed(2);
-    if(!seen[k]){seen[k]=true;out.push(o);}}
-  return out;}
+function findMed(id){return allMeds().concat(emergMeds()).find(m=>m.id===id);}
 
 /* ================================================================
-   RENDER
+   DOSE TARGET + TABLET FITS
+   The target defaults to the low end of the labelled range (start low), is
+   editable per drug, and the chips bracket it: the closest fit at or below,
+   the closest above, and one neighbour either side.
 ================================================================ */
-function chipHtml(m,opts,kg){
+function labelTarget(m){return medLo(m);}
+function curMgkg(m){const s=st(m.id);return s.mgkg!==null?s.mgkg:labelTarget(m);}
+
+/* every total reachable from one strength x one split, ascending, de-duped */
+function allFits(m){
+  if(!m.strengths)return[];
+  const seen={};
+  for(const str of m.strengths)for(const n of m.splits){
+    const mg=Math.round(str*n*1e4)/1e4,k=mg.toFixed(4);
+    if(!seen[k]||n<seen[k].n)seen[k]={s:str,n,mg};}
+  return Object.keys(seen).map(k=>seen[k]).sort((a,b)=>a.mg-b.mg);}
+
+function fitOptions(m,kg){
+  if(!m.strengths||kg===null)return{opts:[],def:0,target:null};
+  const target=curMgkg(m)*kg;
+  const all=allFits(m);
+  if(!all.length)return{opts:[],def:0,target};
+  let i=0;while(i<all.length&&all[i].mg<target-1e-9)i++;
+  const under=i-1,over=i<all.length?i:-1;
+  const idx=[];
+  const push=j=>{if(j>=0&&j<all.length&&idx.indexOf(j)<0)idx.push(j);};
+  if(under>=0&&over>=0){push(under-1);push(under);push(over);push(over+1);}
+  else if(over<0){push(under-3);push(under-2);push(under-1);push(under);}
+  else{push(over);push(over+1);push(over+2);push(over+3);}
+  idx.sort((a,b)=>a-b);
+  const pick=under<0?over:over<0?under:
+    (Math.abs(all[under].mg-target)<=Math.abs(all[over].mg-target)?under:over);
+  const lo=medLo(m)*kg,hi=medHi(m)*kg;
+  const opts=idx.map(j=>{
+    const o=Object.assign({},all[j]);
+    o.inRange=o.mg>=lo*0.7-1e-9&&o.mg<=hi*1.4+1e-9;
+    o.pct=target>0?Math.round(o.mg/target*100):null;
+    return o;});
+  return{opts,def:Math.max(0,idx.indexOf(pick)),target,lo,hi};}
+
+/* the option actually in force */
+function curFit(m,kg){
+  const s=st(m.id),d=fitOptions(m,kg);
+  if(s.opt===-1)return{custom:true,mg:s.customMg};
+  if(s.opt===null||s.opt<0||s.opt>=d.opts.length)return d.opts[d.def]||null;
+  return d.opts[s.opt];}
+
+/* ================================================================
+   RENDER — drug rows
+================================================================ */
+function targetHtml(m,kg){
+  const s=st(m.id),lbl=medRange(m);
+  const val=curMgkg(m);
+  const unitTxt="mg/kg"+(m.perDay?"/day":"");
+  return'<div class="tgt'+(s.mgkg!==null?" custom":"")+'">'+
+    '<input class="tgt-in" type="number" step="any" min="0" inputmode="decimal" value="'+val+'" '+
+      'aria-label="Target dose for '+escA(m.name)+' in '+unitTxt+'" '+
+      'data-act="tgt" data-id="'+m.id+'">'+
+    '<span class="tgt-u">'+unitTxt+'</span>'+
+    (kg===null?"":'<span class="tgt-eq">= '+fmtMg(val*kg)+' mg</span>')+
+    (s.mgkg!==null
+      ?'<button type="button" class="tgt-reset" data-act="tgtreset" data-id="'+m.id+'">↺ back to label ('+esc(lbl)+')</button>'
+      :'')+
+    '</div>';}
+
+function chipsHtml(m,kg){
   const s=st(m.id);
-  if(s.opt!==null&&s.opt>=opts.length)s.opt=null;
-  const sel=s.opt===null?0:s.opt;
-  return opts.map((o,i)=>{
-    const cls="chip"+(i===sel?" sel":"")+(i===0?" best":"");
+  if(!m.strengths)
+    return'<div class="chips"><span class="dgen">'+
+      (m.id==="kbr"?"compounded — dose in mg/day":"dose in mg")+'</span>'+customChip(m,kg)+'</div>';
+  const d=fitOptions(m,kg);
+  if(!d.opts.length)
+    return'<div class="chips"><span class="nofit">Enter a weight</span>'+customChip(m,kg)+'</div>';
+  const sel=(s.opt===null||s.opt<0||s.opt>=d.opts.length)?d.def:s.opt;
+  const chips=d.opts.map((o,i)=>{
+    const on=s.opt!==-1&&i===sel;
+    const cls="chip"+(on?" sel":"")+(i===d.def?" best":"")+(o.inRange?"":" off");
     const mgkg=kg?R2(o.mg/kg):0;
-    return'<span class="'+cls+'" onclick="pickOpt(\''+m.id+'\','+i+')">'+
+    return'<span class="'+cls+'" data-act="pick" data-id="'+m.id+'" data-i="'+i+'" '+
+      'title="'+fmtMg(o.mg)+' mg = '+(o.pct===null?"?":o.pct)+'% of the '+fmtMg(d.target)+
+        ' mg target'+(o.inRange?"":" — well off target")+'">'+
       fr(o.n)+" × "+o.s+" mg <small>= "+fmtMg(o.mg)+" mg · "+mgkg+" mg/kg</small></span>";
-  }).join("");}
+  }).join("");
+  return'<div class="chips">'+chips+customChip(m,kg)+'</div>';}
+
+function customChip(m,kg){
+  const s=st(m.id),on=s.opt===-1;
+  return'<span class="chip cust'+(on?" sel":"")+'">Custom '+
+    '<input type="number" step="any" min="0" inputmode="decimal" placeholder="amount" '+
+      'aria-label="Custom dose for '+escA(m.name)+' in mg" '+
+      'value="'+(s.customMg===null?"":s.customMg)+'" '+
+      'data-act="cust" data-id="'+m.id+'">'+
+    ' mg <small id="cmk-'+m.id+'">'+custMgkg(m,kg)+'</small></span>';}
+function custMgkg(m,kg){
+  const s=st(m.id);
+  return(kg&&s.customMg!==null)?"· "+R2(s.customMg/kg)+" mg/kg":"";}
+
+/* the phenobarb status control lives with the dose it changes */
+function pbInlineHtml(){
+  const pbSel=st("pb").on;
+  return'<div class="pb-inline">'+
+    '<div class="pb-lbl">Patient on phenobarbital?</div>'+
+    '<div class="pb-seg" role="group">'+
+      '<button type="button" class="'+(pbOn?"":"on")+'" data-act="pb" data-v="0">No — 5 mg/kg</button>'+
+      '<button type="button" class="'+(pbOn?"on":"")+'" data-act="pb" data-v="1">Yes — 10 mg/kg</button>'+
+    '</div>'+
+    (pbSel&&!pbOn
+      ?'<div class="pb-nudge">⚠ Phenobarbital is selected below — zonisamide should be 10 mg/kg.'+
+       '<button type="button" data-act="pb" data-v="1">Switch</button></div>'
+      :"")+
+    '</div>';}
 
 function drugRow(m,kg){
   const s=st(m.id);
   const lo=kg===null?null:medLo(m)*kg,hi=kg===null?null:medHi(m)*kg;
   const tgt=lo===null?"—":(hi>lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+" mg"+(m.perDay?"/day":"");
-  const opts=fitOptions(m,kg);
-  const chips=m.strengths?
-    (opts.length?'<div class="chips">'+chipHtml(m,opts,kg)+'</div>':'<span class="nofit">No single-tablet fit — combine strengths</span>')
-    :'<span class="dgen">'+(m.id==="kbr"?"compounded — dose in mg/day":"dose by mg")+'</span>';
   return'<tr>'+
-   '<td class="ck"><input type="checkbox" '+(s.on?"checked":"")+' onchange="toggleMed(\''+m.id+'\')"></td>'+
-   '<td><div class="dname">'+m.name+(m.gen?' <span class="dgen">· '+m.gen+'</span>':'')+'</div>'+
-     (m.note?'<div class="dnote">'+m.note+'</div>':'')+'</td>'+
-   '<td><span class="drange">'+medRange(m)+'</span><div class="dfreq">'+m.freq+'</div></td>'+
-   '<td><span class="target">'+tgt+'</span>'+(m.perDay?'':'<div class="dfreq">per dose</div>')+'</td>'+
-   '<td>'+chips+'</td></tr>';}
+   '<td class="ck"><input type="checkbox" '+(s.on?"checked":"")+
+     ' aria-label="Include '+escA(m.name)+'" data-act="tog" data-id="'+m.id+'"></td>'+
+   '<td data-l="Drug"><div class="dname">'+m.name+(m.gen?' <span class="dgen">· '+m.gen+'</span>':'')+'</div>'+
+     (m.note?'<div class="dnote">'+m.note+'</div>':'')+
+     (m.pbToggle?pbInlineHtml():'')+'</td>'+
+   '<td data-l="Label dose"><span class="drange">'+medRange(m)+'</span>'+
+     '<div class="dfreq">'+m.freq+(m.perDay?'':' · per dose')+'</div>'+
+     '<div class="dfreq">= '+tgt+'</div></td>'+
+   '<td data-l="Target (editable)">'+targetHtml(m,kg)+'</td>'+
+   '<td data-l="Closest fits — tap to choose">'+chipsHtml(m,kg)+'</td></tr>';}
 
 function tierHtml(t,kg){
   let inner;
@@ -382,7 +654,8 @@ function tierHtml(t,kg){
     inner='<div class="sec-sub" style="margin:0 0 4px 2px">'+(t.sub||"")+'</div>';
   }else{
     inner=(t.sub?'<div class="sec-sub" style="margin-bottom:6px">'+t.sub+'</div>':'')+
-    '<table class="dose"><thead><tr><th></th><th>Drug</th><th>Dose range</th><th>Target dose</th><th>Closest tablet fit (click to choose)</th></tr></thead><tbody>'+
+    '<table class="dose"><thead><tr><th></th><th>Drug</th><th>Label dose</th>'+
+    '<th>Target</th><th>Closest fits (tap to choose)</th></tr></thead><tbody>'+
     t.drugs.map(m=>drugRow(m,kg)).join("")+'</tbody></table>';}
   return'<div class="tier"><div class="tier-h">'+t.h+'</div>'+inner+'</div>';}
 
@@ -393,7 +666,8 @@ function emergRow(e,kg){
     (e.hi>e.lo?fmtMl(mgLo/e.conc)+"–"+fmtMl(mgHi/e.conc):fmtMl(mgLo/e.conc))+" ml";
   const mg=mgLo===null?"":(e.hi>e.lo?fmtMg(mgLo)+"–"+fmtMg(mgHi):fmtMg(mgLo))+" mg";
   return'<div class="erow'+(e.alt?" alt":"")+'">'+
-   '<span class="ck"><input type="checkbox" '+(s.on?"checked":"")+' onchange="toggleMed(\''+e.id+'\')"></span>'+
+   '<span class="ck"><input type="checkbox" '+(s.on?"checked":"")+
+     ' aria-label="Include '+escA(e.name)+'" data-act="tog" data-id="'+e.id+'"></span>'+
    (e.step?'<span class="estep">'+e.step+'</span>':'')+
    '<span class="ename">'+e.name+(e.sub?'<span class="esub">'+e.sub+'</span>':'')+'</span>'+
    '<span class="edose">'+e.dose+'</span>'+
@@ -401,13 +675,15 @@ function emergRow(e,kg){
    '<span class="edose">'+mg+'</span>'+
    '<span class="einstr">'+e.instr+'</span></div>';}
 
+/* ================================================================
+   RENDER — page
+================================================================ */
 function render(){
   const kg=getKg();
   const lb=kg===null?null:kg*2.2;
   document.getElementById("kgshow").innerHTML=unit==="lb"
     ?"= <strong>"+(kg===null?"—":R2(kg))+"</strong> kg"
     :"= <strong>"+(lb===null?"—":Math.round(lb*10)/10)+"</strong> lb";
-  document.getElementById("pbctl").style.display=sp==="dog"?"":"none";
 
   const tiers=sp==="dog"?DOG_TIERS:CAT_TIERS;
   const stripDog='<strong>Dog escalation:</strong> Zonisamide <em>or</em> Keppra'+
@@ -420,12 +696,15 @@ function render(){
   let html='<div class="ladder-strip">'+(sp==="dog"?stripDog:stripCat)+'</div>';
 
   html+='<section><div class="sec-title">Long-term Maintenance <span class="sec-tag">'+(sp==="dog"?"Dog":"Cat")+'</span></div>'+
-    '<div class="sec-sub">Dose ranges are per dose unless marked per day. Target dose computed for current weight; tablet chips show the closest real-world fits (best fit highlighted, click to choose for the plan).</div>'+
+    '<div class="sec-sub">Every drug has an editable <strong>target</strong> in mg/kg — it starts at the labelled dose, '+
+    'and the chips beside it bracket that target with the closest real tablet fits (dashed = outside the labelled range). '+
+    'Type your own number in the target box, or put an exact amount in the <em>Custom</em> chip.</div>'+
     tiers.map(t=>tierHtml(t,kg)).join("")+'</section>';
 
   if(sp==="dog"){
     html+='<section><div class="sec-title">Cluster Prevention / Rescue <span class="sec-tag">Dog</span></div>'+
-      '<table class="dose"><thead><tr><th></th><th>Drug</th><th>Dose</th><th>Target dose</th><th>Closest tablet fit</th></tr></thead><tbody>'+
+      '<table class="dose"><thead><tr><th></th><th>Drug</th><th>Label dose</th>'+
+      '<th>Target</th><th>Closest fits</th></tr></thead><tbody>'+
       DOG_CLUSTER.map(m=>drugRow(m,kg)).join("")+'</tbody></table></section>';}
 
   html+='<section class="emerg"><div class="sec-title">⛑ Active Seizure — Emergency <span class="sec-tag">'+(sp==="dog"?"Dog":"Cat")+'</span></div>'+
@@ -444,70 +723,279 @@ function render(){
    (sp==="cat"?'<div><strong>Cats:</strong> KBr is NOT recommended (respiratory disease). Phenobarbital is not hepatotoxic in cats but can raise ALP/ALT ~30%.</div>':'')+
    '</div>';
 
-  html+='<section id="plan"><div class="sec-title">Treatment Plan</div>'+
-    '<div class="sec-sub">Check medications above — the plan builds itself. Edit freely before copying.</div>'+
+  html+='<section id="plan"><div class="sec-title">Treatment Plan &amp; Discharge</div>'+
+    '<div class="sec-sub">Check medications above — both outputs build themselves. Edit freely before copying or printing.</div>'+
+    '<div class="tabs">'+
+      '<button type="button" id="tab-plan" class="'+(mode==="plan"?"on":"")+'" data-act="mode" data-v="plan">Treatment plan</button>'+
+      '<button type="button" id="tab-dis" class="'+(mode==="discharge"?"on":"")+'" data-act="mode" data-v="discharge">Discharge instructions</button>'+
+    '</div>'+
+    '<div id="blocks"></div>'+
     '<div class="plan-pre" id="planout" contenteditable="true" spellcheck="false"></div>'+
+    '<div class="out-dis" id="disout" contenteditable="true" spellcheck="false"></div>'+
     '<div class="plan-actions">'+
-    '<button class="obtn" onclick="copyPlan()">Copy plan</button>'+
-    '<button class="obtn s" onclick="window.print()">Print / PDF</button>'+
+    '<button type="button" class="obtn" data-act="copy">Copy</button>'+
+    '<button type="button" class="obtn s" data-act="print">Print / PDF</button>'+
     '<span class="copied" id="copiedmsg">Copied ✓</span></div></section>';
 
   document.getElementById("main").innerHTML=html;
-  buildPlan();}
+  renderBlocks();
+  buildOutput();}
 
 /* ================================================================
-   TREATMENT PLAN
+   DISCHARGE BLOCK EDITOR
 ================================================================ */
+function renderBlocks(){
+  const wrap=document.getElementById("blocks");
+  if(!wrap)return;
+  if(mode!=="discharge"){wrap.style.display="none";return;}
+  wrap.style.display="block";
+  wrap.innerHTML='<div class="blkhint">CLIENT INSTRUCTION BLOCKS — check to include, and edit the wording to suit the case. '+
+    '"<code>{name}</code>" is replaced by the patient\'s name.</div>'+
+    BLOCKS.map(b=>{
+      const s=bk(b.id);
+      return'<div class="blk">'+
+        '<input type="checkbox" '+(s.on?"checked":"")+' aria-label="Include '+escA(b.title)+'" '+
+          'data-act="blk" data-id="'+b.id+'">'+
+        '<div class="blkwrap"><div class="blktitle">'+esc(b.title)+'</div>'+
+        '<textarea rows="3" data-act="blktext" data-id="'+b.id+'">'+
+        esc(s.text!==null?s.text:b.text)+'</textarea></div></div>';
+    }).join("");}
+
+/* ================================================================
+   OUTPUT — plan (record) and discharge (client)
+================================================================ */
+function fitLine(m,kg){
+  const s=st(m.id),o=curFit(m,kg),u=m.unit||"tablet";
+  if(o&&o.custom)
+    return o.mg===null?m.name+": dose pending — enter a custom amount."
+      :m.name+": give "+fmtMg(o.mg)+" mg by mouth "+m.freq+
+       (kg?" ("+R2(o.mg/kg)+" mg/kg)":"")+".";
+  if(!o)return m.name+": dose pending.";
+  const give=o.n===1?("1 "+u):(fr(o.n)+" "+u+(o.n>1?"s":""));
+  return m.name+" "+o.s+" mg: give "+give+" by mouth "+m.freq+
+    (kg?" ("+fmtMg(o.mg)+" mg ≈ "+R2(o.mg/kg)+" mg/kg)":"")+"."+
+    (m.id==="zon"&&onPB()?" (10 mg/kg target — on phenobarbital.)":"");}
+
 function planLine(m,kg){
   const s=st(m.id);
+  if(m.strengths)return fitLine(m,kg);
+  const how=m.perDay?" total per day, given "+m.freq:" "+m.freq;
+  if(s.opt===-1)
+    return s.customMg===null?m.name+": dose pending — enter a custom amount."
+      :m.name+": "+fmtMg(s.customMg)+" mg"+how+".";
+  const t=curMgkg(m),amt=kg===null?"___":fmtMg(t*kg);
+  return m.name+": "+amt+" mg"+how+
+    (kg?" ("+t+" mg/kg"+(m.perDay?"/day":"")+")":"")+"."+
+    (m.id==="kep_load"?" Regular (IR) Keppra only.":"");}
+
+/* ---- client-facing wording: no abbreviations, no mg/kg arithmetic ---- */
+const FREQ_CLIENT={"BID":"twice daily","TID":"three times daily","SID":"once daily",
+  "QID":"four times daily","BID–TID":"two to three times daily",
+  "q 8 h":"every 8 hours","q 12 h":"every 12 hours","ONCE":"one time only"};
+function freqClient(f){return FREQ_CLIENT[f]||f;}
+function clientLine(m,kg){
+  const s=st(m.id),f=freqClient(m.freq);
   if(m.strengths){
-    const opts=fitOptions(m,kg);
-    const o=opts[s.opt===null?0:Math.min(s.opt,opts.length-1)];
-    if(!o)return m.name+": dose pending.";
+    const o=curFit(m,kg);
+    if(!o||(o.custom&&o.mg===null))return m.name+": dose to be confirmed by the clinic.";
+    if(o.custom)return m.name+": give "+fmtMg(o.mg)+" mg by mouth "+f+".";
     const u=m.unit||"tablet";
     const give=o.n===1?("1 "+u):(fr(o.n)+" "+u+(o.n>1?"s":""));
-    return m.name+" "+o.s+" mg: give "+give+" by mouth "+m.freq+
-      (kg?" ("+fmtMg(o.mg)+" mg ≈ "+R2(o.mg/kg)+" mg/kg)":"")+"."+
-      (m.id==="zon"&&onPB()?" (10 mg/kg target — on phenobarbital.)":"");
-  }
-  const lo=kg===null?null:medLo(m)*kg,hi=kg===null?null:medHi(m)*kg;
-  const amt=lo===null?"___":(hi>lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo));
-  return m.name+": "+amt+" mg"+(m.perDay?" per DAY":"")+" "+m.freq+"."+(m.note&&m.id==="kep_load"?" Regular (IR) Keppra only.":"");}
+    return m.name+" "+o.s+" mg: give "+give+" by mouth "+f+".";}
+  const per=m.perDay?" total per day":"";
+  if(s.opt===-1)
+    return s.customMg===null?m.name+": dose to be confirmed by the clinic."
+      :m.name+": give "+fmtMg(s.customMg)+" mg"+per+" by mouth "+f+".";
+  const amt=kg===null?"___":fmtMg(curMgkg(m)*kg);
+  return m.name+": give "+amt+" mg"+per+" by mouth "+f+".";}
+function clientEmergLine(e){return e.name+": given here in the hospital today.";}
 
 function emergLine(e,kg){
   const mgLo=kg===null?null:e.lo*kg,mgHi=kg===null?null:e.hi*kg;
   const vol=mgLo===null?"___":(e.hi>e.lo?fmtMl(mgLo/e.conc)+"–"+fmtMl(mgHi/e.conc):fmtMl(mgLo/e.conc));
   return e.name+" ("+e.dose+"): "+vol+" ml given in clinic.";}
 
-function buildPlan(){
+function selected(){
   const kg=getKg();
+  return{maint:allMeds().filter(m=>st(m.id).on),emerg:emergMeds().filter(e=>st(e.id).on),kg};}
+
+function buildPlan(){
+  const {maint,emerg,kg}=selected();
   const lb=kg===null?null:Math.round(kg*2.2*10)/10;
-  const maint=allMeds().filter(m=>st(m.id).on);
-  const emerg=emergMeds().filter(e=>st(e.id).on);
-  const n=maint.length+emerg.length;
-  document.getElementById("selcount").textContent=n+" medication"+(n===1?"":"s")+" selected";
-  const d=new Date();
   let out="SEIZURE PLAN — "+(sp==="dog"?"Canine":"Feline")+" — "+
-    (lb===null?"___ lb":lb+" lb ("+R2(kg)+" kg)")+" — "+(d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear()+"\n";
-  if(emerg.length){out+="\nGIVEN IN HOSPITAL:\n"+emerg.map(e=>"• "+emergLine(e,kg)).join("\n")+"\n";}
-  if(maint.length){out+="\nMEDICATIONS:\n"+maint.map(m=>"• "+planLine(m,kg)).join("\n")+"\n";}
-  if(!n)out+="\n(no medications selected)";
+    (lb===null?"___ lb":lb+" lb ("+R2(kg)+" kg)")+" — "+today()+"\n";
+  if(sp==="dog")out+="Phenobarbital status: "+(pbOn?"ON phenobarbital":"not on phenobarbital")+"\n";
+  if(emerg.length)out+="\nGIVEN IN HOSPITAL:\n"+emerg.map(e=>"• "+emergLine(e,kg)).join("\n")+"\n";
+  if(maint.length)out+="\nMEDICATIONS:\n"+maint.map(m=>"• "+planLine(m,kg)).join("\n")+"\n";
+  if(!maint.length&&!emerg.length)out+="\n(no medications selected)";
   document.getElementById("planout").textContent=out.trim();}
 
-async function copyPlan(){
-  const t=document.getElementById("planout").innerText;
-  try{await navigator.clipboard.writeText(t);}
-  catch(e){const a=document.createElement("textarea");a.value=t;a.style.position="fixed";
-    a.style.opacity="0";document.body.appendChild(a);a.select();document.execCommand("copy");
-    document.body.removeChild(a);}
-  const m=document.getElementById("copiedmsg");
-  m.classList.add("show");setTimeout(()=>m.classList.remove("show"),1800);}
+/* "Name: give X" → bold name, plain instruction, for the client sheet */
+function splitLine(line){
+  const i=line.indexOf(": ");
+  if(i<0)return'<span>'+esc(line)+'</span>';
+  return'<span class="mn-bold">'+esc(line.slice(0,i))+'</span><span class="mn-desc">:</span> '+
+    '<span class="mn-give">'+esc(line.slice(i+2))+'</span>';}
+
+function buildDischarge(){
+  const {maint,emerg,kg}=selected();
+  const name=getName();
+  const lb=kg===null?null:Math.round(kg*2.2*10)/10;
+  const wt=lb===null?"___ lb":lb+" lb ("+R2(kg)+" kg)";
+  let h='<div class="dis-title">DISCHARGE INSTRUCTIONS: Seizure Management</div>'+
+    '<div class="dis-sub">'+esc(name)+" · "+(sp==="dog"?"Canine":"Feline")+" · "+esc(wt)+" · "+today()+'</div>';
+  if(emerg.length)
+    h+='<div class="sec-hdr">Treatments performed in hospital</div><ul>'+
+      emerg.map(e=>'<li>'+splitLine(clientEmergLine(e))+'</li>').join("")+'</ul>';
+  h+='<div class="sec-hdr">Medications to give at home</div>';
+  h+=maint.length
+    ?'<ul>'+maint.map(m=>'<li>'+splitLine(clientLine(m,kg))+'</li>').join("")+'</ul>'
+    :'<ul><li><em>No take-home medications selected</em></li></ul>';
+  for(const b of BLOCKS){
+    const s=bk(b.id);
+    if(!s.on)continue;
+    const text=(s.text!==null?s.text:b.text).split("{name}").join(name);
+    h+='<div class="sec-hdr">'+esc(b.title)+'</div><div class="btext">'+esc(text)+'</div>';}
+  document.getElementById("disout").innerHTML=h;}
+
+function buildOutput(){
+  const {maint,emerg}=selected();
+  const n=maint.length+emerg.length;
+  document.getElementById("selcount").textContent=n+" medication"+(n===1?"":"s")+" selected";
+  const plan=document.getElementById("planout"),dis=document.getElementById("disout");
+  if(!plan||!dis)return;
+  plan.style.display=mode==="plan"?"block":"none";
+  dis.style.display=mode==="discharge"?"block":"none";
+  if(mode==="plan")buildPlan(); else buildDischarge();}
+
+function activeOut(){return document.getElementById(mode==="plan"?"planout":"disout");}
 
 /* ================================================================
-   EVENTS
+   COPY / PRINT
+   Printing clones the active output into a static #printroot; a position:fixed
+   print region repeats on every page in Chrome.
 ================================================================ */
-function toggleMed(id){st(id).on=!st(id).on;buildPlan();}
-function pickOpt(id,i){const s=st(id);s.opt=i;render();}
+function outToPlain(){
+  if(mode==="plan")return document.getElementById("planout").innerText;
+  function walk(n){
+    if(n.nodeType===3)return n.textContent;
+    const t=n.tagName&&n.tagName.toLowerCase(),cl=n.classList;
+    if(t==="li")return"• "+[...n.childNodes].map(walk).join("")+"\n";
+    if(t==="br")return"\n";
+    const inner=[...n.childNodes].map(walk).join("");
+    if(cl.contains("dis-sub"))return inner+"\n";
+    if(cl.contains("sec-hdr"))return"\n"+inner.toUpperCase()+":\n";
+    if(cl.contains("btext"))return inner+"\n";
+    if(t==="ul")return"\n"+inner;
+    return inner;}
+  return walk(document.getElementById("disout")).replace(/\n{3,}/g,"\n\n").trim();}
+
+function flash(){const m=document.getElementById("copiedmsg");
+  m.classList.add("show");setTimeout(()=>m.classList.remove("show"),1800);}
+
+async function copyOut(){
+  const text=outToPlain();
+  if(mode==="discharge"&&navigator.clipboard&&window.ClipboardItem){
+    const css="<style>body{font-family:Arial,Helvetica,sans-serif;font-size:11pt;line-height:1.55;color:#000}"+
+      "ul{list-style:none;padding:0;margin:0}li{padding:3pt 0 3pt 14pt;position:relative}"+
+      "li::before{content:'• '}.mn-bold{font-weight:bold}"+
+      ".sec-hdr{font-size:9.5pt;font-weight:bold;text-transform:uppercase;letter-spacing:.06em;"+
+      "margin-top:9pt;margin-bottom:3pt;display:block}"+
+      ".dis-title{font-size:14pt;font-weight:bold}.dis-sub{font-size:10pt;color:#555}"+
+      ".btext{white-space:pre-wrap}</style>";
+    try{
+      await navigator.clipboard.write([new ClipboardItem({
+        "text/html":new Blob([css+document.getElementById("disout").innerHTML],{type:"text/html"}),
+        "text/plain":new Blob([text],{type:"text/plain"})})]);
+      flash();return;
+    }catch(e){/* fall through to plain text */}
+  }
+  try{await navigator.clipboard.writeText(text);}
+  catch(e){const a=document.createElement("textarea");a.value=text;a.style.position="fixed";
+    a.style.opacity="0";document.body.appendChild(a);a.select();document.execCommand("copy");
+    document.body.removeChild(a);}
+  flash();}
+
+function doPrint(){
+  const root=document.getElementById("printroot");
+  root.innerHTML=mode==="plan"
+    ?"<pre>"+esc(document.getElementById("planout").innerText)+"</pre>"
+    :'<div class="out-dis">'+document.getElementById("disout").innerHTML+'</div>';
+  window.print();}
+addEventListener("afterprint",()=>{
+  const root=document.getElementById("printroot");
+  if(root)root.innerHTML="";});
+
+/* ================================================================
+   EVENTS — delegated from #main
+================================================================ */
+function setMode(m){
+  mode=m;
+  const tp=document.getElementById("tab-plan"),td=document.getElementById("tab-dis");
+  if(tp)tp.classList.toggle("on",m==="plan");
+  if(td)td.classList.toggle("on",m==="discharge");
+  renderBlocks();buildOutput();}
+function goOutput(m){
+  setMode(m);
+  const el=document.getElementById("plan");
+  if(el)el.scrollIntoView({behavior:"smooth",block:"start"});}
+
+function toggleMed(id){st(id).on=!st(id).on;
+  if(id==="pb")render(); else buildOutput();}
+function pickOpt(id,i){st(id).opt=i;render();}
+function setTarget(id,v){
+  const s=st(id);
+  const n=parseFloat(v);
+  if(!isFinite(n)||n<=0)return;
+  s.mgkg=Math.round(n*1000)/1000;
+  s.opt=null;                       // follow the new target again
+  render();}
+function resetTarget(id){st(id).mgkg=null;st(id).opt=null;render();}
+function setCustom(id,v){
+  const s=st(id),n=parseFloat(v);
+  s.customMg=(isFinite(n)&&n>0)?Math.round(n*1000)/1000:null;
+  s.opt=-1;
+  const m=findMed(id),el=document.getElementById("cmk-"+id);
+  if(m&&el)el.textContent=custMgkg(m,getKg());
+  const chip=el?el.closest(".chip"):null;
+  if(chip){
+    const row=chip.parentNode;
+    [...row.querySelectorAll(".chip")].forEach(c=>c.classList.toggle("sel",c===chip));}
+  buildOutput();}
+function setPB(v){pbOn=!!v;render();}
+
+document.getElementById("main").addEventListener("click",e=>{
+  const t=e.target.closest("[data-act]");
+  if(!t)return;
+  const a=t.dataset.act;
+  if(a==="pick")pickOpt(t.dataset.id,+t.dataset.i);
+  else if(a==="pb")setPB(+t.dataset.v);
+  else if(a==="tgtreset")resetTarget(t.dataset.id);
+  else if(a==="mode")setMode(t.dataset.v);
+  else if(a==="copy")copyOut();
+  else if(a==="print")doPrint();
+});
+document.getElementById("main").addEventListener("change",e=>{
+  const t=e.target.closest("[data-act]");
+  if(!t)return;
+  const a=t.dataset.act;
+  if(a==="tog")toggleMed(t.dataset.id);
+  else if(a==="tgt")setTarget(t.dataset.id,t.value);
+  else if(a==="blk"){bk(t.dataset.id).on=t.checked;buildOutput();}
+});
+document.getElementById("main").addEventListener("input",e=>{
+  const t=e.target.closest("[data-act]");
+  if(!t)return;
+  const a=t.dataset.act;
+  if(a==="cust")setCustom(t.dataset.id,t.value);
+  else if(a==="blktext"){bk(t.dataset.id).text=t.value;buildOutput();}
+});
+document.getElementById("main").addEventListener("keydown",e=>{
+  if(e.key!=="Enter")return;
+  const t=e.target.closest("[data-act]");
+  if(t&&(t.dataset.act==="tgt"||t.dataset.act==="cust")){e.preventDefault();t.blur();}
+});
+
 function setSp(s){sp=s;
   document.getElementById("btn-dog").classList.toggle("on",s==="dog");
   document.getElementById("btn-cat").classList.toggle("on",s==="cat");
@@ -520,6 +1008,15 @@ function setU(u){
   document.getElementById("btn-kg").classList.toggle("on",u==="kg");
   render();}
 document.getElementById("wt").addEventListener("input",render);
+document.getElementById("pname").addEventListener("input",buildOutput);
+
+/* compact the sticky header once the page is scrolled (phone) */
+let _sc=false;
+addEventListener("scroll",()=>{
+  const now=window.scrollY>70;
+  if(now!==_sc){_sc=now;document.body.classList.toggle("scrolled",now);}
+},{passive:true});
+
 render();
 </script>
 </body>
