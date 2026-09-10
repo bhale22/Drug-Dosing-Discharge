@@ -1,90 +1,99 @@
 {
   "title": "Uveitis",
-  "desc": "Anterior uveitis in dogs — topical steroids or NSAIDs, cycloplegics, doxycycline, and the systemic work-up that should run alongside. Clinician reference.",
+  "desc": "Topical corticosteroid, Topical NSAID, Topical atropine, Doxycycline, Oral corticosteroid, Subconjunctival triamcinolone",
   "icon": "👁",
   "code": "OPHTH-UV",
   "discharge": "Uveitis",
-  "species": ["dog"],
+  "species": [
+    "dog"
+  ],
   "noDischarge": true,
   "bands": {},
   "meds": [
     {
       "id": "topical_steroid_uv",
       "sp": "dog",
-      "grp": "Topical anti-inflammatory",
+      "grp": "Drugs",
       "name": "Topical corticosteroid",
       "gen": "prednisolone acetate, dexamethasone",
-      "desc": "topical anti-inflammatory",
       "type": "fixed",
-      "doseText": "topical drops",
-      "freqs": ["every 6–12 hours depending on severity"],
-      "note": "Frequency is driven by how severe the uveitis is. Do not use a topical steroid if the cornea is ulcerated."
+      "doseText": "applied q 6-12 hrs depending on the severity of the uveitis",
+      "freqs": [
+        "every 6–12 hours depending on severity"
+      ]
     },
     {
       "id": "topical_nsaid_uv",
       "sp": "dog",
-      "grp": "Topical anti-inflammatory",
+      "grp": "Drugs",
       "name": "Topical NSAID",
       "gen": "diclofenac, flurbiprofen",
-      "desc": "topical anti-inflammatory alternative",
       "type": "fixed",
-      "doseText": "topical drops",
-      "freqs": ["every 6–12 hours depending on severity"]
+      "doseText": "applied q 6-12 hrs depending on the severity of the uveitis",
+      "freqs": [
+        "every 6–12 hours depending on severity"
+      ]
     },
     {
       "id": "atropine_uv",
       "sp": "dog",
-      "grp": "Cycloplegic",
+      "grp": "Drugs",
       "name": "Topical atropine",
-      "desc": "cycloplegic — prevents synechiae and eases ciliary spasm",
       "type": "fixed",
-      "doseText": "topical drops",
-      "freqs": ["as directed"],
-      "note": "Induces mydriasis to prevent posterior synechia, provide analgesia and decrease ciliary spasm. Use cautiously and monitor IOP closely — mydriasis can precipitate or worsen secondary glaucoma."
+      "doseText": "Topical cycloplegics (e.g. atropine)",
+      "freqs": [
+        "as directed"
+      ]
     },
     {
       "id": "doxycycline_uv",
       "sp": "dog",
-      "grp": "Systemic",
+      "grp": "Drugs",
       "name": "Doxycycline",
-      "desc": "covers tick-borne disease while the work-up runs",
       "type": "calc",
       "lo": 10,
       "hi": 10,
       "unitDose": "mg",
-      "freqs": ["once daily for 2 weeks"],
-      "note": "10 mg/kg SID. If the work-up is normal and the physical examination shows nothing else, this sheet treats with oral doxycycline for 2 weeks alongside the topical therapy."
+      "freqs": [
+        "SID for 2 weeks"
+      ]
     },
     {
       "id": "oral_steroid_uv",
       "sp": "dog",
-      "grp": "Systemic",
+      "grp": "Drugs",
       "name": "Oral corticosteroid",
-      "desc": "only once the cause is known",
       "type": "fixed",
-      "doseText": "an oral steroid at your usual dose",
-      "freqs": [""],
-      "note": "Consider ONLY once the underlying cause of the uveitis has been identified. Oral steroids can worsen infectious disease, especially if specific systemic therapy for the agent has not been started."
+      "doseText": "Oral corticosteroids",
+      "freqs": [
+        ""
+      ]
     },
     {
       "id": "subconj_uv",
       "sp": "dog",
-      "grp": "Systemic",
+      "grp": "Drugs",
       "name": "Subconjunctival triamcinolone",
-      "desc": "for severe anterior segment inflammation",
       "type": "fixed",
-      "doseText": "a subconjunctival injection",
-      "freqs": [""],
-      "inClinic": true,
-      "note": "May be considered for severe anterior segment inflammation, but can cause subconjunctival granuloma formation. Topical and subconjunctival drugs do not reach the retina or choroid, so they are of little help in posterior uveitis."
+      "doseText": "Subconjunctival steroids (e.g. triamcinolone)",
+      "freqs": [
+        ""
+      ],
+      "inClinic": true
     }
   ],
-  "notes": {
-    "Work-up": "A thorough medical work-up on every dog with anterior uveitis, where the owner will allow it: CBC, biochemistry profile, serology for tick-borne diseases, toxoplasmosis IgG and IgM, and serology for any geographically relevant infectious agents (blastomycosis, leptospirosis and so on).",
-    "If the work-up is clean": "If everything is normal and the physical examination is unremarkable, treat with oral doxycycline for 2 weeks alongside the topical therapy. If the examination gives clues to a systemic problem, chest and abdominal radiographs are usually the next step.",
-    "Atropine caution": "Cycloplegics prevent synechiae and relieve pain, but mydriasis may precipitate or worsen secondary glaucoma — monitor IOP.",
-    "Anterior vs posterior": "Topical and subconjunctival drugs do not reach the retina and choroid, so they help little in posterior uveitis.",
-    "Monitoring and referral": "These patients risk losing vision. Ophthalmic examinations every 1–4 weeks with IOP measurement, and referral to a veterinary ophthalmologist, are warranted. Anterior uveitis is a common cause of secondary glaucoma in dogs."
-  },
+  "notes": [
+    "Topical corticosteroids (e.g. prednisolone acetate, dexamethasone) and nonsteroidal anti-inflammatory drugs",
+    "(e.g. diclofenac, flurbiprofen, NSAIDs) are applied q 6-12 hrs depending on the severity of the uveitis.",
+    "Doxycycline 10 mg/kg SID",
+    "Weight (lb):",
+    "IOral corticosteroids may be considered once the underlying cause of uveitis is identified. Oral steroids may worsen infectious diseases, especially if specific systemic therapy for the agent is not instituted.",
+    "I usually do a thorough medical work-up on all dogs with anterior uveitis (if the owner will allow it). That work-up includes CBC, biochemistry profile, serology for tick borne diseases, toxoplasmosis IgG & IgM, and serology for any geographic infectious agents (e.g. blasto, Lepto, etc.)",
+    "If this work-up is all normal, and there are no other systemic abnormalities detected on the physical examination, then I usually treat the dog with oral doxycycline for 2 weeks, in addition to the topical therapies. If any physical exam findings give clues as to systemic problems, then chest and abdominal x-rays are usually the next step.",
+    "Subconjunctival steroids (e.g. triamcinolone) may be considered for severe anterior segment inflammation but may cause subconjunctival granuloma formation.31 Topical and subconjunctival drugs do not reach the retina and choroid, so are of little help when treating posterior uveitis.",
+    "Patients with uveitis are at risk for loss of vision and other complications, so close monitoring and referral to a veterinary ophthalmologist are warranted. Monitoring involves ophthalmic examinations q 1-4 weeks, with measurement of IOP and other parameters. Anterior uveitis is a common cause of secondary glaucoma in dogs.",
+    "Doxycycline",
+    "Topical cycloplegics (e.g. atropine) may be used to induce mydriasis in order to prevent posterior synechia, provide analgesia, and decrease ciliary spasm. However, they must be used cautiously and with close monitoring of IOP because mydriasis may precipitate or worsen secondary glaucoma."
+  ],
   "dischargeBlocks": []
 }

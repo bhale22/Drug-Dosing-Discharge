@@ -1,6 +1,6 @@
 {
-  "title": "Hyperlipidemia",
-  "desc": "Hypertriglyceridemia in dogs — low-fat diet, chitosan fibre, omega-3, bezafibrate, plus the clinical signs that follow a rising triglyceride level.",
+  "title": "Hyperlipidemia/Hypertriglyceridemia",
+  "desc": "Low-fat diet, Chitin / chitosan fibre, Omega-3 fatty acids, Bezafibrate",
   "icon": "🩸",
   "code": "LIPID",
   "discharge": "High Triglycerides",
@@ -12,92 +12,68 @@
     {
       "id": "diet_lowfat",
       "sp": "dog",
-      "grp": "First step",
-      "name": "Low-fat diet",
-      "desc": "the mainstay of treatment",
+      "grp": "Drugs",
+      "name": "Diet change- low fat",
       "type": "fixed",
-      "doseText": "only the low-fat diet we have recommended",
+      "doseText": "Diet change- low fat",
       "freqs": [
-        "from now on"
-      ],
-      "note": "Recheck fasting triglycerides after 1 month. The goal is under 500 mg/dL."
+        ""
+      ]
     },
     {
       "id": "chitosan",
       "sp": "dog",
-      "grp": "Supplements",
-      "name": "Chitin / chitosan fibre",
-      "gen": "fibre supplement",
-      "desc": "binds fat in the gut",
+      "grp": "Drugs",
+      "name": "Chitin or Chitosan fiber supplement",
       "type": "fixed",
       "doseText": "250 to 500 mg",
       "freqs": [
-        "twice daily"
+        "BID"
       ]
     },
     {
       "id": "omega3_hl",
       "sp": "dog",
-      "grp": "Supplements",
+      "grp": "Drugs",
       "name": "Omega-3 fatty acids",
-      "desc": "lowers triglycerides",
       "type": "calc",
       "lo": 70,
       "hi": 100,
       "unitDose": "mg",
       "freqs": [
-        "per day (total daily dose)"
-      ],
-      "note": "70–100 mg/kg/DAY. This is the combined EPA + DHA amount, not the total fish-oil weight."
+        "per DAY"
+      ]
     },
     {
       "id": "bezafibrate",
       "sp": "dog",
-      "grp": "Prescription",
+      "grp": "Drugs",
       "name": "Bezafibrate",
-      "desc": "fibrate that lowers triglycerides",
       "type": "calc",
       "lo": 4,
       "hi": 10,
       "unitDose": "mg",
       "freqs": [
-        "once daily"
-      ],
-      "note": "Reference case from the sheet: a 40 lb dog was maintained on 100 mg once daily."
+        "SID"
+      ]
     }
   ],
-  "notes": {
-    "When to act": "Most clinical signs occur once triglycerides are above 500 mg/dL (5.65 mmol/L), but many patients show no signs even above 1,000 mg/dL (11.3 mmol/L).",
-    "Confirm before treating": "If the first result was not from a fasted sample, recheck a value above 500 mg/dL on a fasted sample. If it is still above 500 mg/dL, look for an underlying cause.",
-    "Abdominal signs": "Anorexia, vomiting, diarrhea. Acute necrotizing pancreatitis.",
-    "Ocular signs": "Lipid keratopathy, arcus lipoides, stromal dystrophy, lipid in the aqueous humor, uveitis, blindness, and lipemia retinalis.",
-    "Skin signs": "Cutaneous xanthomata, pruritus, and alopecia. Xanthomas may also occur in liver, spleen, kidney, heart, skeletal muscle and intestine.",
-    "Neurological signs": "Seizures, behavioural changes, neuropathies and cerebral atherosclerosis. These usually do not appear until triglycerides exceed 1,000 mg/dL."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "diet",
-      "title": "Diet",
-      "on": true,
-      "text": "The single most important part of treatment is a low-fat diet.\n\n- Feed only the diet we have recommended.\n- No table scraps, fatty treats, chews, or food used to hide pills unless we have said it is low fat.\n- Everyone in the household needs to know, or the diet will not work."
-    },
-    {
-      "id": "recheck",
-      "title": "Recheck bloodwork",
-      "on": true,
-      "text": "We need to recheck {name}'s triglyceride level after about one month on the new diet.\n\nThis test must be done fasted — no food for 12 hours beforehand. Water is fine. A non-fasted sample cannot be interpreted."
-    },
-    {
-      "id": "watch",
-      "title": "Call us if you notice",
-      "on": true,
-      "text": "- Not eating, vomiting, or diarrhea\n- A painful or bloated belly, or a hunched posture\n- Cloudiness or colour change in the eyes, or bumping into things\n- Lumps or crusty patches in the skin\n- A seizure or any sudden change in behaviour\n\nHigh triglycerides can cause pancreatitis, which needs to be treated quickly."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "Please book {name}'s fasted recheck for about one month from today. Call us sooner if any of the signs above appear."
-    }
-  ]
+  "notes": [
+    "Diet change- low fat. Recheck fasting triglycerides after 1 month (goal is < 500)",
+    "Chitin or Chitosan fiber supplement. 250 to 500 mg BID",
+    "Omega-3 fatty acids: 70-100 mg/kg/day",
+    "Bezafibrate 4-10 mg/kg SID (Fiona Stocker on 100 mg SID, 40 lb dog)",
+    "Most clinical signs occur when triglycerides are >500 mg/dL (>5.65 mmol/L) but there are many patients who do not have clinical signs",
+    "even when the value is > 1,000 mg/dL (>11.3 mmol/L). Generally speaking, if the initial result was not on a fasted sample, a value >500 mg/dL (>5.65 mmol/L)",
+    "should be rechecked on a fasted sample and if still > 500 mg/dL (>5.65 mmol/L), underlying reasons for the elevated value should be explored.",
+    "Abdominal signs--anorexia, vomiting, diarrhea.",
+    "Acute necrotizing pancreatitis.",
+    "Ocular changes such as lipid keratopathy, arcus lipoides,",
+    "stromal dystrophy, lipid in the aqueous humor, uveitis, blindness, and lipemia retinalis.",
+    "Dermatological manifestations such as cutaneous xanthomata, pruritus, and alopecia.",
+    "Xanthomas may also be seen in organs (liver, spleen, kidney, heart, skeletal muscle and intestine).",
+    "Central nervous system disturbances such as seizures, behavioral changes, neuropathies,",
+    "and cerebral atherosclerosis. These signs do not usually occur until the triglycerides exceed 1000 mg/dL."
+  ],
+  "dischargeBlocks": []
 }

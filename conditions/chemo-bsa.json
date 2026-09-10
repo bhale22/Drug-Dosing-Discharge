@@ -1,43 +1,34 @@
 {
-  "title": "Body Surface Area (Chemo BSA)",
-  "desc": "Body surface area in m² from body weight, with common mg/m² doses converted to milligrams for the patient in front of you. Clinician reference.",
+  "title": "(BSA) Body Surface Area",
+  "desc": "Body surface area, Common mg/m² doses converted",
   "icon": "📐",
   "code": "REF-BSA",
   "discharge": "BSA Reference",
-  "species": ["dog"],
+  "species": [
+    "dog"
+  ],
   "noDischarge": true,
   "bands": {},
   "meds": [
     {
-      "id": "bsa_calc",
+      "id": "bsa_xref",
       "sp": "dog",
-      "grp": "Body surface area",
-      "name": "Body surface area",
-      "desc": "BSA = 0.101 × kg^(2/3)",
-      "type": "protocol",
-      "chipFn": "(kg,lb)=>(Math.round(0.101*Math.pow(kg,2/3)*1000)/1000)+' m2'",
-      "bodyFn": "(kg,lb)=>'BSA = 0.101 &times; kg<sup>2/3</sup> = 0.101 &times; '+R2(kg)+'<sup>2/3</sup> = <strong>'+(Math.round(0.101*Math.pow(kg,2/3)*1000)/1000)+' m&sup2;</strong>'",
-      "lineFn": "(kg,lb)=>'body surface area '+(Math.round(0.101*Math.pow(kg,2/3)*1000)/1000)+' m2 ('+R2(kg)+' kg)'"
-    },
-    {
-      "id": "bsa_table",
-      "sp": "dog",
-      "grp": "Body surface area",
-      "name": "Common mg/m² doses converted",
-      "desc": "the amount to give at each per-m² dose",
+      "grp": "Dose (mg/m2)",
+      "name": "Amt to give (mg/m2 * m2)",
       "type": "protocol",
       "chipFn": "(kg,lb)=>'see table'",
       "bodyFn": "(kg,lb)=>{var b=0.101*Math.pow(kg,2/3);var d=[0.5,5,10,20,25,30,40,50,60,75,100,150,200,250,300];return d.map(function(x){return x+' mg/m&sup2; &rarr; <strong>'+fmtMg(x*b)+' mg</strong>';}).join(' &nbsp;&middot;&nbsp; ');}",
-      "lineFn": "(kg,lb)=>'dose = (mg/m2) x '+(Math.round(0.101*Math.pow(kg,2/3)*1000)/1000)+' m2'",
-      "note": "Multiply any per-m² dose by the BSA above. The sheet also cross-checks 0.02 mg/kg against 0.5 mg/m² — for a typical dog these land close together, but they diverge sharply at the extremes of size, which is the whole reason BSA is used for cytotoxics."
+      "lineFn": "(kg,lb)=>'BSA '+(Math.round(0.101*Math.pow(kg,2/3)*1000)/1000)+' m2; dose = (mg/m2) x BSA'"
     }
   ],
-  "notes": {
-    "Formula": "BSA (m²) = 0.101 × body weight in kg raised to the power 2/3. This is the standard canine conversion, and the one the source spreadsheet uses.",
-    "Why BSA and not mg/kg": "Cytotoxic drugs are dosed per square metre because surface area tracks metabolic rate better than weight does. Dosing a very small dog by mg/kg overdoses it relative to a large one.",
-    "Worked check": "A 22.5 kg dog has a BSA of 0.806 m². A 2.27 kg dog (5 lb) has a BSA of 0.175 m².",
-    "Small patients": "Below about 10 kg, BSA-based dosing of cytotoxics can overdose the patient. Many protocols switch to mg/kg under that threshold — check the specific protocol before relying on the per-m² figure.",
-    "Handling": "Cytotoxic drugs need cytotoxic handling — closed systems, gloves, and appropriate disposal of waste and patient excreta."
-  },
-  "dischargeBlocks": []
+  "notes": [
+    ".02 mg/kg",
+    ".5 mg/m2"
+  ],
+  "dischargeBlocks": [],
+  "headerCalc": {
+    "label": "BSA",
+    "unit": "m²",
+    "fn": "(kg,lb)=>(Math.round(0.101*Math.pow(kg,2/3)*1000)/1000)"
+  }
 }

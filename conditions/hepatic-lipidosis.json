@@ -1,162 +1,146 @@
 {
   "title": "Hepatic Lipidosis",
-  "desc": "Sharon Center's feline hepatic lipidosis protocol — feeding tube first, l-carnitine, taurine, B vitamins, zinc, vitamin E, SAMe or NAC, and the fluid and refeeding cautions.",
+  "desc": "L-carnitine, Taurine, Water-soluble vitamins, Thiamine, Vitamin B12 (cobalamin), Zinc, Vitamin E, SAMe, N-acetylcysteine, Fish oil",
   "icon": "🐈",
   "code": "HEP-LIP",
   "discharge": "Hepatic Lipidosis",
-  "species": ["cat"],
+  "species": [
+    "cat"
+  ],
   "bands": {},
   "meds": [
     {
       "id": "lcarnitine_hl",
       "sp": "cat",
-      "grp": "Core supplements",
+      "grp": "Drugs",
       "name": "L-carnitine",
-      "desc": "the single biggest survival gain in this protocol",
       "type": "fixed",
-      "doseText": "250 to 500 mg",
-      "freqs": ["per day"],
-      "note": "Dr Center reports survival rising from 62.5% to 85.3% with the addition of l-carnitine to the protocol."
+      "doseText": "250-500 mg/day",
+      "freqs": [
+        "per day"
+      ]
     },
     {
       "id": "taurine_hl",
       "sp": "cat",
-      "grp": "Core supplements",
+      "grp": "Drugs",
       "name": "Taurine",
-      "desc": "essential amino acid in cats",
       "type": "fixed",
-      "doseText": "250 to 500 mg",
-      "freqs": ["per day"]
+      "doseText": "250-500 mg/day",
+      "freqs": [
+        "per day"
+      ]
     },
     {
       "id": "watersol_hl",
       "sp": "cat",
-      "grp": "Core supplements",
+      "grp": "Drugs",
       "name": "Water-soluble vitamins",
-      "desc": "B-complex and vitamin C",
       "type": "fixed",
-      "doseText": "twice the normal maintenance dose",
-      "freqs": ["daily"]
+      "doseText": "two-fold normal maintenance dose daily",
+      "freqs": [
+        "daily"
+      ]
     },
     {
       "id": "thiamine_hl",
       "sp": "cat",
-      "grp": "Core supplements",
+      "grp": "Drugs",
       "name": "Thiamine",
-      "desc": "only if there is ventroflexion of the neck",
       "type": "fixed",
-      "doseText": "100 to 200 mg per day for 3 days",
-      "freqs": [""],
-      "note": "Give if the cat shows ventroflexion of the neck. Ventroflexion in a cat is also a classic sign of hypokalaemia — check potassium as well."
+      "doseText": "100-200 mg/day for 3 days",
+      "freqs": [
+        ""
+      ]
     },
     {
       "id": "b12_hl",
       "sp": "cat",
-      "grp": "Core supplements",
-      "name": "Vitamin B12 (cobalamin)",
-      "desc": "given by injection",
+      "grp": "Drugs",
+      "name": "B12",
       "type": "fixed",
-      "doseText": "1 mg IM",
-      "freqs": [""],
+      "doseText": "1mg IM",
+      "freqs": [
+        ""
+      ],
       "inClinic": true
     },
     {
       "id": "zinc_hl",
       "sp": "cat",
-      "grp": "Core supplements",
+      "grp": "Drugs",
       "name": "Zinc",
-      "desc": "hepatic support",
       "type": "fixed",
-      "doseText": "7 to 8 mg",
-      "freqs": ["per day"]
+      "doseText": "7-8 mg/day",
+      "freqs": [
+        "per day"
+      ]
     },
     {
       "id": "vite_hl",
       "sp": "cat",
-      "grp": "Core supplements",
+      "grp": "Drugs",
       "name": "Vitamin E",
-      "gen": "alpha tocopherol acetate",
-      "desc": "antioxidant, given by mouth",
       "type": "fixed",
-      "doseText": "100 to 200 IU per os",
-      "freqs": ["per day"]
+      "doseText": "100-200 IU/day alpha tocopherol acetate per os",
+      "freqs": [
+        "per day"
+      ]
     },
     {
       "id": "same_hl",
       "sp": "cat",
-      "grp": "Glutathione source",
+      "grp": "Drugs",
       "name": "SAMe",
-      "desc": "glutathione source, oral",
       "type": "fixed",
-      "doseText": "200 mg",
-      "freqs": ["per day"],
-      "note": "Either SAMe or N-acetylcysteine — SAMe once the cat is being fed enterally, NAC while it is not."
+      "doseText": "200 mg/day",
+      "freqs": [
+        "per day"
+      ]
     },
     {
       "id": "nac_hl",
       "sp": "cat",
-      "grp": "Glutathione source",
+      "grp": "Drugs",
       "name": "N-acetylcysteine",
-      "desc": "IV glutathione source, before enteral feeding is established",
       "type": "calc",
       "lo": 70,
       "hi": 70,
       "unitDose": "mg",
-      "freqs": ["IV twice daily until enteral feeding is established"],
-      "inClinic": true,
-      "note": "LOADING DOSE 140 mg/kg IV first, then 70 mg/kg IV BID (the figure calculated above is the maintenance dose, not the load) until enteral feeding is established."
+      "freqs": [
+        "IV BID until enteral feeding is established"
+      ],
+      "inClinic": true
     },
     {
       "id": "fishoil_hl",
       "sp": "cat",
-      "grp": "If the primary process is inflammatory",
+      "grp": "Drugs",
       "name": "Fish oil",
-      "desc": "omega-3 polyunsaturated fatty acids",
       "type": "fixed",
-      "doseText": "2000 mg",
-      "freqs": ["per day"],
-      "note": "Supplies omega-3 PUFAs, which are anti-inflammatory if the primary process is an inflammatory one."
+      "doseText": "2000 mg/day",
+      "freqs": [
+        "per day"
+      ]
     }
   ],
-  "notes": {
-    "Source": "Treatment of hepatic lipidosis after Sharon Center.",
-    "Protein": "Do NOT feed a diet low in protein. Protein restriction is the classic mistake in these cats.",
-    "Underlying disease": "Treat the underlying disease — hepatic lipidosis is almost always secondary to something else.",
-    "Before a feeding tube": "Check for bleeding tendencies (low vitamin K) BEFORE placing an esophagostomy or PEG tube.",
-    "Fluids": "Avoid lactate- and dextrose-containing fluids.",
-    "Electrolytes": "Supplement potassium and phosphorus as needed, and watch for hypophosphataemia developing after refeeding begins.",
-    "Carnitine": "Dr Center has seen survival rise from 62.5% to 85.3% with l-carnitine added to the protocol."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "what",
-      "title": "What has happened",
-      "on": true,
-      "text": "When a cat stops eating, the body moves fat into the liver faster than the liver can process it. The liver becomes clogged with fat and stops working properly, and the cat feels too ill to eat — which makes it worse.\n\nBreaking that cycle means getting food into {name} reliably, every day, whether or not there is any appetite. That is the whole treatment."
-    },
-    {
-      "id": "tube",
-      "title": "The feeding tube",
-      "on": false,
-      "text": "The feeding tube is not a sign that things have gone badly — it is the treatment, and it is what turns this condition around.\n\n- Feed the amounts we have written down, at the times we have written down, even if {name} seems to be eating a little alone.\n- Warm the food to about body temperature and give it slowly.\n- Flush the tube with water before and after every feed.\n- Keep the bandage clean and dry, and look at the skin around the tube each day.\n\nDo not remove the tube yourself, and do not stop using it once {name} starts to nibble — we will tell you when it can come out."
-    },
-    {
-      "id": "food",
-      "title": "Food",
-      "on": true,
-      "text": "{name} needs a high-protein diet. Please do not switch to a low-protein or \"liver\" diet, and do not give a home-cooked diet unless we have designed it — protein restriction makes this condition worse, not better."
-    },
-    {
-      "id": "call",
-      "title": "Call us if",
-      "on": true,
-      "text": "- {name} vomits repeatedly, or vomits after tube feeds\n- The tube becomes blocked, moves, or comes out\n- The skin around the tube is red, swollen, smelly or discharging\n- {name} becomes weak, floppy, or cannot hold the head up normally\n- There is any yellow colour to the gums, eyes or skin\n\nA cat that cannot hold its head up needs to be seen the same day."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "We need to recheck {name} and repeat bloodwork on the schedule we discussed. Recovery takes weeks and the tube usually stays in for most of that — please keep every appointment even when {name} looks better."
-    }
-  ]
+  "notes": [
+    "Treatment of Hepatic Lipidosis (Sharon Center)",
+    "Do not feed a diet low in protein.",
+    "Treat underlying disease.",
+    "Check for bleeding tendencies (low vitamin K) before placing esophagostomy tube or PEG tube.",
+    "Avoid lactate and dextrose containing fluids.",
+    "Potassium and phosphorus supplementation as needed. Be aware of hypophospatemia subsequent to refeeding.",
+    "l-Carnitine 250-500 mg/day",
+    "Taurine 250-500 mg/day",
+    "Water soluble vitamins: two-fold normal maintenance dose daily",
+    "Thiamine if ventroflexion (100-200 mg/day for 3 days)",
+    "B12: 1mg IM",
+    "Zinc 7-8 mg/day",
+    "Vitamin E 100-200 IU/day alpha tocopherol acetate per os",
+    "SAMe as a glutathione source (200 mg/day) or n-acetylcysteine (140 mg/kg IV as a loading dose than 70 mg/kg IV BID until enteral feeding established).",
+    "Fish Oil: 2000 mg/day supplies omega 3-poylunsaturated faty acids which are anti-inflammatory if the primary process is inflammatory.",
+    "Dr. Center has seen an increased survival rate in the treatment of HL from 62.5% to 85.3% with the addition of l-carnitine to her treatment protocol."
+  ],
+  "dischargeBlocks": []
 }

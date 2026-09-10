@@ -1,145 +1,226 @@
 {
-  "title": "Oral Sedation / Chill Protocol",
-  "desc": "Pre-visit sedation for dogs — the gabapentin + melatonin + acepromazine Chill Protocol, the Ace/Telazol meatball for severe cases, phenobarb + gabapentin, and trazodone with its weight chart. Clinician reference.",
+  "title": "Chill Protocol",
+  "desc": "Gabapentin, Melatonin, Acepromazine, Acepromazine in a meatball, Telazol in a meatball, Oral phenobarbital, Trazodone",
   "icon": "😴",
   "code": "SEDATION",
   "discharge": "Pre-Visit Sedation",
-  "species": ["dog"],
+  "species": [
+    "dog"
+  ],
   "noDischarge": true,
   "bands": {
     "traz_os": [
-      { "min": 0, "max": 22, "lb": "Under 22 lb (under 10 kg)", "init": "≤ 25 mg q 8–24 h × 3 d", "text": "≤ 50 mg q 8–24 h" },
-      { "min": 22, "max": 44, "lb": "22 to 44 lb (10–20 kg)", "init": "50 mg q 12–24 h × 3 d", "text": "100 mg q 8–24 h" },
-      { "min": 44, "max": 88, "lb": "44 to 88 lb (20–40 kg)", "init": "100 mg q 12–24 h × 3 d", "text": "200 mg q 8–24 h" },
-      { "min": 88, "max": 300, "lb": "Over 88 lb (over 40 kg)", "init": "100 mg q 12–24 h × 3 d", "text": "200 to 300 mg q 8–24 h" }
+      {
+        "min": 0,
+        "max": 22,
+        "lb": "Under 22 lb (under 10 kg)",
+        "init": "≤ 25 mg q 8–24 h × 3 d",
+        "text": "≤ 50 mg q 8–24 h"
+      },
+      {
+        "min": 22,
+        "max": 44,
+        "lb": "22 to 44 lb (10–20 kg)",
+        "init": "50 mg q 12–24 h × 3 d",
+        "text": "100 mg q 8–24 h"
+      },
+      {
+        "min": 44,
+        "max": 88,
+        "lb": "44 to 88 lb (20–40 kg)",
+        "init": "100 mg q 12–24 h × 3 d",
+        "text": "200 mg q 8–24 h"
+      },
+      {
+        "min": 88,
+        "max": 300,
+        "lb": "Over 88 lb (over 40 kg)",
+        "init": "100 mg q 12–24 h × 3 d",
+        "text": "200 to 300 mg q 8–24 h"
+      }
     ]
   },
   "meds": [
     {
       "id": "gaba_night",
       "sp": "dog",
-      "grp": "Chill Protocol — night before the appointment",
+      "grp": "Chill Protocol — Night Before Appt",
       "name": "Gabapentin",
-      "gen": "caps 100 / 300 / 400 mg; tabs 600 / 800 mg; solution 50 mg/ml",
-      "desc": "first of two doses",
+      "gen": "Caps 100, 300, 400 / Tabs 600, 800 / Soln 50 mg/ml",
       "type": "calc",
       "lo": 20,
       "hi": 25,
       "unitDose": "mg",
-      "freqs": ["the night before the appointment"],
-      "note": "20–25 mg/kg. Round to the nearest capsule — exact milligrams matter less than getting a generous dose in the night before."
+      "freqs": [
+        "the night before the appointment"
+      ]
     },
     {
       "id": "gaba_2hr",
       "sp": "dog",
-      "grp": "Chill Protocol — 2 hours before",
+      "grp": "Chill Protocol — 2 hrs before Appt",
       "name": "Gabapentin",
-      "desc": "second dose",
       "type": "calc",
       "lo": 20,
       "hi": 25,
       "unitDose": "mg",
-      "freqs": ["2 hours before the appointment"]
+      "freqs": [
+        "2 hours before the appointment"
+      ]
     },
     {
       "id": "melatonin_os",
       "sp": "dog",
-      "grp": "Chill Protocol — 2 hours before",
+      "grp": "Chill Protocol — 2 hrs before Appt",
       "name": "Melatonin",
-      "desc": "dosed by rough size band, not mg/kg",
       "type": "fixed",
-      "doseText": "0.5 to 1 mg for a small dog, 1 to 3 mg for a medium dog, 5 mg for a large dog",
-      "freqs": ["2 hours before the appointment"]
+      "doseText": "0.5 to 1 mg for small dog, 1-3 mg for med dog, 5 mg for large dog",
+      "freqs": [
+        "2 hours before the appointment"
+      ]
     },
     {
       "id": "ace_os",
       "sp": "dog",
-      "grp": "Chill Protocol — 30 minutes before",
+      "grp": "Chill Protocol — 30 min before app",
       "name": "Acepromazine",
-      "gen": "10 mg/ml injectable solution, given transmucosally",
-      "desc": "transmucosal, into the cheek pouch",
       "type": "calc",
       "lo": 0.025,
       "hi": 0.05,
       "unitDose": "mg",
-      "freqs": ["30 minutes before the appointment"],
-      "note": "0.025–0.05 mg/kg. Using the 10 mg/ml solution, divide the milligrams above by 10 to get the volume in ml. Given TRANSMUCOSALLY into the cheek pouch, not swallowed."
+      "freqs": [
+        "30 minutes before the appointment"
+      ]
     },
     {
       "id": "ace_meatball",
       "sp": "dog",
-      "grp": "For very difficult dogs",
+      "grp": "For Horrible Dogs",
       "name": "Acepromazine in a meatball",
       "gen": "10 mg/ml",
-      "desc": "injected into a meatball and offered",
       "type": "calc",
       "lo": 2.2,
       "hi": 2.2,
       "unitDose": "mg",
-      "freqs": ["before the appointment"],
-      "note": "2.2 mg/kg of the 10 mg/ml solution injected into a meatball — divide the milligrams by 10 for ml. Give with the Telazol below. May instead be mixed into a SMALL volume of ice cream so it coats the tongue and lips for transmucosal absorption; consider the lower end of the dose range if given that way."
+      "freqs": [
+        "before the appointment"
+      ]
     },
     {
       "id": "telazol_meatball",
       "sp": "dog",
-      "grp": "For very difficult dogs",
+      "grp": "For Horrible Dogs",
       "name": "Telazol in a meatball",
       "gen": "100 mg/ml",
-      "desc": "given with the acepromazine",
       "type": "calc",
       "lo": 10,
       "hi": 20,
       "unitDose": "mg",
-      "freqs": ["before the appointment"],
-      "note": "10–20 mg/kg of the 100 mg/ml solution — divide the milligrams above by 100 for ml. Injected into a meatball alongside the acepromazine, or mixed into a small volume of ice cream for transmucosal absorption."
+      "freqs": [
+        "before the appointment"
+      ]
     },
     {
       "id": "phenobarb_os",
       "sp": "dog",
-      "grp": "Alternative — phenobarb + gabapentin",
-      "name": "Oral phenobarbital",
-      "desc": "combined with gabapentin",
+      "grp": "Oral Phenobarb + Gabapentin",
+      "name": "Phenobarb",
       "type": "calc",
       "lo": 10,
       "hi": 10,
       "unitDose": "mg",
-      "freqs": ["before the appointment"],
-      "note": "Oral phenobarb 10 mg/kg combined with gabapentin 10–40 mg/kg."
+      "freqs": [
+        "before the appointment"
+      ]
     },
     {
       "id": "gaba_combo",
       "sp": "dog",
-      "grp": "Alternative — phenobarb + gabapentin",
+      "grp": "Oral Phenobarb + Gabapentin",
       "name": "Gabapentin",
-      "desc": "combined with the phenobarbital",
       "type": "calc",
       "lo": 10,
       "hi": 40,
       "unitDose": "mg",
-      "freqs": ["before the appointment"],
-      "note": "10–40 mg/kg. The wide range is deliberate — start at the low end in an older or compromised dog."
+      "freqs": [
+        "before the appointment"
+      ]
     },
     {
       "id": "trazodone_os",
       "sp": "dog",
-      "grp": "Alternative — trazodone",
+      "grp": "Trazodone",
       "name": "Trazodone",
-      "desc": "dosed as a total amount per dog, not per kg",
       "type": "weightText",
       "bandKey": "traz_os",
-      "freqs": ["before the appointment"],
-      "chartCols": ["Weight", "Initiation dose", "Target dose"],
-      "chartRowFields": ["lb", "init", "text"],
-      "chartNote": "Trazodone is dosed as a TOTAL dose per dog, not mg/kg. As a cross-check the sheet also gives 5–10 mg/kg.",
-      "note": "Cross-check against 5–10 mg/kg. Run the initiation dose for about 3 days before the appointment where there is time."
+      "freqs": [
+        "before the appointment"
+      ],
+      "chartCols": [
+        "Weight",
+        "Initiation dose",
+        "Target dose"
+      ],
+      "chartRowFields": [
+        "lb",
+        "init",
+        "text"
+      ]
     }
   ],
-  "notes": {
-    "Chill Protocol timing": "Gabapentin 20–25 mg/kg the NIGHT BEFORE; gabapentin 20–25 mg/kg again plus melatonin 2 HOURS BEFORE; acepromazine 0.025–0.05 mg/kg transmucosally 30 MINUTES BEFORE. The night-before dose is the one most often skipped, and the one that makes the difference.",
-    "Gabapentin formulations": "Capsules 100, 300 and 400 mg; tablets 600 and 800 mg; oral solution 50 mg/ml. Avoid xylitol-containing liquid preparations.",
-    "For very difficult dogs": "A meatball injected with acepromazine 2.2 mg/kg and Telazol 10–20 mg/kg. Alternatively mixed with ice cream — ideally a small volume so it coats the tongue and lips for transmucosal absorption, though a lower dose may be appropriate given that route.",
-    "Acepromazine transmucosal": "The 10 mg/ml injectable is placed in the cheek pouch rather than swallowed. Divide milligrams by 10 for the volume in ml.",
-    "Trazodone dosing": "The chart is a total dose per dog, not mg/kg. Cross-check against 5–10 mg/kg."
-  },
+  "notes": [
+    "TRAZODONE",
+    "ORAL SEDATION",
+    "Initiation dosing range",
+    "Target dosing range",
+    "(per dog, not mg/kg)",
+    "< 10",
+    "< 22",
+    "≤ 25 mg q 8–24 hr x 3 d",
+    "≤ 50 mg q 8–24 hr",
+    "≥ 10–20",
+    "≥ 22–44",
+    "50 mg q 12–24 hr x 3 d",
+    "100 mg q 8–24 hr",
+    "Chill Protocol",
+    "≥ 20–40",
+    "≥ 44–88",
+    "100 mg q 12–24 hr x 3 d",
+    "200 mg q 8–24 hr",
+    "\"Chill Protocol\"",
+    "> 40",
+    "> 88",
+    "200–300 mg q 8–24 hr",
+    "Night Before Appt:",
+    "Gabapentin 20 to 25 mg/kg",
+    "2 hrs before Appt:",
+    "Melatonin",
+    "0.5 to 1 mg for small dog",
+    "1-3 mg for med dog",
+    "5 mg for large dog",
+    "30 min before app:",
+    "Acepromazine 0.025-.05 mg/kg",
+    "ml of 10 mg/ml ACE Transumcosal",
+    "For Horrible Dogs",
+    "Meatball injected with Ace 2.2 mg/kg and Telazol 10 to 20 mg/kg",
+    "Liquid volume:",
+    "Gabapentin",
+    "100, 300, 400",
+    "Ace (10 mg/ml)",
+    "Telazol (100 mg/ml)",
+    "600, 800",
+    "Or mixed with ice cream- ideally small volume of ice cream so coats tongue/lips for transmucosal absorption",
+    "(but may need to give lower end of dosing for transmucosal absorption?)",
+    "50 mg/ml",
+    "Oral Phenobarb 10 mg/kg + Gabapentin 10 to 40mg/kg combined",
+    "mg (max)",
+    "Phenobarb 10 mg/kg",
+    "Gabapentin 10 to 40 mg/kg",
+    "mg up to",
+    "mg (40 mg/kg)",
+    "Trazodone 5 to 10 mg/kg",
+    "mg to",
+    "mg (10 mg/kg)"
+  ],
   "dischargeBlocks": []
 }

@@ -1,187 +1,234 @@
 {
   "title": "Thunderstorm Phobia",
-  "desc": "Daily SSRIs (fluoxetine, sertraline) plus event medication given before the storm — alprazolam, trazodone with its weight chart, diazepam, lorazepam, atenolol, clonidine and Sileo.",
+  "desc": "Fluoxetine, Sertraline, Alprazolam, Trazodone, Diazepam, Lorazepam, Atenolol, Clonidine, Sileo",
   "icon": "⛈",
   "code": "BEHAV-TS",
   "discharge": "Storm & Noise Fear",
-  "species": ["dog"],
+  "species": [
+    "dog"
+  ],
   "bands": {
     "traz_ts": [
-      { "min": 0, "max": 22, "lb": "Under 22 lb (under 10 kg)", "init": "≤ 25 mg q 8–24 h", "text": "≤ 50 mg q 8–24 h" },
-      { "min": 22, "max": 44, "lb": "22 to 44 lb (10–20 kg)", "init": "50 mg q 12–24 h", "text": "100 mg q 8–24 h" },
-      { "min": 44, "max": 88, "lb": "44 to 88 lb (20–40 kg)", "init": "100 mg q 12–24 h", "text": "200 mg q 8–24 h" },
-      { "min": 88, "max": 300, "lb": "Over 88 lb (over 40 kg)", "init": "100 mg q 12–24 h", "text": "200 to 300 mg q 8–24 h" }
+      {
+        "min": 0,
+        "max": 22,
+        "lb": "Under 22 lb (under 10 kg)",
+        "init": "≤ 25 mg q 8–24 h",
+        "text": "≤ 50 mg q 8–24 h"
+      },
+      {
+        "min": 22,
+        "max": 44,
+        "lb": "22 to 44 lb (10–20 kg)",
+        "init": "50 mg q 12–24 h",
+        "text": "100 mg q 8–24 h"
+      },
+      {
+        "min": 44,
+        "max": 88,
+        "lb": "44 to 88 lb (20–40 kg)",
+        "init": "100 mg q 12–24 h",
+        "text": "200 mg q 8–24 h"
+      },
+      {
+        "min": 88,
+        "max": 300,
+        "lb": "Over 88 lb (over 40 kg)",
+        "init": "100 mg q 12–24 h",
+        "text": "200 to 300 mg q 8–24 h"
+      }
     ]
   },
   "meds": [
     {
       "id": "fluoxetine_ts",
       "sp": "dog",
-      "grp": "Daily background medication",
+      "grp": "Drugs",
       "name": "Fluoxetine",
       "gen": "Prozac",
-      "desc": "daily SSRI that lowers the overall anxiety level",
       "type": "calc",
       "lo": 1,
       "hi": 2,
       "unitDose": "mg",
-      "freqs": ["once daily"],
-      "note": "1–2 mg/kg SID. Can be used seasonally — wean off by 25% a week at the end of storm season rather than stopping abruptly. It is fine to switch directly between Prozac and Zoloft without tapering."
+      "freqs": [
+        "SID"
+      ]
     },
     {
       "id": "sertraline_ts",
       "sp": "dog",
-      "grp": "Daily background medication",
+      "grp": "Drugs",
       "name": "Sertraline",
       "gen": "Zoloft",
-      "desc": "daily SSRI, gentler on the stomach",
       "type": "calc",
       "lo": 2,
       "hi": 4,
       "unitDose": "mg",
-      "freqs": ["once daily", "divided twice daily (1–2 mg/kg q 12 h)"],
-      "note": "2–4 mg/kg/day, though it is often dosed at 1–2 mg/kg q 12 h. Sertraline has fewer GI side effects than the other SSRIs and is the drug of choice for patients with underlying gastrointestinal disease. OK to switch directly between Zoloft and Prozac without tapering."
+      "freqs": [
+        "SID",
+        "divided BID (1–2 mg/kg q 12 h)"
+      ]
     },
     {
       "id": "alprazolam_ts",
       "sp": "dog",
-      "grp": "Before the storm",
+      "grp": "Drugs",
       "name": "Alprazolam",
       "gen": "Xanax — 0.25, 0.5, 1, 2 mg tabs",
-      "desc": "fast-acting anxiolytic",
       "type": "calc",
       "lo": 0.02,
       "hi": 0.1,
       "unitDose": "mg",
-      "freqs": ["1 hour before the storm"],
-      "note": "Duration 3 to 8 hours. Try 0.02 mg/kg as a TEST DOSE on a calm day — if there is no sedation that is good, and you can work the dose up gradually. If the dog becomes agitated instead, switch to lorazepam (Ativan) at the same dosing."
+      "freqs": [
+        "1 hour before the storm"
+      ]
     },
     {
       "id": "trazodone_ts",
       "sp": "dog",
-      "grp": "Before the storm",
-      "name": "Trazodone",
+      "grp": "Drugs",
+      "name": "Trazadone",
       "gen": "50, 100, 150, 300 mg tabs",
-      "desc": "dosed as a total amount per dog, not per kg",
       "type": "weightText",
       "bandKey": "traz_ts",
-      "freqs": ["1 hour before the storm"],
-      "chartCols": ["Weight", "Initiation dose (3 days)", "Target dose"],
-      "chartRowFields": ["lb", "init", "text"],
-      "chartNote": "Trazodone is dosed as a TOTAL dose per dog, not mg/kg. Start at the initiation dose for about 3 days, then move to the target dose. As a cross-check, 3–5 mg/kg is the usual starting range with 10 mg/kg the maximum.",
-      "note": "Duration 4 to 8 hours. The chart gives a total dose per dog. Cross-check against 3–5 mg/kg, maximum 10 mg/kg."
+      "freqs": [
+        "1 hour before the storm"
+      ],
+      "chartCols": [
+        "Weight",
+        "Initiation dose (3 days)",
+        "Target dose"
+      ],
+      "chartRowFields": [
+        "lb",
+        "init",
+        "text"
+      ]
     },
     {
       "id": "diazepam_ts",
       "sp": "dog",
-      "grp": "Before the storm",
+      "grp": "Drugs",
       "name": "Diazepam",
       "gen": "Valium — 2, 5, 10 mg tabs",
-      "desc": "benzodiazepine, as needed",
       "type": "calc",
       "lo": 0.5,
       "hi": 2.2,
       "unitDose": "mg",
-      "freqs": ["1 hour before the storm, as needed"]
+      "freqs": [
+        "1 hour before the storm, as needed"
+      ]
     },
     {
       "id": "lorazepam_ts",
       "sp": "dog",
-      "grp": "Before the storm",
+      "grp": "Drugs",
       "name": "Lorazepam",
       "gen": "Ativan — 0.5, 1, 2 mg tabs",
-      "desc": "benzodiazepine; the one to try if alprazolam causes agitation",
       "type": "calc",
       "lo": 0.02,
       "hi": 0.1,
       "unitDose": "mg",
-      "freqs": ["1 hour before the storm, then every 8 to 12 hours"],
-      "note": "Same dosing as alprazolam. This is the swap to make if a dog becomes agitated rather than settled on alprazolam."
+      "freqs": [
+        "1 hour before the storm, then q 8-12 h"
+      ]
     },
     {
       "id": "atenolol_ts",
       "sp": "dog",
-      "grp": "Before the storm",
+      "grp": "Drugs",
       "name": "Atenolol",
       "gen": "25, 50, 100 mg tabs",
-      "desc": "beta blocker — takes the racing heart out of the fear",
       "type": "calc",
       "lo": 0.25,
       "hi": 1,
       "unitDose": "mg",
-      "freqs": ["1 hour before the storm"],
-      "note": "A beta blocker, used here to reduce the tachycardia that feeds the panic."
+      "freqs": [
+        "1 hour before the storm"
+      ]
     },
     {
       "id": "clonidine_ts",
       "sp": "dog",
-      "grp": "Before the storm",
+      "grp": "Drugs",
       "name": "Clonidine",
-      "desc": "alpha-2 agonist",
       "type": "calc",
       "lo": 0.01,
       "hi": 0.05,
       "unitDose": "mg",
-      "freqs": ["1.5 to 2 hours before the storm"],
-      "note": "Needs a longer lead time than the benzodiazepines — 1.5 to 2 hours ahead."
+      "freqs": [
+        "1.5 to 2 hours before the storm"
+      ]
     },
     {
       "id": "sileo_ts",
       "sp": "dog",
-      "grp": "Before the storm",
+      "grp": "Drugs",
       "name": "Sileo",
-      "gen": "dexmedetomidine oromucosal gel",
-      "desc": "alpha-2 agonist gel, licensed for noise aversion",
       "type": "fixed",
-      "doseText": "Sileo gel at the label dose for the dog's weight",
-      "freqs": [""],
-      "note": "Dosed from the syringe scale by weight, placed between cheek and gum — not swallowed. Listed on the source sheet without a dose."
+      "doseText": "Sileo (alpha-2 Agonist)",
+      "freqs": [
+        ""
+      ]
     }
   ],
-  "notes": {
-    "Two halves of the plan": "A daily background medication (an SSRI) lowers the baseline anxiety over weeks; an event medication given before the storm covers the storm itself. Severe cases need both.",
-    "Test the event drug first": "Try alprazolam at 0.02 mg/kg as a test dose on a calm day. No sedation is a good result and the dose can be worked up gradually. If the dog becomes agitated rather than calm, switch to lorazepam at the same dosing — paradoxical excitation is not rare.",
-    "Seasonal use": "Fluoxetine can be used seasonally; wean off by 25% a week rather than stopping abruptly.",
-    "Switching SSRIs": "It is fine to switch directly between Zoloft and Prozac without tapering.",
-    "Sertraline and the gut": "Sertraline has fewer GI side effects than the other SSRIs, which makes it the choice where there is underlying gastrointestinal disease.",
-    "Durations": "Alprazolam lasts 3 to 8 hours; trazodone 4 to 8 hours. Match the drug to how long the weather is going to last."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "what",
-      "title": "What we are treating",
-      "on": true,
-      "text": "Storm fear is a panic response, not disobedience. {name} is not being naughty, and cannot simply be reassured out of it.\n\nWe treat it in two parts: a daily medication that lowers the background anxiety over several weeks, and a dose given before a storm to cover the storm itself."
-    },
-    {
-      "id": "timing",
-      "title": "Give the storm dose EARLY",
-      "on": true,
-      "text": "This is the part owners most often get wrong.\n\n- Give the storm medication about an hour BEFORE the weather arrives — watch the forecast, do not wait for the first rumble.\n- Once {name} is already panicking the medication works far less well.\n- If you are going out and storms are forecast, give it before you leave."
-    },
-    {
-      "id": "testdose",
-      "title": "Try a test dose on a calm day",
-      "on": true,
-      "text": "Please give the first dose on a quiet day when no storm is coming, so we can see how {name} responds without the panic on top.\n\n- A little sleepiness, or no obvious change at all, is fine — we can adjust upward.\n- If {name} becomes MORE agitated, restless or disoriented, stop and call us. That happens occasionally and simply means we need a different drug.\n\nTell us what you saw and we will adjust from there."
-    },
-    {
-      "id": "daily",
-      "title": "The daily medication",
-      "on": false,
-      "text": "The daily tablet works gradually — expect 4 to 6 weeks before you see the full benefit. It is not a sedative and you should not see {name} become dopey.\n\nDo not stop it suddenly. If we decide to come off it at the end of storm season we will reduce the dose in steps over several weeks."
-    },
-    {
-      "id": "environment",
-      "title": "What else helps",
-      "on": true,
-      "text": "- Give {name} a safe place to go: an interior room, a covered crate, or a basement — somewhere with no windows if possible.\n- Background noise helps mask the thunder — a fan, music or the television.\n- Comforting {name} is fine. You cannot reinforce fear by being kind.\n- Never punish or force {name} out of a hiding place."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "Please let us know how the test dose went and how the first real storm goes. Getting the drug and the dose right usually takes a couple of adjustments — that is normal, and we would rather hear from you than have you give up on it."
-    }
-  ]
+  "notes": [
+    "Thunderstorm phobia",
+    "Fluoxetine 1 to 2 mg/kg SID",
+    "(1 mg/kg)",
+    "mg SID",
+    "Seasonal (wean off 25% a week)",
+    "Sertraline 2 to 4 mg/kg SID",
+    "(2 mg/kg)",
+    "Sertraline has fewer GI side effects than other SSRI’s and is",
+    "Zoloft- OK to switch between Zoloft and Prozac directly (without tapering)",
+    "the medication of choice for those patients with underlying gastrointestinal disease",
+    "The dose for sertraline is 2–4 mg/kg/day however, it is often dosed at 1–2 mg/kg every 12 hr",
+    "Dose (mg) 0.04 mg/kg",
+    "Alprazolam",
+    ".02-.1 mg/kg",
+    "mg 1 hr prior to storm",
+    "xanax",
+    "prior to storm",
+    "0.25, 0.5, 1, 2mg tabs",
+    "duration 3 to 8 hours",
+    "Trazadone",
+    "Initial TOTAL Dose",
+    "Target TOTAL dose",
+    "50, 100, 150, 300 mg tabs",
+    "<10 kg",
+    "≤ 25 mg q8-24h",
+    "≤ 50 mg q8-24h",
+    "Duration 4 to 8 hrs",
+    "3-5 mg/kg",
+    "≥10-20 kg",
+    "50 mg q12-24h",
+    "100 mg q8-24h",
+    "10 mg/kg max dose",
+    "≥20-40 kg",
+    "100 mg q12-24h",
+    "200 mg q8-24h",
+    ">40 kg",
+    "200 – 300 mg q8-24h",
+    "You might try Xanax 0.02 mg / kg as a test dose--if no sedation, that is good but may gradually work way up. If agitated, try Atavan, same dosing.",
+    "Dose (mg) .5 mg/kg",
+    "diazepam",
+    "0.5-2.2 mg/kg prn",
+    "valium",
+    "2, 5, 10 mg tabs",
+    "Dose (mg) 0.05 mg/kg",
+    "Lorazepam",
+    "q 8 to 12 hrs",
+    "Ativan",
+    "0.5, 1, 2mg tabs",
+    "Atenolol",
+    "0.25-1 mg/kg",
+    "B blocker reduce tachycardia and",
+    "25, 50, 100 mg",
+    "Clonidine (alpha-2 Agonist)",
+    "0.01 - 0.05 mg/kg",
+    "mg 1.5 to 2 hrs prior",
+    "Sileo (alpha-2 Agonist)"
+  ],
+  "dischargeBlocks": []
 }

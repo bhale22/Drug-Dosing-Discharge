@@ -1,227 +1,224 @@
 {
-  "title": "Immune-Mediated Thrombocytopenia (ITP)",
-  "desc": "Steroids, cyclosporine, doxycycline and vincristine for dogs; prednisolone, cyclosporine and chlorambucil for cats. Includes the full prednisone taper and the GI protection that goes with it.",
+  "title": "ITP",
+  "desc": "Prednisone, Dexamethasone, Cyclosporine, Vincristine, Doxycycline, Sucralfate, Omeprazole, Cerenia, Prednisolone, Chlorambucil",
   "icon": "🩸",
   "code": "IMMUNE-ITP",
   "discharge": "Immune Thrombocytopenia",
-  "species": ["dog", "cat"],
+  "species": [
+    "dog",
+    "cat"
+  ],
   "bands": {},
   "meds": [
     {
       "id": "pred_itp_d",
       "sp": "dog",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Prednisone",
-      "desc": "the backbone of treatment",
       "type": "calc",
       "lo": 1,
       "hi": 1,
       "unitDose": "mg",
-      "freqs": ["twice daily"],
-      "note": "1 mg/kg BID to start. TAPER: 1 mg/kg BID daily for 3 weeks, then 0.5 mg/kg BID daily for 3 weeks, then 0.5 mg/kg SID daily for 3 weeks, then 0.5 mg/kg EVERY OTHER DAY for 3 months. Reduce by 25% every 2 to 3 weeks until every-other-day dosing is reached."
+      "freqs": [
+        "BID"
+      ]
     },
     {
       "id": "dex_itp_d",
       "sp": "dog",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Dexamethasone",
-      "desc": "injectable steroid",
       "type": "calc",
       "lo": 0.2,
       "hi": 0.5,
       "unitDose": "mg",
-      "freqs": ["once daily, SQ or IV"],
-      "inClinic": true,
-      "note": "0.2–0.5 mg/kg SID SQ or IV. Dex SP is 3 mg/ml and plain dexamethasone is 2 mg/ml — divide the milligrams by the concentration you have in hand."
+      "freqs": [
+        "SID, SQ or IV"
+      ],
+      "inClinic": true
     },
     {
       "id": "cyclo_itp_d",
       "sp": "dog",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Cyclosporine",
-      "desc": "second immunosuppressant",
       "type": "calc",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
-      "freqs": ["twice daily"]
+      "freqs": [
+        "BID"
+      ]
     },
     {
       "id": "vincristine_itp_d",
       "sp": "dog",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Vincristine",
-      "gen": "1 mg/ml solution",
-      "desc": "raises the platelet count quickly",
+      "gen": "1 mg/ml soln",
       "type": "calc",
       "lo": 0.02,
       "hi": 0.02,
       "unitDose": "mg",
-      "freqs": ["IV, once"],
-      "inClinic": true,
-      "note": "0.02 mg/kg IV. Using the 1 mg/ml solution, the millilitres equal the milligrams. Give through a clean, well-placed catheter — it is a severe vesicant if it extravasates."
+      "freqs": [
+        "IV, once"
+      ],
+      "inClinic": true
     },
     {
       "id": "doxy_itp_d",
       "sp": "dog",
-      "grp": "Cover tick-borne disease",
+      "grp": "Drugs",
       "name": "Doxycycline",
-      "desc": "covers tick-borne causes while the work-up runs",
       "type": "calc",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
-      "freqs": ["twice daily"]
+      "freqs": [
+        "BID"
+      ]
     },
     {
       "id": "carafate_itp_d",
       "sp": "dog",
-      "grp": "GI protection",
-      "name": "Sucralfate",
+      "grp": "Drugs",
+      "name": "Carafate",
       "gen": "Carafate",
-      "desc": "protects the stomach on high-dose steroids",
       "type": "fixed",
-      "doseText": "0.5 to 1 g as a water slurry",
-      "freqs": ["three times daily"],
-      "note": "Give on an empty stomach, at least an hour away from other medication."
+      "doseText": ".5 to 1 g",
+      "freqs": [
+        "TID"
+      ]
     },
     {
       "id": "omeprazole_itp_d",
       "sp": "dog",
-      "grp": "GI protection",
+      "grp": "Drugs",
       "name": "Omeprazole",
-      "desc": "reduces stomach acid",
       "type": "calc",
       "lo": 0.5,
       "hi": 0.5,
       "unitDose": "mg",
-      "freqs": ["twice daily"]
+      "freqs": [
+        "BID"
+      ]
     },
     {
       "id": "cerenia_itp_d",
       "sp": "dog",
-      "grp": "GI protection",
+      "grp": "Drugs",
       "name": "Cerenia",
-      "gen": "maropitant",
-      "desc": "anti-emetic",
       "type": "calc",
       "lo": 2,
       "hi": 2,
       "unitDose": "mg",
-      "freqs": ["once daily"]
+      "freqs": [
+        "SID"
+      ]
     },
     {
       "id": "pred_itp_c",
       "sp": "cat",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Prednisolone",
-      "desc": "the backbone of treatment in cats",
       "type": "calc",
       "lo": 1,
       "hi": 1,
       "unitDose": "mg",
-      "freqs": ["twice daily"],
-      "note": "Prednisolone, not prednisone, in cats. Taper by 25% every 2 to 3 weeks once the platelet count is stable."
+      "freqs": [
+        "BID"
+      ]
     },
     {
       "id": "dex_itp_c",
       "sp": "cat",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Dexamethasone",
-      "desc": "injectable steroid",
       "type": "calc",
       "lo": 0.3,
       "hi": 1,
       "unitDose": "mg",
-      "freqs": ["once daily, SQ or IV"],
-      "inClinic": true,
-      "note": "0.3–1 mg/kg SID. Dex SP is 3 mg/ml, plain dexamethasone 2 mg/ml."
+      "freqs": [
+        "SID, SQ or IV"
+      ],
+      "inClinic": true
     },
     {
       "id": "cyclo_itp_c",
       "sp": "cat",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Cyclosporine",
-      "desc": "second immunosuppressant",
       "type": "calc",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
-      "freqs": ["every 12 to 24 hours"]
+      "freqs": [
+        "q 12-24 h"
+      ]
     },
     {
       "id": "chlorambucil_itp_c",
       "sp": "cat",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Chlorambucil",
-      "desc": "cytotoxic immunosuppressant",
       "type": "calc",
       "lo": 0.1,
       "hi": 0.2,
       "unitDose": "mg",
-      "freqs": ["once daily"],
-      "note": "Handle as a cytotoxic drug — gloves, no splitting of tablets."
+      "freqs": [
+        "SID"
+      ]
     },
     {
       "id": "vincristine_itp_c",
       "sp": "cat",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Vincristine",
-      "gen": "1 mg/ml solution",
-      "desc": "raises the platelet count quickly",
+      "gen": "1 mg/ml soln",
       "type": "calc",
       "lo": 0.02,
       "hi": 0.02,
       "unitDose": "mg",
-      "freqs": ["IV, once"],
-      "inClinic": true,
-      "note": "0.02 mg/kg IV. With the 1 mg/ml solution the millilitres equal the milligrams."
+      "freqs": [
+        "IV, once"
+      ],
+      "inClinic": true
     }
   ],
-  "notes": {
-    "Prednisone taper (dog)": "1 mg/kg BID daily for 3 weeks → 0.5 mg/kg BID daily for 3 weeks → 0.5 mg/kg SID daily for 3 weeks → 0.5 mg/kg EVERY OTHER DAY for 3 months. Overall this is a 25% reduction every 2 to 3 weeks until every-other-day dosing is reached, then continue EOD for 3 months.",
-    "Stabilise first": "Stabilise the platelet numbers before starting to taper anything.",
-    "Which drug to taper first": "Taper the steroids first, unless cost makes that impractical.",
-    "If it recurs": "A long-term adjunctive immunosuppressant and/or splenectomy.",
-    "Dexamethasone concentrations": "Dex SP 3 mg/ml, plain dexamethasone 2 mg/ml. Check which is on the shelf before drawing up.",
-    "GI protection": "High-dose steroids in these patients warrant sucralfate, omeprazole and an anti-emetic alongside."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "what",
-      "title": "What ITP is",
-      "on": true,
-      "text": "Platelets are the cells that make blood clot. {name}'s immune system has started destroying them, so bruising and bleeding happen very easily.\n\nThe medication switches that immune attack off. It works, but it takes time, and the doses have to come down slowly — not stop suddenly."
-    },
-    {
-      "id": "bleeding",
-      "title": "Call us immediately if you see",
-      "on": true,
-      "text": "- Fresh bruising, or pinpoint red spots on the gums, belly or ears\n- Blood in the urine or stool, or black tarry stools\n- Nosebleeds\n- Pale gums, weakness, or collapse\n- Any bleeding that does not stop\n\nThese mean the platelet count may have fallen again and need to be seen the same day."
-    },
-    {
-      "id": "safety",
-      "title": "Keeping {name} safe while platelets are low",
-      "on": true,
-      "text": "- No rough play, jumping from furniture, or off-lead running.\n- Lead walks only, on soft ground.\n- No hard chews or bones.\n- Avoid injections, nail trims and dental work unless we have advised them.\n\nA knock that would not normally matter can cause serious bleeding right now."
-    },
-    {
-      "id": "steroids",
-      "title": "What the steroids will do",
-      "on": true,
-      "text": "{name} will drink and urinate much more, be very hungry, and may pant more. This is expected and is not a reason to stop.\n\n- Always leave water available.\n- Accidents in the house are likely at first — please be patient.\n- Do NOT stop the steroid suddenly or skip doses. Stopping abruptly is dangerous.\n\nWe reduce the dose in steps over several months. Follow the schedule on the label exactly, and call us before making any change."
-    },
-    {
-      "id": "stomach",
-      "title": "Stomach protection",
-      "on": false,
-      "text": "High-dose steroids irritate the stomach, so we have sent medication to protect it.\n\nIf we dispensed sucralfate, give it on an empty stomach and keep it at least an hour away from every other medication — it will bind the other drugs otherwise."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "We need to recheck {name}'s platelet count on the schedule we discussed — frequently at first, then less often as things stabilise.\n\nThese appointments decide when the dose comes down, so please keep every one of them even when {name} looks well."
-    }
-  ]
+  "notes": [
+    "Immune-mediated Thrombocytopenia",
+    "Prednisone",
+    "1 mg/kg BID",
+    "taper pred by 25% every 3 weeks until EOD. Continue EOD 3 months.",
+    "Dexamethasone",
+    "0.2 to .5 mg/kg SID",
+    "SQ, IV",
+    "ml Dex SP or",
+    "ml Dex (2 mg/ml)",
+    "Cyclosporine",
+    "5 mg/kg BID",
+    "Doxycycline",
+    "Vincristine",
+    "0.02 mg/kg",
+    "(1 mg/ml soln)",
+    "PREDNISONE TAPER",
+    "Carafate",
+    ".5 to 1",
+    "Omeprazole",
+    "BID Daily for 3 weeks",
+    "Cerenia",
+    "BID daily for next 3 weeks",
+    "SID Daily for next 3 weeks",
+    "Stabilize platelet numbers",
+    "Every other day for 3 months",
+    "Taper 25% every 2 to 3 weeks (taper steroids first unless cost prohibitive)",
+    "If recurrence, long-term adjunctive immunosuppressant and/or splenectomy",
+    "Prednisolone",
+    "0.3 to 1 mg/kg SID",
+    "5 mg/kg q 12-24 hr",
+    "BID or SID",
+    "Chlorambucil",
+    "0.1-0.2 mg/kg SID"
+  ],
+  "dischargeBlocks": []
 }

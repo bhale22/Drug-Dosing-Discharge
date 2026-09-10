@@ -1,182 +1,176 @@
 {
   "title": "Lyme Nephritis",
-  "desc": "Doxycycline, an ACE inhibitor or ARB, mycophenolate, anti-thrombotic aspirin, fish oils and a renal diet — with Dr Goldstein's preference for pulse dexamethasone if steroids are needed.",
+  "desc": "Doxycycline, Benazepril, Telmisartan, Irbesartan, Losartan, Mycophenolate, Prednisone, Baby aspirin, Fish oils (EPA + DHA), Renal diet",
   "icon": "🫘",
   "code": "RENAL-LYME",
   "discharge": "Lyme Nephritis",
-  "species": ["dog"],
+  "species": [
+    "dog"
+  ],
   "bands": {},
   "meds": [
     {
       "id": "doxy_lyme",
       "sp": "dog",
-      "grp": "Antibiotic",
+      "grp": "Drugs",
       "name": "Doxycycline",
-      "desc": "first-choice antibiotic",
       "type": "calc",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
-      "freqs": ["twice daily"],
-      "note": "5 mg/kg PO q 12 h. Other antibiotic choices are amoxicillin, or Convenia given as two doses two weeks apart."
+      "freqs": [
+        "BID"
+      ]
     },
     {
       "id": "benazepril_lyme",
       "sp": "dog",
-      "grp": "Proteinuria control",
-      "name": "Benazepril",
+      "grp": "Drugs",
+      "name": "Benazapril",
       "gen": "5, 10, 20, 40 mg tabs",
-      "desc": "ACE inhibitor",
       "type": "calc",
       "lo": 0.5,
       "hi": 0.5,
       "unitDose": "mg",
-      "freqs": ["twice daily"]
+      "freqs": [
+        "BID"
+      ]
     },
     {
       "id": "telmisartan_lyme",
       "sp": "dog",
-      "grp": "Proteinuria control",
+      "grp": "Drugs",
       "name": "Telmisartan",
       "gen": "20, 40, 80 mg tabs",
-      "desc": "angiotensin receptor blocker",
       "type": "calc",
       "lo": 1,
       "hi": 1,
       "unitDose": "mg",
-      "freqs": ["once daily"],
-      "note": "1 mg/kg SID, to a maximum of 2 mg/kg SID."
+      "freqs": [
+        "SID"
+      ]
     },
     {
       "id": "irbesartan_lyme",
       "sp": "dog",
-      "grp": "Proteinuria control",
+      "grp": "Drugs",
       "name": "Irbesartan",
       "gen": "75, 150, 300 mg tabs",
-      "desc": "angiotensin receptor blocker",
       "type": "calc",
       "lo": 1,
       "hi": 3,
       "unitDose": "mg",
-      "freqs": ["once daily"]
+      "freqs": [
+        "SID"
+      ]
     },
     {
       "id": "losartan_lyme",
       "sp": "dog",
-      "grp": "Proteinuria control",
+      "grp": "Drugs",
       "name": "Losartan",
-      "desc": "angiotensin receptor blocker",
       "type": "calc",
       "lo": 0.5,
       "hi": 1,
       "unitDose": "mg",
-      "freqs": ["once daily"],
-      "note": "Start at 0.5 mg/kg and increase up to 1 mg/kg BID if needed."
+      "freqs": [
+        "SID"
+      ]
     },
     {
       "id": "mycophenolate_lyme",
       "sp": "dog",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Mycophenolate",
       "gen": "250 mg caps or 500 mg tabs",
-      "desc": "immunosuppressant",
       "type": "calc",
       "lo": 10,
       "hi": 20,
       "unitDose": "mg",
-      "freqs": ["twice daily"]
+      "freqs": [
+        "BID"
+      ]
     },
     {
       "id": "pred_lyme",
       "sp": "dog",
-      "grp": "Immunosuppression",
+      "grp": "Drugs",
       "name": "Prednisone",
-      "desc": "only if the dog is not eating",
       "type": "calc",
       "lo": 1,
       "hi": 1,
       "unitDose": "mg",
-      "freqs": ["twice daily"],
-      "note": "Immunosuppressive doses, used if the dog is not eating. Dr Goldstein recommends PULSE DEXAMETHASONE rather than oral prednisone where steroids are needed."
+      "freqs": [
+        "BID"
+      ]
     },
     {
       "id": "aspirin_lyme",
       "sp": "dog",
-      "grp": "Anti-thrombotic",
+      "grp": "Drugs",
       "name": "Baby aspirin",
-      "desc": "protein-losing nephropathy carries a clotting risk",
       "type": "fixed",
-      "doseText": "¼ of a baby aspirin tablet",
-      "freqs": ["once daily"],
-      "note": "Clopidogrel (Plavix) is raised on the source sheet as a possible alternative."
+      "doseText": "1/4 tab Baby Aspirin",
+      "freqs": [
+        "SID"
+      ]
     },
     {
       "id": "fishoil_lyme",
       "sp": "dog",
-      "grp": "Supportive",
+      "grp": "Drugs",
       "name": "Fish oils (EPA + DHA)",
-      "desc": "renoprotective omega-3",
       "type": "calc",
       "lo": 35,
       "hi": 35,
       "unitDose": "mg",
-      "freqs": ["per day"],
-      "note": "35 mg/kg/day of combined EPA + DHA — roughly 180 mg of omega-3 (EPA plus DHA) per 10 lb per day."
+      "freqs": [
+        "per day"
+      ]
     },
     {
       "id": "diet_lyme",
       "sp": "dog",
-      "grp": "Supportive",
+      "grp": "Drugs",
       "name": "Renal diet",
-      "desc": "low protein",
       "type": "fixed",
-      "doseText": "only the prescription renal diet",
-      "freqs": ["from now on"]
+      "doseText": "Low Protein Diet- renal diet",
+      "freqs": [
+        ""
+      ]
     }
   ],
-  "notes": {
-    "Antibiotic options": "Doxycycline 5 mg/kg BID is first choice. Other options are amoxicillin, or Convenia given as two doses two weeks apart.",
-    "Steroids": "If the dog is not eating, immunosuppressive doses of prednisone. Dr Goldstein recommends pulse dexamethasone rather than oral prednisone where steroids are needed.",
-    "Blocking the RAAS": "Either an ACE inhibitor (benazepril) or an ARB (telmisartan, irbesartan, losartan). Telmisartan 1 mg/kg SID, maximum 2 mg/kg SID.",
-    "Clotting risk": "Protein-losing nephropathy is prothrombotic — hence the low-dose aspirin, with clopidogrel raised as an alternative.",
-    "Fish oil target": "35 mg/kg/day of EPA + DHA combined, which is about 180 mg of omega-3 per 10 lb per day."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "what",
-      "title": "What Lyme nephritis is",
-      "on": true,
-      "text": "Lyme disease has caused {name}'s immune system to damage the filters in the kidneys, so protein that should stay in the blood is being lost into the urine.\n\nThis is serious and we will be monitoring {name} closely. The medications work on several fronts at once: clearing the infection, protecting the kidneys, reducing the protein loss, and lowering the risk of a blood clot."
-    },
-    {
-      "id": "diet",
-      "title": "The renal diet",
-      "on": true,
-      "text": "The prescription diet is part of the treatment, not a suggestion.\n\n- Feed only the diet we have recommended.\n- No table scraps, and no treats or chews unless we have approved them.\n- If {name} will not eat it, call us rather than switching back — there are other options and going hungry is worse."
-    },
-    {
-      "id": "water",
-      "title": "Water",
-      "on": true,
-      "text": "Always leave fresh water available, in more than one place. Never restrict water — {name}'s kidneys need it.\n\nTell us if you notice a sudden increase or decrease in how much {name} is drinking."
-    },
-    {
-      "id": "watch",
-      "title": "Call us if you notice",
-      "on": true,
-      "text": "- Not eating, vomiting, or losing weight\n- Swelling of the legs, belly or face\n- Sudden breathlessness, or a leg that becomes cold, painful or will not bear weight\n- Increasing tiredness, or drinking much more or much less than usual\n\nThe breathing and cold-leg signs suggest a blood clot and are an emergency."
-    },
-    {
-      "id": "ticks",
-      "title": "Ticks",
-      "on": true,
-      "text": "Keep {name} on a reliable tick preventive year-round and check the coat after walks, particularly around the head, ears, neck and between the toes.\n\nRemoving a tick within 24 to 48 hours greatly reduces the chance of Lyme being transmitted."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "{name} needs regular blood and urine tests so we can track kidney values, protein loss and blood pressure, and adjust the medication accordingly.\n\nPlease keep every appointment we book — this condition is managed by the numbers, not by how well {name} looks."
-    }
-  ]
+  "notes": [
+    "LYME NEPHRITIS",
+    "Doxycycline",
+    "5 mg/kg BID",
+    "Benazapril",
+    "0.5 mg/kg BID",
+    "5 10 20 40 mg tabs",
+    "Mycophenolate",
+    "10-20 mg/kg BID",
+    "250 mg caps or 500 mg tabs",
+    "If not eating, then Immune-suppressive doses of Pred (though Dr. Goldstein recommends pulse Dex if steroids are needed)",
+    "Prednisone",
+    "1 mg/kg BID",
+    "1/4 tab Baby Aspirin SID (Or Plavix?)",
+    "1/4 tab SID",
+    "Fish Oils (EPA + DHA)",
+    "35 mg/kg/day",
+    "~180 mg of w-3 (sum of EPA and DHA) per 10 pounds per day",
+    "Low Protein Diet- renal diet",
+    "Telmisartan",
+    "1 mg/kg SID (max 2 SID)",
+    "Telmisartan tabs 20, 40, 80 mg",
+    "Other antibiotic choices = Amoxicillin and Convenia (2 doses 2 weeks apart)",
+    "Irbesartan",
+    "1-3 mg/kg SID",
+    "Angiotensin Receptor Blocker: ARB (75, 150, 300 mg tabs)",
+    "Telmisartan (20, 40, 80 mg tabs)",
+    "1 mg/kg SID",
+    "mg PO",
+    "Losartan",
+    "0.5, increase up to 1 mg/kg BID if needed"
+  ],
+  "dischargeBlocks": []
 }

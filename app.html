@@ -129,8 +129,21 @@ main{max-width:1200px;margin:0 auto;padding:22px 22px 28px}
 .opt.cust.on label{color:var(--ink);font-weight:650}
 .cust-in{font-family:var(--mono);font-size:13px;width:84px;padding:3px 7px;
   border:1.5px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);text-align:right}
-.cust-n{font-family:var(--sans);font-size:13px;padding:3px 5px;border:1.5px solid var(--line);
-  border-radius:7px;background:#fff;color:var(--ink)}
+.cx{display:inline-flex;align-items:center;gap:5px;flex-wrap:wrap}
+.cx-u{font-size:12px;color:var(--soft)}
+.cust-mg,.cust-hr{font-family:var(--mono);font-size:14px;padding:4px 7px;
+  border:1.5px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);text-align:right}
+.cust-mg{width:72px}
+.cust-hr{width:56px}
+.cust-mg:focus,.cust-hr:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.cust-n{font-family:var(--sans);font-size:14px;font-weight:700;min-width:44px;padding:4px 8px;
+  border:1.5px solid var(--accent);border-radius:7px;background:#fff;color:var(--accent-d);cursor:pointer}
+.tabpad{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:7px 0 2px;
+  max-width:210px;padding:8px;background:#F7FAFA;border:1.5px solid var(--line);border-radius:10px}
+.tabpad button{font-family:var(--sans);font-size:17px;font-weight:650;padding:11px 0;
+  border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);cursor:pointer}
+.tabpad button:hover{border-color:var(--accent);color:var(--accent-d)}
+.tabpad .tp-wide{grid-column:1/-1;font-size:12.5px;font-weight:700;padding:8px 0;color:var(--soft)}
 .opt.cust.on .cust-n{border-color:var(--accent)}
 .freq-in{font-family:var(--sans);font-size:12.5px;padding:4px 8px;min-width:190px;
   border:1.5px solid var(--accent);border-radius:7px;background:#fff;color:var(--ink)}
@@ -290,6 +303,27 @@ tr.hit td{background:var(--accent-s)}
 footer{max-width:1200px;margin:0 auto;padding:14px 22px 50px;font-size:11.5px;color:var(--soft)}
 footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
 .loading{text-align:center;padding:80px 20px;font-size:16px;color:var(--soft)}
+/* ===== NO-WEIGHT BANNER ===== */
+.wtbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  background:var(--warn-s);border:1.5px solid #E8D5B8;border-radius:10px;
+  padding:10px 14px;margin:0 2px 14px;font-size:13px;color:#6B4A12}
+.wb-txt{flex:1 1 240px}
+.wb-btn{font-family:var(--sans);font-size:12.5px;font-weight:700;padding:7px 14px;
+  border:none;border-radius:8px;background:var(--warn);color:#fff;cursor:pointer;white-space:nowrap}
+.headercalc{display:flex;align-items:baseline;gap:8px;margin-top:8px;
+  background:var(--accent-s);border-radius:9px;padding:7px 13px}
+.hc-lbl{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-d)}
+.hc-val{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent-d)}
+.hc-unit{font-size:13px;color:var(--accent-d)}
+.njbtn{font-family:var(--sans);font-size:13px;font-weight:650;padding:8px 13px;
+  border:1.5px solid var(--line);border-radius:9px;background:var(--surface);
+  color:var(--ink);cursor:pointer;white-space:nowrap}
+.njbtn:hover{border-color:var(--accent);color:var(--accent-d)}
+.chip.label{background:var(--accent);color:#fff;font-weight:600}
+.mfreq.needwt{color:var(--warn);font-style:italic}
+.notesgrid{margin-top:18px}
+#notes{scroll-margin-top:110px}
+
 /* ===== WEIGHT GATE ===== */
 .wtgate{background:var(--surface);border:2px dashed var(--accent);border-radius:var(--r);
   padding:44px 24px 40px;text-align:center;max-width:520px;margin:22px auto}
@@ -335,7 +369,10 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
   .opt label{gap:5px}
   .dt-in,.cust-in{font-size:16px;padding:6px 8px}
   .cust-in{width:96px}
-  .cust-n,.freq-in{font-size:16px;padding:6px 8px}
+  .cust-mg,.cust-hr,.freq-in{font-size:16px;padding:6px 8px}
+  .cust-n{font-size:17px;padding:7px 12px}
+  .tabpad{max-width:none}
+  .tabpad button{font-size:19px;padding:13px 0}
   .freq-in{min-width:0;width:100%}
   .opt.cust{flex-wrap:wrap}
   .wt-wrap{flex-wrap:wrap}
@@ -422,7 +459,11 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
           <button id="btn-cat" onclick="setSp('cat')">Cat</button>
         </div>
       </div>
-      <div class="ctl">
+      <div class="ctl notesjump" id="notesjump" style="display:none">
+        <label>&nbsp;</label>
+        <button type="button" class="njbtn" onclick="goNotes()">Notes ↓</button>
+      </div>
+      <div class="ctl wt">
         <label>Weight</label>
         <div class="wt-wrap">
           <input id="wt" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0.0">
@@ -432,6 +473,7 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
           </div>
           <div class="kg-show" id="kgshow">= <strong>—</strong></div>
         </div>
+        <div class="headercalc" id="headercalc" hidden></div>
       </div>
     </div>
   </div>
@@ -474,7 +516,7 @@ let sp="dog", unit="lb", mode="record";
 const S={};          // per-med: {on, opt, freq, volMl}
 const BLK={};        // per-block: {on, dur, text}
 function st(id){if(!S[id])S[id]={on:false,opt:null,freq:0,volMl:null,mgkg:null,
-  cN:null,cMg:null,cFreq:null,open:false};
+  cN:null,cMg:null,cHr:null,cFreq:null,open:false};
   return S[id];}
 /* cN x cMg is the custom dose: how many tablets/capsules, of what strength.
    cFreq overrides the frequency list when the clinician types their own. */
@@ -615,14 +657,36 @@ function giveStr(tabs,unit){
   /* a fraction of a tablet is still "half a tab", never "half tabs" */
   if(tabs.length===1){const n=tabs[0].n;return"Give "+fr(n)+" "+u+(n>1?"s":"")+" ";}
   return"Give "+tabs.map(t=>fr(t.n)+"×"+t.mg+"mg").join(" + ")+" ";}
+/* The record goes in the chart, so it wants the short form a vet writes:
+   "Metronidazole 500 mg: 1/2 tab BID" rather than the client sentence. */
+const FREQ_SHORT=[
+  [/\bonce daily\b/i,"SID"],[/\btwice daily\b/i,"BID"],
+  [/\bthree times daily\b/i,"TID"],[/\bfour times daily\b/i,"QID"],
+  [/\bevery other day\b/i,"EOD"],
+  [/\bevery (\d+) to (\d+) hours\b/i,"q $1-$2 h"],
+  [/\bevery (\d+) hours\b/i,"q $1 h"]];
+function shortFreq(f){
+  let t=String(f||"");
+  for(const [re,rep] of FREQ_SHORT)t=t.replace(re,rep);
+  return t.trim();}
+function recordLine(m,kg,lb){
+  const full=medLine(m,kg,lb);
+  /* drop the parenthetical description, keep name + instruction */
+  const mt=full.match(/^(.+?)\s+\((?:.+?)\):\s{2}(.+)$/);
+  let name=mt?mt[1]:full,give=mt?mt[2]:"";
+  if(!mt){const p=full.match(/^(.+?):\s{2}(.+)$/);if(p){name=p[1];give=p[2];}else return full;}
+  give=give.replace(/^Give\s+/,"");
+  return name+": "+shortFreq(give);}
+
 function curFreq(m){
   const s=st(m.id);
+  if(s.opt===-1&&s.cHr!==null)return"every "+s.cHr+(s.cHr==1?" hour":" hours");
   if(s.cFreq!==null&&s.cFreq!=="")return s.cFreq;
   return(m.freqs&&m.freqs.length)?m.freqs[Math.min(s.freq,m.freqs.length-1)]:"";}
 function medLine(m,kg,lb){
   const s=st(m.id);
   const freq=curFreq(m);
-  const D=" ("+m.desc+"):  ";
+  const D=m.desc?" ("+m.desc+"):  ":":  ";
   if(m.type==="band"||m.type==="tab"||m.type==="multiband"){
     const d=doseOptions(m,kg,lb);
     const o=curOpt(m,d);
@@ -646,11 +710,11 @@ function medLine(m,kg,lb){
   }
   if(m.type==="inj"){
     const mg=kg===null?null:m.lo*kg,ml=mg===null?null:mg/m.conc;
-    return m.name+" ("+m.desc+"):  "+(ml===null?"___":fmtMl(ml))+" ml "+m.route+" given in clinic.";
+    return m.name+D+(ml===null?"___":fmtMl(ml))+" ml "+m.route+" given in clinic.";
   }
   if(m.type==="injVolume"){
     const vol=s.volMl!==null?s.volMl:m.defaultMl;
-    return m.name+" ("+m.desc+"):  "+vol+" ml given in clinic.";
+    return m.name+D+vol+" ml given in clinic.";
   }
   if(m.type==="fixed")
     return m.name+(m.strengthLabel?" "+m.strengthLabel:"")+D+"Give "+m.doseText+(freq?" "+freq:"")+"."+(m.extra?" "+m.extra:"");
@@ -671,8 +735,11 @@ function medLine(m,kg,lb){
 ================================================================ */
 function splitLine(line){
   const m=line.match(/^(.+?)\s+\((.+?)\):\s{2}(.+)$/);
-  if(!m)return"<span>"+esc(line)+"</span>";
-  return'<span class="mn-bold">'+esc(m[1])+'</span> <span class="mn-desc">('+esc(m[2])+'):</span>  <span class="mn-give">'+esc(m[3])+'</span>';}
+  if(m)return'<span class="mn-bold">'+esc(m[1])+'</span> <span class="mn-desc">('+esc(m[2])+
+    '):</span>  <span class="mn-give">'+esc(m[3])+'</span>';
+  const p=line.match(/^(.+?):\s{2}(.+)$/);
+  if(p)return'<span class="mn-bold">'+esc(p[1])+':</span>  <span class="mn-give">'+esc(p[2])+'</span>';
+  return"<span>"+esc(line)+"</span>";}
 
 function buildRecord(kg,lb,inhosp,atHome){
   const wt=lb===null?"___ lb":(Math.round(lb*10)/10)+" lb ("+R2(kg)+" kg)";
@@ -680,10 +747,10 @@ function buildRecord(kg,lb,inhosp,atHome){
   let html='<div class="out-record"><div class="rec-hdr">'+esc(hdr)+'</div>';
   if(inhosp.length){
     html+='<div class="sec-lbl">Treatments given in hospital</div><ul>'+
-      inhosp.map(m=>'<li>'+splitLine(medLine(m,kg,lb))+'</li>').join("")+'</ul>';}
+      inhosp.map(m=>'<li>'+splitLine(recordLine(m,kg,lb))+'</li>').join("")+'</ul>';}
   if(atHome.length){
     html+='<div class="sec-lbl">Take-home medications</div><ul>'+
-      atHome.map(m=>'<li>'+splitLine(medLine(m,kg,lb))+'</li>').join("")+'</ul>';}
+      atHome.map(m=>'<li>'+splitLine(recordLine(m,kg,lb))+'</li>').join("")+'</ul>';}
   if(!inhosp.length&&!atHome.length)
     html+='<ul><li><em>No medications selected</em></li></ul>';
   return html+'</div>';}
@@ -708,14 +775,31 @@ function proseHtml(text){
   return out.join("");}
 
 /* One medication, set out like a label: what it is, then what to do, indented. */
+/* Owners should not be handed "BID", so the client sheet turns the sheet's
+   abbreviations back into words at display time. */
+const FREQ_LONG=[
+  [/\bSID\b/g,"once daily"],[/\bBID\b/g,"twice daily"],
+  [/\bTID\b/g,"three times daily"],[/\bQID\b/g,"four times daily"],
+  [/\bEOD\b/g,"every other day"],
+  [/\bq (\d+)-(\d+) h(?:rs?)?\b/gi,"every $1 to $2 hours"],
+  [/\bq (\d+) h(?:rs?)?\b/gi,"every $1 hours"],
+  [/\bPO\b/g,"by mouth"],[/\bper DAY\b/g,"per day"]];
+function longFreq(t){
+  let r=String(t||"");
+  for(const [re,rep] of FREQ_LONG)r=r.replace(re,rep);
+  return r;}
+
 function dischargeMed(m,kg,lb){
-  const line=medLine(m,kg,lb);
+  const line=longFreq(medLine(m,kg,lb));
   const mt=line.match(/^(.+?)\s+\((.+?)\):\s{2}(.+)$/);
-  if(!mt)return'<div class="dmed"><div class="dm-name">'+esc(line)+'</div></div>';
-  return'<div class="dmed">'+
-    '<div class="dm-name">'+esc(mt[1])+'</div>'+
+  const cap=t=>esc(t.charAt(0).toUpperCase()+t.slice(1));
+  if(mt)return'<div class="dmed"><div class="dm-name">'+esc(mt[1])+'</div>'+
     '<div class="dm-what">'+esc(mt[2])+'</div>'+
-    '<div class="dm-give">'+esc(mt[3].charAt(0).toUpperCase()+mt[3].slice(1))+'</div></div>';}
+    '<div class="dm-give">'+cap(mt[3])+'</div></div>';
+  const p=line.match(/^(.+?):\s{2}(.+)$/);
+  if(p)return'<div class="dmed"><div class="dm-name">'+esc(p[1])+'</div>'+
+    '<div class="dm-give">'+cap(p[2])+'</div></div>';
+  return'<div class="dmed"><div class="dm-name">'+esc(line)+'</div></div>';}
 
 function buildDischarge(kg,lb,inhosp,atHome){
   const name=getName();
@@ -921,9 +1005,24 @@ function bandChartHtml(m,lb){
 /* ================================================================
    COLLAPSED ROW — name + the dose that would actually be given
 ================================================================ */
+/* The dose as the source states it, independent of any patient: this is what a
+   quick lookup is actually after, so it is shown whether or not a weight has
+   been entered. */
+function labelDose(m){
+  const u=m.unitDose||"mg";
+  if(m.type==="band"||m.type==="tab"||m.type==="calc"||m.type==="multiband"){
+    if(m.lo===undefined)return"";
+    return(m.hi>m.lo?m.lo+"\u2013"+m.hi:String(m.lo))+" "+u+"/kg"+(m.perDay?"/day":"");}
+  if(m.type==="inj")return m.lo+" mg/kg "+(m.route||"");
+  if(m.type==="iver")return m.doseMid+" mg/kg";
+  if(m.type==="fixed")return m.doseText||"";
+  if(m.type==="injVolume")return(m.defaultMl!==undefined?m.defaultMl+" ml":"");
+  return"";}
+
 function doseSummary(m,kg,lb){
   const s=st(m.id);
-  const freq=(s.cFreq!==null&&s.cFreq!=="")?s.cFreq
+  const freq=(s.opt===-1&&s.cHr!==null)?"every "+s.cHr+(s.cHr==1?" hour":" hours")
+    :(s.cFreq!==null&&s.cFreq!=="")?s.cFreq
     :(m.freqs&&m.freqs.length&&m.freqs[0]!=="")?m.freqs[Math.min(s.freq,m.freqs.length-1)]:"";
   let dose="—",dim=true;
   if(m.type==="band"||m.type==="tab"||m.type==="multiband"){
@@ -951,8 +1050,13 @@ function doseSummary(m,kg,lb){
 
 function summaryInner(m,kg,lb){
   const q=doseSummary(m,kg,lb);
-  return'<span class="chip dose'+(q.dim?" dim":"")+'">'+q.dose+'</span>'+
-    (q.freq?'<span class="mfreq">'+esc(q.freq)+'</span>':"");}
+  const lab=labelDose(m);
+  /* label dose leads; the milligram amount for this patient follows it */
+  const showAmt=!q.dim&&q.dose&&q.dose!==lab;
+  return(lab?'<span class="chip label">'+esc(lab)+'</span>':"")+
+    (q.freq?'<span class="mfreq">'+esc(q.freq)+'</span>':"")+
+    (showAmt?'<span class="chip dose">'+q.dose+'</span>':"")+
+    (q.dim&&kg===null&&lab?'<span class="mfreq needwt">enter weight for mg</span>':"");}
 
 /* editable mg/kg target — the label range is the default and stays one tap away */
 function targetEditHtml(m,kg){
@@ -972,36 +1076,49 @@ function targetEditHtml(m,kg){
       :'<span class="dt-note">label '+lbl+' '+u+'</span>')+
     '</div>';}
 
-/* Custom dose: the clinician states it the way it is dispensed — how many
-   tablets/capsules, of what strength — so the label reads
-   "Pepcid 10 mg: Give ½ tab twice daily." */
-const CUSTN=[0.125,0.25,0.5,0.75,1,1.25,1.5,2,2.5,3,4,5,6];
+/* Custom dose, entered the way it is written on a label: strength in mg, then
+   how many tablets, then the interval in hours. Quarter/half/three-quarter sit
+   above the 1-2-3 row of the tablet keypad. */
+const TABKEYS=[["\u00bc",0.25],["\u00bd",0.5],["\u00be",0.75],
+  ["1",1],["2",2],["3",3],["4",4],["5",5],["6",6],["7",7],["8",8],["9",9]];
 function customOptHtml(m,kg){
-  const s=st(m.id),u=m.unitDose||"mg",unitName=m.unitName||"tab";
+  const s=st(m.id),unitName=m.unitName||"tab";
   const on=s.opt===-1;
   return'<div class="opt cust'+(on?" on":"")+'">'+
     '<input type="radio" name="opt-'+m.id+'" id="rc'+m.id+'" '+(on?"checked":"")+
       ' onchange="pickCustom(\''+m.id+'\')">'+
     '<label for="rc'+m.id+'">Custom</label>'+
-    '<select class="cust-n" aria-label="Number of '+escAttr(unitName)+'s" '+
-      'onchange="setCustomN(\''+m.id+'\',this.value)">'+
-      '<option value=""'+(s.cN===null?" selected":"")+'>–</option>'+
-      CUSTN.map(n=>'<option value="'+n+'"'+(s.cN===n?" selected":"")+'>'+fr(n)+'</option>').join("")+
-    '</select>'+
-    '<span class="cust-u">×</span>'+
-    '<input class="cust-in" type="number" step="any" min="0" inputmode="decimal" '+
-      'placeholder="strength" aria-label="Strength of one '+escAttr(unitName)+' in '+u+'" '+
-      'value="'+(s.cMg===null?"":s.cMg)+'" '+
-      'onfocus="pickCustom(\''+m.id+'\')" '+
-      'oninput="setCustomMg(\''+m.id+'\',this.value)" '+
-      'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+
-    '<span class="cust-u">'+u+' per '+esc(unitName)+'</span>'+
+    '<span class="cx">'+
+      '<input class="cust-mg" type="number" step="any" min="0" inputmode="decimal" '+
+        'placeholder="mg" aria-label="Strength of one '+escAttr(unitName)+' in mg" '+
+        'value="'+(s.cMg===null?"":s.cMg)+'" '+
+        'onfocus="pickCustom(\''+m.id+'\')" '+
+        'oninput="setCustomMg(\''+m.id+'\',this.value)" '+
+        'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+
+      '<span class="cx-u">mg:</span>'+
+      '<button type="button" class="cust-n" id="cn-'+m.id+'" '+
+        'aria-label="Number of '+escAttr(unitName)+'s" '+
+        'onclick="toggleTabPad(\''+m.id+'\')">'+(s.cN===null?"\u2013":fr(s.cN))+'</button>'+
+      '<span class="cx-u">'+esc(unitName)+' every</span>'+
+      '<input class="cust-hr" type="number" step="1" min="1" inputmode="numeric" '+
+        'placeholder="hrs" aria-label="Interval in hours" '+
+        'value="'+(s.cHr===null?"":s.cHr)+'" '+
+        'onfocus="pickCustom(\''+m.id+'\')" '+
+        'oninput="setCustomHr(\''+m.id+'\',this.value)" '+
+        'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+
+      '<span class="cx-u">hrs</span>'+
+    '</span>'+
+    '<div class="tabpad" id="tp-'+m.id+'" hidden>'+
+      TABKEYS.map(k=>'<button type="button" onclick="setCustomN(\''+m.id+'\','+k[1]+')">'+
+        k[0]+'</button>').join("")+
+      '<button type="button" class="tp-wide" onclick="setCustomN(\''+m.id+'\',null)">clear</button>'+
+    '</div>'+
     '<span class="dmg" id="cmk-'+m.id+'">'+customMgkgText(m,kg)+'</span></div>';}
 function customMgkgText(m,kg){
   const t=customTabs(m.id);
   if(!t)return"";
   const tot=t[0].mg*t[0].n;
-  return"= "+fmtMg(tot)+" "+(m.unitDose||"mg")+(kg?" · "+R2(tot/kg)+" "+(m.unitDose||"mg")+"/kg":"");}
+  return"= "+fmtMg(tot)+" mg"+(kg?" \u00b7 "+R2(tot/kg)+" mg/kg":"");}
 
 function medHtml(m,kg,lb){
   const s=st(m.id);
@@ -1153,6 +1270,7 @@ function applyPreset(pid){
     if(pm.mgkg!==undefined)s.mgkg=pm.mgkg;
     if(pm.cMg!==undefined){s.cMg=pm.cMg;s.opt=-1;}
     if(pm.cN!==undefined){s.cN=pm.cN;s.opt=-1;}
+    if(pm.cHr!==undefined){s.cHr=pm.cHr;s.opt=-1;}
     if(pm.freq!==undefined)s.freq=pm.freq;}
   // Apply blocks
   for(const pb of p.blocks){
@@ -1191,6 +1309,18 @@ function refreshPresetBtns(){
       (activePreset===null&&anyOn?
         '<button class="pbtn custom" onclick="" disabled title="Selections modified">✎ Custom</button>':'')
       +'<button class="pbtn clear" onclick="clearAll()">✕ Clear all</button>':"");}
+function hasNotes(){
+  const n=C&&C.notes;
+  return !!n&&(Array.isArray(n)?n.length>0:Object.keys(n).length>0);}
+function notesPanelHtml(){
+  const n=C&&C.notes;
+  if(!hasNotes())return"";
+  const items=Array.isArray(n)
+    ?n.map(v=>'<div class="note-item">'+esc(v)+'</div>').join("")
+    :Object.keys(n).map(k=>'<div class="note-item"><strong>'+esc(k)+':</strong> '+
+       esc(n[k])+'</div>').join("");
+  return'<div class="notes-panel wide" id="notes"><h3>Notes</h3>'+items+'</div>';}
+
 /* ================================================================
    FULL PAGE RENDER
 ================================================================ */
@@ -1200,6 +1330,16 @@ function render(){
   document.getElementById("kgshow").innerHTML=unit==="lb"
     ?"= <strong>"+(kg===null?"—":R2(kg))+"</strong> kg"
     :"= <strong>"+(lb===null?"—":Math.round(lb*10)/10)+"</strong> lb";
+  /* A page whose whole job is one number puts it under the weight box rather
+     than making the reader scroll for it. */
+  const hc=document.getElementById("headercalc");
+  if(hc){
+    if(C.headerCalc){
+      hc.hidden=false;
+      hc.innerHTML='<span class="hc-lbl">'+esc(C.headerCalc.label)+'</span>'+
+        '<span class="hc-val">'+(kg===null?"—":evalFn(C.headerCalc.fn)(kg,lb))+'</span>'+
+        (C.headerCalc.unit?'<span class="hc-unit">'+esc(C.headerCalc.unit)+'</span>':"");
+    }else hc.hidden=true;}
 
   // group meds by species then group name
   const groups={};
@@ -1207,20 +1347,9 @@ function render(){
     if(m.sp!==sp)continue;
     (groups[m.grp]=groups[m.grp]||[]).push(m);}
 
-  // Clinical notes panel (seizure and other specialty conditions)
-  let notesHtml="";
-  if(C.notes&&Object.keys(C.notes).length){
-    const labels={
-      xr_split:"XR Tablet Splitting",
-      clustering:"Cluster Rescue Protocol",
-      pre_ictal:"Pre-ictal / Cluster Prevention",
-      side_effects:"Side Effects",
-      status_sequence:"Active Seizure Sequence",
-      status_note:"Active Seizure Notes"
-    };
-    const items=Object.entries(C.notes).map(([k,v])=>
-      '<div class="note-item"><strong>'+(labels[k]||k)+':</strong> '+esc(v)+'</div>').join("");
-    notesHtml='<div class="notes-panel wide"><h3>Clinical Notes</h3>'+items+'</div>';}
+  /* Notes are the source spreadsheet's own text. An array is rendered line for
+     line with no headings added; the older object form keeps its keys. */
+  const notesHtml=notesPanelHtml();
 
   const cards=Object.entries(groups).map(([grp,meds])=>
 
@@ -1263,28 +1392,28 @@ function render(){
         '<button type="button" class="vbtn" onclick="setAllOpen(true)">⊞ Expand all</button>'+
       '</div></div>';
 
-  /* No weight, no doses. A weight left over from the previous patient is the
-     easiest way to dispense the wrong amount, so the page starts empty and
-     stays gated until someone types one in. */
-  if(kg===null&&!C.noWeight){
-    document.getElementById("main").innerHTML=
-      '<div class="wtgate">'+
-        '<div class="wg-icon">⚖</div>'+
-        '<div class="wg-title">Enter this patient\'s weight</div>'+
-        '<div class="wg-sub">Doses stay hidden until a weight is entered, so nothing '+
-        'can be carried over from the last patient.</div>'+
-        '<button type="button" class="wg-btn" onclick="focusWeight()">Enter weight</button>'+
-      '</div>';
-    document.getElementById("selcount").textContent="Enter a weight to begin";
-    refreshPresetBtns();
-    return;}
+  /* The weight field starts empty on every load so nothing carries over from the
+     last patient, but the page is not gated: mg/kg doses read straight off and
+     only the milligram amounts wait for a weight. */
+  const wtBanner=(kg===null&&!C.noWeight)
+    ?'<div class="wtbar">'+
+       '<span class="wb-txt"><strong>No weight entered.</strong> '+
+       'Doses below are per kg; enter a weight for milligram amounts.</span>'+
+       '<button type="button" class="wb-btn" onclick="focusWeight()">Enter weight</button>'+
+     '</div>':"";
 
+  /* Drugs and doses first, then the discharge/record output, then the source
+     notes at the foot of the page. */
   document.getElementById("main").innerHTML=
-    (viewbarHtml===""?"":viewbar)+'<div class="grid">'+notesHtml+cards+'</div>'+
-    (shown.length?outcard:"");
+    wtBanner+(viewbarHtml===""?"":viewbar)+
+    '<div class="grid">'+cards+'</div>'+
+    (shown.length?outcard:"")+
+    (notesHtml?'<div class="grid notesgrid">'+notesHtml+'</div>':"");
   renderBlocks();
   buildOutput();
-  refreshPresetBtns();}
+  refreshPresetBtns();
+  const nj=document.getElementById("notesjump");
+  if(nj)nj.style.display=hasNotes()?"":"none";}
 
 /* ================================================================
    EVENT HANDLERS
@@ -1327,12 +1456,27 @@ function setCustomMg(id,v){
   if(m&&el)el.textContent=customMgkgText(m,getKg());
   markCustom();buildOutput();refreshSum(id);}
 function setCustomN(id,v){
-  const s=st(id),n=parseFloat(v);
-  s.cN=isFinite(n)&&n>0?n:null;
+  const s=st(id);
+  const n=v===null?null:parseFloat(v);
+  s.cN=(n!==null&&isFinite(n)&&n>0)?n:null;
   s.opt=-1;custRow(id,true);
+  const btn=document.getElementById("cn-"+id);
+  if(btn)btn.textContent=s.cN===null?"\u2013":fr(s.cN);
+  const pad=document.getElementById("tp-"+id);
+  if(pad)pad.hidden=true;
   const m=C.meds.find(x=>x.id===id),el=document.getElementById("cmk-"+id);
   if(m&&el)el.textContent=customMgkgText(m,getKg());
   markCustom();buildOutput();refreshSum(id);}
+function setCustomHr(id,v){
+  const s=st(id),n=parseFloat(v);
+  s.cHr=(isFinite(n)&&n>0)?n:null;
+  s.opt=-1;custRow(id,true);
+  markCustom();buildOutput();refreshSum(id);}
+function toggleTabPad(id){
+  const pad=document.getElementById("tp-"+id);
+  if(!pad)return;
+  pickCustom(id);
+  pad.hidden=!pad.hidden;}
 function setCustomFreq(id,v){
   st(id).cFreq=v;markCustom();redrawMed(id);buildOutput();}
 /* retarget mg/kg — options re-bracket around the new target and the
@@ -1372,6 +1516,9 @@ function setMode(m){
   if(tr)tr.classList.toggle("on",m==="record");
   if(td)td.classList.toggle("on",m==="discharge");}
 /* every condition page can jump straight to the finished sheet */
+function goNotes(){
+  const el=document.getElementById("notes");
+  if(el)el.scrollIntoView({behavior:"smooth",block:"start"});}
 function focusWeight(){
   const w=document.getElementById("wt");
   if(!w)return;

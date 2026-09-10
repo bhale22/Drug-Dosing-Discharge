@@ -548,22 +548,9 @@ const DOG_CLUSTER=[
 /* ================================================================
    DATA — client discharge blocks (all editable in the page)
 ================================================================ */
-const BLOCKS=[
- {id:"during",on:true,title:"During a seizure",
-  text:"Stay calm and keep {name} safe. Move furniture, stairs, water and other pets out of the way. Do NOT put your hands near the mouth and do not try to hold the tongue — pets do not swallow their tongue, and you can be badly bitten. Dim the lights, keep noise down, and time the seizure if you can.\n\nMost seizures stop on their own within 1–2 minutes. Afterwards {name} may be disoriented, restless, wobbly, temporarily blind, or very hungry and thirsty for anywhere from a few minutes to several hours. Keep {name} in a safe, quiet, confined space until fully back to normal."},
- {id:"emergency",on:true,title:"Call us or go to an emergency hospital right away if",
-  text:"• A seizure lasts longer than 5 minutes.\n• {name} has more than one seizure in a 24-hour period (cluster seizures).\n• {name} does not fully wake up and recover between seizures.\n• {name} is struggling to breathe, feels very hot to the touch, or has not returned to normal within a few hours.\n\nProlonged or repeated seizures are a true emergency and need to be treated immediately."},
- {id:"diary",on:true,title:"Seizure diary",
-  text:"Please keep a written or phone log of every seizure: the date, the time of day, how long it lasted, what it looked like, and anything unusual beforehand. This log is the single most useful thing you can bring to a recheck — it tells us whether the medication is working and whether the dose needs to change."},
- {id:"dosing",on:true,title:"Giving the medication",
-  text:"Give every dose at the same times each day — steady blood levels are what control seizures. If you miss a dose, give it as soon as you remember, unless it is nearly time for the next one; never double up. It is fine to hide tablets in a small treat or pill pocket unless we have told you otherwise.\n\nDo NOT stop or taper an anti-seizure medication on your own. Stopping suddenly can trigger severe or prolonged seizures."},
- {id:"sideeffects",on:true,title:"What to expect",
-  text:"Sedation, wobbliness, and increased appetite or thirst are common in the first one to two weeks and usually improve a great deal with time. If {name} is too sedated to eat or drink, will not walk, or vomits the medication, please call us rather than stopping it on your own."},
- {id:"monitor",on:false,title:"Bloodwork and monitoring",
-  text:"Anti-seizure medications are processed by the liver, so we monitor bloodwork. For phenobarbital we check a drug level along with a CBC and chemistry panel about 2 weeks after starting or after any dose change, then about every 6 months. Please keep these appointments even if {name} is doing well."},
- {id:"followup",on:true,title:"Follow up",
-  text:"Please call us with an update in about 2 weeks, or sooner if the seizures continue or the side effects are a problem. Bring the seizure diary to every recheck."},
-];
+/* Client discharge text is supplied by the practice, not generated here.
+   Add entries as {id, on, title, text}; "{name}" is replaced by the patient. */
+const BLOCKS=[];
 
 /* ================================================================
    STATE + HELPERS
@@ -923,6 +910,11 @@ function renderBlocks(){
   if(!wrap)return;
   if(mode!=="discharge"){wrap.style.display="none";return;}
   wrap.style.display="block";
+  if(!BLOCKS.length){
+    wrap.innerHTML='<div class="blkhint">No client instruction blocks have been added for '+
+      'seizures yet — the medication list below still builds. Blocks are defined in '+
+      '<code>BLOCKS</code> in this file.</div>';
+    return;}
   wrap.innerHTML='<div class="blkhint">CLIENT INSTRUCTION BLOCKS — check to include, and edit the wording to suit the case. '+
     '"<code>{name}</code>" is replaced by the patient\'s name. '+
     'Start a line with • or - to print it as a bullet; leave a blank line between paragraphs.</div>'+

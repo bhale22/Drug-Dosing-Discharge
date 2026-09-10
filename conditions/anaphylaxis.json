@@ -1,19 +1,20 @@
 {
-  "title": "Anaphylaxis / Allergic Reaction",
-  "desc": "Volumes worked out by severity — mild skin reaction, mild systemic, severe systemic and localised — for diphenhydramine, Dex SP, epinephrine, atropine and terbutaline.",
+  "title": "Anaphylaxis",
+  "desc": "Diphenhydramine, Dex SP, Epinephrine 1:1000, Atropine, Epinephrine 1:1000 at the site, Terbutaline",
   "icon": "🚨",
   "code": "EMERG-ANA",
   "discharge": "Allergic Reaction",
-  "species": ["dog", "cat"],
+  "species": [
+    "dog",
+    "cat"
+  ],
   "bands": {},
   "meds": [
     {
       "id": "benadryl_mild_d",
       "sp": "dog",
-      "grp": "MILD — skin only",
-      "name": "Diphenhydramine",
-      "gen": "50 mg/ml",
-      "desc": "antihistamine",
+      "grp": "MILD Skin",
+      "name": "Diphenhydramine 50mg/ml",
       "type": "inj",
       "lo": 2.2,
       "hi": 2.2,
@@ -24,10 +25,8 @@
     {
       "id": "dexsp_mild_d",
       "sp": "dog",
-      "grp": "MILD — skin only",
-      "name": "Dex SP",
-      "gen": "4 mg/ml",
-      "desc": "dexamethasone sodium phosphate",
+      "grp": "MILD Skin",
+      "name": "Dex SP 4 mg/ml",
       "type": "inj",
       "lo": 0.25,
       "hi": 0.25,
@@ -38,25 +37,20 @@
     {
       "id": "epi_midsys_d",
       "sp": "dog",
-      "grp": "MILD systemic anaphylaxis",
+      "grp": "Mild SYSTEMIC ANAPHYLAXIS",
       "name": "Epinephrine 1:1000",
-      "gen": "1 mg/ml",
-      "desc": "consider at this stage",
       "type": "inj",
       "lo": 0.01,
       "hi": 0.01,
       "conc": 1,
       "route": "IM",
-      "inClinic": true,
-      "note": "0.01 mg/kg. With 1:1000 (1 mg/ml) the millilitres equal the milligrams."
+      "inClinic": true
     },
     {
       "id": "dexsp_midsys_d",
       "sp": "dog",
-      "grp": "MILD systemic anaphylaxis",
-      "name": "Dex SP",
-      "gen": "4 mg/ml",
-      "desc": "dexamethasone sodium phosphate",
+      "grp": "Mild SYSTEMIC ANAPHYLAXIS",
+      "name": "Dex SP 4mg/ml",
       "type": "inj",
       "lo": 0.25,
       "hi": 0.25,
@@ -67,10 +61,8 @@
     {
       "id": "atropine_midsys_d",
       "sp": "dog",
-      "grp": "MILD systemic anaphylaxis",
+      "grp": "Mild SYSTEMIC ANAPHYLAXIS",
       "name": "Atropine",
-      "gen": "0.54 mg/ml",
-      "desc": "if bradycardic",
       "type": "inj",
       "lo": 0.02,
       "hi": 0.02,
@@ -81,40 +73,34 @@
     {
       "id": "epi_sev_d",
       "sp": "dog",
-      "grp": "SEVERE systemic anaphylaxis",
+      "grp": "Severe SYSTEMIC ANAPHYLAXIS",
       "name": "Epinephrine 1:1000",
-      "gen": "1 mg/ml",
-      "desc": "give first — do not wait",
       "type": "inj",
       "lo": 0.01,
       "hi": 0.01,
       "conc": 1,
       "route": "IM or IV",
-      "inClinic": true,
-      "note": "This is the drug that matters in severe anaphylaxis, and the one most often delayed. Repeat every 5 to 15 minutes as needed."
+      "inClinic": true
     },
     {
       "id": "dexsp_sev_d",
       "sp": "dog",
-      "grp": "SEVERE systemic anaphylaxis",
-      "name": "Dex SP",
-      "gen": "4 mg/ml",
-      "desc": "higher dose than the mild protocol",
+      "grp": "Severe SYSTEMIC ANAPHYLAXIS",
+      "name": "Dex SP 4mg/ml",
       "type": "calc",
       "lo": 0.5,
       "hi": 1,
       "unitDose": "mg",
-      "freqs": ["IV"],
-      "inClinic": true,
-      "note": "0.5 to 1 mg/kg IV in severe cases. At 4 mg/ml, divide the milligrams above by 4 for the volume in ml."
+      "freqs": [
+        "IV"
+      ],
+      "inClinic": true
     },
     {
       "id": "atropine_sev_d",
       "sp": "dog",
-      "grp": "SEVERE systemic anaphylaxis",
+      "grp": "Severe SYSTEMIC ANAPHYLAXIS",
       "name": "Atropine",
-      "gen": "0.54 mg/ml",
-      "desc": "if bradycardic",
       "type": "inj",
       "lo": 0.02,
       "hi": 0.02,
@@ -125,10 +111,8 @@
     {
       "id": "benadryl_loc_d",
       "sp": "dog",
-      "grp": "LOCALISED reaction",
-      "name": "Diphenhydramine",
-      "gen": "50 mg/ml",
-      "desc": "antihistamine",
+      "grp": "Localized Anaphylaxis",
+      "name": "Diphenhydramine 50mg/ml",
       "type": "inj",
       "lo": 2.2,
       "hi": 2.2,
@@ -139,21 +123,20 @@
     {
       "id": "epi_loc_d",
       "sp": "dog",
-      "grp": "LOCALISED reaction",
-      "name": "Epinephrine 1:1000 at the site",
-      "desc": "infiltrated at the injection site",
+      "grp": "Localized Anaphylaxis",
+      "name": "Epinephrine 1:1000",
       "type": "fixed",
-      "doseText": "0.15 ml at the site of the injection",
-      "freqs": [""],
+      "doseText": "0.15 ml at site of injection",
+      "freqs": [
+        ""
+      ],
       "inClinic": true
     },
     {
       "id": "dexsp_loc_d",
       "sp": "dog",
-      "grp": "LOCALISED reaction",
-      "name": "Dex SP",
-      "gen": "4 mg/ml",
-      "desc": "dexamethasone sodium phosphate",
+      "grp": "Localized Anaphylaxis",
+      "name": "Dex SP 4 mg/ml",
       "type": "inj",
       "lo": 0.25,
       "hi": 0.25,
@@ -164,10 +147,8 @@
     {
       "id": "benadryl_mild_c",
       "sp": "cat",
-      "grp": "MILD — skin only",
-      "name": "Diphenhydramine",
-      "gen": "50 mg/ml",
-      "desc": "antihistamine",
+      "grp": "MILD Skin",
+      "name": "Diphenhydramine 50mg/ml",
       "type": "inj",
       "lo": 2.2,
       "hi": 2.2,
@@ -178,10 +159,8 @@
     {
       "id": "dexsp_mild_c",
       "sp": "cat",
-      "grp": "MILD — skin only",
-      "name": "Dex SP",
-      "gen": "4 mg/ml",
-      "desc": "dexamethasone sodium phosphate",
+      "grp": "MILD Skin",
+      "name": "Dex SP 4 mg/ml",
       "type": "inj",
       "lo": 0.25,
       "hi": 0.25,
@@ -192,10 +171,8 @@
     {
       "id": "epi_midsys_c",
       "sp": "cat",
-      "grp": "MILD systemic anaphylaxis",
+      "grp": "Mild SYSTEMIC ANAPHYLAXIS",
       "name": "Epinephrine 1:1000",
-      "gen": "1 mg/ml",
-      "desc": "consider at this stage",
       "type": "inj",
       "lo": 0.01,
       "hi": 0.01,
@@ -206,25 +183,20 @@
     {
       "id": "terb_midsys_c",
       "sp": "cat",
-      "grp": "MILD systemic anaphylaxis",
-      "name": "Terbutaline",
-      "gen": "1 mg/ml",
-      "desc": "for respiratory distress in cats",
+      "grp": "Mild SYSTEMIC ANAPHYLAXIS",
+      "name": "Terbutaline (If Resp Distress CAT)",
       "type": "inj",
       "lo": 0.01,
       "hi": 0.01,
       "conc": 1,
       "route": "IM or SQ",
-      "inClinic": true,
-      "note": "Cats in anaphylaxis present with respiratory signs rather than the collapse seen in dogs — terbutaline is the feline-specific addition."
+      "inClinic": true
     },
     {
       "id": "dexsp_midsys_c",
       "sp": "cat",
-      "grp": "MILD systemic anaphylaxis",
-      "name": "Dex SP",
-      "gen": "4 mg/ml",
-      "desc": "dexamethasone sodium phosphate",
+      "grp": "Mild SYSTEMIC ANAPHYLAXIS",
+      "name": "Dex SP 4mg/ml",
       "type": "inj",
       "lo": 0.25,
       "hi": 0.25,
@@ -235,25 +207,20 @@
     {
       "id": "epi_sev_c",
       "sp": "cat",
-      "grp": "SEVERE systemic anaphylaxis",
+      "grp": "Severe SYSTEMIC ANAPHYLAXIS",
       "name": "Epinephrine 1:1000",
-      "gen": "1 mg/ml",
-      "desc": "give first — do not wait",
       "type": "inj",
       "lo": 0.01,
       "hi": 0.01,
       "conc": 1,
       "route": "IM or IV",
-      "inClinic": true,
-      "note": "Repeat every 5 to 15 minutes as needed."
+      "inClinic": true
     },
     {
       "id": "terb_sev_c",
       "sp": "cat",
-      "grp": "SEVERE systemic anaphylaxis",
-      "name": "Terbutaline",
-      "gen": "1 mg/ml",
-      "desc": "for respiratory distress in cats",
+      "grp": "Severe SYSTEMIC ANAPHYLAXIS",
+      "name": "Terbutaline (If Resp Distress CAT)",
       "type": "inj",
       "lo": 0.01,
       "hi": 0.01,
@@ -264,25 +231,22 @@
     {
       "id": "dexsp_sev_c",
       "sp": "cat",
-      "grp": "SEVERE systemic anaphylaxis",
-      "name": "Dex SP",
-      "gen": "4 mg/ml",
-      "desc": "higher dose than the mild protocol",
+      "grp": "Severe SYSTEMIC ANAPHYLAXIS",
+      "name": "Dex SP 4mg/ml",
       "type": "calc",
       "lo": 0.5,
       "hi": 1,
       "unitDose": "mg",
-      "freqs": ["IV"],
-      "inClinic": true,
-      "note": "0.5 to 1 mg/kg IV. At 4 mg/ml, divide by 4 for the volume in ml."
+      "freqs": [
+        "IV"
+      ],
+      "inClinic": true
     },
     {
       "id": "atropine_sev_c",
       "sp": "cat",
-      "grp": "SEVERE systemic anaphylaxis",
+      "grp": "Severe SYSTEMIC ANAPHYLAXIS",
       "name": "Atropine",
-      "gen": "0.54 mg/ml",
-      "desc": "if bradycardic",
       "type": "inj",
       "lo": 0.02,
       "hi": 0.02,
@@ -291,37 +255,21 @@
       "inClinic": true
     }
   ],
-  "notes": {
-    "Epinephrine first": "In severe systemic anaphylaxis, epinephrine is the drug that changes the outcome. Antihistamines and steroids do not treat the acute event — give the epinephrine and do not wait to see whether the others work.",
-    "Concentration": "Epinephrine 1:1000 is 1 mg/ml, so the millilitres equal the milligrams at 0.01 mg/kg.",
-    "Cats present differently": "Cats show respiratory distress rather than the vascular collapse typical of dogs. Terbutaline 0.01 mg/kg is the feline-specific addition.",
-    "Dexamethasone dose changes with severity": "0.25 mg/kg for mild reactions; 0.5 to 1 mg/kg IV for severe systemic anaphylaxis.",
-    "Localised reactions": "Diphenhydramine 2.2 mg/kg, Dex SP 0.25 mg/kg, and 0.15 ml of epinephrine 1:1000 infiltrated at the site of the injection."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "what",
-      "title": "What happened today",
-      "on": true,
-      "text": "{name} had an allergic reaction. We have treated it and the immediate danger has passed, but reactions can occasionally come back a few hours later.\n\nPlease keep {name} quiet and where you can see them for the rest of today and tonight."
-    },
-    {
-      "id": "watch",
-      "title": "Come straight back, or go to an emergency hospital, if you see",
-      "on": true,
-      "text": "- Swelling of the face, muzzle, eyes or throat\n- Difficulty breathing, noisy breathing, or open-mouthed breathing\n- Vomiting or diarrhea, especially with weakness\n- Pale gums, collapse, or unsteadiness\n- Widespread hives or intense itching returning\n\nDo not wait to see whether it settles. A returning reaction can move quickly."
-    },
-    {
-      "id": "cause",
-      "title": "What caused it",
-      "on": true,
-      "text": "We often cannot identify the trigger with certainty. Common ones are insect stings, medications, vaccines and foods.\n\nIf you know what {name} was exposed to, please tell us so we can record it — that matters for future vaccinations, anaesthetics and prescriptions."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "Call us tomorrow to let us know how {name} is. If reactions have happened more than once we should talk about what to avoid, and whether you should keep anything at home."
-    }
-  ]
+  "notes": [
+    "MILD Skin",
+    "Diphenhydramine 50mg/ml",
+    "Dex SP 4 mg/ml",
+    "Mild SYSTEMIC ANAPHYLAXIS",
+    "Consider Epinephrine 1:1000",
+    "Dex SP 4mg/ml",
+    "Atropine",
+    "Terbutaline (If Resp Distress CAT)",
+    "Severe SYSTEMIC ANAPHYLAXIS",
+    "Epinephrine 1:1000",
+    "Dex SP 4mg/ml (0.5 to 1 mg/kg IV)",
+    "ml to",
+    "Localized Anaphylaxis",
+    "0.15 ml at site of injection"
+  ],
+  "dischargeBlocks": []
 }

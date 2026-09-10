@@ -1,191 +1,237 @@
 {
-  "title": "Urinary Incontinence & Dyssynergia",
-  "desc": "Sphincter incompetence versus reflex dyssynergia — Proin, DES and Incurin for females; tamsulosin, prazosin and bethanechol for males; plus how the residual urine volume tells the two apart.",
+  "title": "Urinary Incontinence",
+  "desc": "Proin, DES, Incurin, Tamsulosin, Prazosin, Bethanechol, Phenoxybenzamine, Diazepam, Acepromazine, Methocarbamol",
   "icon": "💧",
   "code": "URO-INC",
   "discharge": "Urinary Incontinence",
-  "species": ["dog"],
+  "species": [
+    "dog"
+  ],
   "bands": {
     "bethanechol_wt": [
-      { "min": 0, "max": 25, "lb": "Small dog (under about 25 lb)", "text": "5 mg" },
-      { "min": 25, "max": 60, "lb": "Medium dog (about 25 to 60 lb)", "text": "10 mg" },
-      { "min": 60, "max": 300, "lb": "Large dog (over about 60 lb)", "text": "15 mg" }
+      {
+        "min": 0,
+        "max": 25,
+        "lb": "Small dog (under about 25 lb)",
+        "text": "5 mg"
+      },
+      {
+        "min": 25,
+        "max": 60,
+        "lb": "Medium dog (about 25 to 60 lb)",
+        "text": "10 mg"
+      },
+      {
+        "min": 60,
+        "max": 300,
+        "lb": "Large dog (over about 60 lb)",
+        "text": "15 mg"
+      }
     ],
     "prazosin_wt": [
-      { "min": 0, "max": 30, "lb": "Under 30 lb", "text": "1 mg" },
-      { "min": 30, "max": 300, "lb": "Over 30 lb", "text": "2 mg" }
+      {
+        "min": 0,
+        "max": 30,
+        "lb": "Under 30 lb",
+        "text": "1 mg"
+      },
+      {
+        "min": 30,
+        "max": 300,
+        "lb": "Over 30 lb",
+        "text": "2 mg"
+      }
     ]
   },
   "meds": [
     {
       "id": "proin",
       "sp": "dog",
-      "grp": "Sphincter incompetence",
+      "grp": "Drugs",
       "name": "Proin",
-      "gen": "phenylpropanolamine",
-      "desc": "alpha-1 agonist — tightens the sphincter",
       "type": "calc",
       "lo": 1,
       "hi": 1.5,
       "unitDose": "mg",
-      "freqs": ["every 8 to 24 hours"],
-      "note": "1–1.5 mg/kg q 8–24 h. This is the drug for sphincter INCOMPETENCE — it is the wrong drug for reflex dyssynergia and will make that worse."
+      "freqs": [
+        "q 8-24 h"
+      ]
     },
     {
       "id": "des",
       "sp": "dog",
-      "grp": "Sphincter incompetence — female dogs",
+      "grp": "Female Dogs",
       "name": "DES",
-      "gen": "diethylstilbestrol",
-      "desc": "oestrogen, dosed per dog",
       "type": "fixed",
       "doseText": "0.1 to 1 mg PER DOG",
-      "freqs": ["daily for 5 to 7 days, then once or twice weekly"],
-      "note": "A total dose per dog, not mg/kg. Load daily for 5–7 days, then drop to once or twice weekly."
+      "freqs": [
+        "daily for 5 to 7 days, then once or twice weekly"
+      ]
     },
     {
       "id": "incurin",
       "sp": "dog",
-      "grp": "Sphincter incompetence — female dogs",
+      "grp": "Female Dogs",
       "name": "Incurin",
-      "gen": "estriol",
-      "desc": "oestrogen, dosed per dog",
       "type": "fixed",
-      "doseText": "2 mg PER DOG",
-      "freqs": ["daily for 2 weeks, then taper to the lowest effective dose"],
-      "note": "A total dose per dog, not mg/kg."
+      "doseText": "2 mg daily per dog for 2 weeks, then taper to lowest effective dose",
+      "freqs": [
+        "daily for 2 weeks, then taper to the lowest effective dose"
+      ]
     },
     {
       "id": "tamsulosin",
       "sp": "dog",
-      "grp": "Reflex dyssynergia — male dogs",
+      "grp": "MALE DOGS",
       "name": "Tamsulosin",
-      "gen": "Flomax, 0.4 mg capsules",
-      "desc": "relaxes the internal urethral sphincter",
+      "gen": "(flomax) 0.4 mg caps",
       "type": "calc",
       "lo": 0.01,
       "hi": 0.2,
       "unitDose": "mg",
-      "freqs": ["every 24 hours"],
-      "note": "0.01–0.2 mg/kg q 24 h. Fewer side effects and less hypotension than prazosin. Relaxes the INTERNAL urethral sphincter only; prazosin relaxes internal and external."
+      "freqs": [
+        "q 24 h"
+      ]
     },
     {
       "id": "prazosin",
       "sp": "dog",
-      "grp": "Reflex dyssynergia — male dogs",
+      "grp": "MALE DOGS",
       "name": "Prazosin",
-      "desc": "alpha blocker — relaxes internal and external sphincter",
       "type": "weightText",
       "bandKey": "prazosin_wt",
-      "freqs": ["every 8 hours"],
-      "chartCols": ["Weight", "Dose"],
-      "chartRowFields": ["lb", "text"],
-      "chartNote": "1 mg q 8 h under 30 lb; 2 mg q 8 h over 30 lb.",
-      "note": "Relaxes both the internal and external sphincter. More hypotension than tamsulosin."
+      "freqs": [
+        "q 8 h"
+      ],
+      "chartCols": [
+        "Weight",
+        "Dose"
+      ],
+      "chartRowFields": [
+        "lb",
+        "text"
+      ]
     },
     {
       "id": "bethanechol",
       "sp": "dog",
-      "grp": "Reflex dyssynergia — male dogs",
+      "grp": "MALE DOGS",
       "name": "Bethanechol",
-      "gen": "Urecholine",
-      "desc": "contracts the bladder so it can empty",
       "type": "weightText",
       "bandKey": "bethanechol_wt",
-      "freqs": ["three times daily"],
-      "chartCols": ["Size", "Dose"],
-      "chartRowFields": ["lb", "text"],
-      "chartNote": "Small dog 5 mg TID, medium dog 10 mg TID, large dog 15 mg TID.",
-      "note": "Contracts the bladder so it empties instead of overflowing. Dyssynergia needs TWO drugs — bethanechol to empty the bladder, plus an alpha blocker to relax the sphincter."
+      "freqs": [
+        "TID"
+      ],
+      "chartCols": [
+        "Size",
+        "Dose"
+      ],
+      "chartRowFields": [
+        "lb",
+        "text"
+      ]
     },
     {
       "id": "phenoxybenzamine",
       "sp": "dog",
-      "grp": "Reflex dyssynergia — male dogs",
+      "grp": "MALE DOGS",
       "name": "Phenoxybenzamine",
-      "desc": "alternative alpha blocker",
       "type": "calc",
       "lo": 0.25,
       "hi": 0.25,
       "unitDose": "mg",
-      "freqs": ["every 8 to 12 hours"]
+      "freqs": [
+        "q 8-12 h"
+      ]
     },
     {
       "id": "diazepam_inc",
       "sp": "dog",
-      "grp": "Striated muscle relaxation, if needed",
+      "grp": "Drugs",
       "name": "Diazepam",
-      "desc": "relaxes the striated (external) sphincter",
       "type": "calc",
       "lo": 0.5,
       "hi": 2,
       "unitDose": "mg",
-      "freqs": ["every 8 hours, or 30 minutes before voiding"],
-      "note": "Give 30 minutes before voiding if being used situationally rather than around the clock."
+      "freqs": [
+        "q 8 h, or 30 minutes before voiding"
+      ]
     },
     {
       "id": "ace_inc",
       "sp": "dog",
-      "grp": "Striated muscle relaxation, if needed",
+      "grp": "Drugs",
       "name": "Acepromazine",
-      "desc": "striated muscle relaxation",
       "type": "calc",
       "lo": 0.5,
       "hi": 2.2,
       "unitDose": "mg",
-      "freqs": ["every 6 to 8 hours"]
+      "freqs": [
+        "q 6-8 h"
+      ]
     },
     {
       "id": "methocarbamol_inc",
       "sp": "dog",
-      "grp": "Striated muscle relaxation, if needed",
+      "grp": "Drugs",
       "name": "Methocarbamol",
-      "desc": "striated muscle relaxant",
       "type": "calc",
       "lo": 22,
       "hi": 44,
       "unitDose": "mg",
-      "freqs": ["every 8 hours"]
+      "freqs": [
+        "q 8 h"
+      ]
     }
   ],
-  "notes": {
-    "Tell the two apart first": "If the residual urine volume after voiding is greater than 1 ml/kg, reflex dyssynergia is likely. Sphincter incompetence gets Proin; reflex dyssynergia gets prazosin plus bethanechol. Giving Proin for dyssynergia makes it worse.",
-    "Measuring residual volume": "Estimate from ultrasound: L × W × Ht × 0.2 × π, or L × W × H × 0.63 (cm, giving ml). A fully voided bladder should hold about 1 ml/kg.",
-    "Two conditions in male dogs": "1) Sphincter dyssynergia — neurological damage to bladder and sphincter causing paralysis of the bladder wall and spasm of the urinary sphincter, producing overflow incontinence and dribbling. 2) Sphincter incompetence — weakness in the sphincter's ability to hold urine back, the opposite problem, treated with hormones and alpha-1 agonists like PPA. In male dogs, especially older ones, it is most often the first.",
-    "Dyssynergia needs two drugs": "Bethanechol (Urecholine) to contract the bladder so it empties instead of overflowing, PLUS prazosin or a similar alpha blocker to relax the urinary sphincter. One without the other does not work.",
-    "Where the lesion is": "Dyssynergia follows lesions along the lumbosacral region — spondylitis and similar.",
-    "Sphincter coverage": "Flomax relaxes the internal urethral sphincter. Prazosin relaxes internal and external."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "what",
-      "title": "What is causing the leaking",
-      "on": true,
-      "text": "There is more than one reason a dog leaks urine, and they need opposite treatments — which is why we examined {name} and measured how much urine was left behind after urinating.\n\nIn some dogs the valve holding urine in has become weak. In others the bladder itself cannot squeeze properly and the urine overflows. The medication we have chosen matches which one {name} has."
-    },
-    {
-      "id": "notfault",
-      "title": "This is not a house-training problem",
-      "on": true,
-      "text": "{name} is not being disobedient and is very likely unaware it is happening — most leaking occurs while asleep or resting.\n\nPlease do not scold {name} for wet bedding. Washable bedding, or a waterproof cover, makes life easier for everyone while the medication takes effect."
-    },
-    {
-      "id": "monitor",
-      "title": "What to watch for",
-      "on": true,
-      "text": "- Straining to urinate, or producing only small amounts\n- A hard or painful belly\n- Blood in the urine, or a strong smell\n- Restlessness and repeated squatting with little coming out\n\nA dog that cannot pass urine at all is an emergency — call us straight away."
-    },
-    {
-      "id": "sideeffects",
-      "title": "Side effects to tell us about",
-      "on": true,
-      "text": "- Restlessness, panting, or a racing heart\n- Loss of appetite\n- Wobbliness or weakness, especially standing up\n\nSome of these medications affect blood pressure, so please tell us rather than adjusting the dose yourself."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "Please book the recheck we discussed. It is normal to need a dose adjustment before we get the leaking fully under control — keep a note of how often it happens so we have something to compare."
-    }
-  ]
+  "notes": [
+    "Incontinence",
+    "Female Dogs",
+    "Proin",
+    "1-1.5 mg/kg",
+    "8 to 24",
+    "0.1 to 1 mg PER DOG for 5 to 7 days, then once or twice weekly",
+    "Incurin",
+    "(Estriol)",
+    "2 mg daily per dog for 2 weeks, then taper to lowest effective dose",
+    "MALE DOGS",
+    "If urine residual volume > 1 ml/kg, then likely Reflex Dyssynergia",
+    "Urine Volume Estimate from ultrasound (L x W x Ht x 0.2 x Pi), or L x W x H x 0.63",
+    "For sphincter incontinence-> Proin, for Reflex Dyssynergia->Prazosin & bethanechol",
+    "L (cm)",
+    "W (cm)",
+    "H (cm)",
+    "Tamsulosin",
+    ".01 to 0.2 mg/kg q 24 hrs",
+    "q 24 hrs",
+    "(flomax) 0.4 mg caps, fewer side effects, less hypotension than prazosin",
+    "Expected volume (fully voided):",
+    "(1 ml/kg)",
+    "Bethanecol",
+    "Small Dog 5 mg TID, Med dog 10 mg TID, Large dog: 15 mg TID",
+    "Prazosin",
+    "(<30 lb) 1 mg q 8hr",
+    "(>30 lb) 2 mg q 8 hr",
+    "FloMax: Internal urethral sphincter relaxation, Prazosin- internal and external.",
+    "For striated muscle relaxation (if needed), Diazepam 30 min prior to voiding, acepromazine or methocarbamol",
+    "Phenoxybenzamine (.25 mg/kg) q 8-12 hr",
+    "Acepromazine 0.5 - 2.2 mg/kg PO q 6-8 hr",
+    "Diazepam 0.5-2 mg/kg PO q 8 hr or prior to voiding",
+    "Methocarbamol 22-44 mg/kg q 8hr",
+    "Instead the opposite reason is occurring for male incontinence due to sphincter spasms spondylitis etc)",
+    "causing some paralysis of the bladder and causing spasms of the urinary sphincter.",
+    "( opposite of sphincter incompetence). This occurs when there are lesions along the lumbar sacral regions (",
+    "Rx: you need two drugs to successfully treat",
+    "1) Urecholine (bethanecol) to contract bladder so it can empty instead of overflowing urine",
+    "2) Prazosin or similar alpha blocker to relax urinary sphincter",
+    "2 entirely different conditions for dribbling urine in male dogs",
+    "1) Sphincter dyssnergia...due to neurological damage to the bladder and sphincter",
+    "causing paralysis of the bladder wall and spasms of the urinary sphincter....get",
+    "overflow incontinence and dribbling of urine",
+    "2) Male incompetence of the urinary sphincter....due to weakness in the ability",
+    "of the sphincter to hold back urine ( this is the opposite of sphincter dyssnergia",
+    "treat with drugs that improve sphincter control...ie hormones, alpha 1 agonists like PPA",
+    "Most times it is the first cause in male dogs especially older ones"
+  ],
+  "dischargeBlocks": []
 }

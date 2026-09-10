@@ -1,6 +1,6 @@
 {
-  "title": "Reflux Esophagitis (the Gulpies)",
-  "desc": "Gulping and repeated swallowing in dogs — omeprazole, metoclopramide and sucralfate, with the meal-timing routine that makes or breaks the response.",
+  "title": "Gulping/Swallowing",
+  "desc": "Omeprazole, Metoclopramide, Sucralfate, Prednisolone, Budesonide, Cyclosporine",
   "icon": "😮‍💨",
   "code": "GI-REFLUX",
   "discharge": "Reflux / Gulping",
@@ -12,126 +12,91 @@
     {
       "id": "omeprazole_rf",
       "sp": "dog",
-      "grp": "Core treatment",
+      "grp": "Drugs",
       "name": "Omeprazole",
-      "gen": "Prilosec",
-      "desc": "reduces stomach acid so the refluxed fluid stops burning",
       "type": "calc",
       "lo": 1,
       "hi": 1,
       "unitDose": "mg",
       "freqs": [
-        "twice daily, 30 minutes before a meal"
-      ],
-      "note": "1 mg/kg PO q 12 h. Timing matters: give each dose 30 minutes BEFORE a meal. If the episodes are worse overnight, give the second dose at BEDTIME rather than at dinner."
+        "BID, 30 minutes before a meal"
+      ]
     },
     {
       "id": "metoclopramide_rf",
       "sp": "dog",
-      "grp": "Core treatment",
+      "grp": "Drugs",
       "name": "Metoclopramide",
-      "gen": "Reglan",
-      "desc": "tightens the lower esophageal sphincter and moves the stomach along",
       "type": "calc",
       "lo": 0.2,
       "hi": 0.4,
       "unitDose": "mg",
       "freqs": [
         "every 8–12 hours, 30 minutes before a meal"
-      ],
-      "note": "0.2–0.4 mg/kg PO q 8–12 h, each dose 30 minutes before a meal and again at bedtime. After the bedtime dose give a small meal 30 minutes later, then it really is bedtime."
+      ]
     },
     {
       "id": "sucralfate_rf",
       "sp": "dog",
-      "grp": "If needed",
-      "name": "Sucralfate",
-      "gen": "Carafate 1 g tablets",
-      "desc": "coats the irritated esophagus",
+      "grp": "Drugs",
+      "name": "Carafate (if needed)",
       "type": "fixed",
       "doseText": "½ to 1 tablet (1 g tablets) as a water slurry",
       "freqs": [
-        "every 8 hours"
-      ],
-      "note": "Give as a slurry in water, on an empty stomach, an hour or more apart from meals and from any other medication — it will bind the other drugs otherwise."
+        "q 8 h"
+      ]
     },
     {
       "id": "pred_rf",
       "sp": "dog",
-      "grp": "If inflammatory bowel disease is also present",
-      "name": "Prednisolone",
-      "desc": "anti-inflammatory, if IBD is part of the picture",
+      "grp": "Drugs",
+      "name": "Pred",
       "type": "fixed",
-      "doseText": "prednisolone at your usual IBD dose",
+      "doseText": "Pred",
       "freqs": [
         ""
-      ],
-      "note": "Listed on the source sheet as an option only where IBD is present, without a dose. Choose the dose from your usual IBD protocol."
+      ]
     },
     {
       "id": "budesonide_rf",
       "sp": "dog",
-      "grp": "If inflammatory bowel disease is also present",
+      "grp": "Drugs",
       "name": "Budesonide",
-      "desc": "locally acting steroid",
       "type": "fixed",
-      "doseText": "budesonide at your usual IBD dose",
+      "doseText": "budesonide",
       "freqs": [
         ""
-      ],
-      "note": "Listed on the source sheet as an option for concurrent IBD, without a dose."
+      ]
     },
     {
       "id": "cyclosporine_rf",
       "sp": "dog",
-      "grp": "If inflammatory bowel disease is also present",
+      "grp": "Drugs",
       "name": "Cyclosporine",
-      "desc": "immunosuppressive, for refractory IBD",
       "type": "calc",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
-        "once daily"
+        "SID"
       ]
     }
   ],
-  "notes": {
-    "The pattern to look for": "Repeated gulping, licking, or swallowing — often in bouts, often worse at night or on an empty stomach. It frequently looks far more dramatic on video than on examination.",
-    "How fast you will know": "If reflux is the right idea this works immediately — usually within a week you can tell whether the pattern has been interrupted, depending on how often the episodes were happening.",
-    "Timing is the treatment": "The drugs do little if the timing is wrong. Both omeprazole and metoclopramide go in 30 minutes before food; a small meal at bedtime keeps the stomach from being empty overnight.",
-    "Worked example from the sheet": "A dog on omeprazole 30 mg BID and metoclopramide 10 mg BID–TID, each dose 30 minutes before a meal and again at bedtime."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "what",
-      "title": "What is going on",
-      "on": true,
-      "text": "The gulping, licking and repeated swallowing you are seeing is almost certainly acid coming back up into {name}'s food pipe. It is uncomfortable rather than dangerous, and it usually settles quickly once we interrupt the pattern."
-    },
-    {
-      "id": "timing",
-      "title": "When to give the medication — this is the important part",
-      "on": true,
-      "text": "These medicines only work properly if they go in at the right time.\n\n- Give each dose 30 minutes BEFORE a meal, not with food.\n- Give the evening dose at bedtime rather than at dinner if the episodes are worse overnight.\n- After the bedtime dose, wait 30 minutes and give a small meal, then settle {name} for the night.\n\nAn empty stomach overnight is what sets off most of these episodes."
-    },
-    {
-      "id": "slurry",
-      "title": "If we sent home sucralfate (Carafate)",
-      "on": false,
-      "text": "Crush the tablet and mix it with a little water into a slurry, then give it.\n\n- Give it on an empty stomach.\n- Keep it at least one hour away from meals and from every other medication — it will stick to the other drugs and stop them working."
-    },
-    {
-      "id": "expect",
-      "title": "What to expect",
-      "on": true,
-      "text": "If we have the right idea, this works quickly. You should be able to tell within about a week whether the episodes are settling.\n\nPlease keep a rough note of how often the gulping happens so we can compare."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "Please let us know in about a week how {name} is doing. If there is no change at all, call us — it may not be reflux, and we will want to look further."
-    }
-  ]
+  "notes": [
+    "Reflux Esophagitis, the Gulpies",
+    "Omeprazole",
+    "1 mg/kg BID",
+    "Metoclopramide",
+    ".2 - .4mg/kg q 8-12 hr",
+    "Carafate (if needed)",
+    "1/2 to 1 tab",
+    "Give as slurry on empty stomacy an hour or more apart from meals or other meds.",
+    "If IBS. Pred, budesonide, cyclosporine 5 mg/kg SID",
+    "The video looks a LOT like reflux esophagitis, so I'd try those maneuvers:",
+    "-Omeprazole: 30 mg BID, each dose 30 min before a meal (or if this is worse at night, give the second dose at BEDtime, not dinnertime)",
+    "-Metoclopramide: 10 mg BID-TID, each dose 30 min before a meal and again at bedtime",
+    "...after the bedtime meds, give her a small meal 30 min later and then it really IS time for bed",
+    "If this is the right idea, it works immediately....so usually within a week you'll know whether you're interrupting the pattern (depending on how frequently these episodes happen)."
+  ],
+  "dischargeBlocks": []
 }

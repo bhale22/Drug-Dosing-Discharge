@@ -1,159 +1,168 @@
 {
   "title": "Lupoid Onychodystrophy",
-  "desc": "Niacinamide plus tetracycline (or doxycycline/minocycline), vitamin E and essential fatty acids, escalating to pentoxifylline. Also covers plasma cell pododermatitis.",
+  "desc": "Niacinamide, Tetracycline, Doxycycline, Minocycline, Vitamin E, Omega-3 and omega-6 fatty acids, Pentoxifylline",
   "icon": "🐾",
   "code": "DERM-NAIL",
   "discharge": "Nail Disease",
-  "species": ["dog"],
+  "species": [
+    "dog"
+  ],
   "bands": {
     "niacin_wt": [
-      { "min": 0, "max": 22, "lb": "Under 22 lb (under 10 kg)", "text": "250 mg" },
-      { "min": 22, "max": 300, "lb": "Over 22 lb (over 10 kg)", "text": "500 mg" }
+      {
+        "min": 0,
+        "max": 22,
+        "lb": "Under 22 lb (under 10 kg)",
+        "text": "250 mg"
+      },
+      {
+        "min": 22,
+        "max": 300,
+        "lb": "Over 22 lb (over 10 kg)",
+        "text": "500 mg"
+      }
     ]
   },
   "meds": [
     {
       "id": "niacinamide",
       "sp": "dog",
-      "grp": "Preferred first-line pair",
+      "grp": "PREFERRED",
       "name": "Niacinamide",
-      "desc": "dosed by size band, not per kg",
       "type": "weightText",
       "bandKey": "niacin_wt",
-      "freqs": ["twice daily"],
-      "chartCols": ["Weight", "Dose"],
-      "chartRowFields": ["lb", "text"],
-      "chartNote": "250 mg BID under 10 kg; 500 mg BID over 10 kg.",
-      "note": "Given as a pair with tetracycline — neither is used alone for this condition. Niacinamide, not niacin."
+      "freqs": [
+        "BID"
+      ],
+      "chartCols": [
+        "Weight",
+        "Dose"
+      ],
+      "chartRowFields": [
+        "lb",
+        "text"
+      ]
     },
     {
       "id": "tetracycline_nail",
       "sp": "dog",
-      "grp": "Preferred first-line pair",
+      "grp": "PREFERRED",
       "name": "Tetracycline",
-      "desc": "the partner drug to niacinamide",
       "type": "weightText",
       "bandKey": "niacin_wt",
-      "freqs": ["twice daily"],
-      "chartCols": ["Weight", "Dose"],
-      "chartRowFields": ["lb", "text"],
-      "chartNote": "250 mg BID under 10 kg; 500 mg BID over 10 kg — the same size bands as niacinamide.",
-      "note": "Used here for its immunomodulating effect rather than as an antibiotic."
+      "freqs": [
+        "BID"
+      ],
+      "chartCols": [
+        "Weight",
+        "Dose"
+      ],
+      "chartRowFields": [
+        "lb",
+        "text"
+      ]
     },
     {
       "id": "doxycycline_nail",
       "sp": "dog",
-      "grp": "Instead of tetracycline",
+      "grp": "Or doxy/minocycline instead of tetracycline",
       "name": "Doxycycline",
-      "desc": "substitute for tetracycline",
       "type": "calc",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
-      "freqs": ["once daily", "twice daily"],
-      "note": "5 mg/kg SID or BID. Minocycline is equivalent to doxycycline here and can be swapped one for one."
+      "freqs": [
+        "SID",
+        "BID"
+      ]
     },
     {
       "id": "minocycline_nail",
       "sp": "dog",
-      "grp": "Instead of tetracycline",
+      "grp": "Or doxy/minocycline instead of tetracycline",
       "name": "Minocycline",
-      "desc": "equivalent to doxycycline",
       "type": "calc",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
-      "freqs": ["once daily", "twice daily"],
-      "note": "Dosed as for doxycycline."
+      "freqs": [
+        "SID",
+        "BID"
+      ]
     },
     {
       "id": "vite_nail",
       "sp": "dog",
-      "grp": "Supportive",
+      "grp": "Drugs",
       "name": "Vitamin E",
-      "desc": "antioxidant",
       "type": "fixed",
-      "doseText": "200 to 400 IU by mouth",
-      "freqs": ["every 12 hours"]
+      "doseText": "200 to 400 IU PO",
+      "freqs": [
+        "q 12 h"
+      ]
     },
     {
       "id": "efa_nail",
       "sp": "dog",
-      "grp": "Supportive",
+      "grp": "Drugs",
       "name": "Omega-3 and omega-6 fatty acids",
-      "desc": "dosed on EPA content",
       "type": "calc",
       "lo": 36,
       "hi": 36,
       "unitDose": "mg EPA",
-      "freqs": ["per day"],
-      "note": "The published dose is 180 mg EPA per 5 kg per day, which is the 36 mg/kg/day calculated above. Safe upper limit is 370 mg/kg^0.75 per day — for most dogs the calculated dose sits well below that, but check in a very large dog."
+      "freqs": [
+        "per day"
+      ]
     },
     {
       "id": "pentox_nail",
       "sp": "dog",
-      "grp": "If not improving at 4 to 6 weeks",
-      "name": "Pentoxifylline",
-      "gen": "400 mg tablets",
-      "desc": "added when the first-line pair is not enough",
+      "grp": "If not improving after 4 to 6 weeks",
+      "name": "Pentoxyphylline",
       "type": "calc",
       "lo": 15,
       "hi": 15,
       "unitDose": "mg",
-      "freqs": ["twice daily"],
-      "note": "15 mg/kg BID, in 400 mg tablets. Add if there is no improvement after 4 to 6 weeks. If it then improves, wean off the doxycycline, and possibly off the niacinamide too."
+      "freqs": [
+        "BID"
+      ]
     },
     {
       "id": "doxy_pcpod",
       "sp": "dog",
-      "grp": "Plasma cell pododermatitis",
+      "grp": "PLASMA CELL PODODERMATITIS",
       "name": "Doxycycline",
-      "desc": "a different condition with a different course length",
       "type": "calc",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
-      "freqs": ["twice daily for at least 30 days, then once daily for a further 30–60 days"],
-      "note": "5 mg/kg BID for at least 30 days, then drop to once daily for maintenance for another 30 to 60 days. This disease tends to relapse."
+      "freqs": [
+        "BID for at least 30 days, then SID for a further 30–60 days"
+      ]
     }
   ],
-  "notes": {
-    "Preferred protocol": "Niacinamide plus tetracycline, both dosed by size band — 250 mg BID under 10 kg, 500 mg BID over 10 kg — with vitamin E and essential fatty acids alongside.",
-    "Substituting the tetracycline": "Doxycycline 5 mg/kg SID or BID can replace tetracycline; minocycline is equivalent to doxycycline.",
-    "Escalation": "If there is no improvement after 4 to 6 weeks, add pentoxifylline 15 mg/kg BID. If things then improve, wean off the doxycycline, with or without weaning off the niacinamide.",
-    "Fatty acid ceiling": "180 mg EPA per 5 kg per day. The safe upper limit is 370 mg/kg^0.75 per day.",
-    "Plasma cell pododermatitis": "A separate condition: doxycycline 5 mg/kg BID for at least 30 days, then once daily for maintenance for a further 30–60 days. It tends to relapse."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "what",
-      "title": "What is happening to the nails",
-      "on": true,
-      "text": "{name}'s immune system is attacking the nail beds. The nails become brittle, split, and lift away — which is painful, and why {name} may have been licking at the feet.\n\nThe medications calm that immune reaction. They do not glue the nails back on: the damaged nails have to grow out, and that takes months."
-    },
-    {
-      "id": "patience",
-      "title": "How long this takes",
-      "on": true,
-      "text": "Please expect to wait.\n\n- The first sign of improvement is usually new, healthy nail growing in at the base — not the old nails looking better.\n- We reassess at 4 to 6 weeks. If there is no change by then we add another medication.\n- Most dogs stay on treatment for many months, and some stay on a reduced dose long term.\n\nStopping early because nothing seems to be happening is the commonest reason this fails."
-    },
-    {
-      "id": "feet",
-      "title": "Looking after the feet",
-      "on": true,
-      "text": "- Keep the nails trimmed short — ask us to show you how short is right.\n- Loose or lifting nails are painful; do not pull them, and let us remove any that need it.\n- Keep the feet clean and dry.\n- Call us if a foot becomes swollen, smelly, or discharging — that usually means infection on top."
-    },
-    {
-      "id": "meds",
-      "title": "About the medication",
-      "on": true,
-      "text": "Several of these are given twice a day, and consistency matters more than the exact time.\n\nGive them with food. Call us before stopping or changing anything, even if {name} seems better."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "Please book a recheck at 4 to 6 weeks so we can see whether new nail is growing in and decide whether to add anything."
-    }
-  ]
+  "notes": [
+    "Lupoid Onychydystrophy",
+    "PREFERRED:",
+    "Niacinamide 250 mg BID if < 10 kg, 500 BID mg if > 10 kg",
+    "Tetracycline 250 mg BID if < 10 kg, 500 BID mg if > 10 kg",
+    "Vitamin E: 200 to 400 IU PO q 12h",
+    "Omega-3 and Omega-6 Fatty Acids:",
+    "Dose: 180 mg EPA/5 kg/d PO",
+    "Safe upper limit 370mg/kg^(3/4)",
+    "mg/day",
+    "Or doxy/minocycline instead of tetracycline:",
+    "Doxycycline",
+    "5 mg/kg SID or BID",
+    "mg SID or BID",
+    "Minocycline equivalent to Doxy",
+    "If not improving after 4 to 6 weeks: then add Pentoxyphylline, if improvement then wean off of doxycycline, +- weaning off of niacinamide",
+    "Dose (mg) 0.05 mg/kg",
+    "Pentoxyphylline",
+    "15 mg/kg BID",
+    "mg (comes in 400 mg tabs)",
+    "PLASMA CELL PODODERMATITIS",
+    "5 mg/kg doxycycline BID for at least 30 days, then drop to once daily for maintenance for an additional 30-60 days. This disease tends to relapse"
+  ],
+  "dischargeBlocks": []
 }

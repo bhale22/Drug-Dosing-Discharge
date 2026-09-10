@@ -57,13 +57,23 @@ function main() {
       ? data.species
       : [...new Set(meds.map((m) => m.sp).filter(Boolean))].sort();
 
+    /* The home page searches drug names, so they travel in the index. Names and
+       generic/strength labels only - no prose. */
+    const drugs = [];
+    for (const m of meds) {
+      for (const v of [m.name, m.gen]) {
+        const t = v ? String(v).trim() : "";
+        if (t && !drugs.includes(t)) drugs.push(t);
+      }
+    }
+
     const entry = {
       id,
       title: String(data.title),
-      desc: data.desc ? String(data.desc) : "",
       icon: data.icon ? String(data.icon) : "💊",
       species,
       medCount: meds.length,
+      drugs,
     };
     if (CUSTOM_PAGES[id]) entry.page = CUSTOM_PAGES[id];
     conditions.push(entry);

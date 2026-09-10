@@ -1,6 +1,6 @@
 {
   "title": "Snuffling Cat",
-  "desc": "Chronic feline upper respiratory / rhinosinusitis — Cerenia for congestion, pulse-dosed azithromycin, famciclovir, saline flushing, and the supportive protocol (Mandelker).",
+  "desc": "Cerenia, Cerenia in a nebuliser, Azithromycin tablets, Azithromycin liquid, Famciclovir, Nasal saline flush, Neo-Poly-Dex drops, Chlorpheniramine, Krill oil capsules, Adequan, then oral GAGs, Antioxidant combination, High-protein, gluten-free diet",
   "icon": "🐱",
   "code": "URI-CAT",
   "discharge": "Chronic Snuffles",
@@ -12,81 +12,70 @@
     {
       "id": "cerenia_sn",
       "sp": "cat",
-      "grp": "Congestion & inflammation",
+      "grp": "Drugs",
       "name": "Cerenia",
-      "gen": "maropitant, 16 mg tablets",
-      "desc": "the best drug on this sheet for nasal congestion",
+      "gen": "16 mg tab",
       "type": "fixed",
       "doseText": "¼ to ½ of a 16 mg tablet",
       "freqs": [
-        "twice daily for 1–2 days, then once daily for 5 days"
-      ],
-      "note": "Then drop to a maintenance dose of 2 to 4 mg per cat twice weekly, or a low dose daily, or a regular dose every other day. Works by blunting the excess substance P in the area, which is what drives the discharge and inflammation. (Lester Mandelker)"
+        "BID for 1–2 days, then SID for 5 days"
+      ]
     },
     {
       "id": "cerenia_neb",
       "sp": "cat",
-      "grp": "Congestion & inflammation",
-      "name": "Cerenia in a nebuliser",
-      "desc": "nebulised maropitant",
+      "grp": "Drugs",
+      "name": "Cerenia in nebulizer",
       "type": "fixed",
-      "doseText": "2 drops of injectable Cerenia in the nebuliser saline",
+      "doseText": "2 drops of injectible cerenia added to nebulizer saline",
       "freqs": [
-        "once daily"
-      ],
-      "note": "Reported on this sheet to have worked very well in one cat, with the owner noting improvement right away."
+        "SID"
+      ]
     },
     {
       "id": "azithro_tab_sn",
       "sp": "cat",
-      "grp": "Antibiotic / anti-biofilm",
-      "name": "Azithromycin tablets",
-      "gen": "250 mg tablets",
-      "desc": "anti-inflammatory and anti-biofilm as much as antibiotic",
+      "grp": "Drugs",
+      "name": "Azithromycin",
+      "gen": "250 mg tab",
       "type": "fixed",
       "doseText": "¼ of a 250 mg tablet",
       "freqs": [
-        "once daily for 5 days, then twice weekly"
-      ],
-      "note": "The twice-weekly phase continues for weeks to months. (Lester Mandelker)"
+        "SID for 5 days, then twice weekly"
+      ]
     },
     {
       "id": "azithro_liq_sn",
       "sp": "cat",
-      "grp": "Antibiotic / anti-biofilm",
+      "grp": "Drugs",
       "name": "Azithromycin liquid",
-      "gen": "200 mg/5 ml = 50 mg/ml",
-      "desc": "liquid alternative",
+      "gen": "200mg/5ml = 50 mg/ml",
       "type": "calc",
       "lo": 10,
       "hi": 10,
       "unitDose": "mg",
       "freqs": [
-        "once daily for 5 days, then every 3 days (or twice weekly) for 6 weeks"
-      ],
-      "note": "10 mg/kg. The suspension is 50 mg/ml, so divide the milligrams above by 50 to get the volume in ml. (Folger)"
+        "SID for 5 days, then every 3 days (or twice weekly) for 6 weeks"
+      ]
     },
     {
       "id": "famciclovir_sn",
       "sp": "cat",
-      "grp": "Antiviral",
-      "name": "Famciclovir",
-      "desc": "antiviral for herpesvirus",
+      "grp": "Drugs",
+      "name": "Famciclovir Antiviral",
       "type": "fixed",
       "doseText": "62.5 mg twice daily, or 250 mg once daily",
       "freqs": [
         "for 6 weeks"
-      ],
-      "note": "Published doses are all over the map, up to 40 mg/kg TID. The two regimens above are what this sheet settles on, depending on the consultant."
+      ]
     },
     {
       "id": "saline_flush_sn",
       "sp": "cat",
-      "grp": "Local therapy",
-      "name": "Nasal saline flush",
-      "desc": "flushes discharge and biofilm out",
+      "grp": "Drugs",
+      "name": "Local therapy - saline flush",
       "type": "fixed",
-      "doseText": "a saline nasal flush (or hypertonic saline 2–3%)",
+      "doseText": "flush with saline +/- hypertonic saline (2-3%)",
       "freqs": [
         "as directed"
       ]
@@ -94,123 +83,103 @@
     {
       "id": "neopolydex_sn",
       "sp": "cat",
-      "grp": "Local therapy",
+      "grp": "Drugs",
       "name": "Neo-Poly-Dex drops",
-      "desc": "ophthalmic drops used intranasally after flushing",
       "type": "fixed",
-      "doseText": "Neo-Poly-Dex drops into the nose",
+      "doseText": "Neo-Poly-Dex drops",
       "freqs": [
-        "three times daily"
-      ],
-      "note": "Hold the head back so the drops run backward."
+        "TID"
+      ]
     },
     {
       "id": "chlorphen_sn",
       "sp": "cat",
-      "grp": "Supportive",
+      "grp": "Drugs",
       "name": "Chlorpheniramine",
-      "desc": "antihistamine that is synergistic with Cerenia",
       "type": "fixed",
-      "doseText": "chlorpheniramine at your usual feline dose",
+      "doseText": "Chlorpheniramine (antihistamine)",
       "freqs": [
         ""
-      ],
-      "note": "Also mildly antidepressant — roughly 50% of the anti-anxiety effect of fluoxetine — while keeping antihistamine effects that work synergistically with Cerenia. No dose is given on the source sheet."
+      ]
     },
     {
       "id": "krill_sn",
       "sp": "cat",
-      "grp": "Supportive",
-      "name": "Krill oil capsules",
-      "desc": "omega-3 source",
+      "grp": "Drugs",
+      "name": "Krill fish oil caps",
       "type": "fixed",
-      "doseText": "a krill oil capsule per label",
+      "doseText": "Krill fish oil caps",
       "freqs": [
-        "once daily"
+        "SID"
       ]
     },
     {
       "id": "adequan_sn",
       "sp": "cat",
-      "grp": "Supportive",
-      "name": "Adequan, then oral GAGs",
-      "desc": "aims at repairing cartilage damage in the sinuses",
+      "grp": "Drugs",
+      "name": "Adequan",
       "type": "fixed",
-      "doseText": "Adequan as directed, then oral GAGs",
+      "doseText": "Adequan follow by oral GAG's",
       "freqs": [
         ""
-      ],
-      "note": "Intended to improve cartilage damage and repair in the sinuses left behind by previous viral and bacterial damage."
+      ]
     },
     {
       "id": "antiox_sn",
       "sp": "cat",
-      "grp": "Supportive",
-      "name": "Antioxidant combination",
-      "gen": "NuCat Senior",
-      "desc": "antioxidant support",
+      "grp": "Drugs",
+      "name": "NuCat Senior",
       "type": "fixed",
-      "doseText": "the antioxidant supplement per label",
+      "doseText": "Combinations of antioxidants ie NuCat Senior",
       "freqs": [
-        "once daily"
+        "SID"
       ]
     },
     {
       "id": "diet_sn",
       "sp": "cat",
-      "grp": "Supportive",
-      "name": "High-protein, gluten-free diet",
-      "desc": "diet change",
+      "grp": "Drugs",
+      "name": "High protein gluten free diet",
       "type": "fixed",
-      "doseText": "a high-protein, gluten-free wet food — no dry food",
+      "doseText": "High protein gluten free diet... NO DRY FOOD",
       "freqs": [
-        "from now on"
-      ],
-      "note": "High glucose and high carbohydrate diets have more pro-inflammatory effects. The sheet is emphatic: NO DRY FOOD."
+        ""
+      ]
     }
   ],
-  "notes": {
-    "Source": "The numbered protocol on this sheet is from Lester Mandelker, DVM, DABVP, Fellow AAVPT.",
-    "Order of attack": "1) pulse-dosed azithromycin as an anti-inflammatory and anti-biofilm; 2) local therapy — saline or hypertonic saline flush followed by ophthalmic drops; 3) Cerenia for congestion and substance P; 4) chlorpheniramine alongside it; 5) krill oil; 6) Adequan then oral GAGs; 7) antioxidants; 8) a high-protein gluten-free diet with no dry food.",
-    "Why Cerenia": "Much of the congestion and discharge in these cats is driven by excess substance P in the nasal tissue, which is what maropitant blocks — this is why it outperforms decongestants here.",
-    "Long game": "These are weeks-to-months protocols, not a one-week course. The maintenance phases (azithromycin twice weekly, Cerenia twice weekly) are the part that keeps cats comfortable."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "what",
-      "title": "What we are treating",
-      "on": true,
-      "text": "{name} has long-standing inflammation in the nose and sinuses. In most cats this started with a virus years ago and left the lining permanently damaged, so bacteria and inflammation settle in easily.\n\nWe are aiming to keep {name} comfortable and breathing freely. This is managed over months rather than cured in a week — please do not be discouraged if it takes a while."
-    },
-    {
-      "id": "pulse",
-      "title": "Why the medication schedule changes",
-      "on": true,
-      "text": "Some of these medicines start daily and then drop to twice a week. That is deliberate, not a mistake or a taper.\n\nPlease follow the dates on the labels, and keep giving the twice-weekly doses even when {name} seems well — that is what stops the snuffles coming back."
-    },
-    {
-      "id": "flush",
-      "title": "If we asked you to flush the nose",
-      "on": false,
-      "text": "Tip {name}'s head gently backward so the drops or flush run toward the back of the nose rather than straight out.\n\nExpect sneezing afterwards — that is the point, it clears the discharge out."
-    },
-    {
-      "id": "food",
-      "title": "Food",
-      "on": true,
-      "text": "Please feed a high-protein, wet food and stop dry food altogether. Dry food is high in carbohydrate, and that seems to make the inflammation worse.\n\nWarming the food slightly makes it smell stronger, which helps a blocked-up cat keep eating."
-    },
-    {
-      "id": "call",
-      "title": "Call us if",
-      "on": true,
-      "text": "- {name} stops eating for more than a day\n- The breathing becomes noisy at rest, or open-mouthed\n- There is bleeding from the nose\n- One side only becomes affected, or the face looks swollen or asymmetrical\n\nA cat that cannot smell its food will often stop eating, and that needs attention quickly."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "Please book the recheck we discussed so we can see how far the congestion has settled and decide how long to keep the maintenance doses going."
-    }
-  ]
+  "notes": [
+    "Cerenia",
+    "16 mg tab: 1/4 to 1/2 tab PO",
+    "BID 1-2 days, SID another 5 days, then 2 to 4 mg (per cat) twice weekly.",
+    "Lester",
+    "reduces discharge and inflammation caused by substance P",
+    "Cerenia in nebulizer worked very well for Spunky Johnson (started with 2 drops of injectible cerenia added to nebulizer saline once a day, O noted improvement right away)",
+    "Azithromycin",
+    "Dose = 1/4 of 250 mg tab",
+    "SID 5 days, then twice weekly for months (Lester)",
+    "Azithromycin liquid (200mg/5ml = 50 mg/ml): 10 mg/kg SID for 5 days, then q 3 days (or twice weekly) for 6 weeks (Folger)",
+    "Famciclovir Antiviral: doses all over the map up to 40 mg/kg TID. Generally either 62.5 mg BID or 250 mg SID (depending on consultant) for 6 weeks.",
+    "1) 1/4 250 azithromycin tablet daily for 5 days then",
+    "2 X weekly...for weeks and months. Works as an",
+    "anti inflammatory and anti biofilm.",
+    "2) Local therapy....flush with saline ± hypertonic saline (2-3%)",
+    "and follow with ophthalmics like Neo-Poly-Dex drops tid",
+    "Hold head back so drops run backward....",
+    "3) Cerenia..best drug for nasal congestion and to reduce",
+    "inflammation cause by much excessive substance P in the area.",
+    "Give low dose daily ie 2-4mg or regular EOD.",
+    "4) Chlorpheniramine (antihistamine) is also an antidepressant with approx 50% of",
+    "anti anxiety effects compared to fluoxetine and still has antihistamine effects",
+    "that are synergistic with Cerenia..",
+    "5) Krill fish oil caps",
+    "6) Adequan follow by oral GAG's to improve cartilage damage and",
+    "repair in the sinuses from previous damage from viruses and bacteria etc.",
+    "7) Combinations of antioxidants ie NuCat Senior",
+    "8) High protein gluten free diet...more pro-inflammatory",
+    "effects from high glucose and high carbohydrate diets.",
+    "NO DRY FOOD",
+    "Lester Mandelker DVM DABVP",
+    "Fellow AAVPT"
+  ],
+  "dischargeBlocks": []
 }

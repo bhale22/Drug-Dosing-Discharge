@@ -1,6 +1,6 @@
 {
   "title": "Sebaceous Adenitis",
-  "desc": "Cyclosporine, vitamin A, isotretinoin and essential fatty acids, plus the topical descaling and moisturising protocol (baby-oil soaks, sulfur/salicylic shampoos, phytosphingosine).",
+  "desc": "Cyclosporine, Vitamin A, Isotretinoin, Omega-3 fatty acids, Dermoscent Essential 6 Spot-On, Douxo S3 SEB shampoo, Sulfur & salicylic acid shampoo, Baby oil soak, Propylene glycol, Phytosphingosine spray, Hydrating spray",
   "icon": "🐩",
   "code": "DERM-SA",
   "discharge": "Sebaceous Adenitis",
@@ -12,123 +12,105 @@
     {
       "id": "cyclosporine_sa",
       "sp": "dog",
-      "grp": "Systemic therapy",
+      "grp": "Drugs",
       "name": "Cyclosporine",
-      "gen": "Atopica",
-      "desc": "suppresses the immune attack on the sebaceous glands",
       "type": "calc",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
-        "once daily"
-      ],
-      "note": "5 mg/kg once daily. Give on an empty stomach where tolerated. Response is slow — allow several months before judging it."
+        "SID"
+      ]
     },
     {
       "id": "vitamina_sa",
       "sp": "dog",
-      "grp": "Systemic therapy",
+      "grp": "Drugs",
       "name": "Vitamin A",
-      "desc": "normalises keratinisation",
       "type": "calc",
       "lo": 400,
       "hi": 400,
       "unitDose": "IU",
       "freqs": [
-        "once daily"
-      ],
-      "note": "400 IU/kg once daily, to a MAXIMUM of 20,000 IU per day. The calculated figure above is not capped — for any dog over about 50 kg, dispense 20,000 IU rather than the calculated dose."
+        "SID"
+      ]
     },
     {
       "id": "isotretinoin_sa",
       "sp": "dog",
-      "grp": "Systemic therapy",
-      "name": "Isotretinoin",
-      "desc": "retinoid, second-line",
+      "grp": "Drugs",
+      "name": "Isoretinoin",
       "type": "calc",
       "lo": 1.5,
       "hi": 1.5,
       "unitDose": "mg",
       "freqs": [
-        "once daily"
-      ],
-      "note": "Held in reserve on this sheet: potentially problematic side effects and high expense."
+        "SID"
+      ]
     },
     {
       "id": "omega3_sa",
       "sp": "dog",
-      "grp": "Essential fatty acids",
+      "grp": "Drugs",
       "name": "Omega-3 fatty acids",
       "gen": "Welactin",
-      "desc": "essential fatty acid supplement",
       "type": "fixed",
-      "doseText": "the omega-3 supplement per label",
+      "doseText": "Welactin",
       "freqs": [
-        "once daily"
-      ],
-      "note": "Consider changing the food to Hill's j/d Mobility instead — it contains 2% DHA & EPA, about the highest available, and is probably more effective than a regular diet plus Welactin."
+        "SID"
+      ]
     },
     {
       "id": "dermoscent_sa",
       "sp": "dog",
-      "grp": "Topical therapy",
+      "grp": "Drugs",
       "name": "Dermoscent Essential 6 Spot-On",
-      "desc": "topical fatty acids, large-breed formulation",
       "type": "fixed",
-      "doseText": "one spot-on application to the base of the neck",
+      "doseText": "applied to base of neck/shoulder blades in same fashion as flea/tick preventives",
       "freqs": [
         "per label"
-      ],
-      "note": "Available over the counter. Applied to the base of the neck / between the shoulder blades in the same way as a flea and tick preventive."
+      ]
     },
     {
       "id": "douxo_sa",
       "sp": "dog",
-      "grp": "Topical therapy",
+      "grp": "Drugs",
       "name": "Douxo S3 SEB shampoo",
-      "desc": "antiseborrhoeic shampoo",
       "type": "fixed",
-      "doseText": "a bath with Douxo S3 SEB shampoo",
+      "doseText": "Douxo S3 SEB Shampoo",
       "freqs": [
         "weekly or as needed"
-      ],
-      "note": "Labyderm Bioforce (Labyes) is an alternative."
+      ]
     },
     {
       "id": "sulfursal_sa",
       "sp": "dog",
-      "grp": "Topical therapy",
-      "name": "Sulfur & salicylic acid shampoo",
-      "desc": "removes scale",
+      "grp": "Drugs",
+      "name": "Sulfer & salicyclic acid shampoos",
       "type": "fixed",
-      "doseText": "a medicated bath, 10 minutes contact time",
+      "doseText": "2-3 times weekly, 10 min contact time",
       "freqs": [
         "2–3 times weekly"
-      ],
-      "note": "Scale can also be lifted with soft brushing."
+      ]
     },
     {
       "id": "babyoil_sa",
       "sp": "dog",
-      "grp": "Topical therapy",
+      "grp": "Drugs",
       "name": "Baby oil soak",
-      "desc": "heavy descaling soak",
       "type": "fixed",
-      "doseText": "a 50:50 baby oil and water soak over the whole coat",
+      "doseText": "50% baby oil, 50% water and saturate coat",
       "freqs": [
         "weekly to monthly as needed"
-      ],
-      "note": "Leave on as long as possible — 30 to 60 minutes is ideal, up to an hour — then degrease in a Dawn dish-soap bath and moisturise afterwards."
+      ]
     },
     {
       "id": "propglycol_sa",
       "sp": "dog",
-      "grp": "Topical therapy",
+      "grp": "Drugs",
       "name": "Propylene glycol",
-      "desc": "topical humectant",
       "type": "fixed",
-      "doseText": "a topical application of propylene glycol",
+      "doseText": "Propylene glycol topically",
       "freqs": [
         "daily at first, then 2–3 times weekly"
       ]
@@ -136,11 +118,10 @@
     {
       "id": "phyto_sa",
       "sp": "dog",
-      "grp": "Topical therapy",
+      "grp": "Drugs",
       "name": "Phytosphingosine spray",
-      "desc": "topical barrier repair",
       "type": "fixed",
-      "doseText": "a topical application of phytosphingosine spray",
+      "doseText": "Phytosphingosine spray",
       "freqs": [
         "per label"
       ]
@@ -148,46 +129,41 @@
     {
       "id": "hydrospray_sa",
       "sp": "dog",
-      "grp": "Topical therapy",
+      "grp": "Drugs",
       "name": "Hydrating spray",
       "gen": "Ermidra (ICF), Atop spray (Dermoscent)",
-      "desc": "keeps the coat and skin moisturised",
       "type": "fixed",
-      "doseText": "a topical application of hydrating spray",
+      "doseText": "Hydrating sprays such as Ermidra (ICF), Atop spray (Dermoscent)",
       "freqs": [
         "as needed"
       ]
     }
   ],
-  "notes": {
-    "Shape of the plan": "Systemic therapy (cyclosporine ± vitamin A) to stop the glandular destruction, essential fatty acids to support the skin, and a topical routine to lift scale and re-moisturise. The topical work matters as much as the tablets.",
-    "Conditioning": "Conditioning shampoos and sprays after every descaling bath — the aim is to remove scale without stripping the coat.",
-    "Expectations": "This is a lifelong management problem, not a cure. Response is slow, and the topical routine is what most owners notice the biggest difference from."
-  },
-  "dischargeBlocks": [
-    {
-      "id": "what",
-      "title": "What this condition is",
-      "on": true,
-      "text": "Sebaceous adenitis is a condition where {name}'s own immune system attacks the small oil glands in the skin. Without those glands the skin becomes dry and scaly and the coat thins.\n\nIt is managed rather than cured. With a steady routine most dogs do well, but it takes months to see the full benefit — please do not judge the plan too early."
-    },
-    {
-      "id": "bathing",
-      "title": "The bathing routine",
-      "on": true,
-      "text": "This is the part that makes the most visible difference, and it is the part that takes your time.\n\n- Use the medicated shampoo we dispensed, and leave it on for a full 10 minutes before rinsing. Set a timer — this is the step most often cut short.\n- Soft brushing before the bath helps lift the loose scale.\n- Follow every medicated bath with the conditioner or moisturising spray.\n- For heavy scale we may ask you to do an oil soak: half baby oil, half warm water, worked right through the coat, left on for 30 to 60 minutes, then washed out with Dawn dish soap and followed by a moisturiser. It is messy — do it somewhere you do not mind."
-    },
-    {
-      "id": "meds_note",
-      "title": "About the medication",
-      "on": true,
-      "text": "Give every dose as directed and do not stop when the coat starts to look better — the improvement depends on staying on it.\n\nCall us before stopping or changing anything."
-    },
-    {
-      "id": "followup",
-      "title": "Follow up",
-      "on": true,
-      "text": "Please book a recheck as we discussed so we can see how the skin and coat are responding, and call us sooner if {name} becomes itchy, develops sores or a smell, or seems unwell on the medication."
-    }
-  ]
+  "notes": [
+    "Sebaceous Adenitis",
+    "Cyclosporine 5 mg/kg SID",
+    "Vitamin A: 400 IU/kg daily max 20,000 U per day",
+    "Omega-3 fatty acids: Welactin daily",
+    "which is about the highest I've been able to find. This would probably be more effective",
+    "than feeding a regular diet and supplementing with Welactin.",
+    "Consider changing food to Hill's j/d Mobility as it contains 2% DHA & EPA,",
+    "Dermoscent Essential 6 Spot-On Large Breed Dog Skin Care Treatment-- available OTC,",
+    "basically fatty acids that are applied to base of neck/shoulder blades in same fashion as flea/tick preventives.",
+    "Douxo S3 SEB Shampoo: Weekly or as needed.",
+    "Labyderm Bioforce® (Labyes).",
+    "Hydrating sprays such as Ermidra® (ICF), Atop® spray (Dermoscent),",
+    "If needed: Baby oil soaks: 50% baby oil, 50% water and saturate coat. let sit as long as possible 30 to 60 min ideal then degrease in dawn soap bath. then moisturize).",
+    "Cyclosporine 5 mg/mkg SID",
+    "Isoretinoin 1.5 mg/kg SID -- potentially problematic side effects + high expense, so will hold off for now.",
+    "Vitamin A: 400 IU/kg SID with max of 20,000 U SID",
+    "Essential fatty acids",
+    "Topical treatments:",
+    "Sulfer & salicyclic acid shampoos 2-3 times weekly, 10 min contact time",
+    "Scale can be removed with soft brushing.",
+    "Conditioning shampoos & sprays",
+    "Propylene glycol topically-- up to daily, then 2-3 times weekly for maintenance",
+    "Phytosphingosine spray",
+    "Baby oil soaks (diluted 50:50 with water), leaving on for 1 hr, then washing wiht degreasing sdishwashing soap. Can be repeated weekly or monthly if/as needed."
+  ],
+  "dischargeBlocks": []
 }

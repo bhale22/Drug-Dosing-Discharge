@@ -2,295 +2,617 @@
   "generated": "2026-09-10",
   "conditions": [
     {
+      "id": "chemo-bsa",
+      "title": "(BSA) Body Surface Area",
+      "icon": "📐",
+      "species": [
+        "dog"
+      ],
+      "medCount": 1,
+      "drugs": [
+        "Amt to give (mg/m2 * m2)"
+      ]
+    },
+    {
       "id": "anaphylaxis",
-      "title": "Anaphylaxis / Allergic Reaction",
-      "desc": "Volumes worked out by severity — mild skin reaction, mild systemic, severe systemic and localised — for diphenhydramine, Dex SP, epinephrine, atropine and terbutaline.",
+      "title": "Anaphylaxis",
       "icon": "🚨",
       "species": [
         "dog",
         "cat"
       ],
-      "medCount": 20
+      "medCount": 20,
+      "drugs": [
+        "Diphenhydramine 50mg/ml",
+        "Dex SP 4 mg/ml",
+        "Epinephrine 1:1000",
+        "Dex SP 4mg/ml",
+        "Atropine",
+        "Terbutaline (If Resp Distress CAT)"
+      ]
     },
     {
       "id": "babesia",
       "title": "Babesia",
-      "desc": "Imidocarb dipropionate for B. canis; atovaquone plus azithromycin for B. gibsoni and B. microti. Volumes and milligrams computed for the patient's weight.",
       "icon": "🦠",
       "species": [
         "dog"
       ],
-      "medCount": 3
-    },
-    {
-      "id": "chemo-bsa",
-      "title": "Body Surface Area (Chemo BSA)",
-      "desc": "Body surface area in m² from body weight, with common mg/m² doses converted to milligrams for the patient in front of you. Clinician reference.",
-      "icon": "📐",
-      "species": [
-        "dog"
-      ],
-      "medCount": 2
+      "medCount": 3,
+      "drugs": [
+        "Imidocarb 120 mg/ml",
+        "Atovaquone",
+        "Azithromycin"
+      ]
     },
     {
       "id": "carsickness",
-      "title": "Car Sickness",
-      "desc": "Cerenia, acepromazine, dimenhydrinate and meclizine for travel sickness, with separate dog and cat dosing.",
+      "title": "CarSickness",
       "icon": "🚗",
       "species": [
         "dog",
         "cat"
       ],
-      "medCount": 7
+      "medCount": 7,
+      "drugs": [
+        "Cerenia",
+        "Ace",
+        "Dimenhydrinate",
+        "Dramamine / Gravol, 50 mg tabs",
+        "Meclizine",
+        "Antivert, \"Dramamine Non-Drowsy\" — OTC 25 mg tabs",
+        "Antivert, OTC 25 mg tabs"
+      ]
+    },
+    {
+      "id": "oral-sedation",
+      "title": "Chill Protocol",
+      "icon": "😴",
+      "species": [
+        "dog"
+      ],
+      "medCount": 9,
+      "drugs": [
+        "Gabapentin",
+        "Caps 100, 300, 400 / Tabs 600, 800 / Soln 50 mg/ml",
+        "Melatonin",
+        "Acepromazine",
+        "Acepromazine in a meatball",
+        "10 mg/ml",
+        "Telazol in a meatball",
+        "100 mg/ml",
+        "Phenobarb",
+        "Trazodone"
+      ]
     },
     {
       "id": "cholangiohepatitis",
       "title": "Cholangiohepatitis",
-      "desc": "Amoxicillin plus a quinolone, with or without metronidazole; ursodiol, prednisolone and the supportive drugs (famotidine, Cerenia, mirtazapine). Includes anaesthesia premed and induction for liver biopsy.",
       "icon": "🫀",
       "species": [
         "cat"
       ],
-      "medCount": 14
+      "medCount": 14,
+      "drugs": [
+        "Amoxicillin",
+        "Zeniquin",
+        "Baytril",
+        "Cipro",
+        "Chloramphenicol",
+        "Metronidazole",
+        "Flagyl",
+        "Ursodiol",
+        "Prednisolone",
+        "Famotidine",
+        "Cerenia",
+        "Mirtazapine",
+        "Butorphanol",
+        "Buprenorphine",
+        "Induction"
+      ]
     },
     {
       "id": "ckcs-anesthesia",
-      "title": "CKCS Anaesthesia (Mitral Insufficiency)",
-      "desc": "Anaesthetising a dog with mild to moderate chronic mitral insufficiency — quarter-rate fluids, midazolam and opioid premed, preoxygenation, midazolam then propofol to effect. Clinician reference.",
+      "title": "CKCS Anesthesia",
       "icon": "🫁",
       "species": [
         "dog"
       ],
-      "medCount": 11
+      "medCount": 11,
+      "drugs": [
+        "Fluid rate",
+        "Butorphanol",
+        "Buprenorphine",
+        "MethadoneLow",
+        "Methadone High",
+        "Hydro Low",
+        "Hydro High",
+        "Midazolam",
+        "Atropine (low dose)",
+        "Propofol"
+      ]
     },
     {
       "id": "dermatophyte",
-      "title": "Dermatophytosis (Ringworm)",
-      "desc": "Itraconazole, terbinafine and griseofulvin doses for cats and dogs with the terbinafine tablet charts, plus the topical regimens that have to run alongside.",
+      "title": "Dermatophytosis",
       "icon": "🍄",
       "species": [
         "dog",
         "cat"
       ],
-      "medCount": 9
+      "medCount": 9,
+      "drugs": [
+        "Itraconazole",
+        "Sporanox / Itrafungol",
+        "Terbinafine",
+        "Griseofulvin",
+        "Miconazole + chlorhexidine shampoo",
+        "MiconaHexa + Triz, or generic 2% miconazole / 2% chlorhexidine",
+        "Antifungal spray or mousse",
+        "1% clotrimazole, 1% terbinafine, 1–2% miconazole ± chlorhexidine"
+      ]
     },
     {
       "id": "energy-requirement",
       "title": "Energy Requirement Calculator",
-      "desc": "Resting and maintenance energy requirement from body weight, with the k factors for dogs and cats by life stage, plus expected water intake and the PU/PD threshold. Clinician reference.",
       "icon": "🔥",
       "species": [
         "dog",
         "cat"
       ],
-      "medCount": 6
+      "medCount": 6,
+      "drugs": [
+        "RER",
+        "MER by k factor — dog",
+        "Expected water intake — dog",
+        "MER by k factor — cat",
+        "Expected water intake — cat"
+      ]
     },
     {
       "id": "fluid-rates",
-      "title": "Fluid Rates",
-      "desc": "Maintenance and dehydration-deficit fluid rates for dogs (60 ml/kg/day) and cats (45 ml/kg/day), with the potassium supplementation table and Mandelker's SQ fluid/furosemide protocol. Clinician reference.",
+      "title": "Fluid Rate Dog & Cats",
       "icon": "💉",
       "species": [
         "dog",
         "cat"
       ],
-      "medCount": 5
+      "medCount": 5,
+      "drugs": [
+        "Maintenance rate — dog",
+        "Deficit by % dehydration — dog",
+        "Maintenance rate — cat",
+        "Deficit by % dehydration — cat",
+        "SQ fluids with furosemide"
+      ]
     },
     {
       "id": "greyhound",
-      "title": "Greyhound Normal Values",
-      "desc": "Breed-specific reference intervals from Idexx — chemistry, haematology and total T4 — alongside the general canine ranges. No weight or medication needed.",
+      "title": "Greyhound Normals (Idexx)",
       "icon": "🐕‍🦺",
       "species": [
         "dog"
       ],
-      "medCount": 0
+      "medCount": 0,
+      "drugs": []
+    },
+    {
+      "id": "reflux",
+      "title": "Gulping/Swallowing",
+      "icon": "😮‍💨",
+      "species": [
+        "dog"
+      ],
+      "medCount": 6,
+      "drugs": [
+        "Omeprazole",
+        "Metoclopramide",
+        "Carafate (if needed)",
+        "Pred",
+        "Budesonide",
+        "Cyclosporine"
+      ]
     },
     {
       "id": "hepatic-lipidosis",
       "title": "Hepatic Lipidosis",
-      "desc": "Sharon Center's feline hepatic lipidosis protocol — feeding tube first, l-carnitine, taurine, B vitamins, zinc, vitamin E, SAMe or NAC, and the fluid and refeeding cautions.",
       "icon": "🐈",
       "species": [
         "cat"
       ],
-      "medCount": 10
+      "medCount": 10,
+      "drugs": [
+        "L-carnitine",
+        "Taurine",
+        "Water-soluble vitamins",
+        "Thiamine",
+        "B12",
+        "Zinc",
+        "Vitamin E",
+        "SAMe",
+        "N-acetylcysteine",
+        "Fish oil"
+      ]
     },
     {
       "id": "hookworms",
-      "title": "Hookworms — resistant / chronic shedding",
-      "desc": "Multi-drug-resistant Ancylostoma caninum in retired racing greyhounds and other breeds: the moxidectin + Drontal Plus combination protocol, Profender rescue, and how to test for resistance.",
+      "title": "Hookworms- persistent/greyhounds",
       "icon": "🪱",
       "species": [
         "dog"
       ],
-      "medCount": 3
+      "medCount": 3,
+      "drugs": [
+        "Advantage Multi",
+        "Drontal Plus",
+        "Profender given orally"
+      ]
     },
     {
       "id": "hyperlipidemia",
-      "title": "Hyperlipidemia",
-      "desc": "Hypertriglyceridemia in dogs — low-fat diet, chitosan fibre, omega-3, bezafibrate, plus the clinical signs that follow a rising triglyceride level.",
+      "title": "Hyperlipidemia/Hypertriglyceridemia",
       "icon": "🩸",
       "species": [
         "dog"
       ],
-      "medCount": 4
+      "medCount": 4,
+      "drugs": [
+        "Diet change- low fat",
+        "Chitin or Chitosan fiber supplement",
+        "Omega-3 fatty acids",
+        "Bezafibrate"
+      ]
     },
     {
       "id": "itp",
-      "title": "Immune-Mediated Thrombocytopenia (ITP)",
-      "desc": "Steroids, cyclosporine, doxycycline and vincristine for dogs; prednisolone, cyclosporine and chlorambucil for cats. Includes the full prednisone taper and the GI protection that goes with it.",
+      "title": "ITP",
       "icon": "🩸",
       "species": [
         "dog",
         "cat"
       ],
-      "medCount": 13
+      "medCount": 13,
+      "drugs": [
+        "Prednisone",
+        "Dexamethasone",
+        "Cyclosporine",
+        "Vincristine",
+        "1 mg/ml soln",
+        "Doxycycline",
+        "Carafate",
+        "Omeprazole",
+        "Cerenia",
+        "Prednisolone",
+        "Chlorambucil"
+      ]
     },
     {
       "id": "toenails",
       "title": "Lupoid Onychodystrophy",
-      "desc": "Niacinamide plus tetracycline (or doxycycline/minocycline), vitamin E and essential fatty acids, escalating to pentoxifylline. Also covers plasma cell pododermatitis.",
       "icon": "🐾",
       "species": [
         "dog"
       ],
-      "medCount": 8
+      "medCount": 8,
+      "drugs": [
+        "Niacinamide",
+        "Tetracycline",
+        "Doxycycline",
+        "Minocycline",
+        "Vitamin E",
+        "Omega-3 and omega-6 fatty acids",
+        "Pentoxyphylline"
+      ]
     },
     {
       "id": "lyme-nephritis",
       "title": "Lyme Nephritis",
-      "desc": "Doxycycline, an ACE inhibitor or ARB, mycophenolate, anti-thrombotic aspirin, fish oils and a renal diet — with Dr Goldstein's preference for pulse dexamethasone if steroids are needed.",
       "icon": "🫘",
       "species": [
         "dog"
       ],
-      "medCount": 10
+      "medCount": 10,
+      "drugs": [
+        "Doxycycline",
+        "Benazapril",
+        "5, 10, 20, 40 mg tabs",
+        "Telmisartan",
+        "20, 40, 80 mg tabs",
+        "Irbesartan",
+        "75, 150, 300 mg tabs",
+        "Losartan",
+        "Mycophenolate",
+        "250 mg caps or 500 mg tabs",
+        "Prednisone",
+        "Baby aspirin",
+        "Fish oils (EPA + DHA)",
+        "Renal diet"
+      ]
     },
     {
       "id": "megaesophagus",
       "title": "Megaesophagus",
-      "desc": "Vertical feeding, food consistency, meal frequency and the drug trials (omeprazole, sildenafil, metoclopramide) — Sherri Wilson's management approach, plus owner support.",
       "icon": "🍽",
       "species": [
         "dog"
       ],
-      "medCount": 5
-    },
-    {
-      "id": "oral-sedation",
-      "title": "Oral Sedation / Chill Protocol",
-      "desc": "Pre-visit sedation for dogs — the gabapentin + melatonin + acepromazine Chill Protocol, the Ace/Telazol meatball for severe cases, phenobarb + gabapentin, and trazodone with its weight chart. Clinician reference.",
-      "icon": "😴",
-      "species": [
-        "dog"
-      ],
-      "medCount": 9
-    },
-    {
-      "id": "reflux",
-      "title": "Reflux Esophagitis (the Gulpies)",
-      "desc": "Gulping and repeated swallowing in dogs — omeprazole, metoclopramide and sucralfate, with the meal-timing routine that makes or breaks the response.",
-      "icon": "😮‍💨",
-      "species": [
-        "dog"
-      ],
-      "medCount": 6
+      "medCount": 5,
+      "drugs": [
+        "Omeprazole",
+        "Sildenafil",
+        "Metoclopramide",
+        "Neck hug / ProCollar",
+        "Bailey chair"
+      ]
     },
     {
       "id": "sebaceous-adenitis",
       "title": "Sebaceous Adenitis",
-      "desc": "Cyclosporine, vitamin A, isotretinoin and essential fatty acids, plus the topical descaling and moisturising protocol (baby-oil soaks, sulfur/salicylic shampoos, phytosphingosine).",
       "icon": "🐩",
       "species": [
         "dog"
       ],
-      "medCount": 11
+      "medCount": 11,
+      "drugs": [
+        "Cyclosporine",
+        "Vitamin A",
+        "Isoretinoin",
+        "Omega-3 fatty acids",
+        "Welactin",
+        "Dermoscent Essential 6 Spot-On",
+        "Douxo S3 SEB shampoo",
+        "Sulfer & salicyclic acid shampoos",
+        "Baby oil soak",
+        "Propylene glycol",
+        "Phytosphingosine spray",
+        "Hydrating spray",
+        "Ermidra (ICF), Atop spray (Dermoscent)"
+      ]
     },
     {
       "id": "seizure",
       "title": "Seizure Medications",
-      "desc": "Maintenance antiseizure drugs (phenobarbital, levetiracetam IR/XR, zonisamide, KBr), emergency protocols, refractory status, cluster prevention. Includes XR tablet-splitting evidence.",
       "icon": "⚡",
       "species": [
         "dog",
         "cat"
       ],
       "medCount": 29,
+      "drugs": [
+        "Phenobarbital",
+        "Levetiracetam (regular)",
+        "Keppra",
+        "Levetiracetam XR",
+        "Keppra XR",
+        "Zonisamide",
+        "Zonegran",
+        "Potassium Bromide",
+        "KBr",
+        "Gabapentin",
+        "Pregabalin",
+        "Lyrica",
+        "Topiramate",
+        "Topamax",
+        "Felbamate",
+        "Clorazepate",
+        "Levetiracetam — cluster loading",
+        "regular Keppra only — NOT XR",
+        "Diazepam IV",
+        "Valium 5 mg/ml",
+        "Intranasal Midazolam",
+        "5 mg/ml",
+        "Rectal / Intranasal Diazepam",
+        "Levetiracetam IV",
+        "100 mg/ml",
+        "Phenobarbital IV",
+        "65 mg/ml",
+        "Ketamine",
+        "Dexdomitor",
+        "500 mcg/ml",
+        "Levetiracetam",
+        "Levetiracetam (third-line add-on)",
+        "Clonazepam",
+        "Phenobarbital IV/IM"
+      ],
       "page": "seizure.html"
     },
     {
       "id": "skin",
       "title": "Skin Conditions",
-      "desc": "Itch control (Apoquel, Zenrelia, Numelvi), antibiotics, steroids, antifungals, omega-3 supplements, ivermectin protocols.",
       "icon": "🐾",
       "species": [
         "dog",
         "cat"
       ],
-      "medCount": 26
+      "medCount": 26,
+      "drugs": [
+        "Apoquel",
+        "oclacitinib",
+        "Zenrelia",
+        "ilunocitinib",
+        "Numelvi",
+        "atinvicitinib",
+        "Benadryl",
+        "diphenhydramine",
+        "Cephalexin",
+        "Simplicef",
+        "cefpodoxime",
+        "Prednisone",
+        "Kenalog injection",
+        "triamcinolone 10 mg/ml",
+        "Vetalog injection",
+        "triamcinolone 2 mg/ml",
+        "Ketoconazole",
+        "Terbinafine",
+        "Fluconazole",
+        "Welactin",
+        "omega-3, 6 ml scoop",
+        "Scabies protocol",
+        "ivermectin 0.2–0.4 mg/kg",
+        "Demodex protocol",
+        "ivermectin 0.4–0.6 mg/kg",
+        "Prednisolone",
+        "Chlorpheniramine",
+        "Hydroxyzine",
+        "Loratadine",
+        "Cetirizine",
+        "Fexofenadine",
+        "Amitriptyline",
+        "Doxepin",
+        "Welactin Feline",
+        "omega-3, 320 mg per dose"
+      ]
     },
     {
       "id": "snuffling-cat",
       "title": "Snuffling Cat",
-      "desc": "Chronic feline upper respiratory / rhinosinusitis — Cerenia for congestion, pulse-dosed azithromycin, famciclovir, saline flushing, and the supportive protocol (Mandelker).",
       "icon": "🐱",
       "species": [
         "cat"
       ],
-      "medCount": 12
+      "medCount": 12,
+      "drugs": [
+        "Cerenia",
+        "16 mg tab",
+        "Cerenia in nebulizer",
+        "Azithromycin",
+        "250 mg tab",
+        "Azithromycin liquid",
+        "200mg/5ml = 50 mg/ml",
+        "Famciclovir Antiviral",
+        "Local therapy - saline flush",
+        "Neo-Poly-Dex drops",
+        "Chlorpheniramine",
+        "Krill fish oil caps",
+        "Adequan",
+        "NuCat Senior",
+        "High protein gluten free diet"
+      ]
     },
     {
       "id": "tapeworms",
-      "title": "Tapeworms — not responding to routine doses",
-      "desc": "Higher-dose praziquantel for Spirometra in cats, and the Panacur 100 mg/kg × 6 days protocol for Dipylidium that keeps coming back after Droncit.",
+      "title": "Tapeworms (not responsive to routine doses)",
       "icon": "🪱",
       "species": [
         "dog",
         "cat"
       ],
-      "medCount": 3
+      "medCount": 3,
+      "drugs": [
+        "Praziquantel",
+        "Fenbendazole",
+        "Panacur"
+      ]
     },
     {
       "id": "thunderstorm",
       "title": "Thunderstorm Phobia",
-      "desc": "Daily SSRIs (fluoxetine, sertraline) plus event medication given before the storm — alprazolam, trazodone with its weight chart, diazepam, lorazepam, atenolol, clonidine and Sileo.",
       "icon": "⛈",
       "species": [
         "dog"
       ],
-      "medCount": 9
+      "medCount": 9,
+      "drugs": [
+        "Fluoxetine",
+        "Prozac",
+        "Sertraline",
+        "Zoloft",
+        "Alprazolam",
+        "Xanax — 0.25, 0.5, 1, 2 mg tabs",
+        "Trazadone",
+        "50, 100, 150, 300 mg tabs",
+        "Diazepam",
+        "Valium — 2, 5, 10 mg tabs",
+        "Lorazepam",
+        "Ativan — 0.5, 1, 2 mg tabs",
+        "Atenolol",
+        "25, 50, 100 mg tabs",
+        "Clonidine",
+        "Sileo"
+      ]
     },
     {
       "id": "incontinence",
-      "title": "Urinary Incontinence & Dyssynergia",
-      "desc": "Sphincter incompetence versus reflex dyssynergia — Proin, DES and Incurin for females; tamsulosin, prazosin and bethanechol for males; plus how the residual urine volume tells the two apart.",
+      "title": "Urinary Incontinence",
       "icon": "💧",
       "species": [
         "dog"
       ],
-      "medCount": 10
+      "medCount": 10,
+      "drugs": [
+        "Proin",
+        "DES",
+        "Incurin",
+        "Tamsulosin",
+        "(flomax) 0.4 mg caps",
+        "Prazosin",
+        "Bethanechol",
+        "Phenoxybenzamine",
+        "Diazepam",
+        "Acepromazine",
+        "Methocarbamol"
+      ]
     },
     {
       "id": "uveitis",
       "title": "Uveitis",
-      "desc": "Anterior uveitis in dogs — topical steroids or NSAIDs, cycloplegics, doxycycline, and the systemic work-up that should run alongside. Clinician reference.",
       "icon": "👁",
       "species": [
         "dog"
       ],
-      "medCount": 6
+      "medCount": 6,
+      "drugs": [
+        "Topical corticosteroid",
+        "prednisolone acetate, dexamethasone",
+        "Topical NSAID",
+        "diclofenac, flurbiprofen",
+        "Topical atropine",
+        "Doxycycline",
+        "Oral corticosteroid",
+        "Subconjunctival triamcinolone"
+      ]
     },
     {
       "id": "diarrhea",
       "title": "Vomiting & Diarrhea",
-      "desc": "Cerenia, antacids, sucralfate, metronidazole, anti-diarrheals, tylosin, probiotics, dewormers, dexamethasone & B12 protocols, bland diet instructions.",
       "icon": "💊",
       "species": [
         "dog",
         "cat"
       ],
-      "medCount": 25
+      "medCount": 25,
+      "drugs": [
+        "Subcutaneous fluids",
+        "Lactated Ringer's Solution",
+        "Cerenia injection",
+        "maropitant 10 mg/ml",
+        "Cerenia",
+        "maropitant",
+        "Pepcid",
+        "famotidine",
+        "Omeprazole",
+        "Prilosec",
+        "Sucralfate",
+        "Carafate",
+        "Metronidazole",
+        "Loperamide",
+        "Imodium",
+        "Lomotil",
+        "Pepto Bismol",
+        "Tylosin powder",
+        "Tylan",
+        "ProViable Paste",
+        "ProViable or FortiFlora",
+        "Drontal Plus",
+        "Cobalamin",
+        "vitamin B12, extra-label",
+        "Dexamethasone",
+        "IBD / chronic enteritis",
+        "Sulfasalazine",
+        "colitis ± pred",
+        "Cat Drontal",
+        "feline IBD"
+      ]
     }
   ],
   "errors": []

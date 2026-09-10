@@ -3,131 +3,265 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dosing & Discharge — Godspeed Animal Care</title>
+<title>Dosing &amp; Discharge — Godspeed Animal Care</title>
 <style>
   :root{
     --bg:#F3F6F6; --surface:#fff; --ink:#16282C; --soft:#5B6E72;
-    --line:#E1E8E8; --accent:#0E6E66; --accent-s:#E2F1EE; --accent-d:#0A4F49;
-    --r:14px;
+    --line:#E1E8E8; --line2:#EEF2F2; --accent:#0E6E66; --accent-s:#E2F1EE; --accent-d:#0A4F49;
+    --r:12px;
     --sans:"Seravek","Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
+    --mono:"SF Mono","Cascadia Code","JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px}
-  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.45;font-size:15px;
+    -webkit-text-size-adjust:100%}
+  .wrap{max-width:840px;margin:0 auto;padding:0 18px}
 
-  header{background:var(--surface);border-bottom:3px solid var(--accent);padding:36px 0 28px}
-  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
-  h1{font-size:28px;font-weight:700;letter-spacing:-.015em;margin-top:6px}
-  header p{color:var(--soft);margin-top:8px;max-width:580px;font-size:14px}
+  /* ===== search header, sticky so it is always reachable ===== */
+  header{background:var(--surface);border-bottom:2px solid var(--accent);
+    position:sticky;top:0;z-index:20;box-shadow:0 2px 10px rgba(22,40,44,.06)}
+  .hd{max-width:840px;margin:0 auto;padding:12px 18px 11px}
+  .eyebrow{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:20px;font-weight:700;letter-spacing:-.015em;margin:2px 0 10px}
+  .searchrow{display:flex;gap:8px;align-items:center}
+  #q{flex:1;font-family:var(--sans);font-size:16px;padding:11px 14px 11px 38px;
+    border:1.5px solid var(--line);border-radius:10px;background:#F7FAFA url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235B6E72' stroke-width='2'>\
+<circle cx='11' cy='11' r='7'/><path d='M20 20l-4-4'/></svg>") no-repeat 11px center/16px 16px;
+    color:var(--ink)}
+  #q:focus{outline:none;border-color:var(--accent);background-color:#fff}
+  .clr{font-family:var(--sans);font-size:13px;font-weight:700;padding:10px 13px;border:1.5px solid var(--line);
+    border-radius:10px;background:var(--surface);color:var(--soft);cursor:pointer}
+  .clr:hover{border-color:var(--accent);color:var(--accent-d)}
 
-  main{padding:28px 0 20px}
-  #condgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+  /* ===== A–Z jump strip ===== */
+  .az{display:flex;flex-wrap:wrap;gap:3px;margin-top:9px}
+  .az button{font-family:var(--sans);font-size:12px;font-weight:700;width:26px;height:26px;
+    border:none;border-radius:6px;background:transparent;color:var(--soft);cursor:pointer}
+  .az button:hover{background:var(--accent-s);color:var(--accent-d)}
+  .az button:disabled{opacity:.25;cursor:default}
+  .az button:disabled:hover{background:transparent;color:var(--soft)}
 
-  a.cond{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
-    padding:18px 18px 16px;text-decoration:none;color:var(--ink);
-    transition:border-color .15s,box-shadow .15s,transform .12s}
-  a.cond:hover{border-color:var(--accent);box-shadow:0 4px 18px rgba(14,110,102,.12);transform:translateY(-2px)}
-  a.cond:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px}
-  .cicon{font-size:28px;margin-bottom:8px}
-  .cname{font-size:16px;font-weight:700}
-  .cdesc{font-size:12.5px;color:var(--soft);margin-top:5px;line-height:1.45}
-  .cgo{display:inline-block;margin-top:11px;font-size:11.5px;font-weight:700;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--accent)}
+  main{padding:16px 0 40px}
 
-  .placeholder{opacity:.5;pointer-events:none}
-  .placeholder .cgo{color:var(--soft)}
+  /* ===== recently viewed ===== */
+  .seclbl{font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--soft);margin:4px 2px 7px}
+  .recent{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+  .recent a{font-size:13.5px;font-weight:650;padding:8px 14px;border:1.5px solid var(--line);
+    border-radius:20px;background:var(--surface);color:var(--ink);text-decoration:none;white-space:nowrap}
+  .recent a:hover{border-color:var(--accent);color:var(--accent-d)}
 
-  .howto{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
-    padding:16px 18px;margin-top:22px;font-size:13px;color:var(--soft);line-height:1.55}
-  .howto strong{color:var(--ink)}
+  /* ===== alphabetical list ===== */
+  .letter{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--accent);
+    background:var(--accent-s);border-radius:6px;padding:3px 9px;display:inline-block;
+    margin:16px 0 6px;scroll-margin-top:150px}
+  .letter:first-of-type{margin-top:0}
+  ul.list{list-style:none;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    overflow:hidden}
+  ul.list li{border-top:1px solid var(--line2)}
+  ul.list li:first-child{border-top:none}
+  a.row{display:flex;align-items:center;gap:11px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+  a.row:hover{background:var(--accent-s)}
+  a.row:focus-visible{outline:2.5px solid var(--accent);outline-offset:-2px}
+  .ricon{font-size:19px;flex:none;width:24px;text-align:center}
+  .rmain{flex:1;min-width:0}
+  .rname{font-size:15px;font-weight:650;line-height:1.3}
+  .rdrugs{font-size:12px;color:var(--soft);line-height:1.4;margin-top:2px;
+    overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
+  .rmeta{font-size:11px;color:var(--soft);flex:none;text-align:right;white-space:nowrap}
+  mark{background:#FDF0C4;color:inherit;border-radius:2px;padding:0 1px}
 
-  .add-hint{background:var(--accent-s);border:1px dashed var(--accent);border-radius:var(--r);
-    padding:13px 16px;margin-top:16px;font-size:12.5px;color:var(--accent-d)}
-  .add-hint code{background:#C8E6E3;border-radius:4px;padding:1px 5px;font-size:11.5px}
-
-  footer{padding:16px 0 50px;font-size:11.5px;color:var(--soft)}
+  .empty{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);
+    padding:34px 20px;text-align:center;color:var(--soft);font-size:14px}
+  .hint{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    padding:13px 15px;margin-top:18px;font-size:12.5px;color:var(--soft);line-height:1.55}
+  .hint code{background:var(--line2);border-radius:4px;padding:1px 5px;font-family:var(--mono);font-size:11.5px}
+  footer{padding:14px 0 40px;font-size:11.5px;color:var(--soft)}
   footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
-  @media(max-width:600px){header{padding:24px 0 20px}h1{font-size:22px}}
+
+  @media(max-width:600px){
+    .wrap,.hd{padding-left:12px;padding-right:12px}
+    h1{font-size:17px}
+    .az button{width:24px;height:24px;font-size:11.5px}
+    .rmeta{display:none}
+  }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="wrap">
+  <div class="hd">
     <div class="eyebrow">Internal Clinical Reference · Godspeed Animal Care</div>
     <h1>Dosing &amp; Discharge</h1>
-    <p>Select a condition to calculate doses by patient weight, choose medications and dosing options, then generate a medical-record entry or formatted client discharge instructions.</p>
+    <div class="searchrow">
+      <input id="q" type="search" autocomplete="off" autocapitalize="off" spellcheck="false"
+             placeholder="Search condition or drug — e.g. bezafibrate, diarrhea" aria-label="Search conditions and drugs">
+      <button type="button" class="clr" id="clr" onclick="clearSearch()">Clear</button>
+    </div>
+    <div class="az" id="az"></div>
   </div>
 </header>
 
 <main>
   <div class="wrap">
-    <div id="condgrid"><p style="color:var(--soft);font-size:14px">Loading conditions…</p></div>
-
-    <div class="howto" style="margin-top:22px">
-      <strong>How it works:</strong> enter the patient's name, species, and weight at the top of any condition page.
-      Each drug shows the label-chart dose pre-selected, with practical alternatives (including tablet-fraction options) below it.
-      Check the medications to dispense, adjust frequencies, then use the <em>Generated Instructions</em> panel
-      to copy a concise medical-record note or a formatted client discharge sheet — with checkboxes, feeding instructions,
-      and follow-up text — ready to paste into your EMR or print.
-    </div>
-
-    <div class="add-hint">
-      <strong>Adding a new condition:</strong> upload a single <code>conditions/yourcondition.json</code> file — that's it.
-      The index rebuilds itself automatically within a minute (GitHub Action), and the new card appears here.
-      Use any existing JSON as a template; include <code>"title"</code>, <code>"desc"</code>, and <code>"icon"</code> fields for the card.
+    <div id="recentwrap"></div>
+    <div id="listwrap"><p style="color:var(--soft);font-size:14px">Loading…</p></div>
+    <div class="hint">
+      Search matches condition names <em>and</em> drug names — type a drug to find the page it is on.
+      Add a condition by uploading <code>conditions/yourcondition.json</code>; the index rebuilds itself
+      (GitHub Action), or run <code>node scripts/build-index.js</code>.
     </div>
   </div>
 </main>
 
 <footer>
   <div class="wrap"><hr>
-    Internal use only. Compiled from practice dosing spreadsheets; includes off-label options used at the clinician's discretion.
-    Verify all doses, concentrations, and label directions before administering or dispensing.
+    Internal use only. Compiled from practice dosing spreadsheets; includes off-label options used at the
+    clinician's discretion. Verify all doses, concentrations, and label directions before administering
+    or dispensing.
   </div>
 </footer>
 
 <script>
-async function loadConditions(){
+"use strict";
+let CONDS=[];
+const RECENT_KEY="dd-recent";
+
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const norm=s=>String(s||"").toLowerCase();
+/* sort key: ignore a leading article and any non-letter so "(BSA)" files under B */
+function sortKey(t){return norm(t).replace(/^(the|a|an)\s+/,"").replace(/[^a-z0-9]/g,"");}
+function firstLetter(t){const k=sortKey(t);const c=k.charAt(0).toUpperCase();
+  return(c>="A"&&c<="Z")?c:"#";}
+function href(c){return c.page?c.page:"app.html?c="+encodeURIComponent(c.id);}
+
+function hi(text,q){
+  if(!q)return esc(text);
+  const i=norm(text).indexOf(q);
+  if(i<0)return esc(text);
+  return esc(text.slice(0,i))+"<mark>"+esc(text.slice(i,i+q.length))+"</mark>"+
+    esc(text.slice(i+q.length));}
+
+/* a condition matches on its own name or on any drug it contains */
+function matches(c,q){
+  if(!q)return true;
+  if(norm(c.title).indexOf(q)>=0)return true;
+  return (c.drugs||[]).some(d=>norm(d).indexOf(q)>=0);}
+function matchedDrugs(c,q){
+  if(!q)return[];
+  return (c.drugs||[]).filter(d=>norm(d).indexOf(q)>=0);}
+
+function speciesLabel(sp){
+  if(!sp||!sp.length)return"";
+  return sp.map(x=>x==="dog"?"Dogs":x==="cat"?"Cats":x).join(" & ");}
+
+function render(){
+  const q=norm(document.getElementById("q").value.trim());
+  const list=CONDS.filter(c=>matches(c,q));
+  const wrap=document.getElementById("listwrap");
+
+  if(!list.length){
+    wrap.innerHTML='<div class="empty">Nothing matches <strong>'+esc(q)+'</strong>.<br>'+
+      'Try a drug name, or part of the condition.</div>';
+    renderAZ(new Set());
+    return;}
+
+  /* group alphabetically; when searching, skip the letter headings */
+  let html="",cur="";
+  const letters=new Set();
+  for(const c of list){
+    const L=firstLetter(c.title);
+    letters.add(L);
+    if(!q&&L!==cur){
+      if(cur)html+="</ul>";
+      html+='<div class="letter" id="L-'+L+'">'+L+'</div><ul class="list">';
+      cur=L;}
+    else if(!cur){html+='<ul class="list">';cur="_";}
+
+    const drugHits=matchedDrugs(c,q);
+    const sub=drugHits.length
+      ? drugHits.slice(0,4).map(d=>hi(d,q)).join(", ")+(drugHits.length>4?" …":"")
+      : esc((c.drugs||[]).slice(0,6).join(", "));
+    html+='<li><a class="row" href="'+href(c)+'" onclick="remember(\''+c.id+'\')">'+
+      '<span class="ricon">'+(c.icon||"💊")+'</span>'+
+      '<span class="rmain"><span class="rname">'+hi(c.title,q)+'</span>'+
+      (sub?'<span class="rdrugs">'+sub+'</span>':"")+'</span>'+
+      '<span class="rmeta">'+(c.medCount?c.medCount+" drugs":"")+
+      (c.species&&c.species.length?"<br>"+speciesLabel(c.species):"")+'</span></a></li>';
+  }
+  html+="</ul>";
+  wrap.innerHTML=html;
+  renderAZ(letters);}
+
+function renderAZ(present){
+  const az=document.getElementById("az");
+  const q=document.getElementById("q").value.trim();
+  const letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  az.innerHTML=letters.map(L=>
+    '<button type="button" '+(present.has(L)&&!q?"":"disabled")+
+    ' onclick="jump(\''+L+'\')">'+L+'</button>').join("");}
+
+function jump(L){
+  const el=document.getElementById("L-"+L);
+  if(el)el.scrollIntoView({behavior:"smooth",block:"start"});}
+
+function clearSearch(){
+  const q=document.getElementById("q");
+  q.value="";render();q.focus();}
+
+/* ===== recently viewed, kept in this browser only ===== */
+function readRecent(){
+  try{return JSON.parse(localStorage.getItem(RECENT_KEY)||"[]");}catch(e){return[];}}
+function remember(id){
+  try{
+    const r=readRecent().filter(x=>x!==id);
+    r.unshift(id);
+    localStorage.setItem(RECENT_KEY,JSON.stringify(r.slice(0,6)));
+  }catch(e){/* private window: recents are simply not kept */}}
+function renderRecent(){
+  const wrap=document.getElementById("recentwrap");
+  const ids=readRecent();
+  const items=ids.map(id=>CONDS.find(c=>c.id===id)).filter(Boolean);
+  if(!items.length){wrap.innerHTML="";return;}
+  wrap.innerHTML='<div class="seclbl">Recently viewed</div><div class="recent">'+
+    items.map(c=>'<a href="'+href(c)+'" onclick="remember(\''+c.id+'\')">'+
+      (c.icon||"💊")+" "+esc(c.title)+'</a>').join("")+'</div>';}
+
+async function boot(){
   try{
     const r=await fetch("conditions/index.json");
     if(!r.ok)throw new Error("conditions/index.json not found (HTTP "+r.status+")");
     const data=await r.json();
-    // supports both auto-generated format {conditions:[...]} and legacy plain array
     const list=Array.isArray(data)?data:(data.conditions||[]);
+    CONDS=list.slice().sort((a,b)=>sortKey(a.title).localeCompare(sortKey(b.title)));
+    renderRecent();
+    render();
     const errors=Array.isArray(data)?[]:(data.errors||[]);
-    const generated=Array.isArray(data)?null:data.generated;
-    const grid=document.getElementById("condgrid");
-    const spLabel=s=>!s||!s.length?"":(" · "+s.map(x=>x==="dog"?"Dogs":x==="cat"?"Cats":x).join(" & "));
-    grid.innerHTML=list.map(c=>`
-      <a class="cond" href="${c.page?encodeURIComponent(c.page):"app.html?c="+encodeURIComponent(c.id)}">
-        <div class="cicon">${c.icon||"💊"}</div>
-        <div class="cname">${c.title}</div>
-        <div class="cdesc">${c.desc||""}</div>
-        <div class="cdesc" style="margin-top:4px;font-weight:600">${c.medCount?c.medCount+" medications":""}${spLabel(c.species)}</div>
-        <span class="cgo">Open →</span>
-      </a>`).join("")+`
-      <a class="cond placeholder" href="#">
-        <div class="cicon">＋</div>
-        <div class="cname">More conditions</div>
-        <div class="cdesc">Upload a new condition JSON to the conditions/ folder — the index rebuilds itself automatically.</div>
-        <span class="cgo">Coming soon</span>
-      </a>`;
-    if(errors.length){
-      grid.insertAdjacentHTML("afterend",
+    if(errors.length)
+      document.getElementById("listwrap").insertAdjacentHTML("afterend",
         '<div style="margin-top:14px;background:#FDF3E3;border:1.5px solid #B45309;border-radius:12px;'+
-        'padding:11px 14px;font-size:12.5px;color:#7A4A06"><strong>⚠ Skipped invalid condition file(s):</strong> '+
-        errors.map(e=>e.split(" — ")[0]).join(", ")+
-        '. Check the file for JSON errors (Actions tab shows details).</div>');}
-    if(generated){
-      const f=document.querySelector("footer .wrap");
-      if(f)f.insertAdjacentHTML("beforeend",
-        '<div style="margin-top:6px">Condition index auto-generated: '+generated+'</div>');}
+        'padding:11px 14px;font-size:12.5px;color:#7A4A06"><strong>⚠ Skipped condition file(s):</strong> '+
+        errors.map(e=>esc(String(e).split(" — ")[0])).join(", ")+'</div>');
+    const g=Array.isArray(data)?null:data.generated;
+    if(g){const f=document.querySelector("footer .wrap");
+      if(f)f.insertAdjacentHTML("beforeend",'<div style="margin-top:6px">Index built '+esc(g)+'</div>');}
   }catch(e){
-    document.getElementById("condgrid").innerHTML=
-      '<p style="color:#B45309">Could not load conditions list: '+e.message+
-      '. Make sure conditions/index.json exists (the GitHub Action builds it automatically after the first condition upload, or run the workflow manually from the Actions tab).</p>';}}
-loadConditions();
+    document.getElementById("listwrap").innerHTML=
+      '<div class="empty" style="color:#B45309">Could not load the condition list: '+esc(e.message)+'</div>';}}
+
+document.getElementById("q").addEventListener("input",render);
+document.getElementById("q").addEventListener("keydown",e=>{
+  if(e.key==="Escape")clearSearch();
+  /* Enter opens the only remaining match, so a search can end without a tap */
+  if(e.key==="Enter"){
+    const first=document.querySelector("a.row");
+    if(first)first.click();}
+});
+boot();
+/* focus the box on a real keyboard, but do not summon the keyboard on a phone */
+if(!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent))
+  document.getElementById("q").focus();
 </script>
 </body>
 </html>
