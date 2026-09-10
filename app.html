@@ -60,7 +60,31 @@ main{max-width:1200px;margin:0 auto;padding:22px 22px 28px}
 /* ===== MED ROWS ===== */
 .med{border-top:1px solid var(--line);padding:10px 0 9px}
 .med:first-of-type{border-top:none;padding-top:1px}
-.mh{display:flex;align-items:flex-start;gap:9px;min-width:0}
+.med:not(.open){padding:7px 0 6px}
+.med:not(.open) .mbody{display:none}
+.mh{display:flex;align-items:center;gap:9px;min-width:0}
+
+/* one-line summary + disclosure caret */
+.msum{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;
+  cursor:pointer;min-width:0}
+.mfreq{font-size:12px;color:var(--soft);text-align:right}
+.chip.dose{background:var(--accent-s);color:var(--accent-d);font-weight:600}
+.disc{flex:none;width:28px;height:28px;padding:0;border:none;background:transparent;
+  color:var(--soft);cursor:pointer;font-size:13px;line-height:1;border-radius:7px;
+  transition:transform .15s,background .15s}
+.disc:hover{background:var(--line2);color:var(--ink)}
+.disc:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.med.open .disc{transform:rotate(180deg)}
+
+/* overview toolbar */
+.viewbar{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  flex-wrap:wrap;margin:0 2px 12px}
+.vb-label{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.vb-btns{display:flex;gap:6px}
+.vbtn{font-family:var(--sans);font-size:12.5px;font-weight:650;padding:7px 13px;
+  border:1.5px solid var(--line);border-radius:8px;background:var(--surface);
+  color:var(--ink);cursor:pointer;white-space:nowrap}
+.vbtn:hover{border-color:var(--accent);color:var(--accent-d)}
 .mh input[type=checkbox]{width:17px;height:17px;accent-color:var(--accent);margin-top:2px;flex:none;cursor:pointer}
 .mn{flex:1;min-width:0}
 .mn .name{font-weight:650;cursor:pointer;font-size:14px}
@@ -257,6 +281,9 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
   .mh{flex-wrap:wrap}
   .mh input[type=checkbox]{width:22px;height:22px;margin-top:0}
   .chip{white-space:normal}
+  .disc{order:3;width:34px;height:34px;font-size:15px}
+  .msum{order:4;width:100%;justify-content:flex-start;padding-left:31px;margin-top:2px}
+  .vbtn{padding:8px 12px}
   .mn .name{font-size:15px}
   .mb{margin-left:0}
   .med-note-box,.med-image{margin-left:0;margin-right:0}
@@ -401,7 +428,8 @@ let C=null;          // condition data (loaded JSON)
 let sp="dog", unit="lb", mode="record";
 const S={};          // per-med: {on, opt, freq, volMl}
 const BLK={};        // per-block: {on, dur, text}
-function st(id){if(!S[id])S[id]={on:false,opt:null,freq:0,volMl:null,mgkg:null,customMg:null};
+function st(id){if(!S[id])S[id]={on:false,opt:null,freq:0,volMl:null,mgkg:null,customMg:null,
+  open:false};
   return S[id];}
 /* opt: null = follow the target automatically, -1 = custom amount, else index */
 function bk(id,def){if(!BLK[id])BLK[id]={on:def.on,dur:0,text:null};return BLK[id];}
@@ -416,6 +444,7 @@ const fmtMg=x=>{if(x===null)return null;if(x>=100)return Math.round(x).toLocaleS
   if(x>=10)return String(Math.round(x*10)/10);return String(Math.round(x*100)/100);}
 const fmtMl=x=>x===null?null:(Math.round(x*100)/100).toFixed(2);
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const escAttr=s=>esc(s).replace(/"/g,"&quot;");
 function today(){const d=new Date();return (d.getMonth()+1)+"/"+d.getDate()+"/"+d.getFullYear();}
 function getKg(){const v=parseFloat(document.getElementById("wt").value);
   return(!isFinite(v)||v<=0)?null:(unit==="lb"?v/2.2:v);}
@@ -778,6 +807,40 @@ function bandChartHtml(m,lb){
          (b[f]||""))+'</td>').join("")+'</tr>').join("")+
     '</tbody></table>'+(m.chartNote?'<div class="mnote">'+m.chartNote+'</div>':"")+'</details>';}
 
+/* ================================================================
+   COLLAPSED ROW — name + the dose that would actually be given
+================================================================ */
+function doseSummary(m,kg,lb){
+  const s=st(m.id);
+  const freq=(m.freqs&&m.freqs.length&&m.freqs[0]!=="")
+    ?m.freqs[Math.min(s.freq,m.freqs.length-1)]:"";
+  let dose="—",dim=true;
+  if(m.type==="band"||m.type==="tab"||m.type==="multiband"){
+    const d=doseOptions(m,kg,lb),o=curOpt(m,d);
+    if(o&&o.custom){dim=o.mg===null;dose=dim?"custom":fmtMg(o.mg)+" mg";}
+    else if(o){dim=false;dose=tabsText(o.tabs)+(o.mg?" = "+fmtMg(o.mg)+" mg":"");}
+  }else if(m.type==="calc"){
+    const u=m.unitDose||"mg";
+    if(s.opt===-1){dim=s.customMg===null;dose=dim?"custom":fmtMg(s.customMg)+" "+u;}
+    else if(kg!==null){const pk=perKg(m);dim=false;
+      dose=(pk.hi>pk.lo?fmtMg(pk.lo*kg)+"–"+fmtMg(pk.hi*kg):fmtMg(pk.lo*kg))+" "+u;}
+  }else if(m.type==="inj"){
+    if(kg!==null){dim=false;dose=fmtMl(m.lo*kg/m.conc)+" ml "+m.route;}
+  }else if(m.type==="injVolume"){
+    dim=false;dose=(s.volMl!==null?s.volMl:m.defaultMl)+" ml";
+  }else if(m.type==="fixed"){dim=false;dose=m.doseText;
+  }else if(m.type==="weightText"){const b=band(m.bandKey,lb);if(b){dim=false;dose=b.text;}
+  }else if(m.type==="iver"){
+    if(kg!==null){dim=false;dose=fmtMl(kg*m.doseMid/m.conc)+" ml";}
+  }else if(m.type==="protocol"){
+    if(kg!==null){dim=false;dose=evalFn(m.chipFn)(kg,lb);}}
+  return{dose,freq,dim};}
+
+function summaryInner(m,kg,lb){
+  const q=doseSummary(m,kg,lb);
+  return'<span class="chip dose'+(q.dim?" dim":"")+'">'+q.dose+'</span>'+
+    (q.freq?'<span class="mfreq">'+esc(q.freq)+'</span>':"");}
+
 /* editable mg/kg target — the label range is the default and stays one tap away */
 function targetEditHtml(m,kg){
   const s=st(m.id),u=(m.unitDose||"mg")+"/kg";
@@ -874,14 +937,24 @@ function medHtml(m,kg,lb){
     body='<div class="mnote">'+evalFn(m.bodyFn)(kg,lb)+'</div>';
   }
 
-  return'<div class="med '+(s.on?"":"off")+'" id="med-'+m.id+'">'+
+  /* injVolume's chip is the dose entry itself, so it stays interactive */
+  const head=m.type==="injVolume"
+    ?chipHtml(m,kg,lb)
+    :'<span class="msum" id="sum-'+m.id+'" title="Show dosing options" '+
+      'onclick="toggleOpen(\''+m.id+'\')">'+summaryInner(m,kg,lb)+'</span>';
+  return'<div class="med '+(s.on?"":"off")+(s.open?" open":"")+'" id="med-'+m.id+'">'+
     '<div class="mh">'+
     '<input type="checkbox" id="ck-'+m.id+'" '+(s.on?"checked":"")+
     ' onchange="toggleMed(\''+m.id+'\')">'+
     '<div class="mn"><label class="name" for="ck-'+m.id+'">'+m.name+'</label>'+
     (m.gen?'<span class="gen">· '+m.gen+'</span>':"")+'</div>'+
-    chipHtml(m,kg,lb)+'</div>'+
-    '<div class="mb">'+body+'</div>'+chart+'</div>';}
+    head+
+    '<button type="button" class="disc" aria-expanded="'+(s.open?"true":"false")+'" '+
+      'aria-controls="mbody-'+m.id+'" aria-label="'+(s.open?"Collapse":"Expand")+' '+escAttr(m.name)+'" '+
+      'onclick="toggleOpen(\''+m.id+'\')">▾</button>'+
+    '</div>'+
+    '<div class="mbody" id="mbody-'+m.id+'">'+
+    '<div class="mb">'+body+'</div>'+chart+'</div></div>';}
 
 /* ================================================================
    DISCHARGE BLOCKS EDITOR
@@ -1049,8 +1122,19 @@ function render(){
     </div>
   </div>`;
 
+  const shown=C.meds.filter(m=>m.sp===sp);
+  const nOpen=shown.filter(m=>st(m.id).open).length;
+  const viewbar=
+    '<div class="viewbar">'+
+      '<span class="vb-label">'+shown.length+' medications'+
+        (nOpen?' · '+nOpen+' expanded':' · overview')+'</span>'+
+      '<div class="vb-btns">'+
+        '<button type="button" class="vbtn" onclick="setAllOpen(false)">⊟ Collapse all</button>'+
+        '<button type="button" class="vbtn" onclick="setAllOpen(true)">⊞ Expand all</button>'+
+      '</div></div>';
+
   document.getElementById("main").innerHTML=
-    '<div class="grid">'+notesHtml+cards+'</div>'+outcard;
+    viewbar+'<div class="grid">'+notesHtml+cards+'</div>'+outcard;
   renderBlocks();
   buildOutput();
   refreshPresetBtns();}
@@ -1058,9 +1142,23 @@ function render(){
 /* ================================================================
    EVENT HANDLERS
 ================================================================ */
-function toggleMed(id){const s=st(id);s.on=!s.on;
-  document.getElementById("med-"+id).classList.toggle("off",!s.on);markCustom();buildOutput();}
-function pickOpt(id,i){st(id).opt=i;custRow(id,false);markCustom();buildOutput();}
+/* redraw one medication in place — cheaper than a full render and it keeps
+   the rest of the page (and the scroll position) exactly where it was */
+function redrawMed(id){
+  const m=C.meds.find(x=>x.id===id),el=document.getElementById("med-"+id);
+  if(m&&el)el.outerHTML=medHtml(m,getKg(),getLb());}
+/* keep the one-line summary honest while the row is open */
+function refreshSum(id){
+  const m=C.meds.find(x=>x.id===id),el=document.getElementById("sum-"+id);
+  if(m&&el)el.innerHTML=summaryInner(m,getKg(),getLb());}
+
+function toggleMed(id){const s=st(id);s.on=!s.on;s.open=s.on;
+  redrawMed(id);markCustom();buildOutput();}
+function toggleOpen(id){const s=st(id);s.open=!s.open;redrawMed(id);}
+function setAllOpen(v){
+  for(const m of C.meds)if(m.sp===sp)st(m.id).open=v;
+  render();}
+function pickOpt(id,i){st(id).opt=i;custRow(id,false);markCustom();buildOutput();refreshSum(id);}
 /* the custom row is toggled in place — a full re-render would blur the field
    the clinician is typing into */
 function custRow(id,on){
@@ -1073,14 +1171,14 @@ function pickCustom(id){
   if(r)r.checked=true;
   custRow(id,true);
   if(s.opt===-1)return;
-  s.opt=-1;markCustom();buildOutput();}
+  s.opt=-1;markCustom();buildOutput();refreshSum(id);}
 function setCustomMg(id,v){
   const s=st(id),n=parseFloat(v);
   s.customMg=(isFinite(n)&&n>0)?Math.round(n*1000)/1000:null;
   s.opt=-1;custRow(id,true);
   const m=C.meds.find(x=>x.id===id),el=document.getElementById("cmk-"+id);
   if(m&&el)el.textContent=customMgkgText(m,getKg());
-  markCustom();buildOutput();}
+  markCustom();buildOutput();refreshSum(id);}
 /* retarget mg/kg — options re-bracket around the new target and the
    selection goes back to automatic so it follows it */
 function setMgkg(id,v){
@@ -1088,11 +1186,13 @@ function setMgkg(id,v){
   if(v===null||v===""){s.mgkg=null;}
   else{const n=parseFloat(v);if(!isFinite(n)||n<=0)return;s.mgkg=Math.round(n*1000)/1000;}
   s.opt=null;markCustom();render();}
-function pickFreq(id,i){st(id).freq=i;markCustom();buildOutput();}
+function pickFreq(id,i){st(id).freq=i;markCustom();buildOutput();refreshSum(id);}
 function setVol(id,el){
   const v=parseFloat(el.textContent);
   st(id).volMl=isFinite(v)&&v>0?Math.round(v*100)/100:(C.meds.find(m=>m.id===id)||{}).defaultMl||null;
   el.textContent=st(id).volMl;buildOutput();}
+/* a preset is a bulk choice, so its medications land collapsed — the overview
+   is what you want to read after applying one */
 function toggleBlk(id){const b=BLK[id];if(b)b.on=!b.on;markCustom();renderBlocks();buildOutput();}
 function setDur(id,i){const b=BLK[id];if(b)b.dur=i;markCustom();renderBlocks();buildOutput();}
 function editBlk(id,v){const b=BLK[id];if(b)b.text=v;markCustom();buildOutput();}

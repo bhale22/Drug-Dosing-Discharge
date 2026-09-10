@@ -72,7 +72,28 @@ table.dose td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);vertica
 table.dose tr:last-child td{border-bottom:none}
 td.ck{width:30px;padding-top:11px}
 td.ck input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer}
+.dhead{display:flex;align-items:baseline;gap:4px}
 .dname{font-weight:650;font-size:14px}
+.disc{flex:none;width:26px;height:26px;padding:0;margin:0;border:none;
+  background:transparent;color:var(--soft);cursor:pointer;font-size:13px;line-height:1;
+  border-radius:7px;transition:transform .15s,background .15s}
+.disc:hover{background:var(--line2);color:var(--ink)}
+.disc:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+tr.drow.open .disc{transform:rotate(180deg)}
+.chip.rec{background:var(--accent-s);border-color:#C8E6E3;color:var(--accent-d);font-weight:600}
+.chip.rec.dim{background:var(--line2);border-color:var(--line);color:var(--soft)}
+tr.drow:not(.open) td{padding-top:7px;padding-bottom:7px}
+.dfreq em{font-style:normal;color:var(--accent-d);font-weight:700}
+
+/* overview toolbar */
+.viewbar{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  flex-wrap:wrap;margin:0 2px 16px}
+.vb-label{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.vb-btns{display:flex;gap:6px}
+.vbtn{font-family:var(--sans);font-size:12.5px;font-weight:650;padding:7px 13px;
+  border:1.5px solid var(--line);border-radius:8px;background:var(--surface);
+  color:var(--ink);cursor:pointer;white-space:nowrap}
+.vbtn:hover{border-color:var(--accent);color:var(--accent-d)}
 .dgen{font-size:12px;color:var(--soft)}
 .dnote{font-size:11.5px;color:var(--soft);margin-top:3px;max-width:270px;line-height:1.45}
 .drange{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
@@ -118,6 +139,12 @@ td.ck input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer}
 .pb-seg button{font-family:var(--sans);font-size:12.5px;font-weight:650;padding:7px 11px;
   border:none;background:transparent;color:var(--soft);cursor:pointer}
 .pb-seg button.on{background:var(--warn);color:#fff}
+.pb-inline.compact{display:flex;align-items:center;flex-wrap:wrap;gap:5px 8px;
+  background:none;border:none;padding:0;margin-top:6px}
+.pb-inline.compact .pb-lbl{margin:0}
+.pb-inline.compact .pb-seg{border-color:#E3D3B6}
+.pb-inline.compact .pb-seg button{padding:5px 9px;font-size:11.5px}
+.pb-inline.compact .pb-nudge{flex:1 1 100%;margin-top:0}
 .pb-nudge{margin-top:6px;font-size:11.5px;color:var(--warn);font-weight:600;line-height:1.45}
 .pb-nudge button{font-family:var(--sans);font-size:11px;font-weight:700;color:#fff;background:var(--warn);
   border:none;border-radius:20px;padding:4px 10px;cursor:pointer;margin-left:5px}
@@ -236,9 +263,23 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
   td.ck input{width:22px;height:22px}
   table.dose td[data-l]::before{content:attr(data-l);display:block;font-size:9.5px;font-weight:700;
     letter-spacing:.09em;text-transform:uppercase;color:var(--soft);margin-bottom:3px}
+
+  /* a collapsed row is the overview — name on one line, dose on the next,
+     rather than the stack of labelled fields the expanded card needs */
+  table.dose tr.drow:not(.open){display:flex;flex-wrap:wrap;align-items:baseline;
+    gap:3px 10px;padding:11px 12px 12px 42px}
+  tr.drow:not(.open) td{padding:0;width:auto}
+  tr.drow:not(.open) td[data-l]::before{display:none}
+  tr.drow:not(.open) td:nth-child(2){flex:1 1 100%}
+  tr.drow:not(.open) td:nth-child(4){display:none}
+  tr.drow:not(.open) .dfreq{display:inline;font-size:11.5px;margin-left:5px}
+  tr.drow:not(.open) .drange{font-size:12.5px}
+  tr.drow:not(.open) .pb-inline.compact{flex-basis:100%;margin-top:7px}
   .dnote{max-width:none}
   .chips{max-width:none}
   .chip{font-size:13px;padding:8px 12px}
+  .disc{width:34px;height:34px;font-size:15px;margin:-4px -6px 0 0}
+  .vbtn{padding:8px 12px}
   .chip.cust input,.tgt-in{font-size:16px}
   .tgt-in{padding:7px 8px}
   .tgt-reset{padding:6px 11px}
@@ -490,7 +531,8 @@ const BLOCKS=[
 let sp="dog",unit="lb",pbOn=false,mode="plan";
 /* opt: null = follow the target automatically, -1 = custom amount, else index */
 const S={};
-function st(id){if(!S[id])S[id]={on:false,opt:null,mgkg:null,customMg:null};return S[id];}
+function st(id){if(!S[id])S[id]={on:false,opt:null,mgkg:null,customMg:null,open:false};
+  return S[id];}
 const BLK={};
 function bk(id){if(!BLK[id]){const b=BLOCKS.find(x=>x.id===id);BLK[id]={on:!!(b&&b.on),text:null};}return BLK[id];}
 for(const b of BLOCKS)bk(b.id);
@@ -618,10 +660,10 @@ function custMgkg(m,kg){
   return(kg&&s.customMg!==null)?"· "+R2(s.customMg/kg)+" mg/kg":"";}
 
 /* the phenobarb status control lives with the dose it changes */
-function pbInlineHtml(){
+function pbInlineHtml(compact){
   const pbSel=st("pb").on;
-  return'<div class="pb-inline">'+
-    '<div class="pb-lbl">Patient on phenobarbital?</div>'+
+  return'<div class="pb-inline'+(compact?" compact":"")+'">'+
+    '<div class="pb-lbl">'+(compact?"On PB?":"Patient on phenobarbital?")+'</div>'+
     '<div class="pb-seg" role="group">'+
       '<button type="button" class="'+(pbOn?"":"on")+'" data-act="pb" data-v="0">No — 5 mg/kg</button>'+
       '<button type="button" class="'+(pbOn?"on":"")+'" data-act="pb" data-v="1">Yes — 10 mg/kg</button>'+
@@ -632,21 +674,53 @@ function pbInlineHtml(){
       :"")+
     '</div>';}
 
-function drugRow(m,kg){
+/* the dose in force right now, for the collapsed one-line row */
+function recDose(m,kg){
   const s=st(m.id);
+  if(m.strengths){
+    const o=curFit(m,kg);
+    if(o&&o.custom)return o.mg===null?{t:"custom",dim:true}:{t:fmtMg(o.mg)+" mg",dim:false};
+    if(!o)return{t:"—",dim:true};
+    return{t:fr(o.n)+" × "+o.s+" mg = "+fmtMg(o.mg)+" mg",dim:false};}
+  if(s.opt===-1)
+    return s.customMg===null?{t:"custom",dim:true}:{t:fmtMg(s.customMg)+" mg",dim:false};
+  if(kg===null)return{t:"—",dim:true};
+  return{t:fmtMg(curMgkg(m)*kg)+" mg"+(m.perDay?"/day":""),dim:false};}
+
+function drugRow(m,kg){
+  const s=st(m.id),open=!!s.open;
   const lo=kg===null?null:medLo(m)*kg,hi=kg===null?null:medHi(m)*kg;
   const tgt=lo===null?"—":(hi>lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+" mg"+(m.perDay?"/day":"");
-  return'<tr>'+
+  const rec=recDose(m,kg);
+  const caret='<button type="button" class="disc" data-act="disc" data-id="'+m.id+'" '+
+    'aria-expanded="'+(open?"true":"false")+'" '+
+    'aria-label="'+(open?"Collapse":"Expand")+' '+escA(m.name)+'">▾</button>';
+  return'<tr class="drow'+(open?" open":"")+'">'+
    '<td class="ck"><input type="checkbox" '+(s.on?"checked":"")+
      ' aria-label="Include '+escA(m.name)+'" data-act="tog" data-id="'+m.id+'"></td>'+
-   '<td data-l="Drug"><div class="dname">'+m.name+(m.gen?' <span class="dgen">· '+m.gen+'</span>':'')+'</div>'+
-     (m.note?'<div class="dnote">'+m.note+'</div>':'')+
-     (m.pbToggle?pbInlineHtml():'')+'</td>'+
+   '<td data-l="Drug"><div class="dhead">'+
+     '<div class="dname">'+m.name+(m.gen?' <span class="dgen">· '+m.gen+'</span>':'')+'</div>'+
+     caret+'</div>'+
+     (open&&m.note?'<div class="dnote">'+m.note+'</div>':'')+
+     (m.pbToggle?pbInlineHtml(!open):'')+'</td>'+
    '<td data-l="Label dose"><span class="drange">'+medRange(m)+'</span>'+
      '<div class="dfreq">'+m.freq+(m.perDay?'':' · per dose')+'</div>'+
-     '<div class="dfreq">= '+tgt+'</div></td>'+
-   '<td data-l="Target (editable)">'+targetHtml(m,kg)+'</td>'+
-   '<td data-l="Closest fits — tap to choose">'+chipsHtml(m,kg)+'</td></tr>';}
+     (open?'<div class="dfreq">= '+tgt+'</div>':'')+'</td>'+
+   '<td data-l="Target">'+(open
+     ?targetHtml(m,kg)
+     :'<span class="tgt-eq">'+(kg===null?"—":fmtMg(curMgkg(m)*kg)+" mg")+'</span>'+
+      '<div class="dfreq">'+curMgkg(m)+' mg/kg'+(m.perDay?'/day':'')+
+      (st(m.id).mgkg!==null?' <em>(set)</em>':'')+'</div>')+'</td>'+
+   '<td data-l="'+(open?"Closest fits — tap to choose":"Recommended")+'">'+(open
+     ?chipsHtml(m,kg)
+     :'<span class="chip rec'+(rec.dim?" dim":"")+'" data-act="disc" data-id="'+m.id+'" '+
+      'title="Show dosing options">'+rec.t+'</span>')+'</td></tr>';}
+
+function doseTable(drugs,kg){
+  const anyOpen=drugs.some(m=>st(m.id).open);
+  return'<table class="dose"><thead><tr><th></th><th>Drug</th><th>Label dose</th>'+
+    '<th>Target</th><th>'+(anyOpen?"Closest fits (tap to choose)":"Recommended")+'</th></tr></thead>'+
+    '<tbody>'+drugs.map(m=>drugRow(m,kg)).join("")+'</tbody></table>';}
 
 function tierHtml(t,kg){
   let inner;
@@ -654,9 +728,7 @@ function tierHtml(t,kg){
     inner='<div class="sec-sub" style="margin:0 0 4px 2px">'+(t.sub||"")+'</div>';
   }else{
     inner=(t.sub?'<div class="sec-sub" style="margin-bottom:6px">'+t.sub+'</div>':'')+
-    '<table class="dose"><thead><tr><th></th><th>Drug</th><th>Label dose</th>'+
-    '<th>Target</th><th>Closest fits (tap to choose)</th></tr></thead><tbody>'+
-    t.drugs.map(m=>drugRow(m,kg)).join("")+'</tbody></table>';}
+    doseTable(t.drugs,kg);}
   return'<div class="tier"><div class="tier-h">'+t.h+'</div>'+inner+'</div>';}
 
 function emergRow(e,kg){
@@ -695,6 +767,15 @@ function render(){
 
   let html='<div class="ladder-strip">'+(sp==="dog"?stripDog:stripCat)+'</div>';
 
+  const meds=allMeds(),nOpen=meds.filter(m=>st(m.id).open).length;
+  html+='<div class="viewbar">'+
+    '<span class="vb-label">'+meds.length+' medications'+
+      (nOpen?' · '+nOpen+' expanded':' · overview')+'</span>'+
+    '<div class="vb-btns">'+
+      '<button type="button" class="vbtn" data-act="allopen" data-v="0">⊟ Collapse all</button>'+
+      '<button type="button" class="vbtn" data-act="allopen" data-v="1">⊞ Expand all</button>'+
+    '</div></div>';
+
   html+='<section><div class="sec-title">Long-term Maintenance <span class="sec-tag">'+(sp==="dog"?"Dog":"Cat")+'</span></div>'+
     '<div class="sec-sub">Every drug has an editable <strong>target</strong> in mg/kg — it starts at the labelled dose, '+
     'and the chips beside it bracket that target with the closest real tablet fits (dashed = outside the labelled range). '+
@@ -703,9 +784,7 @@ function render(){
 
   if(sp==="dog"){
     html+='<section><div class="sec-title">Cluster Prevention / Rescue <span class="sec-tag">Dog</span></div>'+
-      '<table class="dose"><thead><tr><th></th><th>Drug</th><th>Label dose</th>'+
-      '<th>Target</th><th>Closest fits</th></tr></thead><tbody>'+
-      DOG_CLUSTER.map(m=>drugRow(m,kg)).join("")+'</tbody></table></section>';}
+      doseTable(DOG_CLUSTER,kg)+'</section>';}
 
   html+='<section class="emerg"><div class="sec-title">⛑ Active Seizure — Emergency <span class="sec-tag">'+(sp==="dog"?"Dog":"Cat")+'</span></div>'+
     '<div class="sec-sub">Volumes pre-calculated for current weight. Sequence: diazepam → phenobarb if 2+ seizures after diazepam → levetiracetam IV (may be concurrent).</div>'+
@@ -940,8 +1019,9 @@ function goOutput(m){
   const el=document.getElementById("plan");
   if(el)el.scrollIntoView({behavior:"smooth",block:"start"});}
 
-function toggleMed(id){st(id).on=!st(id).on;
-  if(id==="pb")render(); else buildOutput();}
+function toggleMed(id){const s=st(id);s.on=!s.on;s.open=s.on;render();}
+function toggleOpen(id){const s=st(id);s.open=!s.open;render();}
+function setAllOpen(v){for(const m of allMeds())st(m.id).open=v;render();}
 function pickOpt(id,i){st(id).opt=i;render();}
 function setTarget(id,v){
   const s=st(id);
@@ -969,6 +1049,8 @@ document.getElementById("main").addEventListener("click",e=>{
   if(!t)return;
   const a=t.dataset.act;
   if(a==="pick")pickOpt(t.dataset.id,+t.dataset.i);
+  else if(a==="disc")toggleOpen(t.dataset.id);
+  else if(a==="allopen")setAllOpen(t.dataset.v==="1");
   else if(a==="pb")setPB(+t.dataset.v);
   else if(a==="tgtreset")resetTarget(t.dataset.id);
   else if(a==="mode")setMode(t.dataset.v);
