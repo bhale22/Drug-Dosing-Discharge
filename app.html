@@ -67,7 +67,7 @@ main{max-width:1200px;margin:0 auto;padding:22px 22px 28px}
 
 /* one-line summary + disclosure caret */
 .msum{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;
-  cursor:pointer;min-width:0}
+  cursor:pointer;min-width:0;flex:0 1 auto}
 .mfreq{font-size:12px;color:var(--soft);text-align:right}
 .chip.dose{background:var(--accent-s);color:var(--accent-d);font-weight:600}
 .disc{flex:none;width:28px;height:28px;padding:0;border:none;background:transparent;
@@ -87,7 +87,7 @@ main{max-width:1200px;margin:0 auto;padding:22px 22px 28px}
   color:var(--ink);cursor:pointer;white-space:nowrap}
 .vbtn:hover{border-color:var(--accent);color:var(--accent-d)}
 .mh input[type=checkbox]{width:17px;height:17px;accent-color:var(--accent);margin-top:2px;flex:none;cursor:pointer}
-.mn{flex:1;min-width:0}
+.mn{flex:1 1 130px;min-width:0}
 .mn .name{font-weight:650;cursor:pointer;font-size:14px}
 .mn .gen{color:var(--soft);font-size:12px;margin-left:4px}
 .chip{font-family:var(--mono);font-size:12px;color:var(--accent-d);background:var(--accent-s);
@@ -138,12 +138,17 @@ main{max-width:1200px;margin:0 auto;padding:22px 22px 28px}
 .cust-mg:focus,.cust-hr:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .cust-n{font-family:var(--sans);font-size:14px;font-weight:700;min-width:44px;padding:4px 8px;
   border:1.5px solid var(--accent);border-radius:7px;background:#fff;color:var(--accent-d);cursor:pointer}
-.tabpad{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:7px 0 2px;
-  max-width:210px;padding:8px;background:#F7FAFA;border:1.5px solid var(--line);border-radius:10px}
-.tabpad button{font-family:var(--sans);font-size:17px;font-weight:650;padding:11px 0;
-  border:1.5px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);cursor:pointer}
-.tabpad button:hover{border-color:var(--accent);color:var(--accent-d)}
-.tabpad .tp-wide{grid-column:1/-1;font-size:12.5px;font-weight:700;padding:8px 0;color:var(--soft)}
+/* The keypad floats over the page rather than pushing the layout around. */
+.cx{position:relative}
+.tabpad{position:absolute;top:calc(100% + 6px);left:0;z-index:70;
+  display:grid;grid-template-columns:repeat(3,64px);gap:5px;
+  padding:9px;background:#fff;border:1.5px solid var(--accent);border-radius:12px;
+  box-shadow:0 8px 28px rgba(20,40,44,.22)}
+.tabpad button{font-family:var(--sans);font-size:17px;font-weight:650;padding:12px 0;
+  border:1.5px solid var(--line);border-radius:8px;background:#F7FAFA;color:var(--ink);cursor:pointer}
+.tabpad button:hover{border-color:var(--accent);color:var(--accent-d);background:#fff}
+.tabpad .tp-done{background:var(--accent);border-color:var(--accent);color:#fff;font-size:13px}
+.tabpad .tp-back{font-size:13px;color:var(--soft)}
 .opt.cust.on .cust-n{border-color:var(--accent)}
 .freq-in{font-family:var(--sans);font-size:12.5px;padding:4px 8px;min-width:190px;
   border:1.5px solid var(--accent);border-radius:7px;background:#fff;color:var(--ink)}
@@ -176,8 +181,8 @@ tr.hit td{background:var(--accent-s)}
 .countbar{position:sticky;bottom:0;z-index:40;background:var(--accent-d);color:#fff;
   transition:background .25s}
 .countbar-inner{max-width:1200px;margin:0 auto;padding:9px 22px;
-  display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.countbar strong{font-size:14px;flex:1 1 auto}
+  display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.countbar strong{font-size:14px;flex:0 0 auto}
 .countbar a{color:#fff;font-size:13.5px;font-weight:600}
 .cb-actions{display:flex;gap:7px;flex-wrap:wrap}
 .cbtn{font-family:var(--sans);font-size:13px;font-weight:700;padding:8px 14px;
@@ -232,12 +237,13 @@ tr.hit td{background:var(--accent-s)}
   color:var(--accent);margin:20px 0 7px;padding-bottom:4px;
   border-bottom:1px solid var(--line);transition:color .25s}
 .out-dis .sec-body{padding-left:14px}
-.out-dis .dmed{margin:0 0 13px}
+.out-dis .dmed{margin:0 0 14px}
 .out-dis .dmed:last-child{margin-bottom:2px}
-.out-dis .dm-name{font-size:14.5px;font-weight:700;line-height:1.35}
-.out-dis .dm-what{font-size:12.5px;color:#666;line-height:1.4;margin-top:1px}
-.out-dis .dm-give{font-size:14px;line-height:1.5;margin-top:4px;padding-left:18px;
-  border-left:3px solid var(--accent-s)}
+.out-dis .dm-line{font-size:14px;line-height:1.45}
+.out-dis .dm-name{font-weight:700}
+.out-dis .dm-give{font-weight:400}
+.out-dis .dm-what{font-size:12.5px;color:#666;line-height:1.4;margin-top:3px;
+  padding-left:20px;border-left:3px solid var(--accent-s)}
 .out-dis .dp{font-size:13.5px;line-height:1.65;margin:0 0 9px}
 .out-dis .dp:last-child{margin-bottom:0}
 .out-dis .dbul{display:flex;gap:9px;font-size:13.5px;line-height:1.6;margin:0 0 6px;padding-left:2px}
@@ -287,11 +293,11 @@ tr.hit td{background:var(--accent-s)}
     text-transform:uppercase;letter-spacing:.08em;margin:16pt 0 6pt;
     padding-bottom:2pt;border-bottom:.75pt solid #bbb;color:#000}
   .out-dis .sec-body{padding-left:12pt}
-  .out-dis .dmed{margin:0 0 10pt}
-  .out-dis .dm-name{font-size:12pt;font-weight:bold;line-height:1.3}
-  .out-dis .dm-what{font-size:9.5pt;color:#555;line-height:1.35}
-  .out-dis .dm-give{font-size:11pt;line-height:1.45;margin-top:2pt;padding-left:12pt;
-    border-left:2pt solid #ccc}
+  .out-dis .dmed{margin:0 0 11pt}
+  .out-dis .dm-line{font-size:11.5pt;line-height:1.4}
+  .out-dis .dm-name{font-weight:bold}
+  .out-dis .dm-what{font-size:9.5pt;color:#555;line-height:1.35;margin-top:2pt;
+    padding-left:14pt;border-left:1.5pt solid #ccc}
   .out-dis .dp{font-size:11pt;line-height:1.6;margin:0 0 7pt}
   .out-dis .dbul{display:flex;gap:7pt;font-size:11pt;line-height:1.55;margin:0 0 5pt}
   .out-dis .dbm{flex:none}
@@ -310,7 +316,8 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
 .wb-txt{flex:1 1 240px}
 .wb-btn{font-family:var(--sans);font-size:12.5px;font-weight:700;padding:7px 14px;
   border:none;border-radius:8px;background:var(--warn);color:#fff;cursor:pointer;white-space:nowrap}
-.headercalc{display:flex;align-items:baseline;gap:8px;margin-top:8px;
+.headercalc{display:none}
+.headercalc:not([hidden]){display:flex;align-items:baseline;gap:8px;margin-top:8px;
   background:var(--accent-s);border-radius:9px;padding:7px 13px}
 .hc-lbl{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-d)}
 .hc-val{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent-d)}
@@ -371,8 +378,8 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
   .cust-in{width:96px}
   .cust-mg,.cust-hr,.freq-in{font-size:16px;padding:6px 8px}
   .cust-n{font-size:17px;padding:7px 12px}
-  .tabpad{max-width:none}
-  .tabpad button{font-size:19px;padding:13px 0}
+  .tabpad{grid-template-columns:repeat(3,72px)}
+  .tabpad button{font-size:19px;padding:14px 0}
   .freq-in{min-width:0;width:100%}
   .opt.cust{flex-wrap:wrap}
   .wt-wrap{flex-wrap:wrap}
@@ -520,6 +527,12 @@ function st(id){if(!S[id])S[id]={on:false,opt:null,freq:0,volMl:null,mgkg:null,
   return S[id];}
 /* cN x cMg is the custom dose: how many tablets/capsules, of what strength.
    cFreq overrides the frequency list when the clinician types their own. */
+/* For a medication with no tablet strength, a custom entry is just an amount
+   in that medication's own unit ("1/2 tsp"). */
+function customAmount(m){
+  const s=st(m.id);
+  if(s.opt!==-1||s.cN===null)return"";
+  return fr(s.cN)+" "+(m.unitName||"tab")+(s.cN>1&&!m.unitName?"s":"");}
 function customTabs(id){
   const s=st(id);
   return(s.cN!==null&&s.cMg!==null)?[{mg:s.cMg,n:s.cN}]:null;}
@@ -716,11 +729,14 @@ function medLine(m,kg,lb){
     const vol=s.volMl!==null?s.volMl:m.defaultMl;
     return m.name+D+vol+" ml given in clinic.";
   }
-  if(m.type==="fixed")
-    return m.name+(m.strengthLabel?" "+m.strengthLabel:"")+D+"Give "+m.doseText+(freq?" "+freq:"")+"."+(m.extra?" "+m.extra:"");
+  if(m.type==="fixed"){
+    const cu=customAmount(m);
+    return m.name+(m.strengthLabel?" "+m.strengthLabel:"")+D+"Give "+
+      (cu||m.doseText)+(freq?" "+freq:"")+"."+(m.extra?" "+m.extra:"");}
   if(m.type==="weightText"){
-    const b=band(m.bandKey,lb);
-    return m.name+D+"Give "+(b?b.text:"chart amount")+(m.onFood?" on food":"")+(freq?" "+freq:"")+".";
+    const b=band(m.bandKey,lb),cu=customAmount(m);
+    return m.name+D+"Give "+(cu||(b?b.text:"chart amount"))+
+      (m.onFood?" on food":"")+(freq?" "+freq:"")+".";
   }
   if(m.type==="iver"){
     const ml=kg===null?"___":fmtMl(kg*m.doseMid/m.conc);
@@ -793,13 +809,16 @@ function dischargeMed(m,kg,lb){
   const line=longFreq(medLine(m,kg,lb));
   const mt=line.match(/^(.+?)\s+\((.+?)\):\s{2}(.+)$/);
   const cap=t=>esc(t.charAt(0).toUpperCase()+t.slice(1));
-  if(mt)return'<div class="dmed"><div class="dm-name">'+esc(mt[1])+'</div>'+
-    '<div class="dm-what">'+esc(mt[2])+'</div>'+
-    '<div class="dm-give">'+cap(mt[3])+'</div></div>';
+  /* Drug, strength and directions read as one line; the description sits
+     indented underneath so each drug stands out. */
+  const row=(name,give)=>'<div class="dm-line"><span class="dm-name">'+esc(name)+
+    ':</span> <span class="dm-give">'+cap(give)+'</span></div>';
+  if(mt)return'<div class="dmed">'+row(mt[1],mt[3])+
+    '<div class="dm-what">'+esc(mt[2])+'</div></div>';
   const p=line.match(/^(.+?):\s{2}(.+)$/);
-  if(p)return'<div class="dmed"><div class="dm-name">'+esc(p[1])+'</div>'+
-    '<div class="dm-give">'+cap(p[2])+'</div></div>';
-  return'<div class="dmed"><div class="dm-name">'+esc(line)+'</div></div>';}
+  if(p)return'<div class="dmed">'+row(p[1],p[2])+'</div>';
+  return'<div class="dmed"><div class="dm-line"><span class="dm-name">'+
+    esc(line)+'</span></div></div>';}
 
 function buildDischarge(kg,lb,inhosp,atHome){
   const name=getName();
@@ -868,9 +887,8 @@ function previewToPlain(){
     if(cl.contains("dis-title")||cl.contains("dis-what"))return inner+"\n";
     if(cl.contains("dis-sub"))return inner+"\n";
     if(cl.contains("sec-hdr")||cl.contains("sec-lbl"))return"\n"+inner.toUpperCase()+"\n";
-    if(cl.contains("dm-name"))return"  "+inner+"\n";
-    if(cl.contains("dm-what"))return"  ("+inner+")\n";
-    if(cl.contains("dm-give"))return"      "+inner+"\n";
+    if(cl.contains("dm-line"))return"  "+inner.trim()+"\n";
+    if(cl.contains("dm-what"))return"      "+inner.trim()+"\n";
     if(cl.contains("dmed"))return inner+"\n";
     if(cl.contains("dbul"))return"  • "+inner.replace(/^•\s*/,"").trim()+"\n";
     if(cl.contains("dp"))return"  "+inner+"\n";
@@ -906,8 +924,8 @@ async function copyRich(){
     ".rec-hdr{font-size:10pt;color:#555;border-bottom:1px solid #ccc;padding-bottom:4pt;margin-bottom:6pt}"+
     ".btext{white-space:pre-wrap}.dis-what{font-size:12pt;font-weight:bold}"+
     ".sec-body{padding-left:12pt}.dmed{margin:0 0 9pt}"+
-    ".dm-name{font-size:12pt;font-weight:bold}.dm-what{font-size:9.5pt;color:#555}"+
-    ".dm-give{font-size:11pt;padding-left:12pt}"+
+    ".dm-name{font-weight:bold}.dm-what{font-size:9.5pt;color:#555;padding-left:14pt}"+
+    ".dm-line{font-size:11.5pt}"+
     ".dp{margin:0 0 7pt}.dbul{margin:0 0 5pt;padding-left:12pt}</style>";
   const hb=new Blob([css+el.innerHTML],{type:"text/html"});
   const tb=new Blob([previewToPlain()],{type:"text/plain"});
@@ -1016,6 +1034,12 @@ function labelDose(m){
   if(m.type==="inj")return m.lo+" mg/kg "+(m.route||"");
   if(m.type==="iver")return m.doseMid+" mg/kg";
   if(m.type==="fixed")return m.doseText||"";
+  if(m.type==="weightText"){
+    /* no weight yet: show the chart's own values so the page is still useful */
+    const rows=(C.bands&&C.bands[m.bandKey])||[];
+    const seen=[];
+    for(const b of rows)if(b.text&&seen.indexOf(b.text)<0)seen.push(b.text);
+    return seen.join(" / ");}
   if(m.type==="injVolume")return(m.defaultMl!==undefined?m.defaultMl+" ml":"");
   return"";}
 
@@ -1040,8 +1064,9 @@ function doseSummary(m,kg,lb){
     if(kg!==null){dim=false;dose=fmtMl(m.lo*kg/m.conc)+" ml "+m.route;}
   }else if(m.type==="injVolume"){
     dim=false;dose=(s.volMl!==null?s.volMl:m.defaultMl)+" ml";
-  }else if(m.type==="fixed"){dim=false;dose=m.doseText;
-  }else if(m.type==="weightText"){const b=band(m.bandKey,lb);if(b){dim=false;dose=b.text;}
+  }else if(m.type==="fixed"){dim=false;dose=customAmount(m)||m.doseText;
+  }else if(m.type==="weightText"){const cu=customAmount(m),b=band(m.bandKey,lb);
+    if(cu){dim=false;dose=cu;}else if(b){dim=false;dose=b.text;}
   }else if(m.type==="iver"){
     if(kg!==null){dim=false;dose=fmtMl(kg*m.doseMid/m.conc)+" ml";}
   }else if(m.type==="protocol"){
@@ -1050,7 +1075,8 @@ function doseSummary(m,kg,lb){
 
 function summaryInner(m,kg,lb){
   const q=doseSummary(m,kg,lb);
-  const lab=labelDose(m);
+  let lab=labelDose(m);
+  if(m.type==="weightText"&&lb!==null){const b=band(m.bandKey,lb);if(b)lab=b.text;}
   /* label dose leads; the milligram amount for this patient follows it */
   const showAmt=!q.dim&&q.dose&&q.dose!==lab;
   return(lab?'<span class="chip label">'+esc(lab)+'</span>':"")+
@@ -1079,26 +1105,42 @@ function targetEditHtml(m,kg){
 /* Custom dose, entered the way it is written on a label: strength in mg, then
    how many tablets, then the interval in hours. Quarter/half/three-quarter sit
    above the 1-2-3 row of the tablet keypad. */
-const TABKEYS=[["\u00bc",0.25],["\u00bd",0.5],["\u00be",0.75],
-  ["1",1],["2",2],["3",3],["4",4],["5",5],["6",6],["7",7],["8",8],["9",9]];
+/* Keypad rows. Fractions sit above the digits; a zero and a decimal point are
+   there because some of these doses are volumes, not tablets. */
+const TABKEYS=[
+  ["1/16",0.0625],["\u215b",0.125],["\u00bc",0.25],
+  ["\u00bd",0.5],["\u00be",0.75],["back","BACK"],
+  ["1","1"],["2","2"],["3","3"],
+  ["4","4"],["5","5"],["6","6"],
+  ["7","7"],["8","8"],["9","9"],
+  [".","."],["0","0"],["Done","DONE"]];
+
+/* Custom dose written the way it goes on a label: strength, how many, how often.
+   A medication with no tablet strength (a powder measured in tsp, say) skips the
+   strength box and just takes an amount. */
+function hasStrengthBox(m){
+  return m.type==="band"||m.type==="tab"||m.type==="calc"||m.type==="multiband";}
 function customOptHtml(m,kg){
   const s=st(m.id),unitName=m.unitName||"tab";
   const on=s.opt===-1;
+  const strengthBox=hasStrengthBox(m)
+    ?'<input class="cust-mg" type="number" step="any" min="0" inputmode="decimal" '+
+       'placeholder="mg" aria-label="Strength of one '+escAttr(unitName)+' in mg" '+
+       'value="'+(s.cMg===null?"":s.cMg)+'" '+
+       'onfocus="pickCustom(\''+m.id+'\')" '+
+       'oninput="setCustomMg(\''+m.id+'\',this.value)" '+
+       'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+
+     '<span class="cx-u">mg:</span>'
+    :"";
   return'<div class="opt cust'+(on?" on":"")+'">'+
     '<input type="radio" name="opt-'+m.id+'" id="rc'+m.id+'" '+(on?"checked":"")+
       ' onchange="pickCustom(\''+m.id+'\')">'+
     '<label for="rc'+m.id+'">Custom</label>'+
-    '<span class="cx">'+
-      '<input class="cust-mg" type="number" step="any" min="0" inputmode="decimal" '+
-        'placeholder="mg" aria-label="Strength of one '+escAttr(unitName)+' in mg" '+
-        'value="'+(s.cMg===null?"":s.cMg)+'" '+
-        'onfocus="pickCustom(\''+m.id+'\')" '+
-        'oninput="setCustomMg(\''+m.id+'\',this.value)" '+
-        'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+
-      '<span class="cx-u">mg:</span>'+
+    '<span class="cx">'+strengthBox+
       '<button type="button" class="cust-n" id="cn-'+m.id+'" '+
-        'aria-label="Number of '+escAttr(unitName)+'s" '+
-        'onclick="toggleTabPad(\''+m.id+'\')">'+(s.cN===null?"\u2013":fr(s.cN))+'</button>'+
+        'aria-label="Amount in '+escAttr(unitName)+'" '+
+        'onclick="toggleTabPad(event,\''+m.id+'\')">'+
+        (s.cN===null?"\u2013":fr(s.cN))+'</button>'+
       '<span class="cx-u">'+esc(unitName)+' every</span>'+
       '<input class="cust-hr" type="number" step="1" min="1" inputmode="numeric" '+
         'placeholder="hrs" aria-label="Interval in hours" '+
@@ -1107,13 +1149,14 @@ function customOptHtml(m,kg){
         'oninput="setCustomHr(\''+m.id+'\',this.value)" '+
         'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+
       '<span class="cx-u">hrs</span>'+
+      '<div class="tabpad" id="tp-'+m.id+'" hidden>'+
+        TABKEYS.map(k=>'<button type="button" class="'+
+          (k[1]==="DONE"?"tp-done":k[1]==="BACK"?"tp-back":"")+
+          '" onclick="tabKey(event,\''+m.id+'\',\''+k[1]+'\')">'+k[0]+'</button>').join("")+
+      '</div>'+
     '</span>'+
-    '<div class="tabpad" id="tp-'+m.id+'" hidden>'+
-      TABKEYS.map(k=>'<button type="button" onclick="setCustomN(\''+m.id+'\','+k[1]+')">'+
-        k[0]+'</button>').join("")+
-      '<button type="button" class="tp-wide" onclick="setCustomN(\''+m.id+'\',null)">clear</button>'+
-    '</div>'+
     '<span class="dmg" id="cmk-'+m.id+'">'+customMgkgText(m,kg)+'</span></div>';}
+
 function customMgkgText(m,kg){
   const t=customTabs(m.id);
   if(!t)return"";
@@ -1140,7 +1183,7 @@ function medHtml(m,kg,lb){
         '<label for="r'+m.id+i+'"><span>'+tabsText(o.tabs)+'</span>'+
         (o.mg?'<span class="dmg">= '+fmtMg(o.mg)+" mg"+mgkg+'</span>':"")+tag+'</label></div>';
     }).join("");
-    if(m.type!=="multiband")body+=customOptHtml(m,kg);
+    body+=customOptHtml(m,kg);
     if(m.mlConc&&kg){
       const pk=perKg(m),lo2=pk.lo*kg/m.mlConc,hi2=pk.hi*kg/m.mlConc;
       body+='<div class="mnote">Liquid ('+m.mlConc+' mg/ml): '+(pk.hi>pk.lo?fmtMl(lo2)+"–"+fmtMl(hi2):fmtMl(lo2))+' ml</div>';}
@@ -1161,10 +1204,12 @@ function medHtml(m,kg,lb){
     body='<div class="mnote">Click the volume chip to adjust (default: '+m.defaultMl+' ml).</div>';
   } else if(m.type==="fixed"){
     body='<div class="mnote">'+m.doseText+(m.extraNote?" · "+m.extraNote:"")+'</div>';
+    body+=customOptHtml(m,kg);
     body+=freqHtml(m,s);
   } else if(m.type==="weightText"){
     const b=band(m.bandKey,lb);
     if(m.noteFn)body+='<div class="mnote">'+eval("("+m.noteFn+")")(kg,lb)+'</div>';
+    body+=customOptHtml(m,kg);
     body+=freqHtml(m,s);
     chart=bandChartHtml(m,lb);
   } else if(m.type==="iver"){
@@ -1455,15 +1500,17 @@ function setCustomMg(id,v){
   const m=C.meds.find(x=>x.id===id),el=document.getElementById("cmk-"+id);
   if(m&&el)el.textContent=customMgkgText(m,getKg());
   markCustom();buildOutput();refreshSum(id);}
-function setCustomN(id,v){
+function setCustomN(id,v,keepPad){
   const s=st(id);
   const n=v===null?null:parseFloat(v);
   s.cN=(n!==null&&isFinite(n)&&n>0)?n:null;
   s.opt=-1;custRow(id,true);
   const btn=document.getElementById("cn-"+id);
-  if(btn)btn.textContent=s.cN===null?"\u2013":fr(s.cN);
+  /* show what is being typed, so "0." and "1.2" read back correctly */
+  if(btn)btn.textContent=(keepPad&&PADBUF[id])?PADBUF[id]
+    :(s.cN===null?"\u2013":fr(s.cN));
   const pad=document.getElementById("tp-"+id);
-  if(pad)pad.hidden=true;
+  if(pad&&!keepPad)pad.hidden=true;
   const m=C.meds.find(x=>x.id===id),el=document.getElementById("cmk-"+id);
   if(m&&el)el.textContent=customMgkgText(m,getKg());
   markCustom();buildOutput();refreshSum(id);}
@@ -1472,11 +1519,36 @@ function setCustomHr(id,v){
   s.cHr=(isFinite(n)&&n>0)?n:null;
   s.opt=-1;custRow(id,true);
   markCustom();buildOutput();refreshSum(id);}
-function toggleTabPad(id){
+const PADBUF={};
+function closePads(except){
+  document.querySelectorAll(".tabpad").forEach(p=>{
+    if(p.id!=="tp-"+except)p.hidden=true;});}
+function toggleTabPad(e,id){
+  if(e)e.stopPropagation();
   const pad=document.getElementById("tp-"+id);
   if(!pad)return;
   pickCustom(id);
-  pad.hidden=!pad.hidden;}
+  const willOpen=pad.hidden;
+  closePads(willOpen?id:null);
+  pad.hidden=!willOpen;
+  /* start empty so the first key typed replaces the old amount rather than
+     appending to it */
+  if(willOpen)PADBUF[id]="";}
+/* Digits and the point append; a fraction replaces the fractional part; back
+   deletes one character. The value commits on every press. */
+function tabKey(e,id,k){
+  if(e)e.stopPropagation();
+  let buf=PADBUF[id]===undefined?"":PADBUF[id];
+  if(k==="DONE"){document.getElementById("tp-"+id).hidden=true;return;}
+  if(k==="BACK")buf=buf.slice(0,-1);
+  else if(k==="."){if(buf.indexOf(".")<0)buf=(buf===""?"0":buf)+".";}
+  else if(/^[0-9]$/.test(k))buf=buf+k;
+  else{
+    /* a fraction replaces the fractional part of whatever is there */
+    const whole=Math.floor(parseFloat(buf)||0);
+    buf=String(whole+parseFloat(k));}
+  PADBUF[id]=buf;
+  setCustomN(id,buf===""?null:buf,true);}
 function setCustomFreq(id,v){
   st(id).cFreq=v;markCustom();redrawMed(id);buildOutput();}
 /* retarget mg/kg — options re-bracket around the new target and the
@@ -1575,6 +1647,8 @@ addEventListener("scroll",()=>{
   const now=window.scrollY>70;
   if(now!==_sc){_sc=now;document.body.classList.toggle("scrolled",now);}
 },{passive:true});
+
+document.addEventListener("click",()=>closePads(null));
 
 boot();
 </script>

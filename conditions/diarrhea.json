@@ -438,7 +438,7 @@
         "twice daily (clostridial colitis)",
         "every 2–3 days (chronic clostridial colitis)"
       ],
-      "desc": "antibiotic for chronic or recurrent diarrhea",
+      "desc": "Antibiotic that also reduces inflammation in the colon.",
       "chartCols": [
         "Weight (lb)",
         "Dose"
@@ -447,7 +447,8 @@
         "lb",
         "text"
       ],
-      "chartNote": "1/8 tsp = 325 mg. Measuring-spoon sets (Tad ¼ tsp · Dash 1/8 · Pinch 1/16 · Smidgen 1/32) are handy for dispensing Tylan to clients."
+      "chartNote": "1/8 tsp = 325 mg. Measuring-spoon sets (Tad ¼ tsp · Dash 1/8 · Pinch 1/16 · Smidgen 1/32) are handy for dispensing Tylan to clients.",
+      "unitName": "tsp"
     },
     {
       "id": "provpaste_d",
