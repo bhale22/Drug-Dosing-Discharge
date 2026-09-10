@@ -1,0 +1,89 @@
+{
+  "title": "Energy Requirement Calculator",
+  "desc": "Resting and maintenance energy requirement from body weight, with the k factors for dogs and cats by life stage, plus expected water intake and the PU/PD threshold. Clinician reference.",
+  "icon": "🔥",
+  "code": "REF-MER",
+  "discharge": "Energy Requirement",
+  "species": ["dog", "cat"],
+  "noDischarge": true,
+  "bands": {},
+  "meds": [
+    {
+      "id": "rer",
+      "sp": "dog",
+      "grp": "Resting energy requirement",
+      "name": "RER",
+      "desc": "70 × kg^0.75",
+      "type": "protocol",
+      "chipFn": "(kg,lb)=>R2(70*Math.pow(kg,0.75))+' kcal/day'",
+      "bodyFn": "(kg,lb)=>'RER = 70 &times; kg<sup>0.75</sup> = 70 &times; '+R2(kg)+'<sup>0.75</sup> = <strong>'+R2(70*Math.pow(kg,0.75))+' kcal/day</strong><br>Maintenance ER = k &times; RER &mdash; pick the k factor below.'",
+      "lineFn": "(kg,lb)=>'resting energy requirement '+R2(70*Math.pow(kg,0.75))+' kcal/day'"
+    },
+    {
+      "id": "mer_dog",
+      "sp": "dog",
+      "grp": "Maintenance energy requirement — dog",
+      "name": "MER by k factor — dog",
+      "desc": "k × RER for each condition",
+      "type": "protocol",
+      "chipFn": "(kg,lb)=>'see table'",
+      "bodyFn": "(kg,lb)=>{var r=70*Math.pow(kg,0.75);var k=[['Typical neutered pet',1.6],['Weight loss (overweight)',1.0],['Obese prone',1.4],['Weight gain (neutered)',2.0],['Weight gain (intact)',2.2]];return k.map(function(x){return x[0]+' (k='+x[1]+') &rarr; <strong>'+R2(x[1]*r)+' kcal/day</strong>';}).join('<br>');}",
+      "lineFn": "(kg,lb)=>'maintenance energy requirement = k x '+R2(70*Math.pow(kg,0.75))+' kcal/day'",
+      "note": "k values from Merck and VIN. Divide the kcal/day by the diet's kcal per cup or can to get the amount to feed."
+    },
+    {
+      "id": "water_dog",
+      "sp": "dog",
+      "grp": "Water intake",
+      "name": "Expected water intake — dog",
+      "desc": "1 ml per kcal; PU/PD above 100 ml/kg/day",
+      "type": "protocol",
+      "chipFn": "(kg,lb)=>R2(kg*100)+' ml/day = PU/PD'",
+      "bodyFn": "(kg,lb)=>'Water intake is about <strong>1 ml per kcal</strong>.<br>PU/PD threshold is over 100 ml/kg/day = <strong>'+R2(kg*100)+' ml/day</strong> = <strong>'+R2(kg*100/236.6)+' cups/day</strong>.'",
+      "lineFn": "(kg,lb)=>'PU/PD threshold '+R2(kg*100)+' ml/day (100 ml/kg/day)'"
+    },
+    {
+      "id": "rer_cat",
+      "sp": "cat",
+      "grp": "Resting energy requirement",
+      "name": "RER",
+      "desc": "70 × kg^0.75",
+      "type": "protocol",
+      "chipFn": "(kg,lb)=>R2(70*Math.pow(kg,0.75))+' kcal/day'",
+      "bodyFn": "(kg,lb)=>'RER = 70 &times; kg<sup>0.75</sup> = <strong>'+R2(70*Math.pow(kg,0.75))+' kcal/day</strong><br>Maintenance ER = k &times; RER &mdash; pick the k factor below.'",
+      "lineFn": "(kg,lb)=>'resting energy requirement '+R2(70*Math.pow(kg,0.75))+' kcal/day'"
+    },
+    {
+      "id": "mer_cat",
+      "sp": "cat",
+      "grp": "Maintenance energy requirement — cat",
+      "name": "MER by k factor — cat",
+      "desc": "k × RER for each condition",
+      "type": "protocol",
+      "chipFn": "(kg,lb)=>'see table'",
+      "bodyFn": "(kg,lb)=>{var r=70*Math.pow(kg,0.75);var k=[['Weight loss (overweight)',0.8],['Obese prone',1.0],['Weight gain (neutered)',1.47],['Weight gain (intact)',1.7],['Light / active working',1.6],['Typical intact pet',1.4],['Typical neutered pet',1.2],['Critical care',1.0],['Healthy kitten',2.5]];return k.map(function(x){return x[0]+' (k='+x[1]+') &rarr; <strong>'+R2(x[1]*r)+' kcal/day</strong>';}).join('<br>');}",
+      "lineFn": "(kg,lb)=>'maintenance energy requirement = k x '+R2(70*Math.pow(kg,0.75))+' kcal/day'",
+      "note": "k values from Merck and VIN. Kittens are 2.5 both under and over 16 weeks on this sheet."
+    },
+    {
+      "id": "water_cat",
+      "sp": "cat",
+      "grp": "Water intake",
+      "name": "Expected water intake — cat",
+      "desc": "1 ml per kcal; PU/PD above 100 ml/kg/day",
+      "type": "protocol",
+      "chipFn": "(kg,lb)=>R2(kg*100)+' ml/day = PU/PD'",
+      "bodyFn": "(kg,lb)=>'Water intake is about <strong>1 ml per kcal</strong>.<br>PU/PD threshold is over 100 ml/kg/day = <strong>'+R2(kg*100)+' ml/day</strong> = <strong>'+R2(kg*100/236.6)+' cups/day</strong>.'",
+      "lineFn": "(kg,lb)=>'PU/PD threshold '+R2(kg*100)+' ml/day (100 ml/kg/day)'"
+    }
+  ],
+  "notes": {
+    "Formulae": "Resting energy requirement (RER) = 70 × kg^0.75. Maintenance energy requirement (MER) = k × RER, with k chosen from the tables above. k values are from Merck and VIN.",
+    "Dog k factors": "Typical neutered pet 1.6 · weight loss (overweight) 1.0 · obese prone 1.4 · weight gain, neutered 2.0 · weight gain, intact 2.2.",
+    "Cat k factors": "Weight loss (overweight) 0.8 · obese prone 1.0 · weight gain, neutered 1.47 · weight gain, intact 1.7 · light/active 1.6 · typical intact 1.4 · typical neutered 1.2 · critical care 1.0 · healthy kittens 2.5.",
+    "Turning kcal into food": "Divide the kcal/day by the kcal per cup or per can printed on the diet. A cup is about 236.6 ml.",
+    "Water intake": "Roughly 1 ml of water per kcal consumed. PU/PD is defined here as over 100 ml/kg/day.",
+    "Critical care": "Feed to RER (k = 1.0) in a hospitalised patient — not to maintenance. Overfeeding a critical patient is a real risk."
+  },
+  "dischargeBlocks": []
+}

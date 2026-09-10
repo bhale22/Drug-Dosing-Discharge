@@ -1,0 +1,27 @@
+{
+  "title": "Greyhound Normal Values",
+  "desc": "Breed-specific reference intervals from Idexx — chemistry, haematology and total T4 — alongside the general canine ranges. No weight or medication needed.",
+  "icon": "🐕‍🦺",
+  "code": "REF-GREY",
+  "discharge": "Greyhound Reference",
+  "species": ["dog"],
+  "noDischarge": true,
+  "noWeight": true,
+  "bands": {},
+  "meds": [],
+  "notes": {
+    "How to read this": "Each entry is GREYHOUND-SPECIFIC first, then the general canine interval in brackets. Source: Idexx greyhound reference intervals. A greyhound result that looks abnormal against the general canine range is frequently normal for the breed.",
+    "The big four to remember": "Greyhounds normally run a HIGHER haematocrit, HIGHER creatinine and SDMA, and LOWER platelets, white cells and T4 than other dogs. Reading those against general canine ranges is what leads to unnecessary work-ups.",
+    "Chemistry — renal": "SDMA 0–20 µg/dL (general 0–14) · Creatinine 1.2–2.1 mg/dL (0.5–1.5) · BUN 13–29 mg/dL (9–31)",
+    "Chemistry — electrolytes": "Chloride 107–117 mmol/L (108–119) · Potassium 3.8–4.7 mmol/L (4.0–5.4) · Sodium 139–149 mmol/L (142–152) · Na/K ratio 31–39 (28–37) · TCO2 (bicarb) 18–25 mmol/L (13–27) · Anion gap 12–20 mmol/L (11–26)",
+    "Chemistry — minerals & glucose": "Glucose 72–118 mg/dL (63–114) · Calcium 9.3–10.5 mg/dL (8.4–11.8) · Phosphorus 2.3–5.1 mg/dL (2.5–6.1)",
+    "Chemistry — protein": "Total protein 5.2–6.8 g/dL (5.5–7.5) · Albumin 2.7–3.9 g/dL (2.7–3.9) · Globulin 2.2–3.5 g/dL (2.4–4.0) · Alb/Glob ratio 0.9–1.5 (0.7–1.5)",
+    "Chemistry — liver": "ALT 24–97 U/L (18–121) · AST 23–84 U/L (16–55) · ALP 12–79 U/L (5–160) · GGT 0–18 U/L (0–13)",
+    "Chemistry — bilirubin": "Total bilirubin 0.2–0.5 mg/dL (0–0.3) · Conjugated 0–0.1 mg/dL (0–0.1) · Unconjugated 0.1–0.4 mg/dL (0–0.2)",
+    "Chemistry — other": "Cholesterol 110–236 mg/dL (131–345) · CK 59–538 U/L (10–200)",
+    "Haematology — red cells": "RBC 7.04–9.73 M/µL (5.39–8.70) · HCT 52–68.4% (38.3–56.5%) · Hgb 16.9–23.1 g/dL (13.4–20.7) · MCV 67–80 fL (59–76) · MCH 23.1–25.7 pg (21.9–26.1) · MCHC 30.4–35.8 g/dL (32.6–39.2)",
+    "Haematology — platelets and white cells": "Platelets 97–232 K/µL (143–448) · WBC 3.6–8.6 K/µL (4.9–17.6) · Neutrophils 2.14–6.52 K/µL (2.94–12.67) · Lymphocytes 0.59–2.10 K/µL (1.06–4.95) · Monocytes 0.04–0.34 K/µL (0.13–1.15) · Eosinophils 0.02–1.19 K/µL (0.07–1.49) · Basophils 0–0.1 K/µL (0–0.1)",
+    "Endocrinology": "Total T4 0.5–1.7 µg/dL (general canine 1.0–4.0). A greyhound with a T4 in the low-normal general range is usually euthyroid — do not diagnose hypothyroidism on total T4 alone in this breed."
+  },
+  "dischargeBlocks": []
+}

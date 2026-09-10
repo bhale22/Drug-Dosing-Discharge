@@ -1,0 +1,88 @@
+{
+  "title": "Fluid Rates",
+  "desc": "Maintenance and dehydration-deficit fluid rates for dogs (60 ml/kg/day) and cats (45 ml/kg/day), with the potassium supplementation table and Mandelker's SQ fluid/furosemide protocol. Clinician reference.",
+  "icon": "💉",
+  "code": "FLUIDS",
+  "discharge": "Fluid Therapy",
+  "species": ["dog", "cat"],
+  "noDischarge": true,
+  "bands": {},
+  "meds": [
+    {
+      "id": "maint_dog",
+      "sp": "dog",
+      "grp": "Maintenance",
+      "name": "Maintenance rate — dog",
+      "desc": "60 ml/kg/day",
+      "type": "protocol",
+      "chipFn": "(kg,lb)=>R2(kg*60/24)+' ml/hr'",
+      "bodyFn": "(kg,lb)=>'60 ml/kg/day = <strong>'+R2(kg*60)+' ml/day</strong> = <strong>'+R2(kg*60/24)+' ml/hr</strong>.<br>Twice maintenance = '+R2(kg*120/24)+' ml/hr ('+R2(kg*120)+' ml/day).'",
+      "lineFn": "(kg,lb)=>'maintenance fluids '+R2(kg*60/24)+' ml/hr (60 ml/kg/day)'",
+      "inClinic": true
+    },
+    {
+      "id": "deficit_dog",
+      "sp": "dog",
+      "grp": "Dehydration deficit",
+      "name": "Deficit by % dehydration — dog",
+      "desc": "deficit (ml) = % × kg × 10",
+      "type": "protocol",
+      "chipFn": "(kg,lb)=>'see table'",
+      "bodyFn": "(kg,lb)=>{var p=[3,5,7,9,11];return '<strong>Deficit (ml) = % dehydration &times; kg &times; 10</strong><br>'+p.map(function(x){var d=x*kg*10;return x+'% &rarr; <strong>'+R2(d)+' ml</strong> &nbsp;(over 6 h '+R2(d/6)+', 8 h '+R2(d/8)+', 12 h '+R2(d/12)+', 24 h '+R2(d/24)+' ml/hr)';}).join('<br>');}",
+      "lineFn": "(kg,lb)=>'dehydration deficit = % x '+R2(kg*10)+' ml per 1%'",
+      "inClinic": true,
+      "note": "Replacement rates are the deficit alone. Day 1 is usually replacement PLUS maintenance; day 2 is maintenance only."
+    },
+    {
+      "id": "maint_cat",
+      "sp": "cat",
+      "grp": "Maintenance",
+      "name": "Maintenance rate — cat",
+      "desc": "45 ml/kg/day",
+      "type": "protocol",
+      "chipFn": "(kg,lb)=>R2(kg*45/24)+' ml/hr'",
+      "bodyFn": "(kg,lb)=>'45 ml/kg/day = <strong>'+R2(kg*45)+' ml/day</strong> = <strong>'+R2(kg*45/24)+' ml/hr</strong>.<br>Twice maintenance = '+R2(kg*90/24)+' ml/hr ('+R2(kg*90)+' ml/day).'",
+      "lineFn": "(kg,lb)=>'maintenance fluids '+R2(kg*45/24)+' ml/hr (45 ml/kg/day)'",
+      "inClinic": true,
+      "note": "Cats are 45 ml/kg/day, NOT the canine 60 — this is the number most easily carried across by mistake."
+    },
+    {
+      "id": "deficit_cat",
+      "sp": "cat",
+      "grp": "Dehydration deficit",
+      "name": "Deficit by % dehydration — cat",
+      "desc": "deficit (ml) = % × kg × 10",
+      "type": "protocol",
+      "chipFn": "(kg,lb)=>'see table'",
+      "bodyFn": "(kg,lb)=>{var p=[3,5,7,9,11];return '<strong>Deficit (ml) = % dehydration &times; kg &times; 10</strong><br>'+p.map(function(x){var d=x*kg*10;return x+'% &rarr; <strong>'+R2(d)+' ml</strong> &nbsp;(over 6 h '+R2(d/6)+', 8 h '+R2(d/8)+', 12 h '+R2(d/12)+', 24 h '+R2(d/24)+' ml/hr)';}).join('<br>');}",
+      "lineFn": "(kg,lb)=>'dehydration deficit = % x '+R2(kg*10)+' ml per 1%'",
+      "inClinic": true,
+      "note": "A typical feline plan on the source sheet is twice maintenance plus deficit correction over 12 hours on day 1, dropping to twice maintenance on day 2."
+    },
+    {
+      "id": "mandelker_cat",
+      "sp": "cat",
+      "grp": "Mandelker SQ fluids + furosemide",
+      "name": "SQ fluids with furosemide",
+      "desc": "Lester Mandelker's azotaemia protocol",
+      "type": "fixed",
+      "doseText": "200 ml lactated Ringer's SQ every 3 to 4 hours (600–900 ml per day), each time WITH 0.2 to 0.3 ml furosemide SQ",
+      "freqs": ["for 1 to 2 days"],
+      "inClinic": true,
+      "note": "Hospitalise for 1 to 2 days and treat intensively to lower BUN and creatinine. The furosemide must be given at the SAME TIME as every SQ bolus — it paralyses the sodium/potassium pump, forcing sodium out and taking the SQ fluid with it, flushing the urea toxins out of the body."
+    }
+  ],
+  "notes": {
+    "Maintenance rates": "Dogs 60 ml/kg/day. Cats 45 ml/kg/day. Do not carry the canine figure across to a cat.",
+    "Deficit formula": "Fluid deficit in ml = % dehydration × body weight in kg × 10.",
+    "Day 1 vs day 2": "Day 1 is replacement plus maintenance. Day 2 is maintenance only (or twice maintenance in the feline example on the sheet).",
+    "Potassium — serum K+ under 2.0": "Add 20 mEq KCl per 250 ml, or 80 mEq per litre. MAXIMUM fluid rate 6 ml/kg/hr.",
+    "Potassium — serum K+ 2.1 to 2.5": "Add 15 mEq per 250 ml, or 60 mEq per litre. Maximum rate 8 ml/kg/hr.",
+    "Potassium — serum K+ 2.6 to 3.0": "Add 10 mEq per 250 ml, or 40 mEq per litre. Maximum rate 12 ml/kg/hr.",
+    "Potassium — serum K+ 3.1 to 3.5": "Add 7 mEq per 250 ml, or 28 mEq per litre. Maximum rate 18 ml/kg/hr.",
+    "Potassium — serum K+ 3.6 to 5.0": "Add 5 mEq per 250 ml, or 20 mEq per litre. Maximum rate 25 ml/kg/hr.",
+    "KCl safety": "MARK 'DO NOT FLUSH' on any line carrying high-potassium fluid. The maximum infusion rates above exist because a potassium bolus is fatal.",
+    "Mandelker SQ protocol": "Hospitalise the cat 1–2 days. Lactated Ringer's 200 ml SQ every 3–4 hours, 600–900 ml total per day, and EACH TIME give 0.2–0.3 ml furosemide SQ at the same time."
+  },
+  "dischargeBlocks": []
+}

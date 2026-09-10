@@ -36,6 +36,7 @@ h1{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-top:2px}
 .seg button{font-family:var(--sans);font-size:13.5px;font-weight:600;padding:7px 15px;
   border:none;background:transparent;color:var(--soft);cursor:pointer;transition:background .15s,color .15s}
 .seg button.on{background:var(--accent);color:#fff}
+.seg button:disabled{opacity:.4;cursor:not-allowed}
 .seg button:focus-visible{outline:2px solid var(--accent-d);outline-offset:-2px}
 #wt{font-family:var(--mono);font-size:16px;font-weight:600;width:90px;padding:7px 10px;
   border:1.5px solid var(--line);border-right:none;border-radius:9px 0 0 9px;background:#fff;color:var(--ink)}
@@ -126,8 +127,18 @@ main{max-width:1200px;margin:0 auto;padding:22px 22px 28px}
 .opt.cust{gap:6px;margin-top:2px}
 .opt.cust label{font-size:13px;color:var(--soft)}
 .opt.cust.on label{color:var(--ink);font-weight:650}
-.cust-in{font-family:var(--mono);font-size:13px;width:78px;padding:3px 7px;
+.cust-in{font-family:var(--mono);font-size:13px;width:84px;padding:3px 7px;
   border:1.5px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);text-align:right}
+.cust-n{font-family:var(--sans);font-size:13px;padding:3px 5px;border:1.5px solid var(--line);
+  border-radius:7px;background:#fff;color:var(--ink)}
+.opt.cust.on .cust-n{border-color:var(--accent)}
+.freq-in{font-family:var(--sans);font-size:12.5px;padding:4px 8px;min-width:190px;
+  border:1.5px solid var(--accent);border-radius:7px;background:#fff;color:var(--ink)}
+.freq-x,.freq-add{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--accent-d);
+  background:var(--accent-s);border:none;border-radius:20px;padding:4px 9px;cursor:pointer;
+  margin-left:5px}
+.freq-x:hover,.freq-add:hover{background:#CDE6E2}
+.freq-one{font-size:12.5px}
 .cust-in:focus{outline:2px solid var(--accent);outline-offset:-1px}
 .opt.cust.on .cust-in{border-color:var(--accent)}
 .cust-u{font-size:11.5px;color:var(--soft)}
@@ -198,19 +209,31 @@ tr.hit td{background:var(--accent-s)}
 .out-record li{padding:4px 0 4px 16px;border-bottom:1px solid var(--line2);position:relative;font-size:13px}
 .out-record li:last-child{border-bottom:none}
 .out-record li::before{content:"•";position:absolute;left:0;color:var(--accent)}
-/* discharge styles */
-.out-dis .dis-title{font-size:16px;font-weight:700;margin-bottom:2px}
-.out-dis .dis-sub{font-size:12px;color:#666;margin-bottom:12px}
-.out-dis .sec-hdr{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--accent);margin:14px 0 5px;transition:color .25s}
+/* discharge styles — laid out like a printed handout: short lines, clear
+   headings, everything under a heading indented beneath it */
+.out-dis .dis-title{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.out-dis .dis-what{font-size:15px;font-weight:600;color:#333;margin-top:1px}
+.out-dis .dis-sub{font-size:12.5px;color:#666;margin:6px 0 4px;
+  padding-bottom:10px;border-bottom:2px solid var(--line)}
+.out-dis .sec-hdr{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);margin:20px 0 7px;padding-bottom:4px;
+  border-bottom:1px solid var(--line);transition:color .25s}
+.out-dis .sec-body{padding-left:14px}
+.out-dis .dmed{margin:0 0 13px}
+.out-dis .dmed:last-child{margin-bottom:2px}
+.out-dis .dm-name{font-size:14.5px;font-weight:700;line-height:1.35}
+.out-dis .dm-what{font-size:12.5px;color:#666;line-height:1.4;margin-top:1px}
+.out-dis .dm-give{font-size:14px;line-height:1.5;margin-top:4px;padding-left:18px;
+  border-left:3px solid var(--accent-s)}
+.out-dis .dp{font-size:13.5px;line-height:1.65;margin:0 0 9px}
+.out-dis .dp:last-child{margin-bottom:0}
+.out-dis .dbul{display:flex;gap:9px;font-size:13.5px;line-height:1.6;margin:0 0 6px;padding-left:2px}
+.out-dis .dbm{color:var(--accent);font-weight:700;flex:none}
 .out-dis ul{list-style:none;padding:0}
 .out-dis li{padding:4px 0 4px 16px;border-bottom:1px solid var(--line2);position:relative;font-size:13.5px;line-height:1.5}
 .out-dis li:last-child{border-bottom:none}
 .out-dis li::before{content:"•";position:absolute;left:0;color:var(--accent)}
 .out-dis .btext{font-size:13px;line-height:1.6;white-space:pre-wrap;color:#333;margin-top:2px}
-.out-dis .chk-line{display:flex;align-items:flex-start;gap:8px;padding:4px 0;font-size:13px;line-height:1.5}
-.out-dis .chk-box{display:inline-block;width:14px;height:14px;border:1.5px solid #555;
-  border-radius:2px;flex:none;margin-top:2px}
 /* shared */
 .mn-bold{font-weight:700}
 .mn-desc{color:#555;font-weight:400}
@@ -240,24 +263,43 @@ tr.hit td{background:var(--accent-s)}
     line-height:1.55;color:#000;position:static;width:auto}
   #printroot ul{list-style:none;padding:0;margin:0}
   #printroot li{padding:3pt 0 3pt 14pt;position:relative}
-  #printroot li::before{content:"2";position:absolute;left:0}
-  .out-dis .dis-title{font-size:16pt;font-weight:bold}
-  .out-dis .dis-sub{font-size:10pt;color:#555;margin-bottom:10pt}
+  #printroot li::before{content:"•";position:absolute;left:0}
+  .out-dis .dis-title{font-size:18pt;font-weight:bold}
+  .out-dis .dis-what{font-size:13pt;font-weight:bold;color:#222;margin-top:1pt}
+  .out-dis .dis-sub{font-size:10pt;color:#444;margin:5pt 0 0;
+    padding-bottom:6pt;border-bottom:1.5pt solid #999}
   .out-record .rec-hdr{font-size:10pt;color:#444;border-bottom:1pt solid #999;
     padding-bottom:4pt;margin-bottom:8pt}
-  .out-dis .sec-hdr,.out-record .sec-lbl{font-size:9.5pt;font-weight:bold;
-    text-transform:uppercase;letter-spacing:.06em;margin-top:10pt;margin-bottom:3pt;color:#000}
-  .out-dis .chk-box{border:1.5pt solid #000;width:12pt;height:12pt;
-    display:inline-block;flex:none;margin-top:2pt}
-  .out-dis .chk-line{display:flex;gap:7pt;align-items:flex-start}
+  .out-dis .sec-hdr,.out-record .sec-lbl{font-size:10pt;font-weight:bold;
+    text-transform:uppercase;letter-spacing:.08em;margin:16pt 0 6pt;
+    padding-bottom:2pt;border-bottom:.75pt solid #bbb;color:#000}
+  .out-dis .sec-body{padding-left:12pt}
+  .out-dis .dmed{margin:0 0 10pt}
+  .out-dis .dm-name{font-size:12pt;font-weight:bold;line-height:1.3}
+  .out-dis .dm-what{font-size:9.5pt;color:#555;line-height:1.35}
+  .out-dis .dm-give{font-size:11pt;line-height:1.45;margin-top:2pt;padding-left:12pt;
+    border-left:2pt solid #ccc}
+  .out-dis .dp{font-size:11pt;line-height:1.6;margin:0 0 7pt}
+  .out-dis .dbul{display:flex;gap:7pt;font-size:11pt;line-height:1.55;margin:0 0 5pt}
+  .out-dis .dbm{flex:none}
   .out-actions{display:none}
-  .out-dis .btext,.out-dis .chk-line,#printroot li{page-break-inside:avoid}
+  .out-dis .btext,.out-dis .dmed,.out-dis .dbul,#printroot li{page-break-inside:avoid}
   .out-dis .sec-hdr,.out-record .sec-lbl{page-break-after:avoid}
 }
 
 footer{max-width:1200px;margin:0 auto;padding:14px 22px 50px;font-size:11.5px;color:var(--soft)}
 footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
 .loading{text-align:center;padding:80px 20px;font-size:16px;color:var(--soft)}
+/* ===== WEIGHT GATE ===== */
+.wtgate{background:var(--surface);border:2px dashed var(--accent);border-radius:var(--r);
+  padding:44px 24px 40px;text-align:center;max-width:520px;margin:22px auto}
+.wg-icon{font-size:34px;line-height:1;margin-bottom:12px}
+.wg-title{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.wg-sub{font-size:13.5px;color:var(--soft);line-height:1.55;margin:8px auto 0;max-width:360px}
+.wg-btn{font-family:var(--sans);font-size:14px;font-weight:700;margin-top:18px;
+  padding:11px 22px;border:none;border-radius:9px;background:var(--accent);color:#fff;cursor:pointer}
+.wg-btn:hover{background:var(--accent-d)}
+#wt.needed{border-color:var(--accent);background:var(--accent-s)}
 .err{color:var(--warn);text-align:center;padding:60px 20px}
 /* ===== PHONE ===== */
 @media(max-width:720px){
@@ -293,6 +335,9 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
   .opt label{gap:5px}
   .dt-in,.cust-in{font-size:16px;padding:6px 8px}
   .cust-in{width:96px}
+  .cust-n,.freq-in{font-size:16px;padding:6px 8px}
+  .freq-in{min-width:0;width:100%}
+  .opt.cust{flex-wrap:wrap}
   .wt-wrap{flex-wrap:wrap}
   .kg-show{flex:1 1 100%;margin-left:0;margin-top:3px}
   .dt-reset{padding:6px 12px}
@@ -428,9 +473,14 @@ let C=null;          // condition data (loaded JSON)
 let sp="dog", unit="lb", mode="record";
 const S={};          // per-med: {on, opt, freq, volMl}
 const BLK={};        // per-block: {on, dur, text}
-function st(id){if(!S[id])S[id]={on:false,opt:null,freq:0,volMl:null,mgkg:null,customMg:null,
-  open:false};
+function st(id){if(!S[id])S[id]={on:false,opt:null,freq:0,volMl:null,mgkg:null,
+  cN:null,cMg:null,cFreq:null,open:false};
   return S[id];}
+/* cN x cMg is the custom dose: how many tablets/capsules, of what strength.
+   cFreq overrides the frequency list when the clinician types their own. */
+function customTabs(id){
+  const s=st(id);
+  return(s.cN!==null&&s.cMg!==null)?[{mg:s.cMg,n:s.cN}]:null;}
 /* opt: null = follow the target automatically, -1 = custom amount, else index */
 function bk(id,def){if(!BLK[id])BLK[id]={on:def.on,dur:0,text:null};return BLK[id];}
 
@@ -547,7 +597,9 @@ function doseOptions(m,kg,lb){
 /* which option is in force: explicit pick, custom amount, or the auto default */
 function curOpt(m,d){
   const s=st(m.id);
-  if(s.opt===-1)return{custom:true,mg:s.customMg,tabs:null};
+  if(s.opt===-1){
+    const tabs=customTabs(m.id);
+    return{custom:true,tabs,mg:tabs?tabs[0].mg*tabs[0].n:null};}
   if(s.opt===null||s.opt<0||s.opt>=d.opts.length)return d.opts[d.def]||null;
   return d.opts[s.opt];}
 
@@ -560,26 +612,33 @@ function nameStr(m,tabs){
   return m.name+(tabs.length===1?" "+tabs[0].mg+" mg":" "+tabs.map(t=>t.mg+"mg").join("+"));}
 function giveStr(tabs,unit){
   const u=unit||"tab";
-  if(tabs.length===1){const n=tabs[0].n;return"Give "+fr(n)+" "+u+(n!==1?"s":"")+" ";}
+  /* a fraction of a tablet is still "half a tab", never "half tabs" */
+  if(tabs.length===1){const n=tabs[0].n;return"Give "+fr(n)+" "+u+(n>1?"s":"")+" ";}
   return"Give "+tabs.map(t=>fr(t.n)+"×"+t.mg+"mg").join(" + ")+" ";}
+function curFreq(m){
+  const s=st(m.id);
+  if(s.cFreq!==null&&s.cFreq!=="")return s.cFreq;
+  return(m.freqs&&m.freqs.length)?m.freqs[Math.min(s.freq,m.freqs.length-1)]:"";}
 function medLine(m,kg,lb){
   const s=st(m.id);
-  const freq=(m.freqs&&m.freqs.length)?m.freqs[Math.min(s.freq,m.freqs.length-1)]:"";
+  const freq=curFreq(m);
   const D=" ("+m.desc+"):  ";
   if(m.type==="band"||m.type==="tab"||m.type==="multiband"){
     const d=doseOptions(m,kg,lb);
     const o=curOpt(m,d);
-    if(o&&o.custom)return o.mg===null
-      ?m.name+D+"dose pending — enter a custom amount."
-      :m.name+D+"Give "+fmtMg(o.mg)+" mg "+freq+".";
+    if(o&&o.custom)return o.tabs===null
+      ?m.name+D+"dose pending — enter a custom strength and number."
+      :nameStr(m,o.tabs)+D+giveStr(o.tabs,m.unitName)+freq+".";
     if(!o)return m.name+D+"dose pending — weight outside chart range.";
     return nameStr(m,o.tabs)+D+giveStr(o.tabs,m.unitName)+freq+".";
   }
   if(m.type==="calc"){
     const u=m.unitDose||"mg";
-    if(s.opt===-1)return s.customMg===null
-      ?m.name+D+"dose pending — enter a custom amount."
-      :m.name+D+"Give "+fmtMg(s.customMg)+" "+u+" "+freq+".";
+    if(s.opt===-1){
+      const tabs=customTabs(m.id);
+      return tabs===null
+        ?m.name+D+"dose pending — enter a custom strength and number."
+        :nameStr(m,tabs)+D+giveStr(tabs,m.unitName)+freq+".";}
     const pk=perKg(m);
     const lo=kg===null?null:pk.lo*kg,hi=kg===null?null:pk.hi*kg;
     const amt=lo===null?"___":(pk.hi>pk.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo));
@@ -629,56 +688,86 @@ function buildRecord(kg,lb,inhosp,atHome){
     html+='<ul><li><em>No medications selected</em></li></ul>';
   return html+'</div>';}
 
+/* Client-facing prose: break it into short paragraphs and indented bullets so
+   an owner is never handed a wall of text. A line starting with • or - becomes
+   a bullet; a blank line starts a new paragraph. */
+function proseHtml(text){
+  const out=[];
+  let para=[];
+  const flush=()=>{if(para.length){out.push('<p class="dp">'+esc(para.join(" "))+'</p>');para=[];}};
+  for(const raw of String(text).split(/\r?\n/)){
+    const line=raw.trim();
+    if(!line){flush();continue;}
+    if(/^[•\-\*]\s+/.test(line)){
+      flush();
+      out.push('<div class="dbul"><span class="dbm">•</span><span>'+
+        esc(line.replace(/^[•\-\*]\s+/,""))+'</span></div>');
+      continue;}
+    para.push(line);}
+  flush();
+  return out.join("");}
+
+/* One medication, set out like a label: what it is, then what to do, indented. */
+function dischargeMed(m,kg,lb){
+  const line=medLine(m,kg,lb);
+  const mt=line.match(/^(.+?)\s+\((.+?)\):\s{2}(.+)$/);
+  if(!mt)return'<div class="dmed"><div class="dm-name">'+esc(line)+'</div></div>';
+  return'<div class="dmed">'+
+    '<div class="dm-name">'+esc(mt[1])+'</div>'+
+    '<div class="dm-what">'+esc(mt[2])+'</div>'+
+    '<div class="dm-give">'+esc(mt[3].charAt(0).toUpperCase()+mt[3].slice(1))+'</div></div>';}
+
 function buildDischarge(kg,lb,inhosp,atHome){
   const name=getName();
   const wt=lb===null?"___ lb":(Math.round(lb*10)/10)+" lb ("+R2(kg)+" kg)";
   const sp2=sp==="dog"?"Canine":"Feline";
   let html='<div class="out-dis">'+
-    '<div class="dis-title">DISCHARGE INSTRUCTIONS: '+esc(C.discharge)+'</div>'+
+    '<div class="dis-title">Discharge Instructions</div>'+
+    '<div class="dis-what">'+esc(C.discharge)+'</div>'+
     '<div class="dis-sub">'+esc(name)+" · "+sp2+" · "+esc(wt)+" · "+today()+'</div>';
 
-  // in-hospital section
   if(inhosp.length){
-    html+='<div class="sec-hdr">Treatments performed in hospital</div><ul>'+
-      inhosp.map(m=>'<li>'+splitLine(medLine(m,kg,lb))+'</li>').join("")+'</ul>';}
+    html+='<div class="sec-hdr">What we did today</div><div class="sec-body">'+
+      inhosp.map(m=>dischargeMed(m,kg,lb)).join("")+'</div>';}
 
-  // withhold water / food / small meals checkboxes
-  const ckBlocks=(C.dischargeBlocks||[]).filter(b=>b.checkbox&&bk(b.id,b).on);
-  if(ckBlocks.length){
-    html+='<div class="sec-hdr">Feeding instructions</div>';
-    for(const b of ckBlocks){
+  html+='<div class="sec-hdr">Medications to give at home</div><div class="sec-body">';
+  html+=atHome.length
+    ?atHome.map(m=>dischargeMed(m,kg,lb)).join("")
+    :'<p class="dp"><em>No take-home medications.</em></p>';
+  html+='</div>';
+
+  /* Feeding blocks used to print with a tick box; they are plain instructions now. */
+  const fed=(C.dischargeBlocks||[]).filter(b=>b.checkbox&&bk(b.id,b).on);
+  if(fed.length){
+    html+='<div class="sec-hdr">Food and water</div><div class="sec-body">';
+    for(const b of fed){
       const bs=bk(b.id,b);
       let text=bs.text!==null?bs.text:b.text;
       if(b.durationOptions){
         const dur=b.durationOptions[Math.min(bs.dur,b.durationOptions.length-1)];
         text=text.replace("{duration}",dur);}
-      text=text.replaceAll("{name}",name);
-      html+='<div class="chk-line"><span class="chk-box"></span><span>'+esc(text)+'</span></div>';}}
+      html+=proseHtml(text.replaceAll("{name}",name));}
+    html+='</div>';}
 
-  // take-home meds
-  html+='<div class="sec-hdr">Medications</div>';
-  if(atHome.length)
-    html+='<ul>'+atHome.map(m=>'<li>'+splitLine(medLine(m,kg,lb))+'</li>').join("")+'</ul>';
-  else html+='<ul><li><em>No take-home medications selected</em></li></ul>';
-
-  // free-text blocks (non-checkbox)
   for(const b of (C.dischargeBlocks||[]).filter(x=>!x.checkbox&&bk(x.id,x).on)){
     const bs=bk(b.id,b);
-    let text=bs.text!==null?bs.text:b.text;
-    text=text.replaceAll("{name}",name);
+    const text=(bs.text!==null?bs.text:b.text).replaceAll("{name}",name);
     html+='<div class="sec-hdr">'+esc(b.title)+'</div>'+
-          '<div class="btext">'+esc(text)+'</div>';}
+          '<div class="sec-body">'+proseHtml(text)+'</div>';}
   return html+'</div>';}
 
 function buildOutput(){
   const kg=getKg(),lb=getLb();
   const sel=C.meds.filter(m=>m.sp===sp&&st(m.id).on);
-  document.getElementById("selcount").textContent=
+  const count=document.getElementById("selcount");
+  if(count)count.textContent=
     sel.length+" medication"+(sel.length===1?"":"s")+" selected";
+  const pv=document.getElementById("outpreview");
+  if(!pv)return;
   const inhosp=sel.filter(m=>m.inClinic);
   const atHome=sel.filter(m=>!m.inClinic);
   const html=mode==="record"?buildRecord(kg,lb,inhosp,atHome):buildDischarge(kg,lb,inhosp,atHome);
-  document.getElementById("outpreview").innerHTML=html;}
+  pv.innerHTML=html;}
 
 /* ================================================================
    PLAIN-TEXT SERIALISER (walks live DOM)
@@ -692,10 +781,16 @@ function previewToPlain(){
     if(t==="br")return"\n";
     const inner=[...n.childNodes].map(walk).join("");
     if(cl.contains("rec-hdr"))return inner+"\n";
+    if(cl.contains("dis-title")||cl.contains("dis-what"))return inner+"\n";
     if(cl.contains("dis-sub"))return inner+"\n";
-    if(cl.contains("sec-hdr")||cl.contains("sec-lbl"))return"\n"+inner.toUpperCase()+":\n";
+    if(cl.contains("sec-hdr")||cl.contains("sec-lbl"))return"\n"+inner.toUpperCase()+"\n";
+    if(cl.contains("dm-name"))return"  "+inner+"\n";
+    if(cl.contains("dm-what"))return"  ("+inner+")\n";
+    if(cl.contains("dm-give"))return"      "+inner+"\n";
+    if(cl.contains("dmed"))return inner+"\n";
+    if(cl.contains("dbul"))return"  • "+inner.replace(/^•\s*/,"").trim()+"\n";
+    if(cl.contains("dp"))return"  "+inner+"\n";
     if(cl.contains("btext"))return inner+"\n";
-    if(cl.contains("chk-line"))return"☐  "+inner.trim()+"\n";
     if(t==="ul")return"\n"+inner;
     return inner;
   }
@@ -725,9 +820,11 @@ async function copyRich(){
     "letter-spacing:.06em;margin-top:9pt;margin-bottom:3pt;display:block}"+
     ".dis-title{font-size:14pt;font-weight:bold}.dis-sub{font-size:10pt;color:#555}"+
     ".rec-hdr{font-size:10pt;color:#555;border-bottom:1px solid #ccc;padding-bottom:4pt;margin-bottom:6pt}"+
-    ".btext{white-space:pre-wrap}.chk-box{display:inline-block;width:11pt;height:11pt;"+
-    "border:1.5pt solid #333;border-radius:2pt;margin-right:6pt;vertical-align:middle}"+
-    ".chk-line{margin:2pt 0}</style>";
+    ".btext{white-space:pre-wrap}.dis-what{font-size:12pt;font-weight:bold}"+
+    ".sec-body{padding-left:12pt}.dmed{margin:0 0 9pt}"+
+    ".dm-name{font-size:12pt;font-weight:bold}.dm-what{font-size:9.5pt;color:#555}"+
+    ".dm-give{font-size:11pt;padding-left:12pt}"+
+    ".dp{margin:0 0 7pt}.dbul{margin:0 0 5pt;padding-left:12pt}</style>";
   const hb=new Blob([css+el.innerHTML],{type:"text/html"});
   const tb=new Blob([previewToPlain()],{type:"text/plain"});
   try{await navigator.clipboard.write([new ClipboardItem({"text/html":hb,"text/plain":tb})]);flash();}
@@ -747,9 +844,9 @@ async function copyPlain(){
 ================================================================ */
 function chipHtml(m,kg,lb){
   if(m.type==="calc"){
-    const s=st(m.id),pk=perKg(m);
-    if(s.opt===-1)return'<span class="chip'+(s.customMg===null?" dim":" cust")+'">'+
-      (s.customMg===null?"custom —":fmtMg(s.customMg)+(m.unitDose?" "+m.unitDose:" mg"))+'</span>';
+    const s=st(m.id),pk=perKg(m),ct=customTabs(m.id);
+    if(s.opt===-1)return'<span class="chip'+(ct===null?" dim":" cust")+'">'+
+      (ct===null?"custom —":fmtMg(ct[0].mg*ct[0].n)+(m.unitDose?" "+m.unitDose:" mg"))+'</span>';
     const lo=kg===null?null:pk.lo*kg,hi=kg===null?null:pk.hi*kg;
     const t=lo===null?"—":(pk.hi>pk.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+(m.unitDose?" "+m.unitDose:" mg");
     return'<span class="chip'+(lo===null?" dim":"")+(pk.custom?" cust":"")+'">target '+t+'</span>';}
@@ -764,9 +861,9 @@ function chipHtml(m,kg,lb){
       'onblur="setVol(\''+m.id+'\',this)" '+
       'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+vol+'</span> ml';}
   if(m.type==="band"||m.type==="tab"){
-    const s=st(m.id),pk=perKg(m);
-    if(s.opt===-1)return'<span class="chip'+(s.customMg===null?" dim":" cust")+'">'+
-      (s.customMg===null?"custom —":fmtMg(s.customMg)+" mg")+'</span>';
+    const s=st(m.id),pk=perKg(m),ct=customTabs(m.id);
+    if(s.opt===-1)return'<span class="chip'+(ct===null?" dim":" cust")+'">'+
+      (ct===null?"custom —":fmtMg(ct[0].mg*ct[0].n)+" mg")+'</span>';
     const lo=kg===null?null:pk.lo*kg,hi=kg===null?null:pk.hi*kg;
     const t=lo===null?"—":(pk.hi>pk.lo?fmtMg(lo)+"–"+fmtMg(hi):fmtMg(lo))+" mg";
     return'<span class="chip'+(lo===null?" dim":"")+(pk.custom?" cust":"")+'">target '+t+'</span>';}
@@ -785,12 +882,26 @@ function chipHtml(m,kg,lb){
   return"";}
 
 function freqHtml(m,s){
-  if(!m.freqs||!m.freqs.length||m.freqs[0]==="")return"";
-  if(m.freqs.length===1)return'<div class="freq-row">'+m.freqs[0]+'</div>';
+  const custom=s.cFreq!==null;
+  const box='<input class="freq-in" type="text" placeholder="e.g. twice daily for 5 days" '+
+    'aria-label="Custom frequency" value="'+escAttr(s.cFreq||"")+'" '+
+    'oninput="setCustomFreq(\''+m.id+'\',this.value)" '+
+    'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+
+    '<button type="button" class="freq-x" title="Back to the standard list" '+
+    'onclick="setCustomFreq(\''+m.id+'\',null)">↺</button>';
+  if(!m.freqs||!m.freqs.length||m.freqs[0]===""){
+    return'<div class="freq-row">'+(custom?box
+      :'<button type="button" class="freq-add" onclick="setCustomFreq(\''+m.id+'\',\'\')">'+
+       '+ how often</button>')+'</div>';}
   if(s.freq>=m.freqs.length)s.freq=0;
-  return'<div class="freq-row"><select onchange="pickFreq(\''+m.id+'\',this.selectedIndex)">'+
-    m.freqs.map((f,i)=>'<option '+(s.freq===i?"selected":"")+'>'+f+'</option>').join("")+
-    '</select></div>';}
+  const sel=m.freqs.length===1
+    ?'<span class="freq-one">'+esc(m.freqs[0])+'</span>'
+    :'<select onchange="pickFreq(\''+m.id+'\',this.selectedIndex)">'+
+      m.freqs.map((f,i)=>'<option '+(s.freq===i?"selected":"")+'>'+esc(f)+'</option>').join("")+
+      '</select>';
+  return'<div class="freq-row">'+(custom?box
+    :sel+' <button type="button" class="freq-add" onclick="setCustomFreq(\''+m.id+'\',\'\')">'+
+     'edit</button>')+'</div>';}
 
 function bandChartHtml(m,lb){
   if(!m.bandKey)return"";
@@ -812,16 +923,18 @@ function bandChartHtml(m,lb){
 ================================================================ */
 function doseSummary(m,kg,lb){
   const s=st(m.id);
-  const freq=(m.freqs&&m.freqs.length&&m.freqs[0]!=="")
-    ?m.freqs[Math.min(s.freq,m.freqs.length-1)]:"";
+  const freq=(s.cFreq!==null&&s.cFreq!=="")?s.cFreq
+    :(m.freqs&&m.freqs.length&&m.freqs[0]!=="")?m.freqs[Math.min(s.freq,m.freqs.length-1)]:"";
   let dose="—",dim=true;
   if(m.type==="band"||m.type==="tab"||m.type==="multiband"){
     const d=doseOptions(m,kg,lb),o=curOpt(m,d);
-    if(o&&o.custom){dim=o.mg===null;dose=dim?"custom":fmtMg(o.mg)+" mg";}
+    if(o&&o.custom){dim=o.tabs===null;
+      dose=dim?"custom":tabsText(o.tabs)+" = "+fmtMg(o.mg)+" mg";}
     else if(o){dim=false;dose=tabsText(o.tabs)+(o.mg?" = "+fmtMg(o.mg)+" mg":"");}
   }else if(m.type==="calc"){
-    const u=m.unitDose||"mg";
-    if(s.opt===-1){dim=s.customMg===null;dose=dim?"custom":fmtMg(s.customMg)+" "+u;}
+    const u=m.unitDose||"mg",ct=customTabs(m.id);
+    if(s.opt===-1){dim=ct===null;
+      dose=dim?"custom":tabsText(ct)+" = "+fmtMg(ct[0].mg*ct[0].n)+" "+u;}
     else if(kg!==null){const pk=perKg(m);dim=false;
       dose=(pk.hi>pk.lo?fmtMg(pk.lo*kg)+"–"+fmtMg(pk.hi*kg):fmtMg(pk.lo*kg))+" "+u;}
   }else if(m.type==="inj"){
@@ -859,25 +972,36 @@ function targetEditHtml(m,kg){
       :'<span class="dt-note">label '+lbl+' '+u+'</span>')+
     '</div>';}
 
-/* free-entry amount for compounded / liquid / clinician-chosen doses */
+/* Custom dose: the clinician states it the way it is dispensed — how many
+   tablets/capsules, of what strength — so the label reads
+   "Pepcid 10 mg: Give ½ tab twice daily." */
+const CUSTN=[0.125,0.25,0.5,0.75,1,1.25,1.5,2,2.5,3,4,5,6];
 function customOptHtml(m,kg){
-  const s=st(m.id),u=m.unitDose||"mg";
+  const s=st(m.id),u=m.unitDose||"mg",unitName=m.unitName||"tab";
   const on=s.opt===-1;
   return'<div class="opt cust'+(on?" on":"")+'">'+
     '<input type="radio" name="opt-'+m.id+'" id="rc'+m.id+'" '+(on?"checked":"")+
       ' onchange="pickCustom(\''+m.id+'\')">'+
     '<label for="rc'+m.id+'">Custom</label>'+
+    '<select class="cust-n" aria-label="Number of '+escAttr(unitName)+'s" '+
+      'onchange="setCustomN(\''+m.id+'\',this.value)">'+
+      '<option value=""'+(s.cN===null?" selected":"")+'>–</option>'+
+      CUSTN.map(n=>'<option value="'+n+'"'+(s.cN===n?" selected":"")+'>'+fr(n)+'</option>').join("")+
+    '</select>'+
+    '<span class="cust-u">×</span>'+
     '<input class="cust-in" type="number" step="any" min="0" inputmode="decimal" '+
-      'placeholder="amount" aria-label="Custom dose in '+u+'" '+
-      'value="'+(s.customMg===null?"":s.customMg)+'" '+
+      'placeholder="strength" aria-label="Strength of one '+escAttr(unitName)+' in '+u+'" '+
+      'value="'+(s.cMg===null?"":s.cMg)+'" '+
       'onfocus="pickCustom(\''+m.id+'\')" '+
       'oninput="setCustomMg(\''+m.id+'\',this.value)" '+
       'onkeydown="if(event.key===\'Enter\'){event.preventDefault();this.blur()}">'+
-    '<span class="cust-u">'+u+'</span>'+
+    '<span class="cust-u">'+u+' per '+esc(unitName)+'</span>'+
     '<span class="dmg" id="cmk-'+m.id+'">'+customMgkgText(m,kg)+'</span></div>';}
 function customMgkgText(m,kg){
-  const s=st(m.id);
-  return(kg&&s.customMg!==null)?"· "+R2(s.customMg/kg)+" "+(m.unitDose||"mg")+"/kg":"";}
+  const t=customTabs(m.id);
+  if(!t)return"";
+  const tot=t[0].mg*t[0].n;
+  return"= "+fmtMg(tot)+" "+(m.unitDose||"mg")+(kg?" · "+R2(tot/kg)+" "+(m.unitDose||"mg")+"/kg":"");}
 
 function medHtml(m,kg,lb){
   const s=st(m.id);
@@ -954,20 +1078,24 @@ function medHtml(m,kg,lb){
       'onclick="toggleOpen(\''+m.id+'\')">▾</button>'+
     '</div>'+
     '<div class="mbody" id="mbody-'+m.id+'">'+
-    '<div class="mb">'+body+'</div>'+chart+'</div></div>';}
+    '<div class="mb">'+body+'</div>'+
+    (m.note?'<div class="med-note-box">'+m.note+'</div>':"")+
+    chart+'</div></div>';}
 
 /* ================================================================
    DISCHARGE BLOCKS EDITOR
 ================================================================ */
 function renderBlocks(){
   const wrap=document.getElementById("blocks");
+  if(!wrap)return;
   if(mode!=="discharge"){wrap.style.display="none";return;}
   wrap.style.display="block";
   const blocks=C.dischargeBlocks||[];
   wrap.innerHTML=
     '<div style="font-size:11.5px;color:var(--soft);margin-bottom:8px">'+
     'CLIENT INSTRUCTION BLOCKS — check to include. '+
-    '"<code>{name}</code>" is replaced by the patient\'s name. Checkbox blocks print with an empty box for staff to tick in clinic.</div>'+
+    '"<code>{name}</code>" is replaced by the patient\'s name. '+
+    'Start a line with • or - to print it as a bullet; leave a blank line between paragraphs.</div>'+
     blocks.map(b=>{
       const s=bk(b.id,b);
       let controls="";
@@ -979,7 +1107,7 @@ function renderBlocks(){
       if(b.durationOptions){
         const dur=b.durationOptions[Math.min(s.dur,b.durationOptions.length-1)];
         textVal=textVal.replace("{duration}",dur);}
-      const cbLabel=b.checkbox?'<span style="font-size:10px;background:#E8F0EF;color:var(--accent-d);padding:1px 6px;border-radius:10px;font-weight:700">prints as checkbox</span>':"";
+      const cbLabel="";
       return'<div class="blk">'+
         '<input type="checkbox" '+(s.on?"checked":"")+' onchange="toggleBlk(\''+b.id+'\')">'+
         '<div class="blkwrap">'+
@@ -1023,7 +1151,8 @@ function applyPreset(pid){
     s.on=true;
     if(pm.opt!==undefined)s.opt=pm.opt;
     if(pm.mgkg!==undefined)s.mgkg=pm.mgkg;
-    if(pm.customMg!==undefined){s.customMg=pm.customMg;s.opt=-1;}
+    if(pm.cMg!==undefined){s.cMg=pm.cMg;s.opt=-1;}
+    if(pm.cN!==undefined){s.cN=pm.cN;s.opt=-1;}
     if(pm.freq!==undefined)s.freq=pm.freq;}
   // Apply blocks
   for(const pb of p.blocks){
@@ -1123,6 +1252,7 @@ function render(){
   </div>`;
 
   const shown=C.meds.filter(m=>m.sp===sp);
+  const viewbarHtml=shown.length?null:"";
   const nOpen=shown.filter(m=>st(m.id).open).length;
   const viewbar=
     '<div class="viewbar">'+
@@ -1133,8 +1263,25 @@ function render(){
         '<button type="button" class="vbtn" onclick="setAllOpen(true)">⊞ Expand all</button>'+
       '</div></div>';
 
+  /* No weight, no doses. A weight left over from the previous patient is the
+     easiest way to dispense the wrong amount, so the page starts empty and
+     stays gated until someone types one in. */
+  if(kg===null&&!C.noWeight){
+    document.getElementById("main").innerHTML=
+      '<div class="wtgate">'+
+        '<div class="wg-icon">⚖</div>'+
+        '<div class="wg-title">Enter this patient\'s weight</div>'+
+        '<div class="wg-sub">Doses stay hidden until a weight is entered, so nothing '+
+        'can be carried over from the last patient.</div>'+
+        '<button type="button" class="wg-btn" onclick="focusWeight()">Enter weight</button>'+
+      '</div>';
+    document.getElementById("selcount").textContent="Enter a weight to begin";
+    refreshPresetBtns();
+    return;}
+
   document.getElementById("main").innerHTML=
-    viewbar+'<div class="grid">'+notesHtml+cards+'</div>'+outcard;
+    (viewbarHtml===""?"":viewbar)+'<div class="grid">'+notesHtml+cards+'</div>'+
+    (shown.length?outcard:"");
   renderBlocks();
   buildOutput();
   refreshPresetBtns();}
@@ -1174,11 +1321,20 @@ function pickCustom(id){
   s.opt=-1;markCustom();buildOutput();refreshSum(id);}
 function setCustomMg(id,v){
   const s=st(id),n=parseFloat(v);
-  s.customMg=(isFinite(n)&&n>0)?Math.round(n*1000)/1000:null;
+  s.cMg=(isFinite(n)&&n>0)?Math.round(n*1000)/1000:null;
   s.opt=-1;custRow(id,true);
   const m=C.meds.find(x=>x.id===id),el=document.getElementById("cmk-"+id);
   if(m&&el)el.textContent=customMgkgText(m,getKg());
   markCustom();buildOutput();refreshSum(id);}
+function setCustomN(id,v){
+  const s=st(id),n=parseFloat(v);
+  s.cN=isFinite(n)&&n>0?n:null;
+  s.opt=-1;custRow(id,true);
+  const m=C.meds.find(x=>x.id===id),el=document.getElementById("cmk-"+id);
+  if(m&&el)el.textContent=customMgkgText(m,getKg());
+  markCustom();buildOutput();refreshSum(id);}
+function setCustomFreq(id,v){
+  st(id).cFreq=v;markCustom();redrawMed(id);buildOutput();}
 /* retarget mg/kg — options re-bracket around the new target and the
    selection goes back to automatic so it follows it */
 function setMgkg(id,v){
@@ -1216,6 +1372,11 @@ function setMode(m){
   if(tr)tr.classList.toggle("on",m==="record");
   if(td)td.classList.toggle("on",m==="discharge");}
 /* every condition page can jump straight to the finished sheet */
+function focusWeight(){
+  const w=document.getElementById("wt");
+  if(!w)return;
+  w.scrollIntoView({block:"nearest"});
+  w.focus();w.select();}
 function goOutput(m){
   setMode(m);
   const el=document.getElementById("output");
@@ -1235,11 +1396,27 @@ async function boot(){
     for(const b of(C.dischargeBlocks||[]))bk(b.id,b);
     document.getElementById("pagetitle").textContent=C.title;
     if(C.noDischarge)document.getElementById("cb-dis").style.display="none";
+    if(!C.meds.length)document.querySelector(".countbar").style.display="none";
+    /* A condition that only has feline medications must not open on Dog and
+       show an empty page. Start on a species that actually has something. */
+    const have={dog:C.meds.some(m=>m.sp==="dog"),cat:C.meds.some(m=>m.sp==="cat")};
+    for(const k of["dog","cat"]){
+      const b=document.getElementById("btn-"+k);
+      if(b){b.disabled=!have[k];b.title=have[k]?"":"No "+k+" medications in this condition";}}
+    if(!have[sp]&&have[sp==="dog"?"cat":"dog"])sp=sp==="dog"?"cat":"dog";
+    document.body.classList.toggle("dog",sp==="dog");
+    document.body.classList.toggle("cat",sp==="cat");
+    document.getElementById("btn-dog").classList.toggle("on",sp==="dog");
+    document.getElementById("btn-cat").classList.toggle("on",sp==="cat");
     document.title=C.title+" — Dosing & Discharge";
     document.getElementById("wt").addEventListener("input",render);
     document.getElementById("pname").addEventListener("input",buildOutput);
     render();
     refreshPresetBtns();
+    if(!C.noWeight)document.getElementById("wt").classList.add("needed");
+    document.getElementById("wt").addEventListener("input",()=>{
+      document.getElementById("wt").classList.toggle("needed",getKg()===null);});
+    if(!C.noWeight)focusWeight();
   }catch(e){
     document.getElementById("main").innerHTML=
       '<div class="err">Could not load condition data: '+esc(String(e))+

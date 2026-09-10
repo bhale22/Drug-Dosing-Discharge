@@ -126,8 +126,17 @@ tr.drow:not(.open) td{padding-top:7px;padding-bottom:7px}
 .chip.off small{color:var(--warn)}
 .chip.cust{display:inline-flex;align-items:center;gap:5px;cursor:default;border-style:dashed}
 .chip.cust.sel{border-style:solid}
-.chip.cust input{font-family:var(--mono);font-size:13px;width:84px;padding:3px 6px;border:1.5px solid var(--line);
+.chip.cust input{font-family:var(--mono);font-size:13px;width:76px;padding:3px 6px;border:1.5px solid var(--line);
   border-radius:6px;background:#fff;color:var(--ink);text-align:right}
+.chip.cust select{font-family:var(--sans);font-size:13px;padding:3px 4px;
+  border:1.5px solid var(--line);border-radius:6px;background:#fff;color:var(--ink)}
+.freq-row{margin-top:8px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.freq-one{font-size:12.5px;color:var(--soft)}
+.freq-in{font-family:var(--sans);font-size:12.5px;padding:5px 8px;min-width:170px;flex:1 1 170px;
+  border:1.5px solid var(--accent);border-radius:7px;background:#fff;color:var(--ink)}
+.freq-x,.freq-add{font-family:var(--sans);font-size:11px;font-weight:700;color:var(--accent-d);
+  background:var(--accent-s);border:none;border-radius:20px;padding:4px 9px;cursor:pointer}
+.freq-x:hover,.freq-add:hover{background:#CDE6E2}
 .chip.cust input:focus{outline:2px solid var(--accent);outline-offset:-1px}
 
 /* ---- inline phenobarb status (lives with the zonisamide dose) ---- */
@@ -193,14 +202,22 @@ tr.drow:not(.open) td{padding-top:7px;padding-bottom:7px}
   border:1px solid var(--line);border-radius:10px;padding:14px 16px;min-height:60px;outline:none}
 .out-dis{background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:18px 20px 20px;
   font-size:13.5px;line-height:1.6;color:#111;outline:none}
-.out-dis .dis-title{font-size:16px;font-weight:700;margin-bottom:2px}
-.out-dis .dis-sub{font-size:12px;color:#666;margin-bottom:12px}
-.out-dis .sec-hdr{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--accent);margin:14px 0 5px}
-.out-dis ul{list-style:none;padding:0}
-.out-dis li{padding:4px 0 4px 16px;border-bottom:1px solid var(--line2);position:relative;line-height:1.5}
-.out-dis li:last-child{border-bottom:none}
-.out-dis li::before{content:"\2022";position:absolute;left:0;color:var(--accent)}
+.out-dis .dis-title{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.out-dis .dis-what{font-size:15px;font-weight:600;color:#333;margin-top:1px}
+.out-dis .dis-sub{font-size:12.5px;color:#666;margin:6px 0 4px;
+  padding-bottom:10px;border-bottom:2px solid var(--line)}
+.out-dis .sec-hdr{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);margin:20px 0 7px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.out-dis .sec-body{padding-left:14px}
+.out-dis .dmed{margin:0 0 13px}
+.out-dis .dmed:last-child{margin-bottom:2px}
+.out-dis .dm-name{font-size:14.5px;font-weight:700;line-height:1.35}
+.out-dis .dm-give{font-size:14px;line-height:1.5;margin-top:4px;padding-left:18px;
+  border-left:3px solid var(--accent-s)}
+.out-dis .dp{font-size:13.5px;line-height:1.65;margin:0 0 9px}
+.out-dis .dp:last-child{margin-bottom:0}
+.out-dis .dbul{display:flex;gap:9px;font-size:13.5px;line-height:1.6;margin:0 0 6px;padding-left:2px}
+.out-dis .dbm{color:var(--accent);font-weight:700;flex:none}
 .out-dis .btext{font-size:13px;line-height:1.6;white-space:pre-wrap;color:#333;margin-top:2px}
 .mn-bold{font-weight:700}.mn-desc{color:#555}.mn-give{color:#111}
 
@@ -225,6 +242,17 @@ tr.drow:not(.open) td{padding-top:7px;padding-bottom:7px}
 .cbtn:hover{background:rgba(255,255,255,.14)}
 .cbtn.p{background:#fff;color:var(--accent-d);border-color:#fff}
 .cbtn.p:hover{background:#EAF4F2}
+
+/* ===== WEIGHT GATE ===== */
+.wtgate{background:var(--surface);border:2px dashed var(--accent);border-radius:var(--r);
+  padding:44px 24px 40px;text-align:center;max-width:520px;margin:10px auto}
+.wg-icon{font-size:34px;line-height:1;margin-bottom:12px}
+.wg-title{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.wg-sub{font-size:13.5px;color:var(--soft);line-height:1.55;margin:8px auto 0;max-width:360px}
+.wg-btn{font-family:var(--sans);font-size:14px;font-weight:700;margin-top:18px;
+  padding:11px 22px;border:none;border-radius:9px;background:var(--accent);color:#fff;cursor:pointer}
+.wg-btn:hover{background:var(--accent-d)}
+#wt.needed{border-color:var(--accent);background:var(--accent-s)}
 
 footer{padding:16px 0 30px;font-size:11.5px;color:var(--soft)}
 footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
@@ -280,7 +308,7 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
   .chip{font-size:13px;padding:8px 12px}
   .disc{width:34px;height:34px;font-size:15px;margin:-4px -6px 0 0}
   .vbtn{padding:8px 12px}
-  .chip.cust input,.tgt-in{font-size:16px}
+  .chip.cust input,.chip.cust select,.tgt-in,.freq-in{font-size:16px}
   .tgt-in{padding:7px 8px}
   .tgt-reset{padding:6px 11px}
 
@@ -323,10 +351,22 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
   #printroot ul{list-style:none;padding:0;margin:0}
   #printroot li{padding:3pt 0 3pt 14pt;position:relative;page-break-inside:avoid}
   #printroot li::before{content:"\2022";position:absolute;left:0;color:#000}
-  #printroot .dis-title{font-size:16pt;font-weight:bold}
-  #printroot .dis-sub{font-size:10pt;color:#555;margin-bottom:10pt}
-  #printroot .sec-hdr{font-size:9.5pt;font-weight:bold;text-transform:uppercase;
-    letter-spacing:.06em;margin-top:10pt;margin-bottom:3pt;color:#000;page-break-after:avoid}
+  #printroot .dis-title{font-size:18pt;font-weight:bold}
+  #printroot .dis-what{font-size:13pt;font-weight:bold;color:#222;margin-top:1pt}
+  #printroot .dis-sub{font-size:10pt;color:#444;margin:5pt 0 0;
+    padding-bottom:6pt;border-bottom:1.5pt solid #999}
+  #printroot .sec-hdr{font-size:10pt;font-weight:bold;text-transform:uppercase;
+    letter-spacing:.08em;margin:16pt 0 6pt;padding-bottom:2pt;
+    border-bottom:.75pt solid #bbb;color:#000;page-break-after:avoid}
+  #printroot .sec-body{padding-left:12pt}
+  #printroot .dmed{margin:0 0 10pt;page-break-inside:avoid}
+  #printroot .dm-name{font-size:12pt;font-weight:bold;line-height:1.3}
+  #printroot .dm-give{font-size:11pt;line-height:1.45;margin-top:2pt;padding-left:12pt;
+    border-left:2pt solid #ccc}
+  #printroot .dp{font-size:11pt;line-height:1.6;margin:0 0 7pt;page-break-inside:avoid}
+  #printroot .dbul{display:flex;gap:7pt;font-size:11pt;line-height:1.55;margin:0 0 5pt;
+    page-break-inside:avoid}
+  #printroot .dbm{flex:none}
   #printroot .btext{white-space:pre-wrap;page-break-inside:avoid}
   #printroot pre{font-family:"Courier New",monospace;font-size:10pt;white-space:pre-wrap}
 }
@@ -354,7 +394,7 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
     <div class="ctl wt">
       <label>Weight</label>
       <div class="wt-wrap">
-        <input id="wt" type="number" inputmode="decimal" min="0" step="0.1" value="60">
+        <input id="wt" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0.0">
         <div class="seg">
           <button id="btn-lb" class="on" onclick="setU('lb')">lb</button>
           <button id="btn-kg" onclick="setU('kg')">kg</button>
@@ -531,8 +571,17 @@ const BLOCKS=[
 let sp="dog",unit="lb",pbOn=false,mode="plan";
 /* opt: null = follow the target automatically, -1 = custom amount, else index */
 const S={};
-function st(id){if(!S[id])S[id]={on:false,opt:null,mgkg:null,customMg:null,open:false};
+function st(id){if(!S[id])S[id]={on:false,opt:null,mgkg:null,cN:null,cMg:null,cFreq:null,
+  open:false};
   return S[id];}
+/* cN x cMg is the custom dose — how many tablets/capsules of what strength —
+   so it can be written on a label the way it is dispensed. */
+function customTabs(id){
+  const s=st(id);
+  return(s.cN!==null&&s.cMg!==null)?[{mg:s.cMg,n:s.cN}]:null;}
+function medFreq(m){
+  const s=st(m.id);
+  return(s.cFreq!==null&&s.cFreq!=="")?s.cFreq:m.freq;}
 const BLK={};
 function bk(id){if(!BLK[id]){const b=BLOCKS.find(x=>x.id===id);BLK[id]={on:!!(b&&b.on),text:null};}return BLK[id];}
 for(const b of BLOCKS)bk(b.id);
@@ -605,7 +654,9 @@ function fitOptions(m,kg){
 /* the option actually in force */
 function curFit(m,kg){
   const s=st(m.id),d=fitOptions(m,kg);
-  if(s.opt===-1)return{custom:true,mg:s.customMg};
+  if(s.opt===-1){
+    const t=customTabs(m.id);
+    return{custom:true,tabs:t,mg:t?t[0].mg*t[0].n:null,n:t?t[0].n:null,s:t?t[0].mg:null};}
   if(s.opt===null||s.opt<0||s.opt>=d.opts.length)return d.opts[d.def]||null;
   return d.opts[s.opt];}
 
@@ -647,17 +698,38 @@ function chipsHtml(m,kg){
   }).join("");
   return'<div class="chips">'+chips+customChip(m,kg)+'</div>';}
 
+const CUSTN=[0.125,0.25,0.5,0.75,1,1.25,1.5,2,2.5,3,4,5,6];
 function customChip(m,kg){
-  const s=st(m.id),on=s.opt===-1;
+  const s=st(m.id),on=s.opt===-1,u=m.unit||"tablet";
   return'<span class="chip cust'+(on?" sel":"")+'">Custom '+
-    '<input type="number" step="any" min="0" inputmode="decimal" placeholder="amount" '+
-      'aria-label="Custom dose for '+escA(m.name)+' in mg" '+
-      'value="'+(s.customMg===null?"":s.customMg)+'" '+
+    '<select aria-label="Number of '+escA(u)+'s for '+escA(m.name)+'" '+
+      'data-act="custn" data-id="'+m.id+'">'+
+      '<option value=""'+(s.cN===null?" selected":"")+'>–</option>'+
+      CUSTN.map(n=>'<option value="'+n+'"'+(s.cN===n?" selected":"")+'>'+fr(n)+'</option>').join("")+
+    '</select> × '+
+    '<input type="number" step="any" min="0" inputmode="decimal" placeholder="mg" '+
+      'aria-label="Strength of one '+escA(u)+' of '+escA(m.name)+' in mg" '+
+      'value="'+(s.cMg===null?"":s.cMg)+'" '+
       'data-act="cust" data-id="'+m.id+'">'+
     ' mg <small id="cmk-'+m.id+'">'+custMgkg(m,kg)+'</small></span>';}
 function custMgkg(m,kg){
+  const t=customTabs(m.id);
+  if(!t)return"";
+  const tot=t[0].mg*t[0].n;
+  return"= "+fmtMg(tot)+" mg"+(kg?" · "+R2(tot/kg)+" mg/kg":"");}
+
+/* the frequency is editable per drug — the sheet values are abbreviations and a
+   case often needs its own wording */
+function freqEditHtml(m){
   const s=st(m.id);
-  return(kg&&s.customMg!==null)?"· "+R2(s.customMg/kg)+" mg/kg":"";}
+  if(s.cFreq!==null)
+    return'<div class="freq-row"><input class="freq-in" type="text" '+
+      'placeholder="e.g. twice daily for 5 days" aria-label="Frequency for '+escA(m.name)+'" '+
+      'value="'+escA(s.cFreq)+'" data-act="cfreq" data-id="'+m.id+'">'+
+      '<button type="button" class="freq-x" data-act="cfreqoff" data-id="'+m.id+'" '+
+      'title="Back to the label frequency">↺</button></div>';
+  return'<div class="freq-row"><span class="freq-one">'+esc(m.freq)+'</span>'+
+    '<button type="button" class="freq-add" data-act="cfreqon" data-id="'+m.id+'">edit</button></div>';}
 
 /* the phenobarb status control lives with the dose it changes */
 function pbInlineHtml(compact){
@@ -679,11 +751,14 @@ function recDose(m,kg){
   const s=st(m.id);
   if(m.strengths){
     const o=curFit(m,kg);
-    if(o&&o.custom)return o.mg===null?{t:"custom",dim:true}:{t:fmtMg(o.mg)+" mg",dim:false};
+    if(o&&o.custom)return o.tabs===null?{t:"custom",dim:true}
+      :{t:fr(o.n)+" × "+o.s+" mg = "+fmtMg(o.mg)+" mg",dim:false};
     if(!o)return{t:"—",dim:true};
     return{t:fr(o.n)+" × "+o.s+" mg = "+fmtMg(o.mg)+" mg",dim:false};}
-  if(s.opt===-1)
-    return s.customMg===null?{t:"custom",dim:true}:{t:fmtMg(s.customMg)+" mg",dim:false};
+  if(s.opt===-1){
+    const t=customTabs(m.id);
+    return t===null?{t:"custom",dim:true}
+      :{t:fr(t[0].n)+" × "+t[0].mg+" mg = "+fmtMg(t[0].mg*t[0].n)+" mg",dim:false};}
   if(kg===null)return{t:"—",dim:true};
   return{t:fmtMg(curMgkg(m)*kg)+" mg"+(m.perDay?"/day":""),dim:false};}
 
@@ -712,7 +787,7 @@ function drugRow(m,kg){
       '<div class="dfreq">'+curMgkg(m)+' mg/kg'+(m.perDay?'/day':'')+
       (st(m.id).mgkg!==null?' <em>(set)</em>':'')+'</div>')+'</td>'+
    '<td data-l="'+(open?"Closest fits — tap to choose":"Recommended")+'">'+(open
-     ?chipsHtml(m,kg)
+     ?chipsHtml(m,kg)+freqEditHtml(m)
      :'<span class="chip rec'+(rec.dim?" dim":"")+'" data-act="disc" data-id="'+m.id+'" '+
       'title="Show dosing options">'+rec.t+'</span>')+'</td></tr>';}
 
@@ -764,6 +839,20 @@ function render(){
   const stripCat='<strong>Cat escalation:</strong> Phenobarbital'+
     '<span class="arrow">→</span>add Zonisamide<span class="arrow">→</span>add Keppra'+
     '<span class="arrow">→</span>others';
+
+  /* No weight, no doses — a leftover weight from the previous patient is the
+     easiest route to a dosing error. */
+  if(kg===null){
+    document.getElementById("main").innerHTML=
+      '<div class="wtgate">'+
+        '<div class="wg-icon">⚖</div>'+
+        '<div class="wg-title">Enter this patient\'s weight</div>'+
+        '<div class="wg-sub">Doses stay hidden until a weight is entered, so nothing '+
+        'can be carried over from the last patient.</div>'+
+        '<button type="button" class="wg-btn" data-act="focuswt">Enter weight</button>'+
+      '</div>';
+    document.getElementById("selcount").textContent="Enter a weight to begin";
+    return;}
 
   let html='<div class="ladder-strip">'+(sp==="dog"?stripDog:stripCat)+'</div>';
 
@@ -820,6 +909,12 @@ function render(){
   renderBlocks();
   buildOutput();}
 
+function focusWeight(){
+  const w=document.getElementById("wt");
+  if(!w)return;
+  w.scrollIntoView({block:"nearest"});
+  w.focus();w.select();}
+
 /* ================================================================
    DISCHARGE BLOCK EDITOR
 ================================================================ */
@@ -829,7 +924,8 @@ function renderBlocks(){
   if(mode!=="discharge"){wrap.style.display="none";return;}
   wrap.style.display="block";
   wrap.innerHTML='<div class="blkhint">CLIENT INSTRUCTION BLOCKS — check to include, and edit the wording to suit the case. '+
-    '"<code>{name}</code>" is replaced by the patient\'s name.</div>'+
+    '"<code>{name}</code>" is replaced by the patient\'s name. '+
+    'Start a line with • or - to print it as a bullet; leave a blank line between paragraphs.</div>'+
     BLOCKS.map(b=>{
       const s=bk(b.id);
       return'<div class="blk">'+
@@ -844,28 +940,29 @@ function renderBlocks(){
    OUTPUT — plan (record) and discharge (client)
 ================================================================ */
 function fitLine(m,kg){
-  const s=st(m.id),o=curFit(m,kg),u=m.unit||"tablet";
-  if(o&&o.custom)
-    return o.mg===null?m.name+": dose pending — enter a custom amount."
-      :m.name+": give "+fmtMg(o.mg)+" mg by mouth "+m.freq+
-       (kg?" ("+R2(o.mg/kg)+" mg/kg)":"")+".";
+  const o=curFit(m,kg),u=m.unit||"tablet",f=medFreq(m);
+  if(o&&o.custom&&o.tabs===null)
+    return m.name+": dose pending — enter a custom strength and number.";
   if(!o)return m.name+": dose pending.";
   const give=o.n===1?("1 "+u):(fr(o.n)+" "+u+(o.n>1?"s":""));
-  return m.name+" "+o.s+" mg: give "+give+" by mouth "+m.freq+
+  return m.name+" "+o.s+" mg: give "+give+" by mouth "+f+
     (kg?" ("+fmtMg(o.mg)+" mg ≈ "+R2(o.mg/kg)+" mg/kg)":"")+"."+
     (m.id==="zon"&&onPB()?" (10 mg/kg target — on phenobarbital.)":"");}
 
 function planLine(m,kg){
   const s=st(m.id);
   if(m.strengths)return fitLine(m,kg);
-  const how=m.perDay?" total per day, given "+m.freq:" "+m.freq;
-  if(s.opt===-1)
-    return s.customMg===null?m.name+": dose pending — enter a custom amount."
-      :m.name+": "+fmtMg(s.customMg)+" mg"+how+".";
+  const how=m.perDay?" total per day, given "+medFreq(m):" "+medFreq(m);
+  if(s.opt===-1){
+    const t=customTabs(m.id);
+    return t===null?m.name+": dose pending — enter a custom strength and number."
+      :m.name+" "+t[0].mg+" mg: give "+(t[0].n===1?"1 tablet":fr(t[0].n)+" tablets")+
+       " by mouth"+how+".";}
   const t=curMgkg(m),amt=kg===null?"___":fmtMg(t*kg);
   return m.name+": "+amt+" mg"+how+
     (kg?" ("+t+" mg/kg"+(m.perDay?"/day":"")+")":"")+"."+
     (m.id==="kep_load"?" Regular (IR) Keppra only.":"");}
+function planFreqOf(m){return medFreq(m);}
 
 /* ---- client-facing wording: no abbreviations, no mg/kg arithmetic ---- */
 const FREQ_CLIENT={"BID":"twice daily","TID":"three times daily","SID":"once daily",
@@ -873,18 +970,14 @@ const FREQ_CLIENT={"BID":"twice daily","TID":"three times daily","SID":"once dai
   "q 8 h":"every 8 hours","q 12 h":"every 12 hours","ONCE":"one time only"};
 function freqClient(f){return FREQ_CLIENT[f]||f;}
 function clientLine(m,kg){
-  const s=st(m.id),f=freqClient(m.freq);
-  if(m.strengths){
+  const s=st(m.id),f=freqClient(medFreq(m));
+  if(m.strengths||s.opt===-1){
     const o=curFit(m,kg);
-    if(!o||(o.custom&&o.mg===null))return m.name+": dose to be confirmed by the clinic.";
-    if(o.custom)return m.name+": give "+fmtMg(o.mg)+" mg by mouth "+f+".";
+    if(!o||(o.custom&&o.tabs===null))return m.name+": dose to be confirmed by the clinic.";
     const u=m.unit||"tablet";
     const give=o.n===1?("1 "+u):(fr(o.n)+" "+u+(o.n>1?"s":""));
     return m.name+" "+o.s+" mg: give "+give+" by mouth "+f+".";}
   const per=m.perDay?" total per day":"";
-  if(s.opt===-1)
-    return s.customMg===null?m.name+": dose to be confirmed by the clinic."
-      :m.name+": give "+fmtMg(s.customMg)+" mg"+per+" by mouth "+f+".";
   const amt=kg===null?"___":fmtMg(curMgkg(m)*kg);
   return m.name+": give "+amt+" mg"+per+" by mouth "+f+".";}
 function clientEmergLine(e){return e.name+": given here in the hospital today.";}
@@ -909,32 +1002,54 @@ function buildPlan(){
   if(!maint.length&&!emerg.length)out+="\n(no medications selected)";
   document.getElementById("planout").textContent=out.trim();}
 
-/* "Name: give X" → bold name, plain instruction, for the client sheet */
-function splitLine(line){
+/* "Name: give X" → the name on its own line, the instruction indented under it,
+   so an owner reads one short thing at a time */
+function dischargeMed(line){
   const i=line.indexOf(": ");
-  if(i<0)return'<span>'+esc(line)+'</span>';
-  return'<span class="mn-bold">'+esc(line.slice(0,i))+'</span><span class="mn-desc">:</span> '+
-    '<span class="mn-give">'+esc(line.slice(i+2))+'</span>';}
+  if(i<0)return'<div class="dmed"><div class="dm-name">'+esc(line)+'</div></div>';
+  const give=line.slice(i+2);
+  return'<div class="dmed"><div class="dm-name">'+esc(line.slice(0,i))+'</div>'+
+    '<div class="dm-give">'+esc(give.charAt(0).toUpperCase()+give.slice(1))+'</div></div>';}
+
+/* Client prose: short paragraphs and indented bullets, never a wall of text.
+   A line starting with • or - becomes a bullet; a blank line starts a paragraph. */
+function proseHtml(text){
+  const out=[];
+  let para=[];
+  const flush=()=>{if(para.length){out.push('<p class="dp">'+esc(para.join(" "))+'</p>');para=[];}};
+  for(const raw of String(text).split(/\r?\n/)){
+    const line=raw.trim();
+    if(!line){flush();continue;}
+    if(/^[•\-\*]\s+/.test(line)){
+      flush();
+      out.push('<div class="dbul"><span class="dbm">•</span><span>'+
+        esc(line.replace(/^[•\-\*]\s+/,""))+'</span></div>');
+      continue;}
+    para.push(line);}
+  flush();
+  return out.join("");}
 
 function buildDischarge(){
   const {maint,emerg,kg}=selected();
   const name=getName();
   const lb=kg===null?null:Math.round(kg*2.2*10)/10;
   const wt=lb===null?"___ lb":lb+" lb ("+R2(kg)+" kg)";
-  let h='<div class="dis-title">DISCHARGE INSTRUCTIONS: Seizure Management</div>'+
+  let h='<div class="dis-title">Discharge Instructions</div>'+
+    '<div class="dis-what">Seizure Management</div>'+
     '<div class="dis-sub">'+esc(name)+" · "+(sp==="dog"?"Canine":"Feline")+" · "+esc(wt)+" · "+today()+'</div>';
   if(emerg.length)
-    h+='<div class="sec-hdr">Treatments performed in hospital</div><ul>'+
-      emerg.map(e=>'<li>'+splitLine(clientEmergLine(e))+'</li>').join("")+'</ul>';
-  h+='<div class="sec-hdr">Medications to give at home</div>';
-  h+=maint.length
-    ?'<ul>'+maint.map(m=>'<li>'+splitLine(clientLine(m,kg))+'</li>').join("")+'</ul>'
-    :'<ul><li><em>No take-home medications selected</em></li></ul>';
+    h+='<div class="sec-hdr">What we did today</div><div class="sec-body">'+
+      emerg.map(e=>dischargeMed(clientEmergLine(e))).join("")+'</div>';
+  h+='<div class="sec-hdr">Medications to give at home</div><div class="sec-body">'+
+    (maint.length
+      ?maint.map(m=>dischargeMed(clientLine(m,kg))).join("")
+      :'<p class="dp"><em>No take-home medications.</em></p>')+'</div>';
   for(const b of BLOCKS){
-    const s=bk(b.id);
-    if(!s.on)continue;
-    const text=(s.text!==null?s.text:b.text).split("{name}").join(name);
-    h+='<div class="sec-hdr">'+esc(b.title)+'</div><div class="btext">'+esc(text)+'</div>';}
+    const st2=bk(b.id);
+    if(!st2.on)continue;
+    const text=(st2.text!==null?st2.text:b.text).split("{name}").join(name);
+    h+='<div class="sec-hdr">'+esc(b.title)+'</div>'+
+       '<div class="sec-body">'+proseHtml(text)+'</div>';}
   document.getElementById("disout").innerHTML=h;}
 
 function buildOutput(){
@@ -962,8 +1077,14 @@ function outToPlain(){
     if(t==="li")return"• "+[...n.childNodes].map(walk).join("")+"\n";
     if(t==="br")return"\n";
     const inner=[...n.childNodes].map(walk).join("");
+    if(cl.contains("dis-title")||cl.contains("dis-what"))return inner+"\n";
     if(cl.contains("dis-sub"))return inner+"\n";
-    if(cl.contains("sec-hdr"))return"\n"+inner.toUpperCase()+":\n";
+    if(cl.contains("sec-hdr"))return"\n"+inner.toUpperCase()+"\n";
+    if(cl.contains("dm-name"))return"  "+inner+"\n";
+    if(cl.contains("dm-give"))return"      "+inner+"\n";
+    if(cl.contains("dmed"))return inner+"\n";
+    if(cl.contains("dbul"))return"  • "+inner.replace(/^•\s*/,"").trim()+"\n";
+    if(cl.contains("dp"))return"  "+inner+"\n";
     if(cl.contains("btext"))return inner+"\n";
     if(t==="ul")return"\n"+inner;
     return inner;}
@@ -981,6 +1102,10 @@ async function copyOut(){
       ".sec-hdr{font-size:9.5pt;font-weight:bold;text-transform:uppercase;letter-spacing:.06em;"+
       "margin-top:9pt;margin-bottom:3pt;display:block}"+
       ".dis-title{font-size:14pt;font-weight:bold}.dis-sub{font-size:10pt;color:#555}"+
+      ".dis-what{font-size:12pt;font-weight:bold}.sec-body{padding-left:12pt}"+
+      ".dmed{margin:0 0 9pt}.dm-name{font-size:12pt;font-weight:bold}"+
+      ".dm-give{font-size:11pt;padding-left:12pt}"+
+      ".dp{margin:0 0 7pt}.dbul{margin:0 0 5pt;padding-left:12pt}"+
       ".btext{white-space:pre-wrap}</style>";
     try{
       await navigator.clipboard.write([new ClipboardItem({
@@ -1033,7 +1158,7 @@ function setTarget(id,v){
 function resetTarget(id){st(id).mgkg=null;st(id).opt=null;render();}
 function setCustom(id,v){
   const s=st(id),n=parseFloat(v);
-  s.customMg=(isFinite(n)&&n>0)?Math.round(n*1000)/1000:null;
+  s.cMg=(isFinite(n)&&n>0)?Math.round(n*1000)/1000:null;
   s.opt=-1;
   const m=findMed(id),el=document.getElementById("cmk-"+id);
   if(m&&el)el.textContent=custMgkg(m,getKg());
@@ -1051,6 +1176,9 @@ document.getElementById("main").addEventListener("click",e=>{
   if(a==="pick")pickOpt(t.dataset.id,+t.dataset.i);
   else if(a==="disc")toggleOpen(t.dataset.id);
   else if(a==="allopen")setAllOpen(t.dataset.v==="1");
+  else if(a==="focuswt")focusWeight();
+  else if(a==="cfreqon"){st(t.dataset.id).cFreq="";render();}
+  else if(a==="cfreqoff"){st(t.dataset.id).cFreq=null;render();}
   else if(a==="pb")setPB(+t.dataset.v);
   else if(a==="tgtreset")resetTarget(t.dataset.id);
   else if(a==="mode")setMode(t.dataset.v);
@@ -1062,6 +1190,8 @@ document.getElementById("main").addEventListener("change",e=>{
   if(!t)return;
   const a=t.dataset.act;
   if(a==="tog")toggleMed(t.dataset.id);
+  else if(a==="custn"){const s2=st(t.dataset.id),n=parseFloat(t.value);
+    s2.cN=isFinite(n)&&n>0?n:null;s2.opt=-1;render();}
   else if(a==="tgt")setTarget(t.dataset.id,t.value);
   else if(a==="blk"){bk(t.dataset.id).on=t.checked;buildOutput();}
 });
@@ -1070,12 +1200,14 @@ document.getElementById("main").addEventListener("input",e=>{
   if(!t)return;
   const a=t.dataset.act;
   if(a==="cust")setCustom(t.dataset.id,t.value);
+  else if(a==="cfreq"){st(t.dataset.id).cFreq=t.value;buildOutput();}
   else if(a==="blktext"){bk(t.dataset.id).text=t.value;buildOutput();}
 });
 document.getElementById("main").addEventListener("keydown",e=>{
   if(e.key!=="Enter")return;
   const t=e.target.closest("[data-act]");
-  if(t&&(t.dataset.act==="tgt"||t.dataset.act==="cust")){e.preventDefault();t.blur();}
+  if(t&&(t.dataset.act==="tgt"||t.dataset.act==="cust"||t.dataset.act==="cfreq")){
+    e.preventDefault();t.blur();}
 });
 
 function setSp(s){sp=s;
@@ -1090,6 +1222,9 @@ function setU(u){
   document.getElementById("btn-kg").classList.toggle("on",u==="kg");
   render();}
 document.getElementById("wt").addEventListener("input",render);
+document.getElementById("wt").classList.add("needed");
+document.getElementById("wt").addEventListener("input",()=>{
+  document.getElementById("wt").classList.toggle("needed",getKg()===null);});
 document.getElementById("pname").addEventListener("input",buildOutput);
 
 /* compact the sticky header once the page is scrolled (phone) */
@@ -1100,6 +1235,7 @@ addEventListener("scroll",()=>{
 },{passive:true});
 
 render();
+focusWeight();
 </script>
 </body>
 </html>

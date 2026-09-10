@@ -1,0 +1,230 @@
+{
+  "title": "Cholangiohepatitis",
+  "desc": "Amoxicillin plus a quinolone, with or without metronidazole; ursodiol, prednisolone and the supportive drugs (famotidine, Cerenia, mirtazapine). Includes anaesthesia premed and induction for liver biopsy.",
+  "icon": "🫀",
+  "code": "HEPAT",
+  "discharge": "Liver Inflammation",
+  "species": ["cat"],
+  "bands": {},
+  "meds": [
+    {
+      "id": "amoxi_ch",
+      "sp": "cat",
+      "grp": "Antibiotic — amoxicillin plus a quinolone",
+      "name": "Amoxicillin",
+      "desc": "the amoxicillin half of the pair",
+      "type": "calc",
+      "lo": 10,
+      "hi": 20,
+      "unitDose": "mg",
+      "freqs": ["twice daily"],
+      "note": "10–20 mg/kg BID; the sheet's worked example uses 11 mg/kg BID."
+    },
+    {
+      "id": "zeniquin_ch",
+      "sp": "cat",
+      "grp": "Antibiotic — amoxicillin plus a quinolone",
+      "name": "Zeniquin",
+      "gen": "marbofloxacin",
+      "desc": "quinolone — the target recommendation on this sheet",
+      "type": "calc",
+      "lo": 2.75,
+      "hi": 2.75,
+      "unitDose": "mg",
+      "freqs": ["once daily"]
+    },
+    {
+      "id": "baytril_ch",
+      "sp": "cat",
+      "grp": "Antibiotic — amoxicillin plus a quinolone",
+      "name": "Baytril",
+      "gen": "enrofloxacin",
+      "desc": "quinolone alternative",
+      "type": "calc",
+      "lo": 2.5,
+      "hi": 5,
+      "unitDose": "mg",
+      "freqs": ["once daily (5 mg/kg)", "twice daily (2.5 mg/kg)"],
+      "note": "Retinal toxicity is dose-dependent in cats — keep total daily enrofloxacin at or below 5 mg/kg/day."
+    },
+    {
+      "id": "cipro_ch",
+      "sp": "cat",
+      "grp": "Antibiotic — amoxicillin plus a quinolone",
+      "name": "Ciprofloxacin",
+      "desc": "quinolone alternative",
+      "type": "calc",
+      "lo": 30,
+      "hi": 30,
+      "unitDose": "mg",
+      "freqs": ["once daily"]
+    },
+    {
+      "id": "chloramphenicol_ch",
+      "sp": "cat",
+      "grp": "Antibiotic — amoxicillin plus a quinolone",
+      "name": "Chloramphenicol",
+      "desc": "target recommendation for resistant cases",
+      "type": "calc",
+      "lo": 35,
+      "hi": 35,
+      "unitDose": "mg",
+      "freqs": ["twice daily"],
+      "note": "Warn owners about human exposure — gloves when handling, and it is not for a household with anyone who has a blood dyscrasia."
+    },
+    {
+      "id": "metronidazole_ch",
+      "sp": "cat",
+      "grp": "Add metronidazole",
+      "name": "Metronidazole",
+      "gen": "Flagyl",
+      "desc": "added to the amoxicillin and quinolone, not instead of them",
+      "type": "calc",
+      "lo": 7.5,
+      "hi": 7.5,
+      "unitDose": "mg",
+      "freqs": ["twice daily"],
+      "note": "7.5 mg/kg BID, often used alongside another antimicrobial because it kills anaerobes, penetrates bile and liver well, and has anti-inflammatory (cell-mediated immunity) and anti-endotoxic effects. Flagyl goes IN ADDITION to the amoxicillin and quinolone."
+    },
+    {
+      "id": "ursodiol_ch",
+      "sp": "cat",
+      "grp": "Choleretic",
+      "name": "Ursodiol",
+      "desc": "improves bile flow",
+      "type": "calc",
+      "lo": 10,
+      "hi": 15,
+      "unitDose": "mg",
+      "freqs": ["once daily"],
+      "note": "10–15 mg/kg per day. Do not use if there is a biliary obstruction."
+    },
+    {
+      "id": "pred_ch",
+      "sp": "cat",
+      "grp": "Anti-inflammatory",
+      "name": "Prednisolone",
+      "desc": "for the lymphocytic form",
+      "type": "calc",
+      "lo": 2.2,
+      "hi": 2.2,
+      "unitDose": "mg",
+      "freqs": ["once daily"],
+      "note": "2.2 mg/kg/day. Prednisolone rather than prednisone in cats."
+    },
+    {
+      "id": "famotidine_ch",
+      "sp": "cat",
+      "grp": "Supportive",
+      "name": "Famotidine",
+      "desc": "acid reducer",
+      "type": "calc",
+      "lo": 0.5,
+      "hi": 0.5,
+      "unitDose": "mg",
+      "freqs": ["twice daily"]
+    },
+    {
+      "id": "cerenia_ch",
+      "sp": "cat",
+      "grp": "Supportive",
+      "name": "Cerenia",
+      "gen": "maropitant",
+      "desc": "anti-emetic",
+      "type": "calc",
+      "lo": 2.2,
+      "hi": 2.2,
+      "unitDose": "mg",
+      "freqs": ["once daily"]
+    },
+    {
+      "id": "mirtazapine_ch",
+      "sp": "cat",
+      "grp": "Supportive",
+      "name": "Mirtazapine",
+      "desc": "appetite stimulant",
+      "type": "fixed",
+      "doseText": "¼ of a 7.5 mg tablet",
+      "freqs": ["every other day"]
+    },
+    {
+      "id": "butorphanol_ch",
+      "sp": "cat",
+      "grp": "Anaesthesia for liver biopsy",
+      "name": "Butorphanol premed",
+      "desc": "premedication",
+      "type": "calc",
+      "lo": 0.2,
+      "hi": 0.2,
+      "unitDose": "mg",
+      "freqs": ["as a premed"],
+      "inClinic": true,
+      "note": "0.2 mg/kg. Using the 10 mg/ml solution, divide the milligrams by 10 for the volume in ml."
+    },
+    {
+      "id": "buprenorphine_ch",
+      "sp": "cat",
+      "grp": "Anaesthesia for liver biopsy",
+      "name": "Buprenorphine premed",
+      "desc": "premedication alternative",
+      "type": "calc",
+      "lo": 0.01,
+      "hi": 0.01,
+      "unitDose": "mg",
+      "freqs": ["as a premed"],
+      "inClinic": true,
+      "note": "0.01 mg/kg. Using the 0.3 mg/ml solution, divide the milligrams by 0.3 for the volume in ml."
+    },
+    {
+      "id": "induction_ch",
+      "sp": "cat",
+      "grp": "Anaesthesia for liver biopsy",
+      "name": "Induction",
+      "desc": "midazolam then propofol",
+      "type": "fixed",
+      "doseText": "midazolam IV, followed by propofol TO EFFECT",
+      "freqs": [""],
+      "inClinic": true,
+      "note": "Induce with midazolam IV, then propofol titrated to effect. Check coagulation before biopsy."
+    }
+  ],
+  "notes": {
+    "Antibiotic combination": "Amoxicillin plus a quinolone is the base. Zeniquin 2.75 mg/kg SID and chloramphenicol 35 mg/kg BID are flagged on the sheet as the target recommendations.",
+    "Why add metronidazole": "Metronidazole 7.5 mg/kg BID is often used alongside another antimicrobial — it kills anaerobes, penetrates bile and liver well, and has anti-inflammatory (CMI) and anti-endotoxic effects. It goes IN ADDITION to the amoxicillin and quinolone, not in place of them.",
+    "Enrofloxacin in cats": "Retinal toxicity is dose-dependent — keep the total daily dose at or below 5 mg/kg/day, whether given once daily or split.",
+    "Anaesthesia": "Premed with butorphanol 0.2 mg/kg or buprenorphine 0.01 mg/kg. Induce with midazolam IV followed by propofol to effect.",
+    "Appetite": "These cats stop eating, and that risks hepatic lipidosis on top. Mirtazapine ¼ of a 7.5 mg tablet every other day, and consider a feeding tube early rather than late."
+  },
+  "dischargeBlocks": [
+    {
+      "id": "what",
+      "title": "What is going on",
+      "on": true,
+      "text": "{name} has inflammation of the liver and the bile ducts. It makes cats feel sick, off their food, and sometimes jaundiced — the yellow tinge you may see in the gums, eyes or ears.\n\nIt responds to treatment, but the course is long. Several of these medications run for weeks."
+    },
+    {
+      "id": "eating",
+      "title": "Eating is the most important thing",
+      "on": true,
+      "text": "A cat that stops eating can develop a second liver problem on top of this one, and that is far harder to treat.\n\n- Offer food little and often, warmed slightly so it smells stronger.\n- Tell us straight away if {name} eats nothing for a whole day.\n- If we dispensed an appetite stimulant, give it as directed.\n- Never try to force food into {name}'s mouth — call us instead. If eating does not pick up we will talk about a feeding tube, which is a routine and very effective step."
+    },
+    {
+      "id": "meds",
+      "title": "Giving the medication",
+      "on": true,
+      "text": "There are several medications here and they have different schedules. Please follow the labels carefully, and finish the antibiotic course even once {name} seems well.\n\nIf {name} vomits a dose or you cannot get one in, call us rather than doubling up next time."
+    },
+    {
+      "id": "call",
+      "title": "Call us if you see",
+      "on": true,
+      "text": "- Yellowing of the gums, the whites of the eyes, or the skin inside the ears\n- Vomiting that does not stop, or repeated drooling\n- {name} hiding, or not moving around normally\n- Any bleeding, or bruising\n- Refusing food for more than a day"
+    },
+    {
+      "id": "followup",
+      "title": "Follow up",
+      "on": true,
+      "text": "We need to repeat {name}'s bloodwork on the schedule we discussed so we can see whether the liver values are improving and decide how long to continue.\n\nPlease keep those appointments — this is followed by the numbers, not by appearance alone."
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "title": "Megaesophagus",
+  "desc": "Vertical feeding, food consistency, meal frequency and the drug trials (omeprazole, sildenafil, metoclopramide) — Sherri Wilson's management approach, plus owner support.",
+  "icon": "🍽",
+  "code": "MEGA-E",
+  "discharge": "Megaesophagus",
+  "species": ["dog"],
+  "bands": {},
+  "meds": [
+    {
+      "id": "omeprazole_me",
+      "sp": "dog",
+      "grp": "Drug trials — try one at a time",
+      "name": "Omeprazole",
+      "desc": "almost all of these dogs do better on it",
+      "type": "fixed",
+      "doseText": "2.5 mg, 30 minutes before a meal",
+      "freqs": ["before each meal"],
+      "note": "The 2.5 mg figure on the source sheet is from a small puppy — scale it to the patient in front of you. Almost all megaesophagus dogs do better on omeprazole."
+    },
+    {
+      "id": "sildenafil_me",
+      "sp": "dog",
+      "grp": "Drug trials — try one at a time",
+      "name": "Sildenafil",
+      "desc": "loosens the lower esophageal sphincter",
+      "type": "fixed",
+      "doseText": "sildenafil at your usual dose",
+      "freqs": [""],
+      "note": "Some dogs do far better on it; some do far worse, probably from increased reflux esophagitis. It is a trial, not a default — and worth stopping if things deteriorate."
+    },
+    {
+      "id": "metoclopramide_me",
+      "sp": "dog",
+      "grp": "Drug trials — try one at a time",
+      "name": "Metoclopramide",
+      "desc": "tightens the lower esophageal sphincter",
+      "type": "fixed",
+      "doseText": "metoclopramide at your usual dose",
+      "freqs": [""],
+      "note": "Works in the opposite direction to sildenafil, and some dogs do better on it. Strangely, some dogs do better on BOTH sildenafil and metoclopramide together."
+    },
+    {
+      "id": "procollar_me",
+      "sp": "dog",
+      "grp": "Equipment",
+      "name": "Neck hug / ProCollar",
+      "desc": "keeps the head elevated when lying down",
+      "type": "fixed",
+      "doseText": "an inflatable neck collar",
+      "freqs": ["when lying down"],
+      "note": "Most dogs do better with one. Finding the right size can be the hard part in very small or very large dogs."
+    },
+    {
+      "id": "baileychair_me",
+      "sp": "dog",
+      "grp": "Equipment",
+      "name": "Bailey chair or upright holder",
+      "desc": "the single most important part of management",
+      "type": "fixed",
+      "doseText": "upright feeding for 10 to 30 minutes after every meal",
+      "freqs": ["every meal"],
+      "note": "A Bailey chair suits most bigger dogs. A small pup can go in a tall bucket, a car seat padded with towels, a front-pack baby carrier, or a doorway jumper seat."
+    }
+  ],
+  "notes": {
+    "Source": "Sherri Wilson, DVM, DACVIM (Internal Medicine).",
+    "Vertical feeding": "Feed VERTICALLY — food and water both. Water only goes in vertically too, usually mixed into the food.",
+    "How long upright": "This needs fiddling with per dog. Some do fine after 10–15 minutes upright; others regurgitate or aspirate less if they stay there 20–30 minutes.",
+    "Food consistency": "Also needs fiddling. Many dogs do best on canned food with added water blended to a smoothie. Others do better on hand-fed canned meatballs, each sized so the dog does not chew them. Dry food only works if water is added until it is mush, then blended smooth.",
+    "Meal frequency": "Diluting the calories with water means most need at least 3 meals a day to get the calories in.",
+    "Drug trials": "Almost all do better on omeprazole. Sildenafil loosens the lower esophageal sphincter — some do much better, some much worse from reflux. Metoclopramide tightens it, and some do better on that. Oddly, some do better on both.",
+    "Owner support": "This is a LOT for most owners. Point them at a support group — the Facebook group 'Managing Megaesophagus Successfully' is mostly supportive owners, with a couple of vets keeping the medical side straight."
+  },
+  "dischargeBlocks": [
+    {
+      "id": "what",
+      "title": "What megaesophagus means",
+      "on": true,
+      "text": "{name}'s food pipe has lost its muscle tone, so food no longer gets pushed down into the stomach — it pools instead. When it comes back up it can go into the lungs, and that is the real danger.\n\nGravity is what replaces the missing muscle. That is why everything below is about keeping {name} upright."
+    },
+    {
+      "id": "vertical",
+      "title": "Feeding upright — the most important thing you will do",
+      "on": true,
+      "text": "Every meal, and every drink, goes in with {name} sitting upright.\n\n- Feed {name} standing vertically, not with the head down at a bowl.\n- Keep {name} upright for 10 to 30 minutes AFTER the meal finishes. We will work out the right time together.\n- Water goes in the same way. Most dogs do best with water mixed into the food rather than drunk from a bowl.\n\nFor a bigger dog this usually means a Bailey chair. For a small dog a tall bucket, a padded car seat, a front baby carrier or a doorway jumper seat can all work."
+    },
+    {
+      "id": "consistency",
+      "title": "Getting the food consistency right",
+      "on": true,
+      "text": "Every dog is different, and finding what works for {name} takes some trial and error.\n\n- Many do best on canned food blended with water to a smoothie.\n- Others do better on hand-fed meatballs of canned food, each small enough to swallow whole without chewing.\n- Dry food only works if you add water until it is mush and then blend it smooth.\n\nBecause we are watering the food down, {name} will usually need at least 3 meals a day to take in enough calories."
+    },
+    {
+      "id": "collar",
+      "title": "A neck hug",
+      "on": false,
+      "text": "An inflatable neck collar such as a ProCollar keeps {name}'s head raised while lying down, which helps overnight. Ask us about sizing."
+    },
+    {
+      "id": "aspiration",
+      "title": "Call us straight away if",
+      "on": true,
+      "text": "- {name} is coughing, especially after eating\n- Breathing is faster or noisier than usual\n- There is a fever, or {name} goes quiet and off food\n- You see food or froth coming back up through the nose\n\nThese are signs of aspiration pneumonia, which is the main thing that makes these dogs seriously ill. It needs treating quickly."
+    },
+    {
+      "id": "support",
+      "title": "You are not doing this alone",
+      "on": true,
+      "text": "This is a lot to take on, and most owners feel overwhelmed at the start. It does get easier once the routine settles.\n\nThere is a Facebook group called 'Managing Megaesophagus Successfully' — mostly other owners helping each other, with vets keeping the medical side accurate. Many owners find it the most useful thing they did in the first month.\n\nPlease call us with questions rather than struggling on your own."
+    }
+  ]
+}

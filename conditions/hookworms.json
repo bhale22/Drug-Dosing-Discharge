@@ -1,0 +1,90 @@
+{
+  "title": "Hookworms — resistant / chronic shedding",
+  "desc": "Multi-drug-resistant Ancylostoma caninum in retired racing greyhounds and other breeds: the moxidectin + Drontal Plus combination protocol, Profender rescue, and how to test for resistance.",
+  "icon": "🪱",
+  "code": "PARA-HW",
+  "discharge": "Resistant Hookworms",
+  "species": ["dog"],
+  "bands": {},
+  "meds": [
+    {
+      "id": "advantage_multi",
+      "sp": "dog",
+      "grp": "Combination protocol",
+      "name": "Advantage Multi",
+      "gen": "topical moxidectin",
+      "desc": "topical moxidectin, the backbone of the protocol",
+      "type": "fixed",
+      "doseText": "the standard topical dose (2.5 to 5.0 mg/kg)",
+      "freqs": ["every 2 weeks for 4 doses, then monthly"],
+      "note": "Applied topically at the standard label dose. Every 2 weeks until fecal exams are negative, then monthly."
+    },
+    {
+      "id": "drontal_hw",
+      "sp": "dog",
+      "grp": "Combination protocol",
+      "name": "Drontal Plus",
+      "gen": "febantel / pyrantel / praziquantel",
+      "desc": "given orally alongside the moxidectin",
+      "type": "fixed",
+      "doseText": "the standard oral dose",
+      "freqs": ["monthly until fecal exams are negative"],
+      "note": "Check fecals monthly. Once they are negative, drop the Drontal Plus and continue topical moxidectin monthly."
+    },
+    {
+      "id": "profender_hw",
+      "sp": "dog",
+      "grp": "Rescue option",
+      "name": "Profender given orally",
+      "gen": "emodepside + praziquantel",
+      "desc": "oral emodepside — NOT for MDR1 breeds",
+      "type": "calc",
+      "lo": 1,
+      "hi": 1,
+      "unitDose": "mg",
+      "freqs": ["as a single oral dose"],
+      "note": "Jimenez Castro et al, JAVMA 2023: 1 mg/kg emodepside plus 5 mg/kg praziquantel, given orally. The figure calculated above is the EMODEPSIDE component only. DO NOT USE IN MDR1 / COLLIE-TYPE BREEDS."
+    }
+  ],
+  "notes": {
+    "Source": "With thanks to Dr Sanchez. Handout material from M W Dryden and B H Herrin.",
+    "The problem": "Chronic hookworm (Ancylostoma caninum) is not an uncommon problem in retired racing greyhounds and occasionally other breeds. Anthelmintic resistance is now documented in A. caninum in greyhounds and in other dogs that have likely had contact with environments greyhounds frequented. Some of these nematodes appear to be multi-drug resistant.",
+    "The protocol": "Topical moxidectin (Advantage Multi, standard topical dose, 2.5–5.0 mg/kg) every 2 weeks, combined with Drontal Plus orally monthly, until fecal exams are negative — checking monthly. Once fecals are negative, switch to topical moxidectin monthly.",
+    "Long tail": "It can take 3 to 4 months for egg shedding to stop. Do not judge the protocol before then.",
+    "Ongoing surveillance": "Check a fecal every 3 to 4 months. If it becomes positive again while on monthly Advantage Multi, restart the full combination protocol.",
+    "Testing for resistance": "Run a quantitative fecal (EPG), give the correct dose of Drontal Plus (febantel), Interceptor (milbemycin oxime) or Panacur (fenbendazole), then recheck a quantitative fecal in 7 to 10 days. If the worms are susceptible the fecal should be negative, or egg numbers reduced by more than 90%.",
+    "MDR1 warning": "The oral Profender protocol must not be used in MDR1 / collie-type breeds."
+  },
+  "dischargeBlocks": [
+    {
+      "id": "what",
+      "title": "Why this is taking so long",
+      "on": true,
+      "text": "{name} has a hookworm infection that does not respond to the usual wormers. These resistant hookworms are common in retired racing greyhounds and in dogs that have shared their environment.\n\nThis is not a failure of the earlier treatment — the worms themselves have changed. Clearing them needs a longer, doubled-up protocol."
+    },
+    {
+      "id": "protocol",
+      "title": "The treatment schedule",
+      "on": true,
+      "text": "There are two products, on two different schedules. Please put both in your calendar.\n\n- The spot-on goes on every 2 weeks to begin with.\n- The tablets are given once a month.\n- We will recheck a stool sample every month.\n\nOnce two things line up — the stool samples come back clear — we drop the tablets and keep the spot-on monthly."
+    },
+    {
+      "id": "patience",
+      "title": "What to expect",
+      "on": true,
+      "text": "It can take 3 to 4 months before {name} stops shedding eggs, even when the treatment is working perfectly.\n\nPlease do not stop early because the stool sample is still positive at month one or two. That is expected."
+    },
+    {
+      "id": "hygiene",
+      "title": "The yard",
+      "on": true,
+      "text": "Hookworm larvae live in the soil and can re-infect {name}, so picking up promptly matters as much as the medication.\n\n- Pick up stools every day, and bag them.\n- Keep {name} off areas that stay damp and shaded where possible.\n- Hookworms can penetrate human skin too — wear shoes in the yard and wash hands after picking up."
+    },
+    {
+      "id": "followup",
+      "title": "Follow up",
+      "on": true,
+      "text": "We will keep checking stool samples every month until they are clear, then every 3 to 4 months afterwards.\n\nIf a later sample turns positive again we restart the full protocol — please keep those checks booked even once {name} seems fine."
+    }
+  ]
+}

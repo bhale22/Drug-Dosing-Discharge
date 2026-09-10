@@ -1,0 +1,133 @@
+{
+  "title": "Car Sickness",
+  "desc": "Cerenia, acepromazine, dimenhydrinate and meclizine for travel sickness, with separate dog and cat dosing.",
+  "icon": "🚗",
+  "code": "TRAVEL",
+  "discharge": "Travel Sickness",
+  "species": ["dog", "cat"],
+  "bands": {},
+  "meds": [
+    {
+      "id": "cerenia_car_d",
+      "sp": "dog",
+      "grp": "Anti-emetic",
+      "name": "Cerenia",
+      "gen": "maropitant",
+      "desc": "the licensed drug for motion sickness",
+      "type": "calc",
+      "lo": 8,
+      "hi": 8,
+      "unitDose": "mg",
+      "freqs": ["before travelling"],
+      "note": "8 mg/kg MINIMUM for motion sickness — this is much higher than the anti-emetic dose. Give at least 2 hours before travel."
+    },
+    {
+      "id": "ace_car_d",
+      "sp": "dog",
+      "grp": "Sedation",
+      "name": "Acepromazine",
+      "desc": "sedative, not an anti-emetic",
+      "type": "calc",
+      "lo": 0.25,
+      "hi": 2.2,
+      "unitDose": "mg",
+      "freqs": ["before travelling"],
+      "note": "0.25–2.2 mg/kg for sedation. In a dog on chronic use you may need to double the dosage. Acepromazine sedates but does not stop nausea — pair it with an anti-emetic rather than relying on it alone."
+    },
+    {
+      "id": "ace_car_c",
+      "sp": "cat",
+      "grp": "Sedation",
+      "name": "Acepromazine",
+      "desc": "sedative",
+      "type": "fixed",
+      "doseText": "5 mg",
+      "freqs": ["before travelling"],
+      "note": "Per-cat dose from the source sheet."
+    },
+    {
+      "id": "dimenhydrinate_d",
+      "sp": "dog",
+      "grp": "Antihistamine",
+      "name": "Dimenhydrinate",
+      "gen": "Dramamine / Gravol, 50 mg tabs",
+      "desc": "roughly one tablet per 20 lb",
+      "type": "calc",
+      "lo": 5,
+      "hi": 5,
+      "unitDose": "mg",
+      "freqs": ["before travelling"],
+      "note": "5 mg/kg, which works out at about one 50 mg tablet per 20 lb of body weight."
+    },
+    {
+      "id": "dimenhydrinate_c",
+      "sp": "cat",
+      "grp": "Antihistamine",
+      "name": "Dimenhydrinate",
+      "gen": "Dramamine / Gravol, 50 mg tabs",
+      "desc": "quarter of a 50 mg tablet",
+      "type": "fixed",
+      "doseText": "12.5 mg (¼ of a 50 mg tablet)",
+      "freqs": ["before travelling"]
+    },
+    {
+      "id": "meclizine_d",
+      "sp": "dog",
+      "grp": "Antihistamine",
+      "name": "Meclizine",
+      "gen": "Antivert, \"Dramamine Non-Drowsy\" — OTC 25 mg tabs",
+      "desc": "less sedating than dimenhydrinate",
+      "type": "calc",
+      "lo": 0.5,
+      "hi": 0.5,
+      "unitDose": "mg",
+      "freqs": ["before travelling"],
+      "note": "0.5 mg/kg. In practice the sheet uses 12.5 mg for a small dog, 25 mg for a big dog, and 50 mg for a very large dog."
+    },
+    {
+      "id": "meclizine_c",
+      "sp": "cat",
+      "grp": "Antihistamine",
+      "name": "Meclizine",
+      "gen": "Antivert, OTC 25 mg tabs",
+      "desc": "less sedating than dimenhydrinate",
+      "type": "calc",
+      "lo": 0.5,
+      "hi": 0.5,
+      "unitDose": "mg",
+      "freqs": ["before travelling"]
+    }
+  ],
+  "notes": {
+    "Cerenia dose is the catch": "Motion sickness needs a MINIMUM of 8 mg/kg — far above the usual anti-emetic dose. Under-dosing is the commonest reason it appears not to work.",
+    "Acepromazine with chronic use": "In a dog given it repeatedly, the dose may need doubling over time.",
+    "Sedation is not anti-nausea": "Acepromazine makes a dog quiet but does not stop the nausea. For a dog that actually vomits, pair it with Cerenia or an antihistamine.",
+    "Meclizine in practice": "0.5 mg/kg on paper; in practice 12.5 mg for a small dog, 25 mg for a big dog, 50 mg for a very large one."
+  },
+  "dischargeBlocks": [
+    {
+      "id": "timing",
+      "title": "When to give it",
+      "on": true,
+      "text": "Give the medication at least 2 hours before you set off, on a small amount of food.\n\nGiving it as you put {name} in the car is too late — it needs time to be absorbed and working before the journey starts."
+    },
+    {
+      "id": "practical",
+      "title": "What else helps",
+      "on": true,
+      "text": "- Withhold food for a few hours before travelling, but leave water available.\n- Face {name} forward and, if it is safe, let some fresh air in.\n- A crate or a proper travel harness stops sliding around, which makes the sickness worse.\n- Keep the car cool.\n- Take short, pleasant trips between now and any long journey so the car stops predicting sickness."
+    },
+    {
+      "id": "trial",
+      "title": "Try it before the big trip",
+      "on": true,
+      "text": "Please give a trial dose before a short journey rather than saving it for a long trip or a holiday.\n\nThat way we know how {name} responds, and can change the dose or the drug if we need to."
+    },
+    {
+      "id": "followup",
+      "title": "Follow up",
+      "on": true,
+      "text": "Let us know how {name} travelled. If there was still vomiting, or {name} was too sleepy for too long, call us — there are several options and it often takes one adjustment to get it right."
+    }
+  ]
+}

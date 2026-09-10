@@ -1,0 +1,95 @@
+{
+  "title": "Babesia",
+  "desc": "Imidocarb dipropionate for B. canis; atovaquone plus azithromycin for B. gibsoni and B. microti. Volumes and milligrams computed for the patient's weight.",
+  "icon": "🦠",
+  "code": "BABESIA",
+  "discharge": "Babesiosis",
+  "species": ["dog"],
+  "bands": {},
+  "meds": [
+    {
+      "id": "imidocarb",
+      "sp": "dog",
+      "grp": "Babesia canis",
+      "name": "Imidocarb dipropionate",
+      "gen": "120 mg/ml",
+      "desc": "given by injection in the hospital",
+      "type": "inj",
+      "lo": 6.6,
+      "hi": 6.6,
+      "conc": 120,
+      "route": "IM",
+      "inClinic": true,
+      "note": "6.6 mg/kg IM. TWO doses, given 2 weeks apart — book the second injection before the patient leaves."
+    },
+    {
+      "id": "atovaquone",
+      "sp": "dog",
+      "grp": "Babesia gibsoni / B. microti",
+      "name": "Atovaquone",
+      "desc": "antiprotozoal, must be given with a fatty meal",
+      "type": "calc",
+      "lo": 13.3,
+      "hi": 13.3,
+      "unitDose": "mg",
+      "freqs": ["three times daily with a fatty meal, for 10 days"],
+      "note": "13.3 mg/kg PO q 8 h WITH a fatty meal — absorption is poor without fat, and this is the usual reason the pair fails. Give alongside azithromycin, both for 10 days."
+    },
+    {
+      "id": "azithro_bab",
+      "sp": "dog",
+      "grp": "Babesia gibsoni / B. microti",
+      "name": "Azithromycin",
+      "desc": "partner drug to atovaquone",
+      "type": "calc",
+      "lo": 10,
+      "hi": 10,
+      "unitDose": "mg",
+      "freqs": ["once daily for 10 days"],
+      "note": "10 mg/kg PO SID for 10 days, given together with atovaquone. Neither drug is used alone for B. gibsoni."
+    }
+  ],
+  "notes": {
+    "Match the drug to the species": "Imidocarb is for Babesia canis. It does not clear B. gibsoni — that infection needs the atovaquone plus azithromycin pair, both for 10 days.",
+    "Imidocarb schedule": "Two doses, 6.6 mg/kg IM, two weeks apart.",
+    "Atovaquone absorption": "Always with a fatty meal. Dosing it on an empty stomach is the commonest cause of treatment failure."
+  },
+  "dischargeBlocks": [
+    {
+      "id": "what",
+      "title": "What Babesia is",
+      "on": true,
+      "text": "Babesia is a parasite carried by ticks that lives inside red blood cells and destroys them. That is why {name} may be pale, tired, or have discoloured urine.\n\nIt is treatable, but the treatment has to be completed exactly as prescribed."
+    },
+    {
+      "id": "secondinj",
+      "title": "The second injection",
+      "on": false,
+      "text": "{name} needs a SECOND injection two weeks from today. One injection on its own will not clear the infection.\n\nPlease make sure that appointment is booked before you leave."
+    },
+    {
+      "id": "fattymeal",
+      "title": "Giving atovaquone",
+      "on": false,
+      "text": "Atovaquone must be given WITH a fatty meal — not on an empty stomach, and not with a low-fat food.\n\nThe body absorbs very little of this drug without fat present, and treatment fails as a result. A little canned food, or the food we recommended, at the same time as each dose is what makes it work.\n\nGive all three doses each day, and finish the full 10 days even if {name} seems better."
+    },
+    {
+      "id": "ticks",
+      "title": "Ticks",
+      "on": true,
+      "text": "Babesia comes from ticks, so keeping {name} on a reliable tick preventive year-round matters as much as the treatment.\n\nCheck {name} over after walks, especially around the head, ears, neck and between the toes."
+    },
+    {
+      "id": "call",
+      "title": "Call us if you see",
+      "on": true,
+      "text": "- Pale or yellow gums\n- Dark, orange or red-brown urine\n- Weakness, collapse, or unwillingness to get up\n- Refusing food for more than a day\n\nThese can mean the red cells are being destroyed faster than {name} can replace them."
+    },
+    {
+      "id": "followup",
+      "title": "Follow up",
+      "on": true,
+      "text": "Please book the recheck we discussed so we can repeat bloodwork and confirm the infection is clearing."
+    }
+  ]
+}
