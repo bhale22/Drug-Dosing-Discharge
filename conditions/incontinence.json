@@ -583,5 +583,29 @@
   "aliases": [
     "Incontinence",
     "Dyssynergia"
+  ],
+  "calculators": [
+    {
+      "id": "resid",
+      "title": "Urine Volume Estimate from ultrasound",
+      "inputs": [
+        {
+          "id": "l",
+          "label": "L (cm)",
+          "step": 0.1
+        },
+        {
+          "id": "w",
+          "label": "W (cm)",
+          "step": 0.1
+        },
+        {
+          "id": "h",
+          "label": "H (cm)",
+          "step": 0.1
+        }
+      ],
+      "fn": "(kg,lb,sp,v)=>{\n  const L=v.l, W=v.w, H=v.h;\n  const R=x=>Math.round(x), R1=x=>Math.round(x*10)/10;\n  const out=[];\n  out.push([\"Urine Volume Estimate from ultrasound (L x W x Ht x 0.2 x Pi), or L x W x H x 0.63\"]);\n  if(!(L>0&&W>0&&H>0))return out.concat([[\"Enter L, W and H in cm.\"]]);\n  const vol=L*W*H*0.2*3.14;\n  out.push([\"Volume\",R(vol),\"ml\"]);\n  out.push([\"Expected volume (fully voided):\",R1(kg),\"ml\",\"(1 ml/kg)\"]);\n  if(vol>kg)out.push([\"If urine residual volume > 1 ml/kg, then likely Reflex Dyssynergia\"]);\n  return out;}"
+    }
   ]
 }

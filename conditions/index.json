@@ -153,14 +153,8 @@
         "dog",
         "cat"
       ],
-      "medCount": 6,
-      "drugs": [
-        "RER",
-        "MER by k factor — dog",
-        "Expected water intake — dog",
-        "MER by k factor — cat",
-        "Expected water intake — cat"
-      ],
+      "medCount": 0,
+      "drugs": [],
       "aliases": [
         "PU/PD",
         "Water Intake, Water Dep Test"

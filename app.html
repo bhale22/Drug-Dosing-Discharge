@@ -305,14 +305,16 @@ footer{max-width:1200px;margin:0 auto;padding:14px 22px 50px;font-size:11.5px;co
 footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
 .loading{text-align:center;padding:80px 20px;font-size:16px;color:var(--soft)}
 /* ===== NO-WEIGHT BANNER ===== */
-.wtbar{display:flex;align-items:center;justify-content:center;gap:14px 22px;flex-wrap:wrap;
-  background:var(--accent-s);border:2px solid var(--accent);border-radius:12px;
-  padding:14px 18px;margin:0 2px 16px;color:var(--accent-d)}
-.wb-txt{display:flex;flex-direction:column;gap:2px;font-size:15px;max-width:420px}
-.wb-sub{font-size:12.5px;font-weight:400;color:var(--soft)}
+/* compact, and sitting left of centre where the eye lands after choosing a page */
+.wtbar{display:inline-flex;align-items:center;gap:12px 18px;flex-wrap:wrap;
+  background:var(--surface);border:1.5px solid var(--accent);border-radius:12px;
+  padding:11px 16px;margin:0 2px 16px;color:var(--ink);
+  box-shadow:0 2px 12px rgba(14,110,102,.10)}
+.wb-txt{display:flex;flex-direction:column;gap:1px;font-size:14px;max-width:300px}
+.wb-sub{font-size:12px;font-weight:400;color:var(--soft)}
 .wb-in{display:flex;align-items:center;gap:8px}
-#wt2{font-family:var(--mono);font-size:22px;font-weight:700;width:120px;padding:9px 12px;
-  border:2px solid var(--accent);border-radius:10px;background:#fff;color:var(--ink);text-align:right}
+#wt2{font-family:var(--mono);font-size:20px;font-weight:700;width:104px;padding:7px 10px;
+  border:2px solid var(--accent);border-radius:9px;background:#fff;color:var(--ink);text-align:right}
 #wt2:focus{outline:3px solid rgba(14,110,102,.35);outline-offset:1px}
 .wb-u{font-size:15px;font-weight:700}
 .wb-btn{font-family:var(--sans);font-size:14px;font-weight:700;padding:10px 18px;
@@ -371,6 +373,10 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
   .chip{white-space:normal}
   .disc{order:3;width:34px;height:34px;font-size:15px}
   .msum{order:4;width:100%;justify-content:flex-start;padding-left:31px;margin-top:2px}
+  .qopts{order:5;width:100%;padding-left:31px;margin:4px 0 0}
+  .qchip{font-size:13px;padding:7px 11px}
+  .ci input{font-size:16px;padding:6px 8px}
+  .wtbar{display:flex}
   .vbtn{padding:8px 12px}
   .mn .name{font-size:15px}
   .mb{margin-left:0}
@@ -437,17 +443,52 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
 .note-item{font-size:13px;line-height:1.55;color:#3A3000;padding:6px 0;border-bottom:1px solid #F0E898}
 .note-item:last-child{border-bottom:none}
 .note-item strong{color:#5A4E00}
+.notes-panel.wide{background:var(--surface);border-color:var(--line)}
+.notes-panel h3{color:var(--soft)}
 .sheet-title{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
-  color:#7A6A00;margin:14px 0 5px}
+  color:var(--accent-d);margin:16px 0 6px}
 .sheet-title:first-child{margin-top:0}
-.sheetwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-table.sheet{border-collapse:collapse;font-size:12.5px;line-height:1.4;background:#fff;
-  width:auto;min-width:100%}
-table.sheet td{border:1px solid #E6DFB0;padding:4px 9px;vertical-align:top;
-  white-space:pre-wrap;color:#2A2600;max-width:560px}
-table.sheet td.b{font-weight:700}
-table.sheet td.e{border-color:transparent;background:transparent}
-table.sheet tr.gap td{border:none;height:7px;padding:0;background:transparent}
+.sheetwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);
+  border-radius:10px;background:#fff}
+table.sheet{border-collapse:collapse;font-size:13px;line-height:1.45;width:auto;min-width:100%}
+table.sheet td{border-bottom:1px solid var(--line2);border-right:1px solid var(--line2);
+  padding:6px 11px;vertical-align:top;white-space:pre-wrap;color:var(--ink);max-width:560px}
+table.sheet tr:last-child td{border-bottom:none}
+table.sheet td:last-child{border-right:none}
+table.sheet td.b{font-weight:700;color:var(--accent-d);background:#F4F8F8}
+table.sheet td.e{border-right-color:transparent;background:transparent}
+table.sheet tr.gap td{border:none;height:8px;padding:0;background:#FAFCFC}
+table.sheet tr:nth-child(even) td:not(.b):not(.e){background:#FBFCFC}
+
+/* calculators */
+.calcgrid{margin-top:18px}
+.calc .grp-title{margin-bottom:4px}
+.calc-sub{font-size:12px;color:var(--soft);margin-bottom:8px}
+.calc-in{display:flex;flex-wrap:wrap;gap:8px 14px;margin:6px 0 12px;padding:10px 12px;
+  background:#F7FAFA;border:1px solid var(--line);border-radius:10px}
+.ci{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--soft)}
+.ci input{font-family:var(--mono);font-size:14px;font-weight:600;width:84px;padding:5px 8px;
+  border:1.5px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);text-align:right}
+.ci input:focus{outline:2px solid var(--accent);outline-offset:-1px}
+.ci-u{font-size:11.5px}
+.calc-wait{font-size:13px;color:var(--warn);font-weight:600;padding:4px 2px}
+table.calc-t{border-collapse:collapse;font-size:13px;width:100%;line-height:1.45}
+table.calc-t td,table.calc-t th{padding:6px 10px;border-bottom:1px solid var(--line2);
+  vertical-align:top;text-align:left}
+table.calc-t th{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);
+  background:#F7FAFA;border-bottom:1.5px solid var(--line)}
+table.calc-t td.n{font-family:var(--mono);font-weight:600;text-align:right;white-space:nowrap}
+table.calc-t tr.ch td{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent-d);background:var(--accent-s);padding:5px 10px}
+table.calc-t tr:last-child td{border-bottom:none}
+
+/* quick dose chips */
+.qopts{display:inline-flex;flex-wrap:wrap;gap:5px;margin-left:4px}
+.qchip{font-family:var(--mono);font-size:12px;padding:4px 9px;border:1.5px solid var(--line);
+  border-radius:8px;background:#fff;color:var(--ink);cursor:pointer;white-space:nowrap}
+.qchip:hover{border-color:var(--accent);color:var(--accent-d)}
+.qchip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.qchip.lab:not(.on){border-color:var(--accent);background:var(--accent-s)}
 /* ===== MED NOTE (inline) ===== */
 .med-note-box{font-size:12px;line-height:1.5;color:var(--warn);background:var(--warn-s);
   border-radius:7px;padding:6px 10px;margin-top:5px;margin-left:26px}
@@ -1088,6 +1129,24 @@ function doseSummary(m,kg,lb){
     if(kg!==null){dim=false;dose=evalFn(m.chipFn)(kg,lb);}}
   return{dose,freq,dim};}
 
+/* The bracketed tablet choices, one tap each, right on the collapsed row —
+   no expanding needed. Tapping a choice also selects the drug. */
+function quickOptsHtml(m,kg,lb){
+  if(kg===null)return"";
+  if(!(m.type==="band"||m.type==="tab"||m.type==="multiband"))return"";
+  const d=doseOptions(m,kg,lb);
+  if(d.opts.length<2)return"";
+  const s=st(m.id);
+  const sel=(s.opt===null||s.opt<0||s.opt>=d.opts.length)?d.def:s.opt;
+  return'<span class="qopts">'+d.opts.map((o,i)=>
+    '<button type="button" class="qchip'+(s.opt!==-1&&i===sel?" on":"")+(o.isLabel?" lab":"")+'" '+
+      'title="'+fmtMg(o.mg)+' mg'+(kg?' \u00b7 '+R2(o.mg/kg)+' mg/kg':'')+'" '+
+      'onclick="event.stopPropagation();pickQuick(\''+m.id+'\','+i+')">'+
+      tabsText(o.tabs)+'</button>').join("")+'</span>';}
+function pickQuick(id,i){
+  const s=st(id);s.opt=i;s.on=true;
+  markCustom();redrawMed(id);buildOutput();}
+
 function summaryInner(m,kg,lb){
   const q=doseSummary(m,kg,lb);
   let lab=labelDose(m);
@@ -1236,7 +1295,7 @@ function medHtml(m,kg,lb){
     ' onchange="toggleMed(\''+m.id+'\')">'+
     '<div class="mn"><label class="name" for="ck-'+m.id+'">'+m.name+'</label>'+
     (m.gen?'<span class="gen">· '+m.gen+'</span>':"")+'</div>'+
-    head+
+    head+quickOptsHtml(m,kg,lb)+
     '<button type="button" class="disc" aria-expanded="'+(s.open?"true":"false")+'" '+
       'aria-controls="mbody-'+m.id+'" aria-label="'+(s.open?"Collapse":"Expand")+' '+escAttr(m.name)+'" '+
       'onclick="toggleOpen(\''+m.id+'\')">▾</button>'+
@@ -1356,6 +1415,61 @@ function refreshPresetBtns(){
       (activePreset===null&&anyOn?
         '<button class="pbtn custom" onclick="" disabled title="Selections modified">✎ Custom</button>':'')
       +'<button class="pbtn clear" onclick="clearAll()">✕ Clear all</button>':"");}
+/* ---- calculators: the sheet's own formulas, run on this patient ----
+   Each calculator has its own inputs; the weight and species come from the
+   header. Rows come back as cells; {h:...} is a section heading and
+   {cols:[...]} a column header. */
+const CALC={};
+const calcFnCache={};
+function calcFn(src){
+  if(!calcFnCache[src])calcFnCache[src]=new Function("kg","lb","sp","v","return ("+src+")(kg,lb,sp,v)");
+  return calcFnCache[src];}
+function calcVals(c){
+  const st=CALC[c.id]||(CALC[c.id]={});
+  const v={};
+  for(const i of (c.inputs||[])){
+    const raw=st[i.id];
+    v[i.id]=(raw!==undefined&&raw!=="")?parseFloat(raw):(i.default!==undefined?i.default:NaN);}
+  return v;}
+function calcTable(c,kg,lb){
+  if(kg===null&&c.needsWeight!==false)
+    return'<div class="calc-wait">Enter the patient\'s weight to run this.</div>';
+  let rows;
+  try{rows=calcFn(c.fn)(kg===null?NaN:kg,lb===null?NaN:lb,sp,calcVals(c));}
+  catch(e){return'<div class="warn">'+esc(e.message)+'</div>';}
+  let h='<table class="calc-t">';
+  for(const r of rows){
+    if(r&&r.h){h+='<tr class="ch"><td colspan="6">'+esc(r.h)+'</td></tr>';continue;}
+    if(r&&r.cols){h+='<tr class="cc">'+r.cols.map(x=>'<th>'+esc(x)+'</th>').join("")+'</tr>';continue;}
+    if(!Array.isArray(r))continue;
+    const last=r.length-1;
+    h+='<tr>'+r.map((x,i)=>{
+      const num=typeof x==="number";
+      return'<td'+(num?' class="n"':"")+(i===last&&r.length<6?' colspan="'+(6-last)+'"':"")+'>'+
+        esc(num?String(x):x)+'</td>';}).join("")+'</tr>';}
+  return h+'</table>';}
+function calcHtml(c,kg,lb){
+  const st=CALC[c.id]||(CALC[c.id]={});
+  const inputs=(c.inputs||[]).map(i=>
+    '<label class="ci"><span>'+esc(i.label)+'</span>'+
+    '<input type="number" inputmode="decimal" step="'+(i.step||"any")+'" '+
+      'value="'+(st[i.id]!==undefined?st[i.id]:(i.default!==undefined?i.default:""))+'" '+
+      'oninput="setCalc(\''+c.id+'\',\''+i.id+'\',this.value)">'+
+    (i.unit?'<span class="ci-u">'+esc(i.unit)+'</span>':"")+'</label>').join("");
+  return'<div class="card calc" id="calccard-'+c.id+'">'+
+    '<div class="grp-title">'+esc(c.title)+'</div>'+
+    (c.sub?'<div class="calc-sub">'+esc(c.sub)+'</div>':"")+
+    (inputs?'<div class="calc-in">'+inputs+'</div>':"")+
+    '<div id="calc-'+c.id+'">'+calcTable(c,kg,lb)+'</div></div>';}
+function calcsHtml(kg,lb){
+  const cs=(C.calculators||[]);
+  if(!cs.length)return"";
+  return'<div class="grid calcgrid">'+cs.map(c=>calcHtml(c,kg,lb)).join("")+'</div>';}
+function setCalc(id,inp,val){
+  (CALC[id]||(CALC[id]={}))[inp]=val;
+  const c=(C.calculators||[]).find(x=>x.id===id),el=document.getElementById("calc-"+id);
+  if(c&&el)el.innerHTML=calcTable(c,getKg(),getLb());}
+
 function hasNotes(){
   const n=C&&C.notes;
   if(!n)return false;
@@ -1489,7 +1603,8 @@ function render(){
      notes at the foot of the page. */
   document.getElementById("main").innerHTML=
     wtBanner+(viewbarHtml===""?"":viewbar)+
-    '<div class="grid">'+cards+'</div>'+
+    (cards?'<div class="grid">'+cards+'</div>':"")+
+    calcsHtml(kg,lb)+
     (shown.length?outcard:"")+
     (notesHtml?'<div class="grid notesgrid">'+notesHtml+'</div>':"");
   renderBlocks();
@@ -1625,9 +1740,12 @@ async function boot(){
     document.getElementById("pagetitle").textContent=C.title;
     if(C.noDischarge)document.getElementById("cb-dis").style.display="none";
     if(!C.meds.length)document.querySelector(".countbar").style.display="none";
+    if(!C.meds.length&&(C.calculators||[]).length)C.noDischarge=true;
     /* A condition that only has feline medications must not open on Dog and
        show an empty page. Start on a species that actually has something. */
-    const have={dog:C.meds.some(m=>m.sp==="dog"),cat:C.meds.some(m=>m.sp==="cat")};
+    const anyCalc=(C.calculators||[]).length>0;
+    const have={dog:C.meds.some(m=>m.sp==="dog")||(anyCalc&&(C.species||[]).includes("dog")),
+                cat:C.meds.some(m=>m.sp==="cat")||(anyCalc&&(C.species||[]).includes("cat"))};
     for(const k of["dog","cat"]){
       const b=document.getElementById("btn-"+k);
       if(b){b.disabled=!have[k];b.title=have[k]?"":"No "+k+" medications in this condition";}}
