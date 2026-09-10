@@ -141,28 +141,171 @@
       ]
     }
   ],
-  "notes": [
-    "Lupoid Onychydystrophy",
-    "PREFERRED:",
-    "Niacinamide 250 mg BID if < 10 kg, 500 BID mg if > 10 kg",
-    "Tetracycline 250 mg BID if < 10 kg, 500 BID mg if > 10 kg",
-    "Vitamin E: 200 to 400 IU PO q 12h",
-    "Omega-3 and Omega-6 Fatty Acids:",
-    "Dose: 180 mg EPA/5 kg/d PO",
-    "Safe upper limit 370mg/kg^(3/4)",
-    "mg/day",
-    "Or doxy/minocycline instead of tetracycline:",
-    "Doxycycline",
-    "5 mg/kg SID or BID",
-    "mg SID or BID",
-    "Minocycline equivalent to Doxy",
-    "If not improving after 4 to 6 weeks: then add Pentoxyphylline, if improvement then wean off of doxycycline, +- weaning off of niacinamide",
-    "Dose (mg) 0.05 mg/kg",
-    "Pentoxyphylline",
-    "15 mg/kg BID",
-    "mg (comes in 400 mg tabs)",
-    "PLASMA CELL PODODERMATITIS",
-    "5 mg/kg doxycycline BID for at least 30 days, then drop to once daily for maintenance for an additional 30-60 days. This disease tends to relapse"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "ToeNails",
+        "ncols": 6,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Lupoid Onychydystrophy",
+              "b": true
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "PREFERRED:",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Niacinamide      250 mg  BID if < 10 kg,  500 BID mg if > 10 kg",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Tetracycline      250 mg  BID if < 10 kg,  500 BID mg if > 10 kg",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Vitamin E: 200 to 400 IU PO q 12h",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Omega-3 and Omega-6 Fatty Acids:",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "Dose: 180 mg EPA/5 kg/d PO",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "Safe upper limit 370mg/kg^(3/4)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 4,
+              "t": "mg/day",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Or doxy/minocycline instead of tetracycline:",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Dose",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "Dose (mg)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Doxycycline",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "5 mg/kg SID or BID",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg SID or BID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Minocycline equivalent to Doxy",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "If not improving after 4 to 6 weeks: then add Pentoxyphylline, if improvement then wean off of doxycycline, +- weaning off of niacinamide",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "Dose (mg) 0.05 mg/kg",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Pentoxyphylline",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "15 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg  (comes in 400 mg tabs)",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "PLASMA CELL PODODERMATITIS",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "5 mg/kg doxycycline BID for at least 30 days, then drop to once daily for maintenance for an additional 30-60 days. This disease tends to relapse",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": [
+    "Toe Nails"
+  ]
 }

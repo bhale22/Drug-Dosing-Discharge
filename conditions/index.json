@@ -11,6 +11,9 @@
       "medCount": 1,
       "drugs": [
         "Amt to give (mg/m2 * m2)"
+      ],
+      "aliases": [
+        "Chemo BSA"
       ]
     },
     {
@@ -29,6 +32,9 @@
         "Dex SP 4mg/ml",
         "Atropine",
         "Terbutaline (If Resp Distress CAT)"
+      ],
+      "aliases": [
+        "Allergic Reaction"
       ]
     },
     {
@@ -43,7 +49,8 @@
         "Imidocarb 120 mg/ml",
         "Atovaquone",
         "Azithromycin"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "carsickness",
@@ -62,28 +69,8 @@
         "Meclizine",
         "Antivert, \"Dramamine Non-Drowsy\" — OTC 25 mg tabs",
         "Antivert, OTC 25 mg tabs"
-      ]
-    },
-    {
-      "id": "oral-sedation",
-      "title": "Chill Protocol",
-      "icon": "😴",
-      "species": [
-        "dog"
       ],
-      "medCount": 9,
-      "drugs": [
-        "Gabapentin",
-        "Caps 100, 300, 400 / Tabs 600, 800 / Soln 50 mg/ml",
-        "Melatonin",
-        "Acepromazine",
-        "Acepromazine in a meatball",
-        "10 mg/ml",
-        "Telazol in a meatball",
-        "100 mg/ml",
-        "Phenobarb",
-        "Trazodone"
-      ]
+      "aliases": []
     },
     {
       "id": "cholangiohepatitis",
@@ -109,6 +96,10 @@
         "Butorphanol",
         "Buprenorphine",
         "Induction"
+      ],
+      "aliases": [
+        "Hepatitis",
+        "Liver Disease"
       ]
     },
     {
@@ -130,7 +121,8 @@
         "Midazolam",
         "Atropine (low dose)",
         "Propofol"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "dermatophyte",
@@ -150,7 +142,8 @@
         "MiconaHexa + Triz, or generic 2% miconazole / 2% chlorhexidine",
         "Antifungal spray or mousse",
         "1% clotrimazole, 1% terbinafine, 1–2% miconazole ± chlorhexidine"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "energy-requirement",
@@ -167,6 +160,10 @@
         "Expected water intake — dog",
         "MER by k factor — cat",
         "Expected water intake — cat"
+      ],
+      "aliases": [
+        "PU/PD",
+        "Water Intake, Water Dep Test"
       ]
     },
     {
@@ -184,6 +181,11 @@
         "Maintenance rate — cat",
         "Deficit by % dehydration — cat",
         "SQ fluids with furosemide"
+      ],
+      "aliases": [
+        "Fluid Rate Cats",
+        "Fluid Rate Dog",
+        "Fluid Rate Dogs"
       ]
     },
     {
@@ -194,7 +196,8 @@
         "dog"
       ],
       "medCount": 0,
-      "drugs": []
+      "drugs": [],
+      "aliases": []
     },
     {
       "id": "reflux",
@@ -211,6 +214,9 @@
         "Pred",
         "Budesonide",
         "Cyclosporine"
+      ],
+      "aliases": [
+        "Swallowing/Gulping"
       ]
     },
     {
@@ -232,7 +238,8 @@
         "SAMe",
         "N-acetylcysteine",
         "Fish oil"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "hookworms",
@@ -246,7 +253,8 @@
         "Advantage Multi",
         "Drontal Plus",
         "Profender given orally"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "hyperlipidemia",
@@ -261,7 +269,8 @@
         "Chitin or Chitosan fiber supplement",
         "Omega-3 fatty acids",
         "Bezafibrate"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "itp",
@@ -284,6 +293,9 @@
         "Cerenia",
         "Prednisolone",
         "Chlorambucil"
+      ],
+      "aliases": [
+        "Thrombocytopenia"
       ]
     },
     {
@@ -302,6 +314,9 @@
         "Vitamin E",
         "Omega-3 and omega-6 fatty acids",
         "Pentoxyphylline"
+      ],
+      "aliases": [
+        "Toe Nails"
       ]
     },
     {
@@ -327,7 +342,8 @@
         "Baby aspirin",
         "Fish oils (EPA + DHA)",
         "Renal diet"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "megaesophagus",
@@ -343,6 +359,30 @@
         "Metoclopramide",
         "Neck hug / ProCollar",
         "Bailey chair"
+      ],
+      "aliases": []
+    },
+    {
+      "id": "oral-sedation",
+      "title": "Oral Sedation",
+      "icon": "😴",
+      "species": [
+        "dog"
+      ],
+      "medCount": 9,
+      "drugs": [
+        "Gabapentin",
+        "Caps 100, 300, 400 / Tabs 600, 800 / Soln 50 mg/ml",
+        "Melatonin",
+        "Acepromazine",
+        "10 mg/ml ACE Transumcosal",
+        "Ace (10 mg/ml)",
+        "Telazol (100 mg/ml)",
+        "Phenobarb",
+        "Trazodone"
+      ],
+      "aliases": [
+        "Chill Protocol"
       ]
     },
     {
@@ -367,7 +407,8 @@
         "Phytosphingosine spray",
         "Hydrating spray",
         "Ermidra (ICF), Atop spray (Dermoscent)"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "seizure",
@@ -413,6 +454,9 @@
         "Levetiracetam (third-line add-on)",
         "Clonazepam",
         "Phenobarbital IV/IM"
+      ],
+      "aliases": [
+        "Seizures"
       ],
       "page": "seizure.html"
     },
@@ -461,6 +505,9 @@
         "Doxepin",
         "Welactin Feline",
         "omega-3, 320 mg per dose"
+      ],
+      "aliases": [
+        "SKIN"
       ]
     },
     {
@@ -487,6 +534,9 @@
         "Adequan",
         "NuCat Senior",
         "High protein gluten free diet"
+      ],
+      "aliases": [
+        "Upper Respiratory Cat"
       ]
     },
     {
@@ -502,7 +552,8 @@
         "Praziquantel",
         "Fenbendazole",
         "Panacur"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "thunderstorm",
@@ -529,7 +580,8 @@
         "25, 50, 100 mg tabs",
         "Clonidine",
         "Sileo"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "incontinence",
@@ -551,6 +603,10 @@
         "Diazepam",
         "Acepromazine",
         "Methocarbamol"
+      ],
+      "aliases": [
+        "Incontinence",
+        "Dyssynergia"
       ]
     },
     {
@@ -570,7 +626,8 @@
         "Doxycycline",
         "Oral corticosteroid",
         "Subconjunctival triamcinolone"
-      ]
+      ],
+      "aliases": []
     },
     {
       "id": "diarrhea",
@@ -612,6 +669,10 @@
         "colitis ± pred",
         "Cat Drontal",
         "feline IBD"
+      ],
+      "aliases": [
+        "Diarrhea",
+        "Vomiting"
       ]
     }
   ],

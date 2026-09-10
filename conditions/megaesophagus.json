@@ -65,16 +65,85 @@
       ]
     }
   ],
-  "notes": [
-    "Megaesophagus:",
-    "-start feeding him VERTICALLY (and water only goes in vertically too...usually mixed with the food)....so that's a Bailey chair for most bigger dogs, but a little pup like this could be put in a big white bucket or a car seat with towels stuffed around him to keep him there or put in a front pack baby carrier (like a Baby bjorn) or a kid's jumpy seat that is hanging in a doorway, etc.",
-    "-then there's the fiddling of how long he needs to sit there afterwards e.g. for some dogs it's as short as 10-15 minutes, while others do less regurgitating/aspirating if they're in there for 20-30 min",
-    "-then there's the fiddling of the consistency of the food. For many dogs it's canned food with added water, whirred in a blender until smoothie. For others it's hand-fed individual canned food meatballs, each the size that the dog doesn't chew them. Dry food can only be used if water is added and it becomes mush, then added water in a blender till smoothie",
-    "-then there's the fiddling of how many times/day he needs to be fed. We're diluting the calories with the water, so usually at least 3 times/day to get all the calories in them",
-    "-then there's the fiddling with the drugs e.g. almost all do better on Omeprazole (2.5 mg given 30 min before a meal). Some do way better with Sildenafil (loosens the lower esophageal sphincter or LES) but some do way worse, probably due to increased reflux esophagitis. Some dogs do way better with Metoclopramide (tightens the LES) and, strangely, some dogs do better on both the Sildenafil and Metoclopramide",
-    "-most dogs do better with a 'neck hug' like a ProCollar (keeps their head elevated when the dog is laying down)....going to be challenging to find the right size for a dog this size",
-    "For most owners this is a LOT, so send them to a support group....I'm unofficially helping with a site on Facebook called 'Managing Megaesophagus Successfully'...very supportive owners mostly helping, but another vet and I try to keep the medical part of it straight.",
-    "Sherri Wilson, DVM, DACVIM (Internal Medicine)"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Megaesophagus",
+        "ncols": 1,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Megaesophagus:",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "-start feeding him VERTICALLY (and water only goes in vertically too...usually mixed with the food)....so that's a Bailey chair for most bigger dogs, but a little pup like this could be put in a big white bucket or a car seat with towels stuffed around him to keep him there or put in a front pack baby carrier (like a Baby bjorn) or a kid's jumpy seat that is hanging in a doorway, etc.",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "-then there's the fiddling of how long he needs to sit there afterwards e.g. for some dogs it's as short as 10-15 minutes, while others do less regurgitating/aspirating if they're in there for 20-30 min",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "-then there's the fiddling of the consistency of the food. For many dogs it's canned food with added water, whirred in a blender until smoothie. For others it's hand-fed individual canned food meatballs, each the size that the dog doesn't chew them. Dry food can only be used if water is added and it becomes mush, then added water in a blender till smoothie",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "-then there's the fiddling of how many times/day he needs to be fed. We're diluting the calories with the water, so usually at least 3 times/day to get all the calories in them",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "-then there's the fiddling with the drugs e.g. almost all do better on Omeprazole (2.5 mg given 30 min before a meal). Some do way better with Sildenafil (loosens the lower esophageal sphincter or LES) but some do way worse, probably due to increased reflux esophagitis. Some dogs do way better with Metoclopramide (tightens the LES) and, strangely, some dogs do better on both the Sildenafil and Metoclopramide",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "-most dogs do better with a 'neck hug' like a ProCollar (keeps their head elevated when the dog is laying down)....going to be challenging to find the right size for a dog this size",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "For most owners this is a LOT, so send them to a support group....I'm unofficially helping with a site on Facebook called 'Managing Megaesophagus Successfully'...very supportive owners mostly helping, but another vet and I try to keep the medical part of it straight.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Sherri Wilson, DVM, DACVIM (Internal Medicine)",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

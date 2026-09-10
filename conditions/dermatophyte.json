@@ -293,72 +293,508 @@
       ]
     }
   ],
-  "notes": [
-    "Dermatophytosis",
-    "Treat until 2 negative cultures, requires both topical and systemic treatment",
-    "Systemic Antifungal Drug",
-    "Itraconazole",
-    "5-10 mg/kg q 24 hrs week on, week off",
-    "Available as capsules (Sporanox ®) and liquid (ItrafungolTM).",
-    "10 mg/kg q 24 hrs for 21 days combined with topical antifungals",
-    "Compounded itraconazole is NOT recommended due to poor absorption and efficacy",
-    "ItrafungolTM dose: 5 mg/kg q24 hrs week on, week off for 3 treatment cycles",
-    "Give capsules with food to improve absorption",
-    "Monitor liver enzymes every 4 weeks",
-    "Terbinafine",
-    "20-30 mg/kg q 24 hrs",
-    "Generic form is inexpensive",
-    "For a 250 mg tablet:",
-    "Alternative to itraconazole in cats with liver dysfunction although mild elevations in liver enzymes have been observed",
-    "Cats <2.8 kg receive one-quarter of a tablet (62.5 mg) per dose.",
-    "1/4 tab",
-    "6 pounds and under",
-    "Cats weighing 2.8–5.5 kg receive one-half a tablet (125 mg) per dose.",
-    "1/2 tab",
-    "6 to 12 pounds",
-    "Cats >5.5 kg receive one tablet (250 mg) per dose",
-    "1 tab",
-    "> 12 pounds",
-    "Give with food.",
-    "Systemic Anitfungal Drug",
-    "5-10 mg/kg q 24 hrs",
-    "Itraconazole should not be compounded due to poor efficacy and absorption",
-    "Give with food",
-    "30-40 mg/kg q 24 hrs",
-    "mg q 24 hrs (30 to 40 mg/kg)",
-    "See Chart Below for small dogs/growing puppies",
-    "Limited information on drug dose for canine dermatophytosis",
-    "Appears well tolerated based on limited studies, though stomach upset and mild liver enzyme elevations can occur",
-    "Griseofulvin",
-    "Microsize: 50mg/kg PO q 24 hrs, or divided and given q12 hrs",
-    "Good efficacy against dermatophytes, but difficult to obtain and not recommended because many more side effects than other options",
-    "Ultramicrosize: 5 – 10 mg/kg PO q24 hrs",
-    "Teratogenic – do not use in pregnant animals",
-    "Limited studies in dogs, but does not appear to cause bone marrow suppression (unlike in cats)",
-    "Topical Antifungal Drug",
-    "Miconazole or Miconazole + chlorhexidine shampoo",
-    "Twice weekly",
-    "Miconazole + chlorhexidine shampoo with a systemic antifungal may be more effective than miconazole shampoo with a systemic antifungal (Mason et al 2000).",
-    "Chlorhexidine is not effective against dermatophytosis unless combined with miconazole (Moriello et al. 2017).",
-    "Antifungal spray or mousse (1% clotrimazole, 1% terbinafine, 1 or 2% miconazole +/- chlorhexidine)",
-    "Every 1 – 2 days",
-    "For use in combination with the twice weekly dips or shampoos listed above, along with systemic antifungals – do not use on its own to treat dermatophytosis (Moriello et al. 2017, Moriello 2020).",
-    "Terbinafine Dosing growing puppies",
-    "Terbinafine 250 mg: 1/2 tab per 8 pounds body weight",
-    "3.5 to 6 pounds 1/4 tab",
-    "7 to 9 pounds 1/2 tab",
-    "10 to 14 pounds 3/4 tab",
-    "15 to 19 pounds 1 tab",
-    "20 to 29 pounds 1.5 tabs",
-    "30 to 36 pounds 2 tabs",
-    "37 to 45 pounds 2.5 tabs",
-    "46 to 55 pounds 3 tabs",
-    "Terbinafine 250 mg tabs",
-    "SIG: Give 1 dose once a day. Dose as 1 tab per 16 pounds body weight:",
-    "1/4 tab when 4 to 6 pounds, 1/2 tab when 7-9 pounds, 3/4 tab when 10-14 pounds. 1 tab when 15 to 19 pounds. Then add 1/2 tab for each additional 8 pounds",
-    "RX MiconaHexa + Triz Shampoo for dogs and cats",
-    "(or generic equivalent 2% miconazole 2% chlorhexidine) 1 bottle",
-    "SIG: Shampoo affected areas twice weekly- leave on 10 to 15 min before rinsing."
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Dermatophyte",
+        "ncols": 6,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Dermatophytosis",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Treat until 2 negative cultures, requires both topical and systemic treatment",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Cats",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Systemic Antifungal Drug",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Dose",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Notes",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Itraconazole",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "5-10 mg/kg q 24 hrs week on, week off",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Available as capsules (Sporanox ®) and liquid (ItrafungolTM).",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "10 mg/kg q 24 hrs for 21 days combined with topical antifungals",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Compounded itraconazole is NOT recommended due to poor absorption and efficacy",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "ItrafungolTM dose: 5 mg/kg q24 hrs week on, week off for 3 treatment cycles",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Give capsules with food to improve absorption",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Monitor liver enzymes every 4 weeks",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Terbinafine",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "20-30 mg/kg q 24 hrs",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Generic form is inexpensive",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "For a 250 mg tablet:",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "Alternative to itraconazole in cats with liver dysfunction although mild elevations in liver enzymes have been observed",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Cats <2.8 kg receive one-quarter of a tablet (62.5 mg) per dose.",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "1/4 tab",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "6 pounds and under",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Cats weighing 2.8–5.5 kg receive one-half a tablet (125 mg) per dose.",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "1/2 tab",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "6 to 12 pounds",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Cats >5.5 kg receive one tablet (250 mg) per dose",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "1 tab",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "> 12 pounds",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Give with food.",
+              "b": true
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Dogs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Systemic Anitfungal Drug",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Dose",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Notes",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Itraconazole",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "5-10 mg/kg q 24 hrs",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Itraconazole should not be compounded due to poor efficacy and absorption",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Give with food",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Monitor liver enzymes every 4 weeks",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Terbinafine",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "30-40 mg/kg q 24 hrs",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "Generic form is inexpensive",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "to",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "mg q 24 hrs (30 to 40  mg/kg)",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "See Chart Below for small dogs/growing puppies",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "Limited information on drug dose for canine dermatophytosis",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Appears well tolerated based on limited studies, though stomach upset and mild liver enzyme elevations can occur",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Griseofulvin",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Microsize: 50mg/kg PO q 24 hrs, or divided and given q12 hrs",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Good efficacy against dermatophytes, but difficult to obtain and not recommended because many more side effects than other options",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Ultramicrosize: 5 – 10 mg/kg PO q24 hrs",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Teratogenic – do not use in pregnant animals",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Give with food",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Limited studies in dogs, but does not appear to cause bone marrow suppression (unlike in cats)",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Topical Antifungal Drug",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "Dose",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "Notes",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Miconazole or Miconazole + chlorhexidine shampoo",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Twice weekly",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Miconazole + chlorhexidine shampoo with a systemic antifungal may be more effective than miconazole shampoo with a systemic antifungal (Mason et al 2000).",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Chlorhexidine is not effective against dermatophytosis unless combined with miconazole (Moriello et al. 2017).",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Antifungal spray or mousse (1% clotrimazole, 1% terbinafine, 1 or 2% miconazole +/- chlorhexidine)",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Every 1 – 2 days",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "For use in combination with the twice weekly dips or shampoos listed above, along with systemic antifungals – do not use on its own to treat dermatophytosis (Moriello et al. 2017, Moriello 2020).",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Terbinafine Dosing growing puppies",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Terbinafine 250 mg:  1/2 tab per 8 pounds body weight",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "3.5 to 6 pounds   1/4 tab",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "7 to 9 pounds      1/2 tab",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "10 to 14 pounds  3/4 tab",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "15 to 19 pounds  1 tab",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "20 to 29 pounds  1.5 tabs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "30 to 36 pounds   2 tabs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "37 to 45 pounds   2.5 tabs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "46 to 55 pounds  3 tabs",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Terbinafine 250 mg tabs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "SIG:  Give 1 dose once a day.  Dose as 1 tab per 16 pounds body weight:",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "1/4 tab when 4 to 6 pounds, 1/2 tab when 7-9 pounds, 3/4 tab when 10-14 pounds.  1 tab when 15 to 19 pounds. Then add 1/2 tab for each additional 8 pounds",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "RX      MiconaHexa + Triz Shampoo for dogs and cats",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "(or generic equivalent 2% miconazole 2% chlorhexidine)            1 bottle",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "SIG:  Shampoo affected areas twice weekly- leave on 10 to 15 min before rinsing.",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

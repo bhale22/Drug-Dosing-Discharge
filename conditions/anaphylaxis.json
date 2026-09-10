@@ -255,21 +255,331 @@
       "inClinic": true
     }
   ],
-  "notes": [
-    "MILD Skin",
-    "Diphenhydramine 50mg/ml",
-    "Dex SP 4 mg/ml",
-    "Mild SYSTEMIC ANAPHYLAXIS",
-    "Consider Epinephrine 1:1000",
-    "Dex SP 4mg/ml",
-    "Atropine",
-    "Terbutaline (If Resp Distress CAT)",
-    "Severe SYSTEMIC ANAPHYLAXIS",
-    "Epinephrine 1:1000",
-    "Dex SP 4mg/ml (0.5 to 1 mg/kg IV)",
-    "ml to",
-    "Localized Anaphylaxis",
-    "0.15 ml at site of injection"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Anaphylaxis",
+        "ncols": 8,
+        "rows": [
+          [
+            {
+              "c": 2,
+              "t": "mg/kg",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "MILD Skin",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "Diphenhydramine 50mg/ml",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "2.2",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Dex SP 4 mg/ml",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.25",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Mild SYSTEMIC ANAPHYLAXIS",
+              "b": true
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Consider Epinephrine 1:1000",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.01",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Dex SP 4mg/ml",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.25",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Atropine",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Terbutaline (If Resp Distress CAT)",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.01",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Severe SYSTEMIC ANAPHYLAXIS",
+              "b": true
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Epinephrine 1:1000",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.01",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Dex SP 4mg/ml  (0.5 to 1 mg/kg IV)",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml to",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Atropine",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Terbutaline (If Resp Distress CAT)",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.01",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Localized Anaphylaxis",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Diphenhydramine 50mg/ml",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "2.2",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Epinephrine 1:1000",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "0.15 ml at site of injection",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Dex SP 4 mg/ml",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.25",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": [
+    "Allergic Reaction"
+  ]
 }

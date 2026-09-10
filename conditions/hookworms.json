@@ -45,19 +45,102 @@
       ]
     }
   ],
-  "notes": [
-    "Hookworms - resistant/chronic shedding in Greyhounds (Thanks, Dr. Sanchez!)",
-    "Advantage Multi:",
-    "Monthly every 2 weeks for 4 doses, then monthly",
-    "Drontal Plus:",
-    "Monthly until fecal exam negative",
-    "Can take 3 to 4 months for egg shedding to stop",
-    "Check fecal q 3 to 4 months, if positive again when on Advantage Multi monthly, then restart protocol.",
-    "From handout: Chronic hookworm (Ancylostoma caninum) is a not an uncommon problem in retired racing greyhounds & other occasionally breeds. – MW Dryden & BH Herrin",
-    "One anthelmintic combination that appears to be (at least for now) effective in these cases is transdermal moxidectin (Advantage® multi) combined with Drontal® plus (febantel/pyrantel/praziquantel).2",
-    "Administer moxidectin topically (Advantage® multi - standard topical dose – 2.5 to 5.0 mg/kg every 2 weeks and Drontal® plus orally monthly until fecal exams are negative (check monthly). Once fecals are negative then use topical moxidectin monthly. Check fecals every 3 to 4 months. If fecals become positive for hookworms again, restart combo protocol.",
-    "Finally, anthelmintic resistance has now been documented in Ancylostoma caninum in greyhounds and other breeds of dogs that likely have had contact with environments greyhounds have frequented.1-4 Some of these nematodes appear to be multi-drug resistant. Resistance can be assessed by conducting a quantitative fecal exam (EPG), administering the correct dose of Drontal plus (febantel), Interceptor (milbemycin oxime) or Panacur (fenbendazole) and rechecking a quantitative fecal exam in 7 to 10 days. If the worms are susceptible the fecal should be negative or egg numbers should be reduced by >90%.",
-    "Profender given orally: Jimenez Castro et al.JAVMA 2023: 1 mg/kg emodepside + 5 mg/kg praziquantel. DO NOT USE IN MDR1/COLIES"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Hookworms",
+        "ncols": 3,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Hookworms  -  resistant/chronic shedding in Greyhounds   (Thanks, Dr. Sanchez!)",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Advantage Multi:",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "Monthly every 2 weeks for 4 doses, then monthly",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Drontal Plus:",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "Monthly until fecal exam negative",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Can take 3 to 4 months for egg shedding to stop",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Check fecal q 3 to 4 months, if positive again when on Advantage Multi monthly, then restart protocol.",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 2,
+              "t": "From handout:  Chronic hookworm (Ancylostoma caninum) is a not an uncommon problem in retired racing greyhounds & other occasionally breeds. – MW Dryden & BH Herrin",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 2,
+              "t": "One anthelmintic combination that appears to be (at least for now) effective in these cases is transdermal moxidectin (Advantage® multi) combined with Drontal® plus (febantel/pyrantel/praziquantel).2",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 2,
+              "t": "Administer moxidectin topically (Advantage® multi - standard topical dose – 2.5 to 5.0 mg/kg every 2 weeks and Drontal® plus orally monthly until fecal exams are negative (check monthly). Once fecals are negative then use topical moxidectin monthly. Check fecals every 3 to 4 months. If fecals become positive for hookworms again, restart combo protocol.",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 2,
+              "t": "Finally, anthelmintic resistance has now been documented in Ancylostoma caninum in greyhounds and other breeds of dogs that likely have had contact with environments greyhounds have frequented.1-4 Some of these nematodes appear to be multi-drug resistant. Resistance can be assessed by conducting a quantitative fecal exam (EPG), administering the correct dose of Drontal plus (febantel), Interceptor (milbemycin oxime) or Panacur (fenbendazole) and rechecking a quantitative fecal exam in 7 to 10 days. If the worms are susceptible the fecal should be negative or egg numbers should be reduced by >90%.",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Profender given orally:  Jimenez Castro et al.JAVMA 2023: 1 mg/kg emodepside + 5 mg/kg praziquantel.  DO NOT USE IN MDR1/COLIES",
+              "b": true
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

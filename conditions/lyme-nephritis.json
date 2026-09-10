@@ -140,37 +140,343 @@
       ]
     }
   ],
-  "notes": [
-    "LYME NEPHRITIS",
-    "Doxycycline",
-    "5 mg/kg BID",
-    "Benazapril",
-    "0.5 mg/kg BID",
-    "5 10 20 40 mg tabs",
-    "Mycophenolate",
-    "10-20 mg/kg BID",
-    "250 mg caps or 500 mg tabs",
-    "If not eating, then Immune-suppressive doses of Pred (though Dr. Goldstein recommends pulse Dex if steroids are needed)",
-    "Prednisone",
-    "1 mg/kg BID",
-    "1/4 tab Baby Aspirin SID (Or Plavix?)",
-    "1/4 tab SID",
-    "Fish Oils (EPA + DHA)",
-    "35 mg/kg/day",
-    "~180 mg of w-3 (sum of EPA and DHA) per 10 pounds per day",
-    "Low Protein Diet- renal diet",
-    "Telmisartan",
-    "1 mg/kg SID (max 2 SID)",
-    "Telmisartan tabs 20, 40, 80 mg",
-    "Other antibiotic choices = Amoxicillin and Convenia (2 doses 2 weeks apart)",
-    "Irbesartan",
-    "1-3 mg/kg SID",
-    "Angiotensin Receptor Blocker: ARB (75, 150, 300 mg tabs)",
-    "Telmisartan (20, 40, 80 mg tabs)",
-    "1 mg/kg SID",
-    "mg PO",
-    "Losartan",
-    "0.5, increase up to 1 mg/kg BID if needed"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Lyme Nephritis",
+        "ncols": 8,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "LYME NEPHRITIS",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "DOG",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "Dose",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "(mg/kg)",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "Route",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "q X hrs",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "Dose",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Doxycycline",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "5 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "12",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Benazapril",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.5 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0.5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "12",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "5 10 20 40 mg tabs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Mycophenolate",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "10-20 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "10",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "12",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "250 mg caps or 500 mg tabs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "If not eating, then Immune-suppressive doses of Pred (though Dr. Goldstein recommends pulse Dex if steroids are needed)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Prednisone",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "1 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "12",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "1/4 tab Baby Aspirin SID (Or Plavix?)",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "1/4 tab SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Fish Oils (EPA + DHA)",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "35 mg/kg/day",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "35",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "24",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "~180 mg of w-3 (sum of EPA and DHA) per 10 pounds per day",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Low Protein Diet- renal diet",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Telmisartan",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "1 mg/kg SID (max 2 SID)",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "1",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "24",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "Telmisartan tabs 20, 40, 80 mg",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Other antibiotic choices = Amoxicillin and Convenia (2 doses 2 weeks apart)",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Irbesartan",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "1-3 mg/kg SID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "3",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "24",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Angiotensin Receptor Blocker:  ARB  (75, 150, 300 mg tabs)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Telmisartan (20, 40, 80 mg tabs)",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "1 mg/kg SID",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg PO",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "24",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Losartan",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.5, increase up to 1 mg/kg BID if needed",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0.5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "24",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

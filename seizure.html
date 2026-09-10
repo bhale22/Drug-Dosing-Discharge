@@ -27,6 +27,10 @@ header{background:var(--surface);border-bottom:3px solid var(--accent);padding:1
 .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
 .eyebrow a{color:var(--accent);text-decoration:none}
 .eyebrow a:hover{text-decoration:underline}
+.back{display:inline-block;font-size:13px;font-weight:700;padding:7px 13px;margin-bottom:5px;
+  border:1.5px solid var(--line);border-radius:9px;background:var(--surface);
+  color:var(--accent-d);text-decoration:none;white-space:nowrap}
+.back:hover{border-color:var(--accent);background:var(--accent-s)}
 h1{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-top:2px}
 .ctl label{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
   color:var(--soft);font-weight:600;margin-bottom:4px}
@@ -243,6 +247,21 @@ tr.drow:not(.open) td{padding-top:7px;padding-bottom:7px}
 .cbtn.p{background:#fff;color:var(--accent-d);border-color:#fff}
 .cbtn.p:hover{background:#EAF4F2}
 
+/* ===== WEIGHT BANNER ===== */
+.wtbar{display:flex;align-items:center;justify-content:center;gap:14px 22px;flex-wrap:wrap;
+  background:var(--accent-s);border:2px solid var(--accent);border-radius:12px;
+  padding:14px 18px;margin:0 0 18px;color:var(--accent-d)}
+.wb-txt{display:flex;flex-direction:column;gap:2px;font-size:15px;max-width:420px}
+.wb-sub{font-size:12.5px;font-weight:400;color:var(--soft)}
+.wb-in{display:flex;align-items:center;gap:8px}
+#wt2{font-family:var(--mono);font-size:22px;font-weight:700;width:120px;padding:9px 12px;
+  border:2px solid var(--accent);border-radius:10px;background:#fff;color:var(--ink);text-align:right}
+#wt2:focus{outline:3px solid rgba(14,110,102,.35);outline-offset:1px}
+.wb-u{font-size:15px;font-weight:700}
+.wb-btn{font-family:var(--sans);font-size:14px;font-weight:700;padding:10px 18px;
+  border:none;border-radius:9px;background:var(--accent);color:#fff;cursor:pointer;white-space:nowrap}
+.wb-btn:hover{background:var(--accent-d)}
+
 /* ===== WEIGHT GATE ===== */
 .wtgate{background:var(--surface);border:2px dashed var(--accent);border-radius:var(--r);
   padding:44px 24px 40px;text-align:center;max-width:520px;margin:10px auto}
@@ -265,6 +284,7 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
   .titleblock{flex:1 1 100%}
   h1{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .eyebrow{font-size:10.5px}
+  .back{font-size:15px;padding:10px 16px;margin-bottom:7px}
   body.scrolled h1{display:none}
   .bar-inner>.ctl{flex:0 0 auto}
   .ctl.name{flex:1 1 100%}
@@ -376,7 +396,7 @@ footer hr{border:none;border-top:1px solid var(--line);margin-bottom:10px}
 <header>
   <div class="bar-inner">
     <div class="titleblock">
-      <div class="eyebrow"><a href="index.html">← All Conditions</a></div>
+      <a class="back" href="index.html">← All conditions</a>
       <h1>⚡ Seizure Medications</h1>
     </div>
     <div class="ctl name">
@@ -439,7 +459,7 @@ const DOG_TIERS=[
     rangeFn:pb=>pb?"10 mg/kg":"5 mg/kg",
     strengths:[25,50,100],splits:[1,2,3],
     note:"On phenobarbital (induces metabolism): 10 mg/kg BID. Not on PB: 5 mg/kg BID."},
-   {id:"kep",name:"Levetiracetam (regular)",gen:"Keppra IR",unit:"tablet",freq:"TID",
+   {id:"kep",name:"Levetiracetam (regular)",gen:"Keppra",unit:"tablet",freq:"TID",
     lo:20,hi:20,range:"20 mg/kg",strengths:[250,500,750],splits:[0.25,0.5,0.75,1,1.5,2]},
    {id:"kepxr",name:"Levetiracetam XR",gen:"Keppra XR",unit:"tablet",freq:"BID",
     lo:30,hi:30,range:"30 mg/kg",strengths:[500,750],splits:[0.5,1,1.5,2],
@@ -488,7 +508,7 @@ const CAT_TIERS=[
   ]},
  {h:"Tier 3 — Add Levetiracetam",
   drugs:[
-   {id:"kep_c",name:"Levetiracetam (regular)",gen:"Keppra IR",unit:"tablet",freq:"TID",
+   {id:"kep_c",name:"Levetiracetam (regular)",gen:"Keppra",unit:"tablet",freq:"TID",
     lo:20,hi:20,range:"20 mg/kg",strengths:[250,500],splits:[0.25,0.5,0.75,1]},
   ]},
  {h:"Tier 4 — Further add-ons / alternatives",
@@ -684,15 +704,12 @@ function chipsHtml(m,kg){
   }).join("");
   return'<div class="chips">'+chips+customChip(m,kg)+'</div>';}
 
-const CUSTN=[0.125,0.25,0.5,0.75,1,1.25,1.5,2,2.5,3,4,5,6];
 function customChip(m,kg){
   const s=st(m.id),on=s.opt===-1,u=m.unit||"tablet";
   return'<span class="chip cust'+(on?" sel":"")+'">Custom '+
-    '<select aria-label="Number of '+escA(u)+'s for '+escA(m.name)+'" '+
-      'data-act="custn" data-id="'+m.id+'">'+
-      '<option value=""'+(s.cN===null?" selected":"")+'>–</option>'+
-      CUSTN.map(n=>'<option value="'+n+'"'+(s.cN===n?" selected":"")+'>'+fr(n)+'</option>').join("")+
-    '</select> × '+
+    '<input type="number" step="any" min="0" inputmode="decimal" placeholder="#" '+
+      'aria-label="Number of '+escA(u)+'s for '+escA(m.name)+'" '+
+      'value="'+(s.cN===null?"":s.cN)+'" data-act="custn" data-id="'+m.id+'"> × '+
     '<input type="number" step="any" min="0" inputmode="decimal" placeholder="mg" '+
       'aria-label="Strength of one '+escA(u)+' of '+escA(m.name)+' in mg" '+
       'value="'+(s.cMg===null?"":s.cMg)+'" '+
@@ -826,21 +843,24 @@ function render(){
     '<span class="arrow">→</span>add Zonisamide<span class="arrow">→</span>add Keppra'+
     '<span class="arrow">→</span>others';
 
-  /* No weight, no doses — a leftover weight from the previous patient is the
-     easiest route to a dosing error. */
-  if(kg===null){
-    document.getElementById("main").innerHTML=
-      '<div class="wtgate">'+
-        '<div class="wg-icon">⚖</div>'+
-        '<div class="wg-title">Enter this patient\'s weight</div>'+
-        '<div class="wg-sub">Doses stay hidden until a weight is entered, so nothing '+
-        'can be carried over from the last patient.</div>'+
-        '<button type="button" class="wg-btn" data-act="focuswt">Enter weight</button>'+
-      '</div>';
-    document.getElementById("selcount").textContent="Enter a weight to begin";
-    return;}
+  /* The weight box sits in a banner at the top of the page — the first thing
+     seen and the first thing to do — but nothing is hidden behind it: the label
+     doses read straight off, and the per-patient fits fill in once a weight is in. */
+  const hdrWt=document.querySelector(".ctl.wt");
+  if(hdrWt)hdrWt.style.display=kg===null?"none":"";
+  const wtBanner=kg===null
+    ?'<div class="wtbar">'+
+       '<label class="wb-txt" for="wt2"><strong>Patient weight</strong>'+
+       '<span class="wb-sub">mg/kg doses are shown below; tablet fits fill in once a weight is entered.</span></label>'+
+       '<span class="wb-in">'+
+         '<input id="wt2" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0.0" '+
+           'aria-label="Patient weight in '+unit+'" data-act="wt2">'+
+         '<span class="wb-u">'+unit+'</span>'+
+         '<button type="button" class="wb-btn" data-act="commitwt">Go</button>'+
+       '</span>'+
+     '</div>':"";
 
-  let html='<div class="ladder-strip">'+(sp==="dog"?stripDog:stripCat)+'</div>';
+  let html=wtBanner+'<div class="ladder-strip">'+(sp==="dog"?stripDog:stripCat)+'</div>';
 
   const meds=allMeds(),nOpen=meds.filter(m=>st(m.id).open).length;
   html+='<div class="viewbar">'+
@@ -896,7 +916,7 @@ function render(){
   buildOutput();}
 
 function focusWeight(){
-  const w=document.getElementById("wt");
+  const w=document.getElementById("wt2")||document.getElementById("wt");
   if(!w)return;
   w.scrollIntoView({block:"nearest"});
   w.focus();w.select();}
@@ -1168,6 +1188,7 @@ document.getElementById("main").addEventListener("click",e=>{
   else if(a==="disc")toggleOpen(t.dataset.id);
   else if(a==="allopen")setAllOpen(t.dataset.v==="1");
   else if(a==="focuswt")focusWeight();
+  else if(a==="commitwt")render();
   else if(a==="cfreqon"){st(t.dataset.id).cFreq="";render();}
   else if(a==="cfreqoff"){st(t.dataset.id).cFreq=null;render();}
   else if(a==="pb")setPB(+t.dataset.v);
@@ -1180,6 +1201,7 @@ document.getElementById("main").addEventListener("change",e=>{
   const t=e.target.closest("[data-act]");
   if(!t)return;
   const a=t.dataset.act;
+  if(a==="wt2"){render();return;}
   if(a==="tog")toggleMed(t.dataset.id);
   else if(a==="custn"){const s2=st(t.dataset.id),n=parseFloat(t.value);
     s2.cN=isFinite(n)&&n>0?n:null;s2.opt=-1;render();}
@@ -1191,12 +1213,15 @@ document.getElementById("main").addEventListener("input",e=>{
   if(!t)return;
   const a=t.dataset.act;
   if(a==="cust")setCustom(t.dataset.id,t.value);
+  else if(a==="wt2"){const w=document.getElementById("wt");if(w){w.value=t.value;
+    w.classList.toggle("needed",getKg()===null);}}
   else if(a==="cfreq"){st(t.dataset.id).cFreq=t.value;buildOutput();}
   else if(a==="blktext"){bk(t.dataset.id).text=t.value;buildOutput();}
 });
 document.getElementById("main").addEventListener("keydown",e=>{
   if(e.key!=="Enter")return;
   const t=e.target.closest("[data-act]");
+  if(t&&t.dataset.act==="wt2"){e.preventDefault();render();return;}
   if(t&&(t.dataset.act==="tgt"||t.dataset.act==="cust"||t.dataset.act==="cfreq")){
     e.preventDefault();t.blur();}
 });
@@ -1226,7 +1251,7 @@ addEventListener("scroll",()=>{
 },{passive:true});
 
 render();
-focusWeight();
+if(!/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent))focusWeight();
 </script>
 </body>
 </html>

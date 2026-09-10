@@ -21,14 +21,88 @@
       "lineFn": "(kg,lb)=>'BSA '+(Math.round(0.101*Math.pow(kg,2/3)*1000)/1000)+' m2; dose = (mg/m2) x BSA'"
     }
   ],
-  "notes": [
-    ".02 mg/kg",
-    ".5 mg/m2"
-  ],
+  "notes": {
+    "grids": [
+      {
+        "title": "Chemo BSA",
+        "ncols": 7,
+        "rows": [
+          [
+            {
+              "c": 1,
+              "t": "Body surface area (m2)",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 3,
+              "t": "lb",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "BSA",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": ".02 mg/kg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": ".5 mg/m2",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Dose (mg/m2)",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Amt to give (mg/m2 * m2)",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "10",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "5",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "15",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
   "dischargeBlocks": [],
   "headerCalc": {
     "label": "BSA",
     "unit": "m²",
     "fn": "(kg,lb)=>(Math.round(0.101*Math.pow(kg,2/3)*1000)/1000)"
-  }
+  },
+  "aliases": [
+    "Chemo BSA"
+  ]
 }

@@ -139,31 +139,185 @@
       ]
     }
   ],
-  "notes": [
-    "Sebaceous Adenitis",
-    "Cyclosporine 5 mg/kg SID",
-    "Vitamin A: 400 IU/kg daily max 20,000 U per day",
-    "Omega-3 fatty acids: Welactin daily",
-    "which is about the highest I've been able to find. This would probably be more effective",
-    "than feeding a regular diet and supplementing with Welactin.",
-    "Consider changing food to Hill's j/d Mobility as it contains 2% DHA & EPA,",
-    "Dermoscent Essential 6 Spot-On Large Breed Dog Skin Care Treatment-- available OTC,",
-    "basically fatty acids that are applied to base of neck/shoulder blades in same fashion as flea/tick preventives.",
-    "Douxo S3 SEB Shampoo: Weekly or as needed.",
-    "Labyderm Bioforce® (Labyes).",
-    "Hydrating sprays such as Ermidra® (ICF), Atop® spray (Dermoscent),",
-    "If needed: Baby oil soaks: 50% baby oil, 50% water and saturate coat. let sit as long as possible 30 to 60 min ideal then degrease in dawn soap bath. then moisturize).",
-    "Cyclosporine 5 mg/mkg SID",
-    "Isoretinoin 1.5 mg/kg SID -- potentially problematic side effects + high expense, so will hold off for now.",
-    "Vitamin A: 400 IU/kg SID with max of 20,000 U SID",
-    "Essential fatty acids",
-    "Topical treatments:",
-    "Sulfer & salicyclic acid shampoos 2-3 times weekly, 10 min contact time",
-    "Scale can be removed with soft brushing.",
-    "Conditioning shampoos & sprays",
-    "Propylene glycol topically-- up to daily, then 2-3 times weekly for maintenance",
-    "Phytosphingosine spray",
-    "Baby oil soaks (diluted 50:50 with water), leaving on for 1 hr, then washing wiht degreasing sdishwashing soap. Can be repeated weekly or monthly if/as needed."
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Sebaceous Adenitis",
+        "ncols": 4,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Sebaceous Adenitis",
+              "b": true
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Cyclosporine 5 mg/kg SID",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Vitamin A:  400 IU/kg daily max 20,000 U per day",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Omega-3 fatty acids:  Welactin daily",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "which is about the highest I've been able to find.  This would probably be more effective",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "than feeding a regular diet and supplementing with Welactin.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Consider changing food to Hill's j/d Mobility as it contains 2% DHA & EPA,",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Dermoscent Essential 6 Spot-On Large Breed Dog Skin Care Treatment-- available OTC,",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "basically fatty acids that are applied to base of neck/shoulder blades in same fashion as flea/tick preventives.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Douxo S3 SEB Shampoo:  Weekly or as needed.",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Labyderm Bioforce® (Labyes).",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Hydrating sprays such as Ermidra® (ICF), Atop® spray (Dermoscent),",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "If needed:  Baby oil soaks: 50% baby oil, 50% water and saturate coat. let sit as long as possible 30 to 60 min ideal then degrease in dawn soap bath. then moisturize).",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Cyclosporine 5 mg/mkg SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Isoretinoin 1.5 mg/kg SID -- potentially problematic side effects + high expense, so will hold off for now.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Vitamin A:  400 IU/kg SID with max of 20,000 U SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Essential fatty acids",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Topical treatments:",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Sulfer & salicyclic acid shampoos 2-3 times weekly, 10 min contact time",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Scale can be removed with soft brushing.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Conditioning shampoos & sprays",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Propylene glycol topically-- up to daily, then 2-3 times weekly for maintenance",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Phytosphingosine spray",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Baby oil soaks (diluted 50:50 with water), leaving on for 1 hr, then washing wiht degreasing sdishwashing soap.  Can be repeated weekly or monthly if/as needed.",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

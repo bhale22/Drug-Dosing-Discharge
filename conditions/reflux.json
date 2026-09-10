@@ -82,21 +82,209 @@
       ]
     }
   ],
-  "notes": [
-    "Reflux Esophagitis, the Gulpies",
-    "Omeprazole",
-    "1 mg/kg BID",
-    "Metoclopramide",
-    ".2 - .4mg/kg q 8-12 hr",
-    "Carafate (if needed)",
-    "1/2 to 1 tab",
-    "Give as slurry on empty stomacy an hour or more apart from meals or other meds.",
-    "If IBS. Pred, budesonide, cyclosporine 5 mg/kg SID",
-    "The video looks a LOT like reflux esophagitis, so I'd try those maneuvers:",
-    "-Omeprazole: 30 mg BID, each dose 30 min before a meal (or if this is worse at night, give the second dose at BEDtime, not dinnertime)",
-    "-Metoclopramide: 10 mg BID-TID, each dose 30 min before a meal and again at bedtime",
-    "...after the bedtime meds, give her a small meal 30 min later and then it really IS time for bed",
-    "If this is the right idea, it works immediately....so usually within a week you'll know whether you're interrupting the pattern (depending on how frequently these episodes happen)."
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Reflux esophagitis",
+        "ncols": 8,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Reflux Esophagitis, the Gulpies",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "DOG",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "Dose",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "(mg/kg)",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "Route",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "q X hrs",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "Dose",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Omeprazole",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "1 mg/kg BID",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "1",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": true
+            },
+            {
+              "c": 5,
+              "t": "12",
+              "b": true
+            },
+            {
+              "c": 7,
+              "t": "mg",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Metoclopramide",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": ".2 - .4mg/kg q 8-12 hr",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "0.4",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": true
+            },
+            {
+              "c": 5,
+              "t": "12",
+              "b": true
+            },
+            {
+              "c": 7,
+              "t": "mg",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Carafate (if needed)",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "1/2 to 1 tab",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": true
+            },
+            {
+              "c": 5,
+              "t": "8",
+              "b": true
+            },
+            {
+              "c": 6,
+              "t": "1 g",
+              "b": true
+            },
+            {
+              "c": 7,
+              "t": "Give as slurry on empty stomacy an hour or more apart from meals or other meds.",
+              "b": true
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "If IBS. Pred, budesonide, cyclosporine 5 mg/kg SID",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "The video looks a LOT like reflux esophagitis, so I'd try those maneuvers:",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "-Omeprazole: 30 mg BID, each dose 30 min before a meal (or if this is worse at night, give the second dose at BEDtime, not dinnertime)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "and",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "-Metoclopramide: 10 mg BID-TID, each dose 30 min before a meal and again at bedtime",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "...after the bedtime meds, give her a small meal 30 min later and then it really IS time for bed",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "If this is the right idea, it works immediately....so usually within a week you'll know whether you're interrupting the pattern (depending on how frequently these episodes happen).",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": [
+    "Swallowing/Gulping"
+  ]
 }

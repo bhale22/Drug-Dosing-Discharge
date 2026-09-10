@@ -147,39 +147,246 @@
       ]
     }
   ],
-  "notes": [
-    "Cerenia",
-    "16 mg tab: 1/4 to 1/2 tab PO",
-    "BID 1-2 days, SID another 5 days, then 2 to 4 mg (per cat) twice weekly.",
-    "Lester",
-    "reduces discharge and inflammation caused by substance P",
-    "Cerenia in nebulizer worked very well for Spunky Johnson (started with 2 drops of injectible cerenia added to nebulizer saline once a day, O noted improvement right away)",
-    "Azithromycin",
-    "Dose = 1/4 of 250 mg tab",
-    "SID 5 days, then twice weekly for months (Lester)",
-    "Azithromycin liquid (200mg/5ml = 50 mg/ml): 10 mg/kg SID for 5 days, then q 3 days (or twice weekly) for 6 weeks (Folger)",
-    "Famciclovir Antiviral: doses all over the map up to 40 mg/kg TID. Generally either 62.5 mg BID or 250 mg SID (depending on consultant) for 6 weeks.",
-    "1) 1/4 250 azithromycin tablet daily for 5 days then",
-    "2 X weekly...for weeks and months. Works as an",
-    "anti inflammatory and anti biofilm.",
-    "2) Local therapy....flush with saline ± hypertonic saline (2-3%)",
-    "and follow with ophthalmics like Neo-Poly-Dex drops tid",
-    "Hold head back so drops run backward....",
-    "3) Cerenia..best drug for nasal congestion and to reduce",
-    "inflammation cause by much excessive substance P in the area.",
-    "Give low dose daily ie 2-4mg or regular EOD.",
-    "4) Chlorpheniramine (antihistamine) is also an antidepressant with approx 50% of",
-    "anti anxiety effects compared to fluoxetine and still has antihistamine effects",
-    "that are synergistic with Cerenia..",
-    "5) Krill fish oil caps",
-    "6) Adequan follow by oral GAG's to improve cartilage damage and",
-    "repair in the sinuses from previous damage from viruses and bacteria etc.",
-    "7) Combinations of antioxidants ie NuCat Senior",
-    "8) High protein gluten free diet...more pro-inflammatory",
-    "effects from high glucose and high carbohydrate diets.",
-    "NO DRY FOOD",
-    "Lester Mandelker DVM DABVP",
-    "Fellow AAVPT"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Snuffling Cat",
+        "ncols": 4,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Cerenia",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "16 mg tab: 1/4 to 1/2 tab PO",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "BID 1-2 days, SID another 5 days, then 2 to 4 mg (per cat) twice weekly.",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "Lester",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "reduces discharge and inflammation caused by substance P",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Cerenia in nebulizer worked very well for Spunky Johnson (started with 2 drops of injectible cerenia added to nebulizer saline once a day, O noted improvement right away)",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Azithromycin",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Dose = 1/4 of 250 mg tab",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "SID 5 days, then twice weekly for months (Lester)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Azithromycin liquid (200mg/5ml = 50 mg/ml):  10 mg/kg SID for 5 days, then q 3 days (or twice weekly) for 6 weeks (Folger)",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Famciclovir Antiviral:  doses all over the map up to 40 mg/kg TID.  Generally either 62.5 mg BID or 250 mg SID (depending on consultant) for 6 weeks.",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "1) 1/4 250 azithromycin tablet daily for 5 days then",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "2 X weekly...for weeks and months. Works as an",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "anti inflammatory and anti biofilm.",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "2) Local therapy....flush with saline ± hypertonic saline (2-3%)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "and follow with ophthalmics like Neo-Poly-Dex drops tid",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Hold head back so drops run backward....",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "3) Cerenia..best drug for nasal congestion and to reduce",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "inflammation cause by much excessive substance P in the area.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Give low dose daily ie 2-4mg or regular EOD.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "4) Chlorpheniramine (antihistamine) is also an antidepressant with approx 50% of",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "anti anxiety effects compared to fluoxetine and still has antihistamine effects",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "that are synergistic with Cerenia..",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "5) Krill fish oil caps",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "6) Adequan follow by oral GAG's to improve cartilage damage and",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "repair in the sinuses from previous damage from viruses and bacteria etc.",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "7) Combinations of antioxidants ie NuCat Senior",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "8) High protein gluten free diet...more pro-inflammatory",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "effects from high glucose and high carbohydrate diets.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "NO DRY FOOD",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Lester Mandelker DVM DABVP",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Fellow AAVPT",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": [
+    "Upper Respiratory Cat"
+  ]
 }

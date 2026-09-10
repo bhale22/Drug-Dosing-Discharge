@@ -68,33 +68,908 @@
       "inClinic": true
     }
   ],
-  "notes": [
-    "Fluids DOGS ONLY",
-    "Mark Do Not Flush on line with High-KCl fluid",
-    "Table: Potassium Supplementation Guidelines",
-    "mEq KCl to Add to 250 mL of Fluids",
-    "mEq KCl to Add to 1 L of Fluids",
-    "Maximum Fluid Infusion Rate (mL/kg/hr)",
-    "<2.0",
-    "2.1-2.5",
-    "% Dehydrated",
-    "Fluid Deficit (ml)",
-    "Over 6 hrs",
-    "Over 8 hrs",
-    "Over 12 hr",
-    "Over 24 hrs",
-    "2.6-3.0",
-    "3.1-3.5",
-    "3.6-5.0",
-    "(60 ml/kg/day)",
-    "% Dehydration",
-    "Maintenance x",
-    "Correction over",
-    "Fluid Rate:",
-    "1st 24 hrs",
-    "Replacement + maint",
-    "2nd 24 hrs",
-    "(maint only)"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Fluid Rate Dogs",
+        "ncols": 15,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Fluids DOGS ONLY",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 11,
+              "t": "Mark Do Not Flush on line with High-KCl fluid",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 11,
+              "t": "Table: Potassium Supplementation Guidelines",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "CANINE",
+              "b": true
+            },
+            {
+              "c": 11,
+              "t": "Serum K+ Concentration (mEq/L)",
+              "b": true
+            },
+            {
+              "c": 12,
+              "t": "mEq KCl to Add to 250 mL of Fluids",
+              "b": true
+            },
+            {
+              "c": 13,
+              "t": "mEq KCl to Add to 1 L of Fluids",
+              "b": true
+            },
+            {
+              "c": 14,
+              "t": "Maximum Fluid Infusion Rate (mL/kg/hr)",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 11,
+              "t": "<2.0",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "20",
+              "b": false
+            },
+            {
+              "c": 13,
+              "t": "80",
+              "b": false
+            },
+            {
+              "c": 14,
+              "t": "6",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 11,
+              "t": "2.1-2.5",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "15",
+              "b": false
+            },
+            {
+              "c": 13,
+              "t": "60",
+              "b": false
+            },
+            {
+              "c": 14,
+              "t": "8",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "% Dehydrated",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "Fluid Deficit (ml)",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "Over 6 hrs",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "Over 8 hrs",
+              "b": false
+            },
+            {
+              "c": 8,
+              "t": "Over 12 hr",
+              "b": false
+            },
+            {
+              "c": 9,
+              "t": "Over 24 hrs",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "2.6-3.0",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "10",
+              "b": false
+            },
+            {
+              "c": 13,
+              "t": "40",
+              "b": false
+            },
+            {
+              "c": 14,
+              "t": "12",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "3",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "ml/hr",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "3.1-3.5",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "7",
+              "b": false
+            },
+            {
+              "c": 13,
+              "t": "28",
+              "b": false
+            },
+            {
+              "c": 14,
+              "t": "18",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "5",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "ml/hr",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "3.6-5.0",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "5",
+              "b": false
+            },
+            {
+              "c": 13,
+              "t": "20",
+              "b": false
+            },
+            {
+              "c": 14,
+              "t": "25",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "7",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "ml/hr",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "9",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "ml/hr",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "11",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "ml/hr",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Maintenance",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "(60 ml/kg/day)",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "ml/hr",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "% Dehydration",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "0",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "%",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Maintenance x",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "2",
+              "b": true
+            },
+            {
+              "c": 5,
+              "t": "ml/hr",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Correction over",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "12",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "Hrs",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "ml/hr",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Fluid Rate:",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "CANINE",
+              "b": true
+            },
+            {
+              "c": 5,
+              "t": "ml/hr",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 5,
+              "t": "1st 24 hrs",
+              "b": true
+            },
+            {
+              "c": 7,
+              "t": "Replacement + maint",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 5,
+              "t": "2nd 24 hrs",
+              "b": true
+            },
+            {
+              "c": 7,
+              "t": "(maint only)",
+              "b": false
+            }
+          ]
+        ]
+      },
+      {
+        "title": "Fluid Rate Cats",
+        "ncols": 16,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Fluids CATS ONLY",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 12,
+              "t": "Mark Do Not Flush on line with High-KCl fluid",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "FELINE",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "% Dehydrated",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "Fluid Deficit (ml)",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "Over 6 hrs",
+              "b": false
+            },
+            {
+              "c": 8,
+              "t": "Over 8 hrs",
+              "b": false
+            },
+            {
+              "c": 9,
+              "t": "Over 12 hr",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "Over 24 hrs",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "Table: Potassium Supplementation Guidelines",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "(Scroll down for dogs)",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "3",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "ml/hr",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "Serum K+ Concentration (mEq/L)",
+              "b": true
+            },
+            {
+              "c": 13,
+              "t": "mEq KCl to Add to 250 mL of Fluids",
+              "b": true
+            },
+            {
+              "c": 14,
+              "t": "mEq KCl to Add to 1 L of Fluids",
+              "b": true
+            },
+            {
+              "c": 15,
+              "t": "Maximum Fluid Infusion Rate (mL/kg/hr)",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "5",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "ml/hr",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "<2.0",
+              "b": false
+            },
+            {
+              "c": 13,
+              "t": "20",
+              "b": false
+            },
+            {
+              "c": 14,
+              "t": "80",
+              "b": false
+            },
+            {
+              "c": 15,
+              "t": "6",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "7",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "ml/hr",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "2.1-2.5",
+              "b": false
+            },
+            {
+              "c": 13,
+              "t": "15",
+              "b": false
+            },
+            {
+              "c": 14,
+              "t": "60",
+              "b": false
+            },
+            {
+              "c": 15,
+              "t": "8",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "9",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "ml/hr",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "2.6-3.0",
+              "b": false
+            },
+            {
+              "c": 13,
+              "t": "10",
+              "b": false
+            },
+            {
+              "c": 14,
+              "t": "40",
+              "b": false
+            },
+            {
+              "c": 15,
+              "t": "12",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "11",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "ml/hr",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "3.1-3.5",
+              "b": false
+            },
+            {
+              "c": 13,
+              "t": "7",
+              "b": false
+            },
+            {
+              "c": 14,
+              "t": "28",
+              "b": false
+            },
+            {
+              "c": 15,
+              "t": "18",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 12,
+              "t": "3.6-5.0",
+              "b": false
+            },
+            {
+              "c": 13,
+              "t": "5",
+              "b": false
+            },
+            {
+              "c": 14,
+              "t": "20",
+              "b": false
+            },
+            {
+              "c": 15,
+              "t": "25",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Maintenance",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "(45 ml/kg/day)",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml/hr",
+              "b": false
+            },
+            {
+              "c": 8,
+              "t": "ml per day = maint",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 2,
+              "t": "% Dehydration",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "5",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "%",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml  total",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Maintenance x",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "2",
+              "b": true
+            },
+            {
+              "c": 6,
+              "t": "ml/hr",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Correction over",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "12",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "Hrs",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "ml/hr",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 2,
+              "t": "Fluid Rate:",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "FELINE",
+              "b": true
+            },
+            {
+              "c": 6,
+              "t": "ml/hr",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "Twice maint + deficit correction  over 12 hours.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 6,
+              "t": "Day 1",
+              "b": true
+            },
+            {
+              "c": 7,
+              "t": "twice main + deficit correction",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 6,
+              "t": "Day 2",
+              "b": true
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Lester Mandelker's SQ Fluids/Furosemide Protocol",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Hospitalize cat for 1-2 days and treat intensely to lower BUN/creatinine",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Start with SQ fluids ie lactated ringers",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Give 200ml SQ every 3-4 hours for a day total of 600-900ml",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "EACH TIME you must give SQ furosemide ie 0.2ml - 0.3ml at the same time",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Furosemide paralyzes the sodium/potassium pump forcing",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "sodium to be excreted taking all the SQ fluids with it.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "This fluids is flushed out with the urea toxins out of the body almost",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "immediately as cat will urinate a ton :)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "The reason why furosemide is given every time is that",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "the paralysis effect to excrete sodium only lasts for 2 -4 hrs.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "About the half/ life of furosemide....",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "I have never seen pulmonary edema develop nor will it",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "appreciably alter blood pressure. Fluids increase BP",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "while furosemide decreases BP so they cancel each other",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "out. Give your standard dose of amlopidine that day.",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "This procedure works in 1 or 2 days...no longer is needed.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Once BUN/creatinine return to more normal levels..send",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "cat home on a can food diet ( better lower protein first week or two)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "with extra tuna juice etc.to encourage increased fluid intake",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Don't give dry....as dry food just dehydrates the cats again....",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": [
+    "Fluid Rate Cats",
+    "Fluid Rate Dog",
+    "Fluid Rate Dogs"
+  ]
 }

@@ -74,6 +74,9 @@ function main() {
       species,
       medCount: meds.length,
       drugs,
+      aliases: Array.isArray(data.aliases)
+        ? data.aliases.map(String).filter((a) => a && a !== data.title)
+        : [],
     };
     if (CUSTOM_PAGES[id]) entry.page = CUSTOM_PAGES[id];
     conditions.push(entry);

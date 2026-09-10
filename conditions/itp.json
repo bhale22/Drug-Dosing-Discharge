@@ -185,40 +185,595 @@
       "inClinic": true
     }
   ],
-  "notes": [
-    "Immune-mediated Thrombocytopenia",
-    "Prednisone",
-    "1 mg/kg BID",
-    "taper pred by 25% every 3 weeks until EOD. Continue EOD 3 months.",
-    "Dexamethasone",
-    "0.2 to .5 mg/kg SID",
-    "SQ, IV",
-    "ml Dex SP or",
-    "ml Dex (2 mg/ml)",
-    "Cyclosporine",
-    "5 mg/kg BID",
-    "Doxycycline",
-    "Vincristine",
-    "0.02 mg/kg",
-    "(1 mg/ml soln)",
-    "PREDNISONE TAPER",
-    "Carafate",
-    ".5 to 1",
-    "Omeprazole",
-    "BID Daily for 3 weeks",
-    "Cerenia",
-    "BID daily for next 3 weeks",
-    "SID Daily for next 3 weeks",
-    "Stabilize platelet numbers",
-    "Every other day for 3 months",
-    "Taper 25% every 2 to 3 weeks (taper steroids first unless cost prohibitive)",
-    "If recurrence, long-term adjunctive immunosuppressant and/or splenectomy",
-    "Prednisolone",
-    "0.3 to 1 mg/kg SID",
-    "5 mg/kg q 12-24 hr",
-    "BID or SID",
-    "Chlorambucil",
-    "0.1-0.2 mg/kg SID"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "ITP",
+        "ncols": 13,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Immune-mediated Thrombocytopenia",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "DOG",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "Dose",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "(mg/kg)",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "Route",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "Dose",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Prednisone",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "1 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "1",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "BID",
+              "b": false
+            },
+            {
+              "c": 8,
+              "t": "taper pred by 25% every 3 weeks until EOD.  Continue EOD 3 months.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Dexamethasone",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.2 to .5 mg/kg SID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0.5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "SQ, IV",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "SID",
+              "b": false
+            },
+            {
+              "c": 9,
+              "t": "ml Dex SP or",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "ml Dex (2 mg/ml)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Cyclosporine",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "5 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "BID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Doxycycline",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "5 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "BID",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Vincristine",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "0.02 mg/kg",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "0.02",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "IV",
+              "b": true
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": true
+            },
+            {
+              "c": 7,
+              "t": "(1 mg/ml soln)",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 11,
+              "t": "PREDNISONE TAPER",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Carafate",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": ".5 to 1",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "g",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "TID",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "mg/kg",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Omeprazole",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0.5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "BID",
+              "b": false
+            },
+            {
+              "c": 9,
+              "t": "Prednisone",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "1",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "BID Daily for 3 weeks",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Cerenia",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "2",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "SID",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "0.5",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "BID daily for next 3 weeks",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 10,
+              "t": "0.5",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "SID Daily for next 3 weeks",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Stabilize platelet numbers",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "0.5",
+              "b": false
+            },
+            {
+              "c": 12,
+              "t": "Every other day for 3 months",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Taper 25% every 2 to 3 weeks (taper steroids first unless cost prohibitive)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "If recurrence, long-term adjunctive immunosuppressant and/or splenectomy",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "CAT",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "Dose",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "(mg/kg)",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "Route",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "Dose",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Prednisolone",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "1 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "1",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "BID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Dexamethasone",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.3 to 1 mg/kg SID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0.5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "SQ, IV",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "SID",
+              "b": false
+            },
+            {
+              "c": 9,
+              "t": "ml Dex SP or",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "ml Dex (2 mg/ml)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Cyclosporine",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "5 mg/kg q 12-24 hr",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "BID or SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Chlorambucil",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.1-0.2 mg/kg SID",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0.1",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "PO",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "SID",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Vincristine",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "0.02 mg/kg",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "0.02",
+              "b": true
+            },
+            {
+              "c": 4,
+              "t": "IV",
+              "b": true
+            },
+            {
+              "c": 6,
+              "t": "mg",
+              "b": true
+            },
+            {
+              "c": 7,
+              "t": "(1 mg/ml soln)",
+              "b": true
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": [
+    "Thrombocytopenia"
+  ]
 }

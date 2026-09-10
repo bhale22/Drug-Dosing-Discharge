@@ -11,122 +11,1100 @@
   "noWeight": true,
   "bands": {},
   "meds": [],
-  "notes": [
-    "GreyHound Normal Values from Idexx",
-    "Website for Greyhound Normal Values (Idexx)",
-    "Chemistry",
-    "Greyhound-specific",
-    "General",
-    "SDMA",
-    "0–20",
-    "µg/dL",
-    "0–14",
-    "Creatinine",
-    "1.2–2.1",
-    "mg/dL",
-    "0.5–1.5",
-    "13–29",
-    "9–31",
-    "Glucose",
-    "72–118",
-    "63–114",
-    "Calcium",
-    "9.3–10.5",
-    "8.4–11.8",
-    "Phosphorus",
-    "2.3–5.1",
-    "2.5–6.1",
-    "Chloride",
-    "107–117",
-    "mmol/L",
-    "108–119",
-    "Potassium",
-    "3.8–4.7",
-    "4–5.4",
-    "Sodium",
-    "139–149",
-    "142–152",
-    "Na/K ratio",
-    "31–39",
-    "28–37",
-    "TCO2 (Bicarb)",
-    "18–25",
-    "13–27",
-    "Anion Gap",
-    "12–20",
-    "11–26",
-    "Total Protein",
-    "5.2–6.8",
-    "g/dL",
-    "5.5–7.5",
-    "Albumin",
-    "2.7–3.9",
-    "Globulin",
-    "2.2–3.5",
-    "2.4–4",
-    "Alb/Glob ratio",
-    "0.9–1.5",
-    "0.7–1.5",
-    "24–97",
-    "18–121",
-    "23–84",
-    "16–55",
-    "12–79",
-    "5–160",
-    "0–18",
-    "0–13",
-    "Total Bili",
-    "0.2–0.5",
-    "0–0.3",
-    "Conjugated Bili",
-    "0–0.1",
-    "Unconjugated Bili",
-    "0.1–0.4",
-    "0–0.2",
-    "Cholesterol",
-    "110–236",
-    "131–345",
-    "59–538",
-    "10–200",
-    "Hematology",
-    "General Canine",
-    "7.04–9.73",
-    "M/µL",
-    "5.39–8.7",
-    "52%–68.4%",
-    "38.3%–56.5%",
-    "16.9–23.1",
-    "13.4–20.7",
-    "67–80",
-    "59–76",
-    "23.1–25.7",
-    "21.9–26.1",
-    "MCHC",
-    "30.4–35.8",
-    "32.6–39.2",
-    "Platelets",
-    "97–232",
-    "K/µL",
-    "143–448",
-    "3.6–8.6",
-    "4.9–17.6",
-    "Neutrophils",
-    "2.14–6.52",
-    "2.94–12.67",
-    "Lymphocytes",
-    "0.59–2.1",
-    "1.06–4.95",
-    "Monocytes",
-    "0.04–0.34",
-    "0.13–1.15",
-    "Eosinophils",
-    "0.02–1.19",
-    "0.07–1.49",
-    "Basophil",
-    "Endocrinology",
-    "Total T4",
-    "0.5–1.7",
-    "1.0–4.0"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "GreyHound",
+        "ncols": 5,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "GreyHound Normal Values from Idexx",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Website for Greyhound Normal Values (Idexx)",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Chemistry",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Greyhound-specific",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "General",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "canine",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "SDMA",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0–20",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "µg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0–14",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "µg/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Creatinine",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "1.2–2.1",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0.5–1.5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "BUN",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "13–29",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "9–31",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Glucose",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "72–118",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "63–114",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Calcium",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "9.3–10.5",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "8.4–11.8",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Phosphorus",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "2.3–5.1",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "2.5–6.1",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Chloride",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "107–117",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mmol/L",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "108–119",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mmol/L",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Potassium",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "3.8–4.7",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mmol/L",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "4–5.4",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mmol/L",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Sodium",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "139–149",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mmol/L",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "142–152",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mmol/L",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Na/K ratio",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "31–39",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "28–37",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "TCO2 (Bicarb)",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "18–25",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mmol/L",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "13–27",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mmol/L",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Anion Gap",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "12–20",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mmol/L",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "11–26",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mmol/L",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Total Protein",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "5.2–6.8",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "g/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "5.5–7.5",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "g/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Albumin",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "2.7–3.9",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "g/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "2.7–3.9",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "g/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Globulin",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "2.2–3.5",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "g/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "2.4–4",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "g/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Alb/Glob ratio",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0.9–1.5",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "0.7–1.5",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "ALT",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "24–97",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "U/L",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "18–121",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "U/L",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "AST",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "23–84",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "U/L",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "16–55",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "U/L",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "ALP",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "12–79",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "U/L",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "5–160",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "U/L",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "GGT",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0–18",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "U/L",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0–13",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "U/L",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Total Bili",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0.2–0.5",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0–0.3",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Conjugated Bili",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0–0.1",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0–0.1",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Unconjugated Bili",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0.1–0.4",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0–0.2",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Cholesterol",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "110–236",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "mg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "131–345",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "CK",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "59–538",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "U/L",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "10–200",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "U/L",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Hematology",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "Greyhound-specific",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "General Canine",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "RBC",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "7.04–9.73",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "M/µL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "5.39–8.7",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "M/µL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "HCT",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "52%–68.4%",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "38.3%–56.5%",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Hgb",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "16.9–23.1",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "g/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "13.4–20.7",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "g/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "MCV",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "67–80",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "fL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "59–76",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "fL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "MCH",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "23.1–25.7",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "pg",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "21.9–26.1",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "pg",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "MCHC",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "30.4–35.8",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "g/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "32.6–39.2",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "g/dL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Platelets",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "97–232",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "K/µL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "143–448",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "K/µL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "WBC",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "3.6–8.6",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "K/µL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "4.9–17.6",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "K/µL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Neutrophils",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "2.14–6.52",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "K/µL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "2.94–12.67",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "K/µL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Lymphocytes",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0.59–2.1",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "K/µL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "1.06–4.95",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "K/µL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Monocytes",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0.04–0.34",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "K/µL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0.13–1.15",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "K/µL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Eosinophils",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0.02–1.19",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "K/µL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0.07–1.49",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "K/µL",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Basophil",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0–0.1",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "K/µL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0–0.1",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "K/µL",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Endocrinology",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Total T4",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "0.5–1.7",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "µg/dL",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "1.0–4.0",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "µg/dL",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

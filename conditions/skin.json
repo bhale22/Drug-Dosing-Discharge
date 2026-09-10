@@ -1001,5 +1001,8 @@
       "on": true,
       "text": "Please give us a call in 10 to 14 days to let us know how {name} is coming along. If the itching, redness, or skin lesions are not improving — or are getting worse — please call us right away so we can re-evaluate."
     }
+  ],
+  "aliases": [
+    "SKIN"
   ]
 }

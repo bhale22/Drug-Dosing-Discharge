@@ -63,6 +63,8 @@
   ul.list li:first-child{border-top:none}
   a.row{display:flex;align-items:center;gap:11px;padding:12px 14px;text-decoration:none;color:var(--ink)}
   a.row:hover{background:var(--accent-s)}
+  a.row.alias .rname{font-weight:600}
+  a.row.alias .rdrugs{color:var(--accent-d)}
   a.row:focus-visible{outline:2.5px solid var(--accent);outline-offset:-2px}
   .ricon{font-size:19px;flex:none;width:24px;text-align:center}
   .rmain{flex:1;min-width:0}
@@ -126,6 +128,8 @@
 <script>
 "use strict";
 let CONDS=[];
+/* one row per name a page goes by: the condition itself plus each alias */
+let ENTRIES=[];
 const RECENT_KEY="dd-recent";
 
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
@@ -143,11 +147,13 @@ function hi(text,q){
   return esc(text.slice(0,i))+"<mark>"+esc(text.slice(i,i+q.length))+"</mark>"+
     esc(text.slice(i+q.length));}
 
-/* a condition matches on its own name or on any drug it contains */
-function matches(c,q){
+/* a condition matches on its own name or on any drug it contains; an alias
+   row matches only on its own name, so a drug search shows the page once */
+function matches(e,q){
   if(!q)return true;
-  if(norm(c.title).indexOf(q)>=0)return true;
-  return (c.drugs||[]).some(d=>norm(d).indexOf(q)>=0);}
+  if(norm(e.title).indexOf(q)>=0)return true;
+  if(e.kind==="alias")return false;
+  return (e.drugs||[]).some(d=>norm(d).indexOf(q)>=0);}
 function matchedDrugs(c,q){
   if(!q)return[];
   return (c.drugs||[]).filter(d=>norm(d).indexOf(q)>=0);}
@@ -158,7 +164,7 @@ function speciesLabel(sp){
 
 function render(){
   const q=norm(document.getElementById("q").value.trim());
-  const list=CONDS.filter(c=>matches(c,q));
+  const list=ENTRIES.filter(e=>matches(e,q));
   const wrap=document.getElementById("listwrap");
 
   if(!list.length){
@@ -179,16 +185,20 @@ function render(){
       cur=L;}
     else if(!cur){html+='<ul class="list">';cur="_";}
 
-    const drugHits=matchedDrugs(c,q);
-    const sub=drugHits.length
-      ? drugHits.slice(0,4).map(d=>hi(d,q)).join(", ")+(drugHits.length>4?" …":"")
-      : esc((c.drugs||[]).slice(0,6).join(", "));
-    html+='<li><a class="row" href="'+href(c)+'" onclick="remember(\''+c.id+'\')">'+
-      '<span class="ricon">'+(c.icon||"💊")+'</span>'+
+    const t=c.kind==="alias"?c.target:c;
+    const drugHits=c.kind==="alias"?[]:matchedDrugs(c,q);
+    const sub=c.kind==="alias"
+      ? '→ '+esc(t.title)
+      : drugHits.length
+        ? drugHits.slice(0,4).map(d=>hi(d,q)).join(", ")+(drugHits.length>4?" …":"")
+        : esc((t.drugs||[]).slice(0,6).join(", "));
+    html+='<li><a class="row'+(c.kind==="alias"?" alias":"")+'" href="'+href(t)+
+      '" onclick="remember(\''+t.id+'\')">'+
+      '<span class="ricon">'+(t.icon||"💊")+'</span>'+
       '<span class="rmain"><span class="rname">'+hi(c.title,q)+'</span>'+
       (sub?'<span class="rdrugs">'+sub+'</span>':"")+'</span>'+
-      '<span class="rmeta">'+(c.medCount?c.medCount+" drugs":"")+
-      (c.species&&c.species.length?"<br>"+speciesLabel(c.species):"")+'</span></a></li>';
+      '<span class="rmeta">'+(t.medCount?t.medCount+" drugs":"")+
+      (t.species&&t.species.length?"<br>"+speciesLabel(t.species):"")+'</span></a></li>';
   }
   html+="</ul>";
   wrap.innerHTML=html;
@@ -234,7 +244,12 @@ async function boot(){
     if(!r.ok)throw new Error("conditions/index.json not found (HTTP "+r.status+")");
     const data=await r.json();
     const list=Array.isArray(data)?data:(data.conditions||[]);
-    CONDS=list.slice().sort((a,b)=>sortKey(a.title).localeCompare(sortKey(b.title)));
+    CONDS=list.slice();
+    ENTRIES=[];
+    for(const c of CONDS){
+      ENTRIES.push(c);
+      for(const a of (c.aliases||[]))ENTRIES.push({kind:"alias",title:a,target:c});}
+    ENTRIES.sort((a,b)=>sortKey(a.title).localeCompare(sortKey(b.title)));
     renderRecent();
     render();
     const errors=Array.isArray(data)?[]:(data.errors||[]);

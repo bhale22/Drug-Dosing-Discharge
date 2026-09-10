@@ -49,17 +49,136 @@
       ]
     }
   ],
-  "notes": [
-    "For Babesia canis",
-    "Imidocarb dipropionate: 2 doses 6.6 mg/kg IM 2 weeks apart",
-    "Imidocarb 120 mg/ml",
-    "ml IM. Repeat in 2 weeks",
-    "For Babesia gibsoni or B. microti",
-    "Atovaquone (13.3 mg/kg PO q 8 hr w' fatty meal) + Azithromycin (10 mg/kg PO SID), each for 10 days",
-    "Atovaquone",
-    "q 8 hr",
-    "TID with fatty meal",
-    "Azithromycin"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Babesia",
+        "ncols": 6,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "For Babesia canis",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Imidocarb dipropionate:  2 doses 6.6 mg/kg IM 2 weeks apart",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "mg/kg",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "ml",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Imidocarb 120 mg/ml",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "6.6",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "ml IM.   Repeat in 2 weeks",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "For Babesia gibsoni or B. microti",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Atovaquone (13.3 mg/kg PO q 8 hr w' fatty meal) + Azithromycin (10 mg/kg PO SID), each for 10 days",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "mg/kg",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "mg",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Atovaquone",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "13.3",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "q 8 hr",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "TID with fatty meal",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Azithromycin",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "10",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "SID",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "SID",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

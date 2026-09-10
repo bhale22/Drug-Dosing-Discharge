@@ -558,5 +558,8 @@
       "desc": "if 2+ seizures after diazepam; can give IM in cats"
     }
   ],
-  "dischargeBlocks": []
+  "dischargeBlocks": [],
+  "aliases": [
+    "Seizures"
+  ]
 }

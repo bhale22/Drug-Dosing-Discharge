@@ -58,22 +58,123 @@
       ]
     }
   ],
-  "notes": [
-    "Diet change- low fat. Recheck fasting triglycerides after 1 month (goal is < 500)",
-    "Chitin or Chitosan fiber supplement. 250 to 500 mg BID",
-    "Omega-3 fatty acids: 70-100 mg/kg/day",
-    "Bezafibrate 4-10 mg/kg SID (Fiona Stocker on 100 mg SID, 40 lb dog)",
-    "Most clinical signs occur when triglycerides are >500 mg/dL (>5.65 mmol/L) but there are many patients who do not have clinical signs",
-    "even when the value is > 1,000 mg/dL (>11.3 mmol/L). Generally speaking, if the initial result was not on a fasted sample, a value >500 mg/dL (>5.65 mmol/L)",
-    "should be rechecked on a fasted sample and if still > 500 mg/dL (>5.65 mmol/L), underlying reasons for the elevated value should be explored.",
-    "Abdominal signs--anorexia, vomiting, diarrhea.",
-    "Acute necrotizing pancreatitis.",
-    "Ocular changes such as lipid keratopathy, arcus lipoides,",
-    "stromal dystrophy, lipid in the aqueous humor, uveitis, blindness, and lipemia retinalis.",
-    "Dermatological manifestations such as cutaneous xanthomata, pruritus, and alopecia.",
-    "Xanthomas may also be seen in organs (liver, spleen, kidney, heart, skeletal muscle and intestine).",
-    "Central nervous system disturbances such as seizures, behavioral changes, neuropathies,",
-    "and cerebral atherosclerosis. These signs do not usually occur until the triglycerides exceed 1000 mg/dL."
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Hyperlipidemia",
+        "ncols": 3,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Diet change- low fat.  Recheck fasting triglycerides after 1 month (goal is < 500)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Chitin or Chitosan fiber supplement.  250 to 500 mg BID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Omega-3 fatty acids:  70-100 mg/kg/day",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Bezafibrate 4-10 mg/kg SID (Fiona Stocker on 100 mg SID, 40 lb dog)",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Most clinical signs occur when triglycerides are >500 mg/dL (>5.65 mmol/L) but there are many patients who do not have clinical signs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "even when the value is > 1,000 mg/dL (>11.3 mmol/L). Generally speaking, if the initial result was not on a fasted sample, a value >500 mg/dL (>5.65 mmol/L)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "should be rechecked on a fasted sample and if still > 500 mg/dL (>5.65 mmol/L), underlying reasons for the elevated value should be explored.",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Abdominal signs--anorexia, vomiting, diarrhea.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Acute necrotizing pancreatitis.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Ocular changes such as lipid keratopathy, arcus lipoides,",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "stromal dystrophy, lipid in the aqueous humor, uveitis, blindness, and lipemia retinalis.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Dermatological manifestations such as cutaneous xanthomata, pruritus, and alopecia.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Xanthomas may also be seen in organs (liver, spleen, kidney, heart, skeletal muscle and intestine).",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Central nervous system disturbances such as seizures, behavioral changes, neuropathies,",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "and cerebral atherosclerosis. These signs do not usually occur until the triglycerides exceed 1000 mg/dL.",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

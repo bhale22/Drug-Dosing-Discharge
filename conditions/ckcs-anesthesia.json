@@ -141,26 +141,229 @@
       "inClinic": true
     }
   ],
-  "notes": [
-    "Anesthesia for dog with mild to moderate chronic mitral insufficiency",
-    "Fluids at 2.5 ml/kg/hr (1/4 of our usual rate of 10 ml/kg/hr)",
-    "Premed with midazolam and opioid, and possibly low dose glyco/atropine",
-    "Preoxygenate prior to induction",
-    "Induce with midazolam IV, followed by Propofol TO EFFECT",
-    "VOLUME (ml)",
-    "Butorphanol",
-    "Buprenorphine",
-    "MethadoneLow",
-    "Methadone High",
-    "Hydro Low",
-    "Hydro High",
-    "Midazolam",
-    "Atropine (low dose)",
-    "Preoxygenate",
-    "IV INDUCTION",
-    "Propofol",
-    "Draw 1 ml/10 pounds, but give slowly to effect",
-    "ml/kg/hr"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "CKCS Anesthesia",
+        "ncols": 4,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Anesthesia for dog with mild to moderate chronic mitral insufficiency",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Fluids at 2.5 ml/kg/hr  (1/4 of our usual rate of 10 ml/kg/hr)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Premed with midazolam and opioid, and possibly low dose glyco/atropine",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Preoxygenate prior to induction",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Induce with midazolam IV, followed by Propofol TO EFFECT",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "PREMED",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "dose (mg/kg)",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "VOLUME (ml)",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Butorphanol",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "0.2",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Buprenorphine",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "0.01",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "MethadoneLow",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "0.2",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Methadone High",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "0.5",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Hydro Low",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "0.1",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Hydro High",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "0.2",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Midazolam",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "0.2",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Atropine (low dose)",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "0.015",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Preoxygenate",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "IV INDUCTION",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Midazolam",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "0.18",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Propofol",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "Draw 1 ml/10 pounds, but give slowly to effect",
+              "b": true
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Fluid rate",
+              "b": true
+            },
+            {
+              "c": 1,
+              "t": "ml/kg/hr",
+              "b": true
+            },
+            {
+              "c": 3,
+              "t": "ml/hr",
+              "b": true
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

@@ -172,63 +172,424 @@
       ]
     }
   ],
-  "notes": [
-    "Thunderstorm phobia",
-    "Fluoxetine 1 to 2 mg/kg SID",
-    "(1 mg/kg)",
-    "mg SID",
-    "Seasonal (wean off 25% a week)",
-    "Sertraline 2 to 4 mg/kg SID",
-    "(2 mg/kg)",
-    "Sertraline has fewer GI side effects than other SSRI’s and is",
-    "Zoloft- OK to switch between Zoloft and Prozac directly (without tapering)",
-    "the medication of choice for those patients with underlying gastrointestinal disease",
-    "The dose for sertraline is 2–4 mg/kg/day however, it is often dosed at 1–2 mg/kg every 12 hr",
-    "Dose (mg) 0.04 mg/kg",
-    "Alprazolam",
-    ".02-.1 mg/kg",
-    "mg 1 hr prior to storm",
-    "xanax",
-    "prior to storm",
-    "0.25, 0.5, 1, 2mg tabs",
-    "duration 3 to 8 hours",
-    "Trazadone",
-    "Initial TOTAL Dose",
-    "Target TOTAL dose",
-    "50, 100, 150, 300 mg tabs",
-    "<10 kg",
-    "≤ 25 mg q8-24h",
-    "≤ 50 mg q8-24h",
-    "Duration 4 to 8 hrs",
-    "3-5 mg/kg",
-    "≥10-20 kg",
-    "50 mg q12-24h",
-    "100 mg q8-24h",
-    "10 mg/kg max dose",
-    "≥20-40 kg",
-    "100 mg q12-24h",
-    "200 mg q8-24h",
-    ">40 kg",
-    "200 – 300 mg q8-24h",
-    "You might try Xanax 0.02 mg / kg as a test dose--if no sedation, that is good but may gradually work way up. If agitated, try Atavan, same dosing.",
-    "Dose (mg) .5 mg/kg",
-    "diazepam",
-    "0.5-2.2 mg/kg prn",
-    "valium",
-    "2, 5, 10 mg tabs",
-    "Dose (mg) 0.05 mg/kg",
-    "Lorazepam",
-    "q 8 to 12 hrs",
-    "Ativan",
-    "0.5, 1, 2mg tabs",
-    "Atenolol",
-    "0.25-1 mg/kg",
-    "B blocker reduce tachycardia and",
-    "25, 50, 100 mg",
-    "Clonidine (alpha-2 Agonist)",
-    "0.01 - 0.05 mg/kg",
-    "mg 1.5 to 2 hrs prior",
-    "Sileo (alpha-2 Agonist)"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "T-Storms",
+        "ncols": 9,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Thunderstorm phobia",
+              "b": true
+            }
+          ],
+          [],
+          [
+            {
+              "c": 5,
+              "t": "Dose (mg)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Fluoxetine 1 to 2 mg/kg SID",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "(1 mg/kg)",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Seasonal (wean off 25% a week)",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Sertraline  2 to 4 mg/kg SID",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "(2 mg/kg)",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg SID",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "Sertraline has fewer GI side effects than other SSRI’s and is",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Zoloft- OK to switch between Zoloft and Prozac directly (without tapering)",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "the medication of choice for those patients with underlying gastrointestinal disease",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 7,
+              "t": "The dose for sertraline is 2–4 mg/kg/day however, it is often dosed at 1–2 mg/kg every 12 hr",
+              "b": true
+            }
+          ],
+          [],
+          [
+            {
+              "c": 2,
+              "t": "Dose",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "Dose (mg) 0.04 mg/kg",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Alprazolam",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": ".02-.1 mg/kg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg 1 hr prior to storm",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "xanax",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "prior to storm",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "0.25, 0.5, 1, 2mg tabs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "duration 3 to 8 hours",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Trazadone",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "Initial TOTAL Dose",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "Target TOTAL dose",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "50, 100, 150, 300 mg tabs",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "<10 kg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "≤ 25 mg q8-24h",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "≤ 50 mg q8-24h",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Duration 4 to 8 hrs",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "3-5 mg/kg",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "≥10-20 kg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "50 mg q12-24h",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "100 mg q8-24h",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "10 mg/kg max dose",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "≥20-40 kg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "100 mg q12-24h",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "200 mg q8-24h",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 5,
+              "t": ">40 kg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "100 mg q12-24h",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "200 – 300 mg q8-24h",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "You might try Xanax 0.02 mg / kg as a test dose--if no sedation, that is good but may gradually work way up. If agitated, try Atavan, same dosing.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 5,
+              "t": "Dose (mg) .5 mg/kg",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "diazepam",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.5-2.2 mg/kg prn",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg 1 hr prior to storm",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "valium",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "prior to storm",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "2, 5, 10 mg tabs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 5,
+              "t": "Dose (mg) 0.05 mg/kg",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Lorazepam",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": ".02-.1 mg/kg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg 1 hr prior to storm",
+              "b": false
+            },
+            {
+              "c": 8,
+              "t": "q 8 to 12 hrs",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Ativan",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "prior to storm",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "0.5, 1, 2mg tabs",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Atenolol",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.25-1 mg/kg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg 1 hr prior to storm",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "B blocker reduce tachycardia and",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "prior to storm",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "25, 50, 100 mg",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Clonidine (alpha-2 Agonist)",
+              "b": true
+            },
+            {
+              "c": 2,
+              "t": "0.01 - 0.05 mg/kg",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "0.01",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg 1.5 to 2 hrs prior",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Sileo (alpha-2 Agonist)",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

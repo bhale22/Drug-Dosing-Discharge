@@ -124,23 +124,128 @@
       ]
     }
   ],
-  "notes": [
-    "Treatment of Hepatic Lipidosis (Sharon Center)",
-    "Do not feed a diet low in protein.",
-    "Treat underlying disease.",
-    "Check for bleeding tendencies (low vitamin K) before placing esophagostomy tube or PEG tube.",
-    "Avoid lactate and dextrose containing fluids.",
-    "Potassium and phosphorus supplementation as needed. Be aware of hypophospatemia subsequent to refeeding.",
-    "l-Carnitine 250-500 mg/day",
-    "Taurine 250-500 mg/day",
-    "Water soluble vitamins: two-fold normal maintenance dose daily",
-    "Thiamine if ventroflexion (100-200 mg/day for 3 days)",
-    "B12: 1mg IM",
-    "Zinc 7-8 mg/day",
-    "Vitamin E 100-200 IU/day alpha tocopherol acetate per os",
-    "SAMe as a glutathione source (200 mg/day) or n-acetylcysteine (140 mg/kg IV as a loading dose than 70 mg/kg IV BID until enteral feeding established).",
-    "Fish Oil: 2000 mg/day supplies omega 3-poylunsaturated faty acids which are anti-inflammatory if the primary process is inflammatory.",
-    "Dr. Center has seen an increased survival rate in the treatment of HL from 62.5% to 85.3% with the addition of l-carnitine to her treatment protocol."
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Hepatic Lipidosis",
+        "ncols": 1,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Treatment of Hepatic Lipidosis  (Sharon Center)",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Do not feed a diet low in protein.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Treat underlying disease.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Check for bleeding tendencies (low vitamin K) before placing esophagostomy tube or PEG tube.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Avoid lactate and dextrose containing fluids.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Potassium and phosphorus supplementation as needed. Be aware of hypophospatemia subsequent to refeeding.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "l-Carnitine 250-500 mg/day",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Taurine 250-500 mg/day",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Water soluble vitamins: two-fold normal maintenance dose daily",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Thiamine if ventroflexion (100-200 mg/day for 3 days)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "B12: 1mg IM",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Zinc 7-8 mg/day",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Vitamin E 100-200 IU/day alpha tocopherol acetate per os",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "SAMe as a glutathione source (200 mg/day) or n-acetylcysteine (140 mg/kg IV as a loading dose than 70 mg/kg IV BID until enteral feeding established).",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Fish Oil: 2000 mg/day supplies omega 3-poylunsaturated faty acids which are anti-inflammatory if the primary process is inflammatory.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Dr. Center has seen an increased survival rate in the treatment of HL from 62.5% to 85.3% with the addition of l-carnitine to her treatment protocol.",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

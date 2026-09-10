@@ -52,24 +52,146 @@
       ]
     }
   ],
-  "notes": [
-    "Spirometra In Cats",
-    "Praziquantel has been used successfully for Spirometra and Dibothriocephalus spp. infections but a higher dosage of 25 mg/kg PO q 24 hrs for 2 consecutive days",
-    "Praziquantel 25 mg/kg:",
-    "mg on two consecutive days",
-    "Can order Oral praziquantel solution up to 68 mg/ml on Covetrus and 150 mg/ml on Chewy",
-    "Resistant Tapeworms",
-    "Fenbendazole 100 mg/kg:",
-    "mg Daily for 6 days",
-    "Panacur 100 m/kg SID for 6 days",
-    "The Droncit at higher doses for 3 consecutive days only caused her to skip shedding tapeworms for one day.",
-    "I spoke to the parasitologist at VaTech who recommended using Panacur at 100 mg/kg sid x 6 days. The rationale for this is that in Europe, mebendazole has been shown effective against dipilydium. Panacur didn't work against it in trials here, but the company did not attempt to test it at higher doses.",
-    "Pet finished the course 7 days ago, and has not shed any worms since day 2 of the regimen.",
-    "I will update further if the tapeworms recur, but wanted to get it out there that panacur at higher doses may work.",
-    "Good deal, thanks for updating. Panacur has a 100 mg/kg label dose in Europe for one dose instead of 3.",
-    "Craig Datz, DVM, MS, DABVP, DACVN",
-    "How safe is use of panacur at the 100 mg/kg dose in a 5mo puppy?",
-    "Good safety margin. I wouldn't have concerns about 100 mg/kg."
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Tapeworms",
+        "ncols": 4,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Weight (pounds)",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "15",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Spirometra In Cats",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "Praziquantel has been used successfully for Spirometra and Dibothriocephalus spp. infections but a higher dosage of 25 mg/kg PO q 24 hrs for 2 consecutive days",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Praziquantel 25 mg/kg:",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "mg on two consecutive days",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 2,
+              "t": "Can order Oral praziquantel solution up to 68 mg/ml on Covetrus and 150 mg/ml on Chewy",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Resistant Tapeworms",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Fenbendazole 100 mg/kg:",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "mg Daily for 6 days",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "Panacur 100 m/kg SID for 6 days",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "The Droncit at higher doses for 3 consecutive days only caused her to skip shedding tapeworms for one day.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "I spoke to the parasitologist at VaTech who recommended using Panacur at 100 mg/kg sid x 6 days. The rationale for this is that in Europe, mebendazole has been shown effective against dipilydium. Panacur didn't work against it in trials here, but the company did not attempt to test it at higher doses.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "Pet finished the course 7 days ago, and has not shed any worms since day 2 of the regimen.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "I will update further if the tapeworms recur, but wanted to get it out there that panacur at higher doses may work.",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 3,
+              "t": "Good deal, thanks for updating. Panacur has a 100 mg/kg label dose in Europe for one dose instead of 3.",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 3,
+              "t": "Craig Datz, DVM, MS, DABVP, DACVN",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 3,
+              "t": "How safe is use of panacur at the 100 mg/kg dose in a 5mo puppy?",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 3,
+              "t": "Good safety margin. I wouldn't have concerns about 100 mg/kg.",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

@@ -102,21 +102,150 @@
       ]
     }
   ],
-  "notes": [
-    "Cerenia",
-    "8 mg/kg minimum",
-    "5 - 10 mg",
-    ".25-2.2 mg/kg for sedation*",
-    "* in dog with chronic use may need to double dosage",
-    "Dimenhydrinate",
-    "12.5 mg (1/4 tab)",
-    "5mg/kg (1 tab per 20#)",
-    "Dramamine/Gravol 50 mg tabs",
-    "Meclizine",
-    "Antivert, \"Dramamine Non-drowsy\" OTC 25 mg tabs",
-    "0.5 mg/kg",
-    "12.5 mg for small dog, 25 mg big dog",
-    "(50mg big big dog)"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "CarSickness",
+        "ncols": 6,
+        "rows": [
+          [
+            {
+              "c": 1,
+              "t": "Weight",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "22",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "lb",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "kg",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Dose/cat",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "Dose/dog",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Cerenia",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "8 mg/kg minimum",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Ace",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "5mg",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "5 - 10 mg",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": ".25-2.2 mg/kg for sedation*",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 4,
+              "t": "* in dog with chronic use may need to double dosage",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Dimenhydrinate",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "12.5 mg (1/4 tab)",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "5mg/kg (1 tab per 20#)",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Dramamine/Gravol 50 mg tabs",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 0,
+              "t": "Meclizine",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Antivert, \"Dramamine Non-drowsy\"  OTC 25 mg tabs",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "0.5 mg/kg",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "12.5 mg for small dog, 25 mg big dog",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 4,
+              "t": "(50mg big big dog)",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": []
 }

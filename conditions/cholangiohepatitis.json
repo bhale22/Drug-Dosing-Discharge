@@ -193,38 +193,493 @@
       "inClinic": true
     }
   ],
-  "notes": [
-    "Antibiotics",
-    "Amoxi + quinolone",
-    "Induce with midazolam IV, followed by Propofol TO EFFECT",
-    "Amoxicillin",
-    "Zeniquin",
-    "Baytril",
-    "Cipro",
-    "+- Flagyl",
-    "Metronidazole",
-    "flagyl IN ADDITION to amoxi & Quinolone",
-    "Metronidazole (7.5 mg/kg BID) is often used with another antimicrobial",
-    "because it kills anaerobes, penetrates the bile and liver well, has anti-inflammatory (CMI) and anti-endotoxic effects",
-    "Ursodiol",
-    "10-15mg/kg",
-    "mg SID",
-    "VOLUME (ml)",
-    "Butorphanol",
-    "Buprenorphine",
-    "mg/kg/day (10-15)",
-    "Prednisolone",
-    "mg/kg BID",
-    "mg/kg SID",
-    "Famotidine",
-    "Cerenia",
-    "Mirtazapine",
-    "1/4 of 7.5 mg tab EOD",
-    "10-20 mg/kg BID",
-    "Target recommendations",
-    "2.75 mg/kg SID",
-    "Chloramphenicol",
-    "35 mg/kg BID"
-  ],
-  "dischargeBlocks": []
+  "notes": {
+    "grids": [
+      {
+        "title": "Cholangiohep",
+        "ncols": 12,
+        "rows": [
+          [
+            {
+              "c": 0,
+              "t": "Antibiotics",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Amoxi + quinolone",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "Dose (mg/kg)",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "Dose (mg)",
+              "b": false
+            },
+            {
+              "c": 8,
+              "t": "Induce with midazolam IV, followed by Propofol TO EFFECT",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Amoxicillin",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "11",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "BID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Zeniquin",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "2.75",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Baytril",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "5",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Cipro",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "30",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "+- Flagyl",
+              "b": false
+            },
+            {
+              "c": 1,
+              "t": "Metronidazole",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "7.5",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "BID",
+              "b": false
+            },
+            {
+              "c": 7,
+              "t": "flagyl IN ADDITION to amoxi & Quinolone",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "Metronidazole (7.5 mg/kg BID) is often used with another antimicrobial",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 0,
+              "t": "because it kills anaerobes, penetrates the bile and liver well, has anti-inflammatory (CMI) and anti-endotoxic effects",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Ursodiol",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "10",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "10-15mg/kg",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 6,
+              "t": "mg SID",
+              "b": false
+            },
+            {
+              "c": 8,
+              "t": "PREMED",
+              "b": true
+            },
+            {
+              "c": 9,
+              "t": "dose (mg/kg)",
+              "b": false
+            },
+            {
+              "c": 10,
+              "t": "mg",
+              "b": false
+            },
+            {
+              "c": 11,
+              "t": "VOLUME (ml)",
+              "b": true
+            }
+          ],
+          [
+            {
+              "c": 8,
+              "t": "Butorphanol",
+              "b": true
+            },
+            {
+              "c": 9,
+              "t": "0.2",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 8,
+              "t": "Buprenorphine",
+              "b": true
+            },
+            {
+              "c": 9,
+              "t": "0.01",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Ursodiol",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "10",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "mg/kg/day (10-15)",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Prednisolone",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "2.2",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "mg/kg/day",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Metronidazole",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "7.5",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "BID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Zeniquin",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "2.75",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "mg/kg SID",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Baytril",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "2.5",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "BID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Famotidine",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "0.5",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "BID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Cerenia",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "2.2",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "mg/kg/day",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Mirtazapine",
+              "b": false
+            },
+            {
+              "c": 4,
+              "t": "1/4 of 7.5 mg tab EOD",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Amoxicillin",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "10",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "10-20 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "BID",
+              "b": false
+            }
+          ],
+          [],
+          [
+            {
+              "c": 1,
+              "t": "Target recommendations",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Zeniquin",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "2.75",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "2.75 mg/kg SID",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "SID",
+              "b": false
+            }
+          ],
+          [
+            {
+              "c": 1,
+              "t": "Chloramphenicol",
+              "b": false
+            },
+            {
+              "c": 2,
+              "t": "35",
+              "b": false
+            },
+            {
+              "c": 3,
+              "t": "35 mg/kg BID",
+              "b": false
+            },
+            {
+              "c": 5,
+              "t": "BID",
+              "b": false
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "dischargeBlocks": [],
+  "aliases": [
+    "Hepatitis",
+    "Liver Disease"
+  ]
 }
