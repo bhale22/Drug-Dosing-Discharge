@@ -103,14 +103,23 @@
       "sp": "cat",
       "grp": "Drugs",
       "name": "N-acetylcysteine",
-      "type": "calc",
+      "type": "tab",
       "lo": 70,
       "hi": 70,
       "unitDose": "mg",
       "freqs": [
         "IV BID until enteral feeding is established"
       ],
-      "inClinic": true
+      "inClinic": true,
+      "strengths": [
+        600
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "fishoil_hl",

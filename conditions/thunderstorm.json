@@ -46,13 +46,24 @@
       "grp": "Drugs",
       "name": "Fluoxetine",
       "gen": "Prozac",
-      "type": "calc",
+      "type": "tab",
       "lo": 1,
       "hi": 2,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        10,
+        20,
+        40
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "sertraline_ts",
@@ -60,14 +71,30 @@
       "grp": "Drugs",
       "name": "Sertraline",
       "gen": "Zoloft",
-      "type": "calc",
+      "type": "tab",
       "lo": 2,
       "hi": 4,
       "unitDose": "mg",
       "freqs": [
         "SID",
         "divided BID (1–2 mg/kg q 12 h)"
-      ]
+      ],
+      "strengths": [
+        25,
+        50,
+        100
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab",
+      "mlConc": 20.0
     },
     {
       "id": "alprazolam_ts",
@@ -75,13 +102,29 @@
       "grp": "Drugs",
       "name": "Alprazolam",
       "gen": "Xanax — 0.25, 0.5, 1, 2 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.02,
       "hi": 0.1,
       "unitDose": "mg",
       "freqs": [
         "1 hour before the storm"
-      ]
+      ],
+      "strengths": [
+        0.25,
+        0.5,
+        1,
+        2
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "trazodone_ts",
@@ -111,13 +154,28 @@
       "grp": "Drugs",
       "name": "Diazepam",
       "gen": "Valium — 2, 5, 10 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 2.2,
       "unitDose": "mg",
       "freqs": [
         "1 hour before the storm, as needed"
-      ]
+      ],
+      "strengths": [
+        2,
+        5,
+        10
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "lorazepam_ts",
@@ -125,13 +183,28 @@
       "grp": "Drugs",
       "name": "Lorazepam",
       "gen": "Ativan — 0.5, 1, 2 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.02,
       "hi": 0.1,
       "unitDose": "mg",
       "freqs": [
         "1 hour before the storm, then q 8-12 h"
-      ]
+      ],
+      "strengths": [
+        0.5,
+        1,
+        2
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "atenolol_ts",
@@ -139,26 +212,56 @@
       "grp": "Drugs",
       "name": "Atenolol",
       "gen": "25, 50, 100 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.25,
       "hi": 1,
       "unitDose": "mg",
       "freqs": [
         "1 hour before the storm"
-      ]
+      ],
+      "strengths": [
+        25,
+        50,
+        100
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "clonidine_ts",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Clonidine",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.01,
       "hi": 0.05,
       "unitDose": "mg",
       "freqs": [
         "1.5 to 2 hours before the storm"
-      ]
+      ],
+      "strengths": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "sileo_ts",

@@ -14,13 +14,26 @@
       "sp": "dog",
       "grp": "Drugs",
       "name": "Cyclosporine",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap",
+      "mlConc": 100.0
     },
     {
       "id": "vitamina_sa",

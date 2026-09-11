@@ -47,26 +47,52 @@
       "grp": "Chill Protocol",
       "name": "Gabapentin",
       "gen": "Caps 100, 300, 400 / Tabs 600, 800 / Soln 50 mg/ml",
-      "type": "calc",
+      "type": "tab",
       "lo": 20,
       "hi": 25,
       "unitDose": "mg",
       "freqs": [
         "Night Before Appt"
-      ]
+      ],
+      "strengths": [
+        100,
+        300,
+        400,
+        600,
+        800
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "gaba_2hr",
       "sp": "dog",
       "grp": "Chill Protocol",
       "name": "Gabapentin",
-      "type": "calc",
+      "type": "tab",
       "lo": 20,
       "hi": 25,
       "unitDose": "mg",
       "freqs": [
         "2 hrs before Appt"
-      ]
+      ],
+      "strengths": [
+        100,
+        300,
+        400,
+        600,
+        800
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "melatonin_os",
@@ -84,27 +110,57 @@
       "sp": "dog",
       "grp": "Chill Protocol",
       "name": "Acepromazine",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.025,
       "hi": 0.05,
       "unitDose": "mg",
       "freqs": [
         "30 min before app"
       ],
-      "gen": "10 mg/ml ACE Transumcosal"
+      "gen": "10 mg/ml ACE Transumcosal",
+      "strengths": [
+        5,
+        10,
+        25
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "ace_meatball",
       "sp": "dog",
       "grp": "For Horrible Dogs",
       "name": "Ace (10 mg/ml)",
-      "type": "calc",
+      "type": "tab",
       "lo": 2.2,
       "hi": 2.2,
       "unitDose": "mg",
       "freqs": [
         "Meatball injected with Ace 2.2 mg/kg and Telazol 10 to 20 mg/kg"
-      ]
+      ],
+      "strengths": [
+        5,
+        10,
+        25
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "telazol_meatball",
@@ -124,26 +180,59 @@
       "sp": "dog",
       "grp": "Oral Phenobarb 10 mg/kg + Gabapentin 10 to 40mg/kg combined",
       "name": "Phenobarb",
-      "type": "calc",
+      "type": "tab",
       "lo": 10,
       "hi": 10,
       "unitDose": "mg",
       "freqs": [
         ""
-      ]
+      ],
+      "strengths": [
+        15,
+        16.2,
+        30,
+        32.4,
+        60,
+        64.8,
+        97.2,
+        100
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "gaba_combo",
       "sp": "dog",
       "grp": "Oral Phenobarb 10 mg/kg + Gabapentin 10 to 40mg/kg combined",
       "name": "Gabapentin",
-      "type": "calc",
+      "type": "tab",
       "lo": 10,
       "hi": 40,
       "unitDose": "mg",
       "freqs": [
         ""
-      ]
+      ],
+      "strengths": [
+        100,
+        300,
+        400,
+        600,
+        800
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "trazodone_os",

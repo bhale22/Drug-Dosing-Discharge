@@ -14,13 +14,30 @@
       "sp": "dog",
       "grp": "Drugs",
       "name": "Doxycycline",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        20,
+        50,
+        75,
+        100,
+        150
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "benazepril_lyme",
@@ -28,13 +45,29 @@
       "grp": "Drugs",
       "name": "Benazapril",
       "gen": "5, 10, 20, 40 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 0.5,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        5,
+        10,
+        20,
+        40
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "telmisartan_lyme",
@@ -42,13 +75,28 @@
       "grp": "Drugs",
       "name": "Telmisartan",
       "gen": "20, 40, 80 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 1,
       "hi": 1,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        20,
+        40,
+        80
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "irbesartan_lyme",
@@ -56,26 +104,56 @@
       "grp": "Drugs",
       "name": "Irbesartan",
       "gen": "75, 150, 300 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 1,
       "hi": 3,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        75,
+        150,
+        300
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "losartan_lyme",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Losartan",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 1,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        25,
+        50,
+        100
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "mycophenolate_lyme",
@@ -83,26 +161,55 @@
       "grp": "Drugs",
       "name": "Mycophenolate",
       "gen": "250 mg caps or 500 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 10,
       "hi": 20,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        250,
+        500
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap",
+      "mlConc": 200.0
     },
     {
       "id": "pred_lyme",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Prednisone",
-      "type": "calc",
+      "type": "tab",
       "lo": 1,
       "hi": 1,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        1,
+        2.5,
+        5,
+        10,
+        20,
+        50
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "aspirin_lyme",

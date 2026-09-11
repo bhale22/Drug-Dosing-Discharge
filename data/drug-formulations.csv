@@ -1,0 +1,195 @@
+﻿Drug,Generic,Brand(s),Form,US tablet/cap strengths (mg),Liquid concentration,Injectable concentration,Unit,Source,Notes,Spreadsheet sheets
+Acepromazine,acepromazine,PromAce,tab; injectable,5 / 10 / 25,,10 mg/ml,tab,VET-LABEL,,CarSickness; Dog Anesthesia meds; Dyssynergia; Incontinence; Oral Sedation
+Tylenol,acetaminophen,Tylenol,tab/cap,325 / 500,,,tab,HUMAN-GEN,"Tylenol #3 = 300/30 mg codeine, #4 = 300/60 mg (sheet). NEVER cats.",Disk Disease; NSAID; NSAIDs-tyl-grapes-raisins
+Activated Charcoal,activated charcoal,ToxiBan,suspension,,ToxiBan 104 mg/ml (10.4%),,ml,VET-LABEL,,NSAIDs-tyl-grapes-raisins
+Alfaxan,alfaxalone,Alfaxan,injectable,,,10 mg/ml,ml,VET-LABEL,,
+Alprazolam,alprazolam,Xanax,tab,0.25 / 0.5 / 1 / 2,,,tab,SHEET,,T-Storms; Urethrospasms)
+Aloh,aluminum hydroxide,Phosbind,powder,,,,tsp,SHEET,1/8 tsp = 250 mg (sheet),"Calcitriol, ALOH, Darbe-EPO"
+Amitriptyline,amitriptyline,Elavil,tab,10 / 25 / 50 / 75 / 100 / 150,,,tab,HUMAN-GEN,,SKIN
+Amoxicillin,amoxicillin,Amoxi-Tabs / Amoxi-Drop,tab (vet); cap (human); suspension,50 / 100 / 150 / 200 / 400 / 250 / 500 / 875,Amoxi-Drop 50 mg/ml; human 125/250/400 mg per 5 ml,,tab,VET-LABEL,"vet tabs 50/100/150/200/400; human caps 250/500, tabs 500/875",Cholangiohep; Helicobacter; Liver Drugs; UTI ANTIBIOTICS
+Clavamox,amoxicillin/clavulanate,Clavamox,tab / chewable; drops,62.5 / 125 / 250 / 375,Clavamox Drops 62.5 mg/ml,,tab,VET-LABEL,,UTI ANTIBIOTICS
+Ampicillin,ampicillin,,injectable,,,sheet uses 250 mg/ml,ml,SHEET,,Dog Anesthesia meds
+Apomorphine,apomorphine,Clevor,injectable / ophthalmic,,,3 mg/ml (sheet); Clevor 30 mg/ml eye drops,ml,VET-LABEL,,NSAIDs-tyl-grapes-raisins; Vomiting
+Aspirin,aspirin,,tab,81 / 325,,,tab,OTC,baby aspirin = 81 mg,
+Atenolol,atenolol,Tenormin,tab,25 / 50 / 100,,,tab,SHEET,,T-Storms
+Atovaquone,atovaquone,Mepron,suspension,,750 mg/5 ml (150 mg/ml),,ml,HUMAN-GEN,,Babesia
+Atropine,atropine,,injectable,,,0.54 mg/ml (1/120 gr); 0.4 mg/ml,ml,VET-LABEL,,Anaphylaxis ; Dog Anesthesia meds
+Azathioprine,azathioprine,Imuran,tab,50 / 75 / 100,,,tab,HUMAN-GEN,DOGS ONLY (sheet),Skin AutoImmune
+Azithromycin,azithromycin,Zithromax,tab; suspension,250 / 500 / 600,100 mg/5 ml; 200 mg/5 ml (40 mg/ml),,tab,HUMAN-GEN,,Babesia; Snuffling Cat
+Benazepril,benazepril,Lotensin / Fortekor,tab,5 / 10 / 20 / 40,,,tab,SHEET,sheet lists 5/10/20/40,Heart; Lyme Nephritis
+Bethanechol,bethanechol,Urecholine,tab,5 / 10 / 25 / 50,,,tab,HUMAN-GEN,,Dyssynergia; Incontinence
+Bezafibrate,bezafibrate,,compounded cap,,,,cap,COMPOUNDED,no US commercial product; compounded (e.g. Chiron) weight-based caps. Bezalip 200/400 mg outside US,Hyperlipidemia
+Pepto,bismuth subsalicylate,Pepto-Bismol,chewable tab; liquid,262,262 mg/15 ml (17.5 mg/ml); max-strength 525 mg/15 ml,,tab,OTC,,Diarrhea; Helicobacter
+Budesonide,budesonide,Entocort EC,cap (delayed release),3,,,cap,HUMAN-GEN,vet doses often compounded 1 mg caps,Reflux esophagitis
+Buprenex,buprenorphine,Buprenex / Simbadol,injectable,,,0.3 mg/ml; Simbadol 1.8 mg/ml (cats); SR compounded 3 mg/ml (sheet),ml,VET-LABEL,,Dog Anesthesia meds; SR Buprenorphine
+Torbutrol,butorphanol,Torbutrol / Torbugesic,tab (vet),1 / 5 / 10,,10 mg/ml,tab,VET-LABEL,,Dog Anesthesia meds
+Calcitriol,calcitriol,Rocaltrol,cap; compounded,,,,cap,COMPOUNDED,human 0.25/0.5 mcg caps; vet doses need compounding (ng/kg),
+Calcium Gluconate,calcium gluconate,,injectable,,,10% (100 mg/ml),ml,HUMAN-GEN,,Dog Anesthesia meds; Dystocia
+Entyce,capromorelin,Entyce,oral solution,,30 mg/ml,,ml,VET-LABEL,,Appetite stimulation
+Elura,capromorelin,Elura,oral solution (cats),,20 mg/ml,,ml,VET-LABEL,,Appetite stimulation
+Rimadyl,carprofen,Rimadyl,chewable tab (scored),25 / 75 / 100,,50 mg/ml,tab,VET-LABEL,,Disk Disease; NSAID; NSAIDs-tyl-grapes-raisins
+Cefazolin,cefazolin,Ancef,injectable,,,reconstituted; sheet uses 100 mg/ml,ml,SHEET,,Dog Anesthesia meds
+Convenia,cefovecin,Convenia,injectable,,,80 mg/ml reconstituted,ml,VET-LABEL,,UTI ANTIBIOTICS
+Simplicef,cefpodoxime proxetil,Simplicef,tab (scored),100 / 200,50 mg/5 ml; 100 mg/5 ml (human),,tab,VET-LABEL,,SKIN; UTI ANTIBIOTICS
+Cephalexin,cephalexin,Keflex / Rilexine,cap; tab; suspension,250 / 500 / 750,125 mg/5 ml; 250 mg/5 ml,,cap,HUMAN-GEN,Rilexine vet chewables 75/150/300/600 mg,MELTING ULCER-OTC drops; SKIN; UTI ANTIBIOTICS
+Chitin,chitosan,,cap (OTC),500,,,cap,OTC,,Hyperlipidemia
+Chlorambucil,chlorambucil,Leukeran,tab,2,,,tab,HUMAN-GEN,do not split; cytotoxic handling,ITP; Skin AutoImmune
+Chloramphenicol,chloramphenicol,Viceton,tab (vet),250 / 500 / 1000,,,tab,VET-LABEL,gloves when handling,Cholangiohep; Liver Drugs
+Chlorpheniramine,chlorpheniramine,Chlor-Trimeton,tab,4 / 8 / 12,,,tab,HUMAN-GEN,8/12 mg are extended release,
+Cimetidine,cimetidine,Tagamet,tab,200 / 300 / 400 / 800,,,tab,HUMAN-GEN,,NSAIDs-tyl-grapes-raisins
+Cipro,ciprofloxacin,Cipro,tab,250 / 500 / 750,250 mg/5 ml; 500 mg/5 ml,,tab,HUMAN-GEN,,Cholangiohep; UTI ANTIBIOTICS
+Clarithromycin,clarithromycin,Biaxin,tab; suspension,250 / 500,125 mg/5 ml; 250 mg/5 ml,,tab,HUMAN-GEN,,Helicobacter
+Clindamycin,clindamycin,Antirobe,cap; liquid,25 / 75 / 150 / 300,25 mg/ml (Antirobe Aquadrops),,cap,VET-LABEL,,
+Clonazepam,clonazepam,Klonopin,tab,0.5 / 1 / 2,,,tab,SHEET,,Seizures
+Clonidine,clonidine,Catapres,tab,0.1 / 0.2 / 0.3,,,tab,HUMAN-GEN,,T-Storms
+Clopidogrel,clopidogrel,Plavix,tab,75,,,tab,HUMAN-GEN,,
+Clorazepate,clorazepate,Tranxene,tab,3.75 / 7.5 / 15,,,tab,SHEET,,Seizures
+Cortrosyn,cosyntropin,Cortrosyn,injectable,,,0.25 mg vial,ml,HUMAN-GEN,,Addisons; Endocrine Testing
+B12,cyanocobalamin,,injectable; tab,,,1000 mcg/ml,ml,HUMAN-GEN,,"Calcitriol, ALOH, Darbe-EPO; Hepatic Lipidosis"
+Cyclosporine,cyclosporine (modified),Atopica / Cyclavance,cap; oral solution,10 / 25 / 50 / 100,100 mg/ml (Atopica for Cats / Cyclavance),,cap,VET-LABEL,,ITP; Reflux esophagitis; Sebaceous Adenitis; Skin AutoImmune
+Cytarabine,cytarabine,Cytosar,injectable,,,20 mg/ml; 100 mg/ml,ml,HUMAN-GEN,,Encephalitis
+Darbepoetin,darbepoetin alfa,Aranesp,injectable,,,25/40/60/100/200 mcg per syringe,ml,HUMAN-GEN,,
+Deramaxx,deracoxib,Deramaxx,chewable tab,12 / 25 / 75 / 100,,,tab,VET-LABEL,,NSAIDs-tyl-grapes-raisins
+Ddavp,desmopressin,DDAVP,nasal solution; tab,0.1 / 0.2,100 mcg/ml (0.01%) nasal,,tab,HUMAN-GEN,,
+Docp,desoxycorticosterone pivalate,Zycortal / Percorten-V,injectable suspension,,,25 mg/ml,ml,VET-LABEL,,Addisons
+Dexamethasone,dexamethasone,Azium / Dex SP,tab; injectable,0.5 / 0.75 / 1 / 1.5 / 2 / 4 / 6,,2 mg/ml; Dex SP 4 mg/ml (sheet),tab,HUMAN-GEN,,Anaphylaxis ; Disk Disease; Endocrine Testing; ITP
+Dexdomitor,dexmedetomidine,Dexdomitor,injectable,,,0.5 mg/ml (500 mcg/ml); 0.1 mg/ml,ml,VET-LABEL,,Dog Anesthesia meds; Seizures; Vomiting
+Sileo,dexmedetomidine oromucosal gel,Sileo,gel,,0.09 mg/ml,,ml,VET-LABEL,,
+Diazepam,diazepam,Valium,tab; injectable; rectal gel,2 / 5 / 10,5 mg/5 ml; 5 mg/ml intensol,5 mg/ml,tab,SHEET,,Disk Disease; Dog Anesthesia meds; Dyssynergia; Incontinence; Seizures
+Des,diethylstilbestrol,,compounded cap,1,,,cap,COMPOUNDED,typically 1 mg caps; also 0.5 mg,Incontinence
+Dimenhydrinate,dimenhydrinate,Dramamine,tab (OTC),50,,,tab,SHEET,,CarSickness
+Diphenhydramine,diphenhydramine,Benadryl,tab; cap; liquid; injectable,25 / 50,12.5 mg/5 ml (2.5 mg/ml),50 mg/ml,tab,HUMAN-GEN,,Anaphylaxis ; SKIN
+Lomotil,diphenoxylate/atropine,Lomotil,tab,2.5,2.5 mg/5 ml,,tab,HUMAN-GEN,2.5 mg diphenoxylate + 0.025 mg atropine,Diarrhea
+Cosopt,dorzolamide/timolol,Cosopt,ophthalmic,,,,gtt,HUMAN-GEN,,Glaucoma
+Doxapram,doxapram,Dopram-V,injectable,,,20 mg/ml,ml,VET-LABEL,,Dog Anesthesia meds
+Doxycycline,doxycycline,Vibramycin,tab; cap; suspension,20 / 50 / 75 / 100 / 150,25 mg/5 ml; 50 mg/5 ml (10 mg/ml),,tab,HUMAN-GEN,hyclate & monohydrate; give with food/water in cats,ITP; Lyme Nephritis; ToeNails; UTI ANTIBIOTICS; Uveitis
+Edta,EDTA,,ophthalmic (compounded),,,,gtt,COMPOUNDED,,MELTING ULCER-OTC drops
+Profender,emodepside/praziquantel,Profender,topical (cats); oral off-label per sheet,,,,ml,VET-LABEL,NOT MDR1 breeds (sheet),
+Enalapril,enalapril,Enacard / Vasotec,tab,2.5 / 5 / 10 / 20,,,tab,HUMAN-GEN,,Heart
+Baytril,enrofloxacin,Baytril,Taste Tabs / film-coated tab,22.7 / 68 / 136,,22.7 mg/ml; 100 mg/ml,tab,VET-LABEL,136 mg is Taste Tab only,Cholangiohep; Liver Drugs; UTI ANTIBIOTICS
+Epinephrine,epinephrine 1:1000,,injectable,,,1 mg/ml,ml,HUMAN-GEN,,Anaphylaxis ; Dog Anesthesia meds
+Dermoscent,essential fatty acid spot-on,Dermoscent Essential 6,topical,,,,pipette,OTC,,
+Incurin,estriol,Incurin,tab,1,,,tab,VET-LABEL,,Incontinence
+Famciclovir,famciclovir,Famvir,tab,125 / 250 / 500,,,tab,HUMAN-GEN,,
+Famotidine,famotidine,Pepcid,tab,10 / 20 / 40,40 mg/5 ml (8 mg/ml),10 mg/ml,tab,HUMAN-GEN,,Cholangiohep; Diarrhea; Helicobacter; Liver Drugs; NSAIDs-tyl-grapes-raisins; Vomiting
+Felbamate,felbamate,Felbatol,tab; suspension,400 / 600,600 mg/5 ml (120 mg/ml),,tab,SHEET,,Seizures
+Fenbendazole,fenbendazole,Panacur,granules; suspension,,"Panacur granules 222 mg/g (22.2%), 1/2/4 g packets & 1 lb jar; suspension 100 mg/ml (equine/bovine, used off-label)",,g,VET-LABEL,,Lungworms; Tapeworms
+Previcox,firocoxib,Previcox,chewable tab (half-scored),57 / 227,,,tab,VET-LABEL,,NSAID
+Fluocinolone,fluocinolone/DMSO,Synotic,otic,,,,ml,VET-LABEL,,Skin AutoImmune
+Fluoxetine,fluoxetine,Prozac / Reconcile,cap; tab; solution; vet chewable,10 / 20 / 40,20 mg/5 ml (4 mg/ml),,cap,HUMAN-GEN,10/20/40 caps; 10/20/60 tabs; Reconcile chewables 8/16/32/64 mg (VET-LABEL),House Soiling; T-Storms
+Furosemide,furosemide,Salix / Lasix,tab; solution; injectable,12.5 / 20 / 40 / 50 / 80,10 mg/ml oral solution,50 mg/ml (5%),tab,VET-LABEL,Salix 12.5 & 50 mg vet; human 20/40/80,Fluid Rate Cats; Heart
+Gabapentin,gabapentin,Neurontin,cap; tab; solution,100 / 300 / 400 / 600 / 800,"250 mg/5 ml (50 mg/ml) — human liquid contains xylitol, avoid",,cap,SHEET,100/300/400 caps; 600/800 tabs (sheet),House Soiling; MELTING ULCER-OTC drops; Oral Sedation; Seizures
+Glucosamine,glucosamine/chondroitin,Dasuquin / Cosequin,chewable,,,,tab,VET-LABEL,dose by weight band,Joint Supplements
+Glycopyrrolate,glycopyrrolate,Robinul,injectable,,,0.2 mg/ml,ml,HUMAN-GEN,,
+Galliprant,grapiprant,Galliprant,tab (20 & 60 scored; 100 unscored),20 / 60 / 100,,,tab,VET-LABEL,100 mg is not scored,NSAID
+Griseofulvin,griseofulvin,Gris-PEG / Grifulvin,tab; suspension,125 / 250 / 500,microsize 125 mg/5 ml,,tab,HUMAN-GEN,microsize 500 mg tab; ultramicrosize 125/250 mg,Dermatophyte
+Hetastarch,hetastarch,Hespan / VetStarch,IV fluid,,,6%,ml,VET-LABEL,,Dog Anesthesia meds
+Hycodan,hydrocodone/homatropine,Hycodan,tab; syrup,5,5 mg/5 ml,,tab,HUMAN-GEN,5 mg hydrocodone / 1.5 mg homatropine per tab or 5 ml; C-II,Cough
+Hydrogen Peroxide,hydrogen peroxide 3%,,solution,,,,ml,OTC,,Vomiting
+Hydro Low,hydromorphone,Dilaudid,injectable,,,2 mg/ml,ml,HUMAN-GEN,,
+Hydroxyzine,hydroxyzine,Atarax,tab; cap; syrup,10 / 25 / 50,10 mg/5 ml,,tab,HUMAN-GEN,,
+Hypertonic Saline,hypertonic saline,,IV fluid,,,7.2% / 7.5%,ml,VET-LABEL,,Dog Anesthesia meds
+Ibuprofen,ibuprofen,Advil/Motrin,tab,200 / 400 / 600 / 800,,,tab,HUMAN-GEN,toxicity reference only,NSAIDs-tyl-grapes-raisins
+Zenrelia,ilunocitinib,Zenrelia,tab,4.8 / 6.4 / 8.5 / 15,,,tab,VET-LABEL,from Ben skin.json,
+Advantage Multi,imidacloprid/moxidectin,Advantage Multi,topical,,,,tube,VET-LABEL,dose by weight band tube,
+Imidocarb,imidocarb dipropionate,Imizol,injectable,,,120 mg/ml,ml,VET-LABEL,,Babesia
+Insulin,insulin,Vetsulin / ProZinc,injectable,,,Vetsulin 40 U/ml; ProZinc 40 U/ml; glargine 100 U/ml,U,VET-LABEL,,
+Irbesartan,irbesartan,Avapro,tab,75 / 150 / 300,,,tab,SHEET,,Lyme Nephritis
+Iron Dextran,iron dextran,,injectable,,,100 mg/ml,ml,VET-LABEL,,"Calcitriol, ALOH, Darbe-EPO"
+Itraconazole,itraconazole,Sporanox / Itrafungol,cap; oral solution,100,Itrafungol 10 mg/ml (cats); Sporanox solution 10 mg/ml,,cap,VET-LABEL,do not compound (sheet),Dermatophyte
+Ivermectin,ivermectin 1%,Ivomec,injectable used orally,,,10 mg/ml (1%),ml,VET-LABEL,MDR1 caution,Lungworms; Mange
+Ketamine,ketamine,Ketaset,injectable,,,100 mg/ml,ml,VET-LABEL,,Disk Disease; Dog Anesthesia meds; Seizures
+Ketoconazole,ketoconazole,Nizoral,tab,200,,,tab,HUMAN-GEN,,
+L-Carnitine,L-carnitine,,cap/liquid (OTC),250 / 500,,,cap,OTC,,
+Lrs,lactated Ringer's,,IV/SQ fluid,,,,ml,VET-LABEL,,Dog Anesthesia meds
+Lactulose,lactulose,Enulose,solution,,10 g/15 ml (667 mg/ml),,ml,HUMAN-GEN,,Obstipation
+Levetiracetam,levetiracetam,Keppra,tab IR; XR; solution; injectable,250 / 500 / 750 / 1000,100 mg/ml,100 mg/ml,tab,SHEET,"XR 500/750 mg (splittable per sheet, never crush); sheet uses 250/500/750 IR",Seizures
+Levothyroxine,levothyroxine,Thyro-Tabs / Soloxine,tab (vet),0.1 / 0.2 / 0.3 / 0.4 / 0.5 / 0.6 / 0.7 / 0.8 / 1,ThyroKare 1 mg/ml,,tab,VET-LABEL,0.1–1.0 mg,
+Lidocaine,lidocaine,,injectable,,,20 mg/ml (2%),ml,HUMAN-GEN,,Dog Anesthesia meds
+Loperamide,loperamide,Imodium,cap / tab,2,1 mg/5 ml (0.2 mg/ml); 1 mg/7.5 ml,,tab,HUMAN-GEN,,Diarrhea
+Loratadine,loratadine,Claritin,tab; syrup,10,5 mg/5 ml,,tab,HUMAN-GEN,,SKIN
+Lorazepam,lorazepam,Ativan,tab,0.5 / 1 / 2,,,tab,SHEET,,T-Storms
+Losartan,losartan,Cozaar,tab,25 / 50 / 100,,,tab,HUMAN-GEN,,Lyme Nephritis
+Zeniquin,marbofloxacin,Zeniquin,tab (scored),25 / 50 / 100 / 200,,,tab,VET-LABEL,only the 25 mg is labelled for cats,Cholangiohep; Liver Drugs; UTI ANTIBIOTICS
+Cerenia,maropitant,Cerenia,tab (scored),16 / 24 / 60 / 160,,10 mg/ml,tab,VET-LABEL,,CarSickness; Cholangiohep; ITP; Liver Drugs; NSAIDs-tyl-grapes-raisins; Snuffling Cat; Vomiting
+Meclizine,meclizine,Antivert,tab (OTC),12.5 / 25 / 50,,,tab,SHEET,,CarSickness
+Douxo,medicated shampoo,Douxo / MiconaHex+Triz,topical,,,,bottle,VET-LABEL,,
+Melatonin,melatonin,,tab (OTC),1 / 3 / 5 / 10,,,tab,OTC,avoid xylitol-sweetened products,Oral Sedation
+Meloxicam,meloxicam,Metacam,oral suspension,,1.5 mg/ml (also 0.5 mg/ml),5 mg/ml,ml,VET-LABEL,human tabs 7.5/15 mg exist but are not practical for small patients,Disk Disease; Dog Anesthesia meds; NSAID; NSAIDs-tyl-grapes-raisins
+Methadone,methadone,,injectable,,,10 mg/ml,ml,HUMAN-GEN,,Dog Anesthesia meds
+Methimazole,methimazole,Felimazole,tab,2.5 / 5,,,tab,VET-LABEL,,
+Methocarbamol,methocarbamol,Robaxin,tab,500 / 750,,,tab,HUMAN-GEN,,Disk Disease; Dyssynergia; Incontinence
+Methylene Blue,methylene blue,,injectable,,,10 mg/ml (1%),ml,HUMAN-GEN,,
+Metoclopramide,metoclopramide,Reglan,tab; solution,5 / 10,5 mg/5 ml (1 mg/ml),5 mg/ml,tab,HUMAN-GEN,,Reflux esophagitis; Vomiting
+Metronidazole,metronidazole,Flagyl,tab,250 / 500,compounded benzoate suspension,,tab,HUMAN-GEN,,Cholangiohep; Diarrhea; Helicobacter; Liver Drugs; Vomiting
+Midazolam,midazolam,Versed,injectable,,,5 mg/ml; 1 mg/ml,ml,HUMAN-GEN,,CKCS Anesthesia; Dog Anesthesia meds; Seizures
+Interceptor,milbemycin oxime,Interceptor / Interceptor Plus,chewable,2.3 / 5.75 / 11.5 / 23,,,tab,VET-LABEL,"mg milbemycin per chew, by weight band",Lungworms
+Minocycline,minocycline,Minocin,cap; tab,50 / 75 / 100,,,cap,HUMAN-GEN,,
+Mirtazapine,mirtazapine,Remeron / Mirataz,tab; transdermal,7.5 / 15 / 30 / 45,,,tab,HUMAN-GEN,Mirataz ointment 20 mg/g (1.5-inch ribbon ≈ 2 mg) for cats — VET-LABEL,Cholangiohep; Liver Drugs
+Misoprostol,misoprostol,Cytotec,tab,0.1 / 0.2,,,tab,HUMAN-GEN,100 and 200 mcg tablets (listed here as 0.1 / 0.2 mg),NSAIDs-tyl-grapes-raisins
+Varenzin,molidustat,Varenzin-CA1,oral suspension (cats),,25 mg/ml,,ml,VET-LABEL,,"Calcitriol, ALOH, Darbe-EPO"
+Morphine,morphine,,injectable,,,10 mg/ml (also 15 mg/ml),ml,HUMAN-GEN,,Dog Anesthesia meds
+Mycophenolate,mycophenolate mofetil,CellCept,cap; tab; suspension,250 / 500,200 mg/ml,,cap,SHEET,"250 mg caps, 500 mg tabs (sheet)",Lyme Nephritis
+N-Acetylcysteine,N-acetylcysteine,Acetadote,injectable; cap (OTC),600,,200 mg/ml,cap,HUMAN-GEN,,NSAIDs-tyl-grapes-raisins
+Naloxone,naloxone,Narcan,injectable,,,0.4 mg/ml,ml,HUMAN-GEN,,Dog Anesthesia meds
+Naproxen,naproxen,Aleve,tab,220 / 250 / 375 / 500,,,tab,HUMAN-GEN,toxicity reference only,NSAIDs-tyl-grapes-raisins
+Neo-Poly-Dex,neomycin/polymyxin/dexamethasone,Neo-Poly-Dex,ophthalmic,,,,gtt,HUMAN-GEN,,Glaucoma
+Niacinamide,niacinamide,,tab (OTC),100 / 250 / 500,,,tab,OTC,,ToeNails
+Numelvi,numelvi,Numelvi,tab,21.6 / 31.6,,,tab,SHEET,strengths as in Ben skin.json,
+Apoquel,oclacitinib,Apoquel / Apoquel Chewable,tab (scored both sides),3.6 / 5.4 / 16,,,tab,VET-LABEL,,SKIN
+Omega,omega-3 fatty acids,Welactin / Nordic,liquid; cap,,,,ml,OTC,dose on EPA+DHA content; varies by product,Hyperlipidemia; Lyme Nephritis; SKIN; ToeNails
+Omeprazole,omeprazole,Prilosec,"cap / tab (delayed release, do not split)",10 / 20 / 40,,,cap,HUMAN-GEN,DR — do not split; 10 mg caps can be opened onto food,Diarrhea; Helicobacter; ITP; Reflux esophagitis
+Orbax,orbifloxacin,Orbax,tab; suspension,22.7 / 68,30 mg/ml,,tab,VET-LABEL,5.7 mg tab no longer listed,UTI ANTIBIOTICS
+Pentoxifylline,pentoxifylline,Trental,ER tab,400,,,tab,SHEET,"extended release, do not crush",ToeNails
+Phenobarbital,phenobarbital,Luminal,tab; elixir; injectable,15 / 16.2 / 30 / 32.4 / 60 / 64.8 / 97.2 / 100,20 mg/5 ml (4 mg/ml) elixir,65 mg/ml; 130 mg/ml,tab,HUMAN-GEN,"sheet uses 15/30/60 dog, 15/30 cat",Oral Sedation; Seizures
+Phenoxybenzamine,phenoxybenzamine,Dibenzyline,cap,10,,,cap,HUMAN-GEN,,Dyssynergia; Incontinence
+Proin,phenylpropanolamine,Proin / Proin ER,chewable tab (scored); ER tab,25 / 50 / 75,,,tab,VET-LABEL,Proin ER 18/38/74/145 mg once daily (do not split ER),Incontinence
+Pimobendan,pimobendan,Vetmedin,chewable tab (half-scored),1.25 / 2.5 / 5 / 10,,,tab,VET-LABEL,,Heart
+Miralax,polyethylene glycol 3350,Miralax,powder,,,,tsp,OTC,17 g per capful; sheet doses in tsp,Obstipation
+Adequan,polysulfated glycosaminoglycan,Adequan Canine,injectable,,,100 mg/ml,ml,VET-LABEL,,
+Kbr,potassium bromide,KBroVet-CA1,chewable tab; oral solution,250 / 500,250 mg/ml,,tab,VET-LABEL,sheet says compounded; KBroVet is now a conditionally approved product,Seizures
+Potassium Gluconate,potassium gluconate / citrate,Tumil-K / Renal K+,powder; gel; tab,,,,tsp,VET-LABEL,Tumil-K powder 2 mEq per 1/4 tsp; tabs 2 mEq,"Calcitriol, ALOH, Darbe-EPO"
+Veraflox,pradofloxacin,Veraflox,oral suspension (cats),,25 mg/ml,,ml,VET-LABEL,,UTI ANTIBIOTICS
+Praziquantel,praziquantel,Droncit,tab; injectable,34,,56.8 mg/ml,tab,VET-LABEL,oral solution up to 68 mg/ml (Covetrus) and 150 mg/ml (Chewy) per sheet,Lungworms; Tapeworms
+Cat Drontal,praziquantel/pyrantel,Drontal (feline),tab,18.2,,,tab,VET-LABEL,18.2 mg praziquantel / 72.6 mg pyrantel,
+Drontal,praziquantel/pyrantel/febantel,Drontal Plus,tab,22.7 / 68 / 136,,,tab,VET-LABEL,"mg praziquantel per tab: 22.7 (2-25 lb), 68 (26-60 lb), 136 (45+ lb)",
+Prazosin,prazosin,Minipress,cap,1 / 2 / 5,,,cap,HUMAN-GEN,,Dyssynergia; Incontinence; Urethrospasms)
+Prednisolone,prednisolone,PrednisTab / Millipred,tab (vet quarter-scored); solution,5 / 20,15 mg/5 ml (3 mg/ml); 5 mg/5 ml,,tab,VET-LABEL,PrednisTab 5 & 20 mg; human 5 mg tabs and 15 mg/5 ml syrup,Addisons; Cholangiohep; Diarrhea; Glaucoma; ITP; Liver Drugs; Reflux esophagitis; SKIN; Skin AutoImmune
+Pred Acetate,prednisolone acetate 1%,Pred Forte,ophthalmic,,,,gtt,HUMAN-GEN,,Glaucoma
+Prednisone,prednisone,Deltasone,tab; solution,1 / 2.5 / 5 / 10 / 20 / 50,5 mg/5 ml; 5 mg/ml intensol,,tab,HUMAN-GEN,,Addisons; Disk Disease; IMHA; ITP; Lyme Nephritis; SKIN; Skin AutoImmune
+Pregabalin,pregabalin,Lyrica,cap,25 / 50 / 75 / 100 / 150 / 200 / 225 / 300,20 mg/ml,,cap,HUMAN-GEN,,Seizures
+Probiotic,probiotic,ProViable / FortiFlora,cap; paste; sachet,,,,cap,VET-LABEL,,
+Propofol,propofol,PropoFlo,injectable,,,10 mg/ml,ml,VET-LABEL,,CKCS Anesthesia; Dog Anesthesia meds
+Same,S-adenosylmethionine,Denamarin / Denosyl,tab (vet),90 / 225 / 425,,,tab,VET-LABEL,Denamarin for cats/small dogs 90 mg; med 225; large 425 (SAMe content); do not split (enteric),NSAIDs-tyl-grapes-raisins
+Selegiline,selegiline,Anipryl,tab (vet),2 / 5 / 10 / 15 / 30,,,tab,VET-LABEL,2 mg has limited availability,Cognitive Dysfunction
+Sertraline,sertraline,Zoloft,tab; solution,25 / 50 / 100,20 mg/ml,,tab,HUMAN-GEN,,T-Storms
+Sildenafil,sildenafil,Revatio / Viagra,tab; suspension,20 / 25 / 50 / 100,10 mg/ml (Revatio suspension),,tab,HUMAN-GEN,,
+Spironolactone,spironolactone,Aldactone,tab,25 / 50 / 100,,,tab,HUMAN-GEN,,Heart
+Sucralfate,sucralfate,Carafate,tab; suspension,1000,1 g/10 ml (100 mg/ml),,tab,HUMAN-GEN,,Diarrhea; ITP; NSAIDs-tyl-grapes-raisins; Reflux esophagitis; Vomiting
+Smz,sulfamethoxazole/trimethoprim,Bactrim,tab; suspension,480 / 960,240 mg/5 ml (48 mg/ml),,tab,HUMAN-GEN,"SS 400/80, DS 800/160",UTI ANTIBIOTICS
+Sulfasalazine,sulfasalazine,Azulfidine,tab,500,,,tab,HUMAN-GEN,,Diarrhea
+Tacrolimus,tacrolimus,Protopic,topical ointment; cap,0.5 / 1 / 5,,,cap,HUMAN-GEN,0.03% and 0.1% ointment for skin; 0.02% ophthalmic compounded,Skin AutoImmune
+Tamsulosin,tamsulosin,Flomax,cap,0.4,,,cap,SHEET,,Dyssynergia; Incontinence
+Taurine,taurine,,cap/powder (OTC),250 / 500 / 1000,,,cap,OTC,,Hepatic Lipidosis
+Telmisartan,telmisartan,Micardis / Semintra,tab; oral solution,20 / 40 / 80,Semintra 10 mg/ml (US),,tab,SHEET,sheet lists 20/40/80 mg tabs,Lyme Nephritis
+Terbinafine,terbinafine,Lamisil,tab,250,,,tab,HUMAN-GEN,,Dermatophyte; Yeast Dermatitis
+Terbutaline,terbutaline,Brethine,tab; injectable,2.5 / 5,,1 mg/ml,tab,HUMAN-GEN,,Anaphylaxis 
+Tetracycline,tetracycline,,cap,250 / 500,,,cap,HUMAN-GEN,,Helicobacter; ToeNails
+Thiamine,thiamine,,injectable; tab,50 / 100,,100 mg/ml,tab,HUMAN-GEN,,Hepatic Lipidosis
+Telazol,tiletamine/zolazepam,Telazol,injectable,,,100 mg/ml reconstituted,ml,VET-LABEL,,Oral Sedation
+Tobramycin,tobramycin 0.3%,Tobrex,ophthalmic,,,,gtt,HUMAN-GEN,,MELTING ULCER-OTC drops
+Topiramate,topiramate,Topamax,tab; sprinkle cap,25 / 50 / 100 / 200,,,tab,SHEET,sheet uses 25/50/100,Seizures
+Torsemide,torsemide,Demadex,tab,5 / 10 / 20 / 100,,,tab,HUMAN-GEN,,Heart
+Tramadol,tramadol,Ultram,tab,50,,,tab,HUMAN-GEN,,
+Trazodone,trazodone,Desyrel,tab,50 / 100 / 150 / 300,,,tab,SHEET,,Oral Sedation
+Kenalog,triamcinolone,Vetalog / Kenalog,tab; injectable,0.5 / 1.5,,2 mg/ml; 6 mg/ml; Kenalog 10/40 mg/ml,tab,VET-LABEL,,SKIN
+Trilostane,trilostane,Vetoryl,cap,5 / 10 / 20 / 30 / 60 / 120,,,cap,VET-LABEL,do not open capsules,Endocrine Testing
+Temaril-P,trimeprazine/prednisolone,Temaril-P,tab,5,,,tab,VET-LABEL,5 mg trimeprazine + 2 mg prednisolone per tab,Cough
+Tylosin,tylosin tartrate,Tylan Soluble,powder,,,,tsp,VET-LABEL,"100 g jar; ~2.6 g per level teaspoon, so 1/8 tsp = ~325 mg (matches sheet)",Diarrhea
+Ursodiol,ursodiol,Actigall/Urso,cap; tab; suspension,250 / 300 / 500,250 mg/5 ml (50 mg/ml),,cap,HUMAN-GEN,300 mg caps; 250 & 500 mg tabs,Cholangiohep; Liver Drugs
+Vincristine,vincristine,Oncovin,injectable,,,1 mg/ml,ml,SHEET,,ITP
+Vitamin A,vitamin A,,cap (OTC),8000 / 10000 / 25000,,,cap,OTC,IU,Sebaceous Adenitis
+Vitamin C,vitamin C,,tab (OTC),250 / 500 / 1000,,,tab,OTC,,NSAIDs-tyl-grapes-raisins
+Vitamin E,vitamin E,,cap (OTC),100 / 200 / 400,,,cap,OTC,IU,Hepatic Lipidosis; Skin AutoImmune; ToeNails
+Zinc,zinc,,tab (OTC),,,,tab,OTC,elemental zinc varies by salt,Hepatic Lipidosis
+Zonisamide,zonisamide,Zonegran,cap,25 / 50 / 100,,,cap,SHEET,,Seizures

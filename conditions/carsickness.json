@@ -15,26 +15,57 @@
       "sp": "dog",
       "grp": "Drugs",
       "name": "Cerenia",
-      "type": "calc",
+      "type": "tab",
       "lo": 8,
       "hi": 8,
       "unitDose": "mg",
       "freqs": [
         "before travelling"
-      ]
+      ],
+      "strengths": [
+        16,
+        24,
+        60,
+        160
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "ace_car_d",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Ace",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.25,
       "hi": 2.2,
       "unitDose": "mg",
       "freqs": [
         "before travelling"
-      ]
+      ],
+      "strengths": [
+        5,
+        10,
+        25
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "ace_car_c",
@@ -53,13 +84,26 @@
       "grp": "Drugs",
       "name": "Dimenhydrinate",
       "gen": "Dramamine / Gravol, 50 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "before travelling"
-      ]
+      ],
+      "strengths": [
+        50
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "dimenhydrinate_c",
@@ -79,13 +123,28 @@
       "grp": "Drugs",
       "name": "Meclizine",
       "gen": "Antivert, \"Dramamine Non-Drowsy\" — OTC 25 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 0.5,
       "unitDose": "mg",
       "freqs": [
         "before travelling"
-      ]
+      ],
+      "strengths": [
+        12.5,
+        25,
+        50
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "meclizine_c",
@@ -93,13 +152,28 @@
       "grp": "Drugs",
       "name": "Meclizine",
       "gen": "Antivert, OTC 25 mg tabs",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 0.5,
       "unitDose": "mg",
       "freqs": [
         "before travelling"
-      ]
+      ],
+      "strengths": [
+        12.5,
+        25,
+        50
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     }
   ],
   "notes": {

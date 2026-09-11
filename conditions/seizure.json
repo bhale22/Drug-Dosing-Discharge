@@ -78,7 +78,8 @@
       "freqs": [
         "three times daily (TID)"
       ],
-      "desc": "first-line — preferred by many neurologists; no hepatotoxicity, minimal drug interactions"
+      "desc": "first-line — preferred by many neurologists; no hepatotoxicity, minimal drug interactions",
+      "mlConc": 100.0
     },
     {
       "id": "levetiracetam_xr",
@@ -104,7 +105,8 @@
       ],
       "desc": "extended-release — BID dosing improves compliance; tablets may be split for small dogs",
       "note": "SPLITTING IS APPROPRIATE — dissolution studies confirm split XR maintains sustained-release kinetics. See graph below.",
-      "imageKey": "keppra_xr"
+      "imageKey": "keppra_xr",
+      "mlConc": 100.0
     },
     {
       "id": "zonisamide_d",
@@ -139,14 +141,29 @@
       "grp": "Second-line / Add-on",
       "name": "Potassium Bromide",
       "gen": "KBr",
-      "type": "calc",
+      "type": "tab",
       "lo": 10,
       "hi": 35,
       "freqs": [
         "once daily (SID)"
       ],
       "desc": "add-on antiseizure; slow to steady state (months without loading)",
-      "note": "Takes 3–4 months to reach steady state without a loading dose. NOT recommended in cats (causes respiratory disease)."
+      "note": "Takes 3–4 months to reach steady state without a loading dose. NOT recommended in cats (causes respiratory disease).",
+      "strengths": [
+        250,
+        500
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab",
+      "mlConc": 250.0
     },
     {
       "id": "gabapentin_d",
@@ -199,7 +216,8 @@
         "twice daily (BID)",
         "three times daily (TID)"
       ],
-      "desc": "add-on antiseizure; similar mechanism to gabapentin"
+      "desc": "add-on antiseizure; similar mechanism to gabapentin",
+      "mlConc": 20.0
     },
     {
       "id": "topiramate_d",
@@ -233,13 +251,27 @@
       "grp": "Second-line / Add-on",
       "name": "Felbamate",
       "gen": "",
-      "type": "calc",
+      "type": "tab",
       "lo": 15,
       "hi": 20,
       "freqs": [
         "three times daily (TID)"
       ],
-      "desc": "add-on for refractory cases — monitor for aplastic anemia and hepatotoxicity"
+      "desc": "add-on for refractory cases — monitor for aplastic anemia and hepatotoxicity",
+      "strengths": [
+        400,
+        600
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "clorazepate_prev",
@@ -247,14 +279,29 @@
       "grp": "Pre-ictal / Cluster Prevention",
       "name": "Clorazepate",
       "gen": "",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 1,
       "freqs": [
         "every 8 hours (maintenance)",
         "every 8 hours × 2 days (post-seizure)"
       ],
-      "desc": "benzodiazepine for pre-ictal use or post-seizure cluster prevention"
+      "desc": "benzodiazepine for pre-ictal use or post-seizure cluster prevention",
+      "strengths": [
+        3.75,
+        7.5,
+        15
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "keppra_cluster",
@@ -262,14 +309,31 @@
       "grp": "Pre-ictal / Cluster Prevention",
       "name": "Levetiracetam — cluster loading",
       "gen": "regular Keppra only — NOT XR",
-      "type": "calc",
+      "type": "tab",
       "lo": 60,
       "hi": 60,
       "freqs": [
         "once only, then resume maintenance dosing"
       ],
       "desc": "cluster rescue dose — give regular (IR) Keppra once PO, then restart 20 mg/kg TID or 30 mg/kg XR BID",
-      "note": "Use REGULAR (immediate-release) Keppra only for this loading dose — NOT extended release."
+      "note": "Use REGULAR (immediate-release) Keppra only for this loading dose — NOT extended release.",
+      "strengths": [
+        250,
+        500,
+        750,
+        1000
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab",
+      "mlConc": 100.0
     },
     {
       "id": "diazepam_iv",
@@ -418,7 +482,8 @@
       "freqs": [
         "three times daily (TID)"
       ],
-      "desc": "first-line in cats; preferred by many neurologists"
+      "desc": "first-line in cats; preferred by many neurologists",
+      "mlConc": 100.0
     },
     {
       "id": "zonisamide_c",
@@ -451,13 +516,30 @@
       "grp": "Second-line / Add-on",
       "name": "Levetiracetam (third-line add-on)",
       "gen": "Keppra",
-      "type": "calc",
+      "type": "tab",
       "lo": 20,
       "hi": 20,
       "freqs": [
         "three times daily (TID)"
       ],
-      "desc": "add-on after phenobarb and zonisamide"
+      "desc": "add-on after phenobarb and zonisamide",
+      "strengths": [
+        250,
+        500,
+        750,
+        1000
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab",
+      "mlConc": 100.0
     },
     {
       "id": "clonazepam_c",
@@ -465,13 +547,28 @@
       "grp": "Second-line / Add-on",
       "name": "Clonazepam",
       "gen": "",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.016,
       "hi": 0.125,
       "freqs": [
         "once daily (SID)"
       ],
-      "desc": "benzodiazepine add-on for cats"
+      "desc": "benzodiazepine add-on for cats",
+      "strengths": [
+        0.5,
+        1,
+        2
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "topiramate_c",
@@ -479,13 +576,29 @@
       "grp": "Second-line / Add-on",
       "name": "Topiramate",
       "gen": "Topamax",
-      "type": "calc",
+      "type": "tab",
       "lo": 2.4,
       "hi": 5,
       "freqs": [
         "twice daily (BID)"
       ],
-      "desc": "add-on antiseizure for cats"
+      "desc": "add-on antiseizure for cats",
+      "strengths": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "felbamate_c",
@@ -493,13 +606,27 @@
       "grp": "Second-line / Add-on",
       "name": "Felbamate",
       "gen": "",
-      "type": "calc",
+      "type": "tab",
       "lo": 15,
       "hi": 20,
       "freqs": [
         "three times daily (TID)"
       ],
-      "desc": "add-on for refractory cases"
+      "desc": "add-on for refractory cases",
+      "strengths": [
+        400,
+        600
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "clorazepate_c",
@@ -507,13 +634,28 @@
       "grp": "Second-line / Add-on",
       "name": "Clorazepate",
       "gen": "",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 1,
       "freqs": [
         "every 8 hours"
       ],
-      "desc": "benzodiazepine add-on for cats"
+      "desc": "benzodiazepine add-on for cats",
+      "strengths": [
+        3.75,
+        7.5,
+        15
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "diazepam_iv_c",

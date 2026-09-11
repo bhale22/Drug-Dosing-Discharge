@@ -564,13 +564,27 @@
       "grp": "Itch Control",
       "name": "Benadryl",
       "gen": "diphenhydramine",
-      "type": "calc",
+      "type": "tab",
       "lo": 2.2,
       "hi": 2.2,
       "freqs": [
         "three times daily"
       ],
-      "desc": "antihistamine to help reduce itching"
+      "desc": "antihistamine to help reduce itching",
+      "strengths": [
+        25,
+        50
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "ceph_d",
@@ -681,13 +695,26 @@
       "grp": "Antifungals",
       "name": "Ketoconazole",
       "gen": "",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "freqs": [
         "once daily"
       ],
-      "desc": "antifungal for yeast skin infection"
+      "desc": "antifungal for yeast skin infection",
+      "strengths": [
+        200
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "terb",
@@ -787,13 +814,27 @@
       "grp": "Steroids",
       "name": "Prednisolone",
       "gen": "",
-      "type": "calc",
+      "type": "tab",
       "lo": 1,
       "hi": 1,
       "freqs": [
         "once daily"
       ],
-      "desc": "steroid to reduce inflammation and itching"
+      "desc": "steroid to reduce inflammation and itching",
+      "strengths": [
+        5,
+        20
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "kenalog_c",
@@ -815,13 +856,24 @@
       "grp": "Antibiotics",
       "name": "Cephalexin",
       "gen": "",
-      "type": "calc",
+      "type": "tab",
       "lo": 30,
       "hi": 30,
       "freqs": [
         "twice daily"
       ],
-      "desc": "antibiotic for skin infection"
+      "desc": "antibiotic for skin infection",
+      "strengths": [
+        250,
+        500,
+        750
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "chlorphen",
@@ -843,14 +895,29 @@
       "grp": "Antihistamines",
       "name": "Hydroxyzine",
       "gen": "",
-      "type": "calc",
+      "type": "tab",
       "lo": 2,
       "hi": 2,
       "freqs": [
         "once daily",
         "twice daily"
       ],
-      "desc": "antihistamine to help reduce itching"
+      "desc": "antihistamine to help reduce itching",
+      "strengths": [
+        10,
+        25,
+        50
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "lorat",
@@ -858,13 +925,26 @@
       "grp": "Antihistamines",
       "name": "Loratadine",
       "gen": "",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 0.5,
       "freqs": [
         "once daily"
       ],
-      "desc": "antihistamine to help reduce itching"
+      "desc": "antihistamine to help reduce itching",
+      "strengths": [
+        10
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "cetir",

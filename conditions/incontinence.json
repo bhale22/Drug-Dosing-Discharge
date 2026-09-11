@@ -49,13 +49,28 @@
       "sp": "dog",
       "grp": "Drugs",
       "name": "Proin",
-      "type": "calc",
+      "type": "tab",
       "lo": 1,
       "hi": 1.5,
       "unitDose": "mg",
       "freqs": [
         "q 8-24 h"
-      ]
+      ],
+      "strengths": [
+        25,
+        50,
+        75
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "des",
@@ -85,13 +100,22 @@
       "grp": "MALE DOGS",
       "name": "Tamsulosin",
       "gen": "(flomax) 0.4 mg caps",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.01,
       "hi": 0.2,
       "unitDose": "mg",
       "freqs": [
         "q 24 h"
-      ]
+      ],
+      "strengths": [
+        0.4
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "prazosin",
@@ -136,52 +160,105 @@
       "sp": "dog",
       "grp": "MALE DOGS",
       "name": "Phenoxybenzamine",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.25,
       "hi": 0.25,
       "unitDose": "mg",
       "freqs": [
         "q 8-12 h"
-      ]
+      ],
+      "strengths": [
+        10
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "diazepam_inc",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Diazepam",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 2,
       "unitDose": "mg",
       "freqs": [
         "q 8 h, or 30 minutes before voiding"
-      ]
+      ],
+      "strengths": [
+        2,
+        5,
+        10
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "ace_inc",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Acepromazine",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 2.2,
       "unitDose": "mg",
       "freqs": [
         "q 6-8 h"
-      ]
+      ],
+      "strengths": [
+        5,
+        10,
+        25
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "methocarbamol_inc",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Methocarbamol",
-      "type": "calc",
+      "type": "tab",
       "lo": 22,
       "hi": 44,
       "unitDose": "mg",
       "freqs": [
         "q 8 h"
-      ]
+      ],
+      "strengths": [
+        500,
+        750
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     }
   ],
   "notes": {

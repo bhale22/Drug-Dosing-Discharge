@@ -50,13 +50,30 @@
       "sp": "dog",
       "grp": "Drugs",
       "name": "Doxycycline",
-      "type": "calc",
+      "type": "tab",
       "lo": 10,
       "hi": 10,
       "unitDose": "mg",
       "freqs": [
         "SID for 2 weeks"
-      ]
+      ],
+      "strengths": [
+        20,
+        50,
+        75,
+        100,
+        150
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "oral_steroid_uv",

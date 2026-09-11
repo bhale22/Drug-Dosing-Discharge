@@ -1582,17 +1582,19 @@ function render(){
      only the milligram amounts wait for a weight. */
   /* The weight box is right here in the banner — the first thing on the page
      and the first thing to do — rather than a notice pointing at the header. */
+  const showBanner=(kg===null||typingWt)&&!C.noWeight;
   const hdrWt=document.querySelector(".ctl.wt");
-  if(hdrWt)hdrWt.style.display=(kg===null&&!C.noWeight)?"none":"";
-  const wtBanner=(kg===null&&!C.noWeight)
+  if(hdrWt)hdrWt.style.display=showBanner?"none":"";
+  const typed=escAttr(document.getElementById("wt").value||"");
+  const wtBanner=showBanner
     ?'<div class="wtbar">'+
        '<label class="wb-txt" for="wt2"><strong>Patient weight</strong>'+
        '<span class="wb-sub">mg/kg doses are shown below; the milligram amounts fill in once a weight is entered.</span></label>'+
        '<span class="wb-in">'+
          '<input id="wt2" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0.0" '+
-           'aria-label="Patient weight in '+unit+'" '+
+           'value="'+typed+'" aria-label="Patient weight in '+unit+'" '+
            'oninput="mirrorWt(this.value)" '+
-           'onchange="commitWt()" '+
+           'onblur="commitWt()" '+
            'onkeydown="if(event.key===\'Enter\'){event.preventDefault();commitWt()}">'+
          '<span class="wb-u">'+unit+'</span>'+
          '<button type="button" class="wb-btn" onclick="commitWt()">Go</button>'+
@@ -1601,6 +1603,7 @@ function render(){
 
   /* Drugs and doses first, then the discharge/record output, then the source
      notes at the foot of the page. */
+  rerendering=true;
   document.getElementById("main").innerHTML=
     wtBanner+(viewbarHtml===""?"":viewbar)+
     (cards?'<div class="grid">'+cards+'</div>':"")+
@@ -1611,7 +1614,9 @@ function render(){
   buildOutput();
   refreshPresetBtns();
   const nj=document.getElementById("notesjump");
-  if(nj)nj.style.display=hasNotes()?"":"none";}
+  if(nj)nj.style.display=hasNotes()?"":"none";
+  rerendering=false;
+  if(typingWt){const f=document.getElementById("wt2");if(f){f.focus();}}}
 
 /* ================================================================
    EVENT HANDLERS
@@ -1713,10 +1718,17 @@ function focusWeight(){
   if(!w)return;
   w.scrollIntoView({block:"nearest"});
   w.focus();w.select();}
-/* the banner field mirrors into the header field; the page re-renders when
-   the entry is finished so the field is not pulled away mid-typing */
-function mirrorWt(v){const w=document.getElementById("wt");if(w)w.value=v;}
+/* Typing in the banner field recomputes the page on every keystroke ("4"
+   then "44"), and the banner stays put with the cursor in it until the entry
+   is finished; then the header field takes over. */
+let typingWt=false,rerendering=false;
+function mirrorWt(v){
+  const w=document.getElementById("wt");
+  if(w){w.value=v;w.classList.toggle("needed",getKg()===null);}
+  typingWt=true;render();}
 function commitWt(){
+  if(rerendering)return;
+  typingWt=false;
   const w=document.getElementById("wt");
   if(w)w.classList.toggle("needed",getKg()===null);
   render();}

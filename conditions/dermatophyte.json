@@ -142,14 +142,23 @@
       "grp": "Systemic Antifungal Drug",
       "name": "Itraconazole",
       "gen": "Sporanox / Itrafungol",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 10,
       "unitDose": "mg",
       "freqs": [
         "SID, one week on / one week off",
         "SID for 21 days with topical antifungals"
-      ]
+      ],
+      "strengths": [
+        100
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "terb_cat",
@@ -187,13 +196,22 @@
       "sp": "dog",
       "grp": "Systemic Antifungal Drug",
       "name": "Itraconazole",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 10,
       "unitDose": "mg",
       "freqs": [
         "SID with food"
-      ]
+      ],
+      "strengths": [
+        100
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "terb_dog",
@@ -236,13 +254,28 @@
       "sp": "dog",
       "grp": "Systemic Antifungal Drug",
       "name": "Griseofulvin",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 10,
       "unitDose": "mg",
       "freqs": [
         "SID with food (ultramicrosize)"
-      ]
+      ],
+      "strengths": [
+        125,
+        250,
+        500
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "micona_dog",

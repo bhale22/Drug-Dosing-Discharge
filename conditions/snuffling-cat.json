@@ -50,13 +50,28 @@
       "grp": "Drugs",
       "name": "Azithromycin liquid",
       "gen": "200mg/5ml = 50 mg/ml",
-      "type": "calc",
+      "type": "tab",
       "lo": 10,
       "hi": 10,
       "unitDose": "mg",
       "freqs": [
         "SID for 5 days, then every 3 days (or twice weekly) for 6 weeks"
-      ]
+      ],
+      "strengths": [
+        250,
+        500,
+        600
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "famciclovir_sn",

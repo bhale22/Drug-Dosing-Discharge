@@ -15,40 +15,90 @@
       "sp": "dog",
       "grp": "Drugs",
       "name": "Prednisone",
-      "type": "calc",
+      "type": "tab",
       "lo": 1,
       "hi": 1,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        1,
+        2.5,
+        5,
+        10,
+        20,
+        50
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "dex_itp_d",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Dexamethasone",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.2,
       "hi": 0.5,
       "unitDose": "mg",
       "freqs": [
         "SID, SQ or IV"
       ],
-      "inClinic": true
+      "inClinic": true,
+      "strengths": [
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        4,
+        6
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "cyclo_itp_d",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Cyclosporine",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap",
+      "mlConc": 100.0
     },
     {
       "id": "vincristine_itp_d",
@@ -70,13 +120,30 @@
       "sp": "dog",
       "grp": "Drugs",
       "name": "Doxycycline",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        20,
+        50,
+        75,
+        100,
+        150
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "carafate_itp_d",
@@ -95,79 +162,161 @@
       "sp": "dog",
       "grp": "Drugs",
       "name": "Omeprazole",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 0.5,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        10,
+        20,
+        40
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "cerenia_itp_d",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Cerenia",
-      "type": "calc",
+      "type": "tab",
       "lo": 2,
       "hi": 2,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        16,
+        24,
+        60,
+        160
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "pred_itp_c",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Prednisolone",
-      "type": "calc",
+      "type": "tab",
       "lo": 1,
       "hi": 1,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        5,
+        20
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "dex_itp_c",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Dexamethasone",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.3,
       "hi": 1,
       "unitDose": "mg",
       "freqs": [
         "SID, SQ or IV"
       ],
-      "inClinic": true
+      "inClinic": true,
+      "strengths": [
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        4,
+        6
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "cyclo_itp_c",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Cyclosporine",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "q 12-24 h"
-      ]
+      ],
+      "strengths": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap",
+      "mlConc": 100.0
     },
     {
       "id": "chlorambucil_itp_c",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Chlorambucil",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.1,
       "hi": 0.2,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        2
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "vincristine_itp_c",

@@ -14,26 +14,51 @@
       "sp": "dog",
       "grp": "Drugs",
       "name": "Omeprazole",
-      "type": "calc",
+      "type": "tab",
       "lo": 1,
       "hi": 1,
       "unitDose": "mg",
       "freqs": [
         "BID, 30 minutes before a meal"
-      ]
+      ],
+      "strengths": [
+        10,
+        20,
+        40
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "metoclopramide_rf",
       "sp": "dog",
       "grp": "Drugs",
       "name": "Metoclopramide",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.2,
       "hi": 0.4,
       "unitDose": "mg",
       "freqs": [
         "every 8–12 hours, 30 minutes before a meal"
-      ]
+      ],
+      "strengths": [
+        5,
+        10
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "sucralfate_rf",
@@ -73,13 +98,26 @@
       "sp": "dog",
       "grp": "Drugs",
       "name": "Cyclosporine",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        10,
+        25,
+        50,
+        100
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap",
+      "mlConc": 100.0
     }
   ],
   "notes": {

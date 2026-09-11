@@ -14,66 +14,147 @@
       "sp": "cat",
       "grp": "Drugs",
       "name": "Amoxicillin",
-      "type": "calc",
+      "type": "tab",
       "lo": 10,
       "hi": 20,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        50,
+        100,
+        150,
+        200,
+        400,
+        250,
+        500,
+        875
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "zeniquin_ch",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Zeniquin",
-      "type": "calc",
+      "type": "tab",
       "lo": 2.75,
       "hi": 2.75,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "baytril_ch",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Baytril",
-      "type": "calc",
+      "type": "tab",
       "lo": 2.5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "SID (5 mg/kg)",
         "BID (2.5 mg/kg)"
-      ]
+      ],
+      "strengths": [
+        22.7,
+        68,
+        136
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "cipro_ch",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Cipro",
-      "type": "calc",
+      "type": "tab",
       "lo": 30,
       "hi": 30,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        250,
+        500,
+        750
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "chloramphenicol_ch",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Chloramphenicol",
-      "type": "calc",
+      "type": "tab",
       "lo": 35,
       "hi": 35,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        250,
+        500,
+        1000
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "metronidazole_ch",
@@ -81,65 +162,135 @@
       "grp": "Drugs",
       "name": "Metronidazole",
       "gen": "Flagyl",
-      "type": "calc",
+      "type": "tab",
       "lo": 7.5,
       "hi": 7.5,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        250,
+        500
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "ursodiol_ch",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Ursodiol",
-      "type": "calc",
+      "type": "tab",
       "lo": 10,
       "hi": 15,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        250,
+        300,
+        500
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "pred_ch",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Prednisolone",
-      "type": "calc",
+      "type": "tab",
       "lo": 2.2,
       "hi": 2.2,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        5,
+        20
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "famotidine_ch",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Famotidine",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.5,
       "hi": 0.5,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        10,
+        20,
+        40
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "cerenia_ch",
       "sp": "cat",
       "grp": "Drugs",
       "name": "Cerenia",
-      "type": "calc",
+      "type": "tab",
       "lo": 2.2,
       "hi": 2.2,
       "unitDose": "mg",
       "freqs": [
         "SID"
-      ]
+      ],
+      "strengths": [
+        16,
+        24,
+        60,
+        160
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "mirtazapine_ch",
@@ -157,14 +308,29 @@
       "sp": "cat",
       "grp": "Drugs",
       "name": "Butorphanol",
-      "type": "calc",
+      "type": "tab",
       "lo": 0.2,
       "hi": 0.2,
       "unitDose": "mg",
       "freqs": [
         "as a premed"
       ],
-      "inClinic": true
+      "inClinic": true,
+      "strengths": [
+        1,
+        5,
+        10
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "buprenorphine_ch",

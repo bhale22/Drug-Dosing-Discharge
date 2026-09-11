@@ -574,7 +574,7 @@ const BLOCKS=[];
 /* ================================================================
    STATE + HELPERS
 ================================================================ */
-let sp="dog",unit="lb",pbOn=false,mode="plan";
+let sp="dog",unit="lb",pbOn=false,mode="plan",typingWt=false,rerendering=false;
 /* opt: null = follow the target automatically, -1 = custom amount, else index */
 const S={};
 function st(id){if(!S[id])S[id]={on:false,opt:null,mgkg:null,cN:null,cMg:null,cFreq:null,
@@ -846,15 +846,17 @@ function render(){
   /* The weight box sits in a banner at the top of the page — the first thing
      seen and the first thing to do — but nothing is hidden behind it: the label
      doses read straight off, and the per-patient fits fill in once a weight is in. */
+  const showBanner=kg===null||typingWt;
   const hdrWt=document.querySelector(".ctl.wt");
-  if(hdrWt)hdrWt.style.display=kg===null?"none":"";
-  const wtBanner=kg===null
+  if(hdrWt)hdrWt.style.display=showBanner?"none":"";
+  const typed=escA(document.getElementById("wt").value||"");
+  const wtBanner=showBanner
     ?'<div class="wtbar">'+
        '<label class="wb-txt" for="wt2"><strong>Patient weight</strong>'+
        '<span class="wb-sub">mg/kg doses are shown below; tablet fits fill in once a weight is entered.</span></label>'+
        '<span class="wb-in">'+
          '<input id="wt2" type="number" inputmode="decimal" min="0" step="0.1" placeholder="0.0" '+
-           'aria-label="Patient weight in '+unit+'" data-act="wt2">'+
+           'value="'+typed+'" aria-label="Patient weight in '+unit+'" data-act="wt2">'+
          '<span class="wb-u">'+unit+'</span>'+
          '<button type="button" class="wb-btn" data-act="commitwt">Go</button>'+
        '</span>'+
@@ -911,9 +913,12 @@ function render(){
     '<button type="button" class="obtn s" data-act="print">Print / PDF</button>'+
     '<span class="copied" id="copiedmsg">Copied ✓</span></div></section>';
 
+  rerendering=true;
   document.getElementById("main").innerHTML=html;
   renderBlocks();
-  buildOutput();}
+  buildOutput();
+  rerendering=false;
+  if(typingWt){const f=document.getElementById("wt2");if(f)f.focus();}}
 
 function focusWeight(){
   const w=document.getElementById("wt2")||document.getElementById("wt");
@@ -1188,7 +1193,7 @@ document.getElementById("main").addEventListener("click",e=>{
   else if(a==="disc")toggleOpen(t.dataset.id);
   else if(a==="allopen")setAllOpen(t.dataset.v==="1");
   else if(a==="focuswt")focusWeight();
-  else if(a==="commitwt")render();
+  else if(a==="commitwt"){typingWt=false;render();}
   else if(a==="cfreqon"){st(t.dataset.id).cFreq="";render();}
   else if(a==="cfreqoff"){st(t.dataset.id).cFreq=null;render();}
   else if(a==="pb")setPB(+t.dataset.v);
@@ -1201,7 +1206,7 @@ document.getElementById("main").addEventListener("change",e=>{
   const t=e.target.closest("[data-act]");
   if(!t)return;
   const a=t.dataset.act;
-  if(a==="wt2"){render();return;}
+  if(a==="wt2"){return;}
   if(a==="tog")toggleMed(t.dataset.id);
   else if(a==="custn"){const s2=st(t.dataset.id),n=parseFloat(t.value);
     s2.cN=isFinite(n)&&n>0?n:null;s2.opt=-1;render();}
@@ -1214,14 +1219,18 @@ document.getElementById("main").addEventListener("input",e=>{
   const a=t.dataset.act;
   if(a==="cust")setCustom(t.dataset.id,t.value);
   else if(a==="wt2"){const w=document.getElementById("wt");if(w){w.value=t.value;
-    w.classList.toggle("needed",getKg()===null);}}
+    w.classList.toggle("needed",getKg()===null);}typingWt=true;render();}
   else if(a==="cfreq"){st(t.dataset.id).cFreq=t.value;buildOutput();}
   else if(a==="blktext"){bk(t.dataset.id).text=t.value;buildOutput();}
+});
+document.getElementById("main").addEventListener("focusout",e=>{
+  const t=e.target.closest&&e.target.closest("[data-act]");
+  if(t&&t.dataset.act==="wt2"&&!rerendering){typingWt=false;render();}
 });
 document.getElementById("main").addEventListener("keydown",e=>{
   if(e.key!=="Enter")return;
   const t=e.target.closest("[data-act]");
-  if(t&&t.dataset.act==="wt2"){e.preventDefault();render();return;}
+  if(t&&t.dataset.act==="wt2"){e.preventDefault();typingWt=false;render();return;}
   if(t&&(t.dataset.act==="tgt"||t.dataset.act==="cust"||t.dataset.act==="cfreq")){
     e.preventDefault();t.blur();}
 });

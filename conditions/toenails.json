@@ -67,28 +67,56 @@
       "sp": "dog",
       "grp": "Or doxy/minocycline instead of tetracycline",
       "name": "Doxycycline",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "SID",
         "BID"
-      ]
+      ],
+      "strengths": [
+        20,
+        50,
+        75,
+        100,
+        150
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "minocycline_nail",
       "sp": "dog",
       "grp": "Or doxy/minocycline instead of tetracycline",
       "name": "Minocycline",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "SID",
         "BID"
-      ]
+      ],
+      "strengths": [
+        50,
+        75,
+        100
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "cap"
     },
     {
       "id": "vite_nail",
@@ -119,26 +147,52 @@
       "sp": "dog",
       "grp": "If not improving after 4 to 6 weeks",
       "name": "Pentoxyphylline",
-      "type": "calc",
+      "type": "tab",
       "lo": 15,
       "hi": 15,
       "unitDose": "mg",
       "freqs": [
         "BID"
-      ]
+      ],
+      "strengths": [
+        400
+      ],
+      "splits": [
+        1,
+        2,
+        3
+      ],
+      "unitName": "tab"
     },
     {
       "id": "doxy_pcpod",
       "sp": "dog",
       "grp": "PLASMA CELL PODODERMATITIS",
       "name": "Doxycycline",
-      "type": "calc",
+      "type": "tab",
       "lo": 5,
       "hi": 5,
       "unitDose": "mg",
       "freqs": [
         "BID for at least 30 days, then SID for a further 30–60 days"
-      ]
+      ],
+      "strengths": [
+        20,
+        50,
+        75,
+        100,
+        150
+      ],
+      "splits": [
+        0.25,
+        0.5,
+        0.75,
+        1,
+        1.5,
+        2,
+        3
+      ],
+      "unitName": "tab"
     }
   ],
   "notes": {
