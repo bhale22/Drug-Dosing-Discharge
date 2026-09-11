@@ -1,0 +1,23 @@
+{
+  "title": "Pododermatitis / Plasma Cell Pododermatitis",
+  "desc": "Screen aggressively for renal disease and anemia",
+  "icon": "🐾",
+  "code": "DERM-POD",
+  "discharge": "Pododermatitis",
+  "species": [
+    "cat"
+  ],
+  "noDischarge": true,
+  "noWeight": true,
+  "bands": {},
+  "meds": [],
+  "dischargeBlocks": [],
+  "notes": [
+    "Screen aggressively for renal disease and anemia",
+    "Sarkan et al. 2026: Feline plasma cell pododermatitis with concurrent glomerular disease: a case series of 25 cats",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13125834/"
+  ],
+  "aliases": [
+    "Plasma Cell Pododermatitis"
+  ]
+}

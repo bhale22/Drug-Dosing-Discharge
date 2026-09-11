@@ -212,9 +212,13 @@ function renderAZ(present){
     '<button type="button" '+(present.has(L)&&!q?"":"disabled")+
     ' onclick="jump(\''+L+'\')">'+L+'</button>').join("");}
 
+/* Straight there — the list is long enough that a smooth scroll is a wait. */
 function jump(L){
   const el=document.getElementById("L-"+L);
-  if(el)el.scrollIntoView({behavior:"smooth",block:"start"});}
+  if(!el)return;
+  const bar=document.querySelector("header");
+  const off=(bar?bar.getBoundingClientRect().height:0)+8;
+  window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-off,behavior:"auto"});}
 
 function clearSearch(){
   const q=document.getElementById("q");

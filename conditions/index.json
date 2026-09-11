@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-10",
+  "generated": "2026-09-11",
   "conditions": [
     {
       "id": "chemo-bsa",
@@ -377,6 +377,19 @@
       ],
       "aliases": [
         "Chill Protocol"
+      ]
+    },
+    {
+      "id": "pododermatitis",
+      "title": "Pododermatitis / Plasma Cell Pododermatitis",
+      "icon": "🐾",
+      "species": [
+        "cat"
+      ],
+      "medCount": 0,
+      "drugs": [],
+      "aliases": [
+        "Plasma Cell Pododermatitis"
       ]
     },
     {
